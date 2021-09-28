@@ -1,0 +1,888 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		245FBB410E904DC93260B259 /* Pods_CampApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 563B635613E820CD082950D7 /* Pods_CampApp.framework */; };
+		2E2CDC0526FDB9CF0005AE67 /* CampComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CDC0426FDB9CF0005AE67 /* CampComponent.swift */; };
+		2E2CDC0826FDBA950005AE67 /* CampComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CDC0726FDBA950005AE67 /* CampComponentView.swift */; };
+		2E2CDC0B26FDBCBB0005AE67 /* CampComponentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CDC0A26FDBCBB0005AE67 /* CampComponentPresenter.swift */; };
+		2E2CDC0E26FDC3650005AE67 /* IconedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CDC0D26FDC3650005AE67 /* IconedLabel.swift */; };
+		2E2CDC1126FDC37E0005AE67 /* IconedLabelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CDC1026FDC37E0005AE67 /* IconedLabelPresenter.swift */; };
+		2E2CDC1426FDCA6B0005AE67 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CDC1326FDCA6B0005AE67 /* Label.swift */; };
+		2E2CDC1626FDF59F0005AE67 /* ColorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CDC1526FDF59F0005AE67 /* ColorProvider.swift */; };
+		2E2CDC1826FDF77E0005AE67 /* FontProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CDC1726FDF77E0005AE67 /* FontProvider.swift */; };
+		2E98853B26FBA1F200A881F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98853A26FBA1F200A881F7 /* AppDelegate.swift */; };
+		2E98853F26FBA1F200A881F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98853E26FBA1F200A881F7 /* ViewController.swift */; };
+		2E98854226FBA1F200A881F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E98854026FBA1F200A881F7 /* Main.storyboard */; };
+		2E98854426FBA1F300A881F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E98854326FBA1F300A881F7 /* Assets.xcassets */; };
+		2E98854726FBA1F300A881F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E98854526FBA1F300A881F7 /* LaunchScreen.storyboard */; };
+		2E98855026FBB56D00A881F7 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98854F26FBB56D00A881F7 /* MainCoordinator.swift */; };
+		2E98855526FBB63A00A881F7 /* MainTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98855426FBB63A00A881F7 /* MainTabCoordinator.swift */; };
+		2E98855926FBB8F800A881F7 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98855826FBB8F800A881F7 /* HomeCoordinator.swift */; };
+		2E98855D26FBB93400A881F7 /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98855C26FBB93400A881F7 /* SearchCoordinator.swift */; };
+		2E98856126FBB98800A881F7 /* FavouriteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98856026FBB98800A881F7 /* FavouriteCoordinator.swift */; };
+		2E98856526FBB9BF00A881F7 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98856426FBB9BF00A881F7 /* ProfileCoordinator.swift */; };
+		2E98856826FBBB4D00A881F7 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98856726FBBB4D00A881F7 /* Tabs.swift */; };
+		2E98856B26FCB2B400A881F7 /* StringProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98856A26FCB2B400A881F7 /* StringProvider.swift */; };
+		2E98856D26FCB53200A881F7 /* ImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98856C26FCB53200A881F7 /* ImageProvider.swift */; };
+		2E98857026FCBB0F00A881F7 /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98856F26FCBB0F00A881F7 /* BaseListController.swift */; };
+		2E98857626FCBFF300A881F7 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98857526FCBFF300A881F7 /* Then.swift */; };
+		2E98858826FCC2F500A881F7 /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98858726FCC2F500A881F7 /* BaseInteractor.swift */; };
+		2E98858A26FCC2FD00A881F7 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98858926FCC2FD00A881F7 /* BasePresenter.swift */; };
+		2E98858D26FCC32400A881F7 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98858C26FCC32400A881F7 /* BaseView.swift */; };
+		2E98858F26FCC78200A881F7 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98858E26FCC78200A881F7 /* HomeController.swift */; };
+		2E98859126FCDB1D00A881F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E98859026FCDB1D00A881F7 /* GoogleService-Info.plist */; };
+		2E98859726FD057000A881F7 /* FirebaseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98859626FD057000A881F7 /* FirebaseNetwork.swift */; };
+		2E98859A26FD058E00A881F7 /* GenericResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98859926FD058E00A881F7 /* GenericResult.swift */; };
+		2E98859D26FD05EE00A881F7 /* CampModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98859C26FD05EE00A881F7 /* CampModel.swift */; };
+		2E98859F26FD0F0600A881F7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98859E26FD0F0600A881F7 /* Extensions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2E2CDC0426FDB9CF0005AE67 /* CampComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampComponent.swift; sourceTree = "<group>"; };
+		2E2CDC0726FDBA950005AE67 /* CampComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampComponentView.swift; sourceTree = "<group>"; };
+		2E2CDC0A26FDBCBB0005AE67 /* CampComponentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampComponentPresenter.swift; sourceTree = "<group>"; };
+		2E2CDC0D26FDC3650005AE67 /* IconedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconedLabel.swift; sourceTree = "<group>"; };
+		2E2CDC1026FDC37E0005AE67 /* IconedLabelPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconedLabelPresenter.swift; sourceTree = "<group>"; };
+		2E2CDC1326FDCA6B0005AE67 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		2E2CDC1526FDF59F0005AE67 /* ColorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorProvider.swift; sourceTree = "<group>"; };
+		2E2CDC1726FDF77E0005AE67 /* FontProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontProvider.swift; sourceTree = "<group>"; };
+		2E98853726FBA1F200A881F7 /* CampApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E98853A26FBA1F200A881F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2E98853E26FBA1F200A881F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2E98854126FBA1F200A881F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2E98854326FBA1F300A881F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2E98854626FBA1F300A881F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2E98854826FBA1F300A881F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E98854F26FBB56D00A881F7 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		2E98855426FBB63A00A881F7 /* MainTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabCoordinator.swift; sourceTree = "<group>"; };
+		2E98855826FBB8F800A881F7 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		2E98855C26FBB93400A881F7 /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
+		2E98856026FBB98800A881F7 /* FavouriteCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCoordinator.swift; sourceTree = "<group>"; };
+		2E98856426FBB9BF00A881F7 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		2E98856726FBBB4D00A881F7 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
+		2E98856A26FCB2B400A881F7 /* StringProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringProvider.swift; sourceTree = "<group>"; };
+		2E98856C26FCB53200A881F7 /* ImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
+		2E98856F26FCBB0F00A881F7 /* BaseListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
+		2E98857526FCBFF300A881F7 /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
+		2E98858726FCC2F500A881F7 /* BaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
+		2E98858926FCC2FD00A881F7 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		2E98858C26FCC32400A881F7 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		2E98858E26FCC78200A881F7 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		2E98859026FCDB1D00A881F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2E98859626FD057000A881F7 /* FirebaseNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseNetwork.swift; sourceTree = "<group>"; };
+		2E98859926FD058E00A881F7 /* GenericResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResult.swift; sourceTree = "<group>"; };
+		2E98859C26FD05EE00A881F7 /* CampModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampModel.swift; sourceTree = "<group>"; };
+		2E98859E26FD0F0600A881F7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4ADDABF7A13CFD7AAC1CE5F1 /* Pods-CampApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampApp.release.xcconfig"; path = "Target Support Files/Pods-CampApp/Pods-CampApp.release.xcconfig"; sourceTree = "<group>"; };
+		563B635613E820CD082950D7 /* Pods_CampApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CampApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B931465612FB61811CAF0105 /* Pods-CampApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampApp.debug.xcconfig"; path = "Target Support Files/Pods-CampApp/Pods-CampApp.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2E98853426FBA1F200A881F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				245FBB410E904DC93260B259 /* Pods_CampApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2E2CDC0226FDB9410005AE67 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2E2CDC1226FDCA5B0005AE67 /* Label */,
+				2E2CDC0C26FDC3560005AE67 /* IconedLabel */,
+				2E2CDC0326FDB94D0005AE67 /* CampComponent */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2E2CDC0326FDB94D0005AE67 /* CampComponent */ = {
+			isa = PBXGroup;
+			children = (
+				2E2CDC0926FDBCA80005AE67 /* Presenter */,
+				2E2CDC0626FDBA8C0005AE67 /* View */,
+				2E2CDC0426FDB9CF0005AE67 /* CampComponent.swift */,
+			);
+			path = CampComponent;
+			sourceTree = "<group>";
+		};
+		2E2CDC0626FDBA8C0005AE67 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2E2CDC0726FDBA950005AE67 /* CampComponentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2E2CDC0926FDBCA80005AE67 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2E2CDC0A26FDBCBB0005AE67 /* CampComponentPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2E2CDC0C26FDC3560005AE67 /* IconedLabel */ = {
+			isa = PBXGroup;
+			children = (
+				2E2CDC0F26FDC3700005AE67 /* Presenter */,
+				2E2CDC0D26FDC3650005AE67 /* IconedLabel.swift */,
+			);
+			path = IconedLabel;
+			sourceTree = "<group>";
+		};
+		2E2CDC0F26FDC3700005AE67 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2E2CDC1026FDC37E0005AE67 /* IconedLabelPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2E2CDC1226FDCA5B0005AE67 /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				2E2CDC1326FDCA6B0005AE67 /* Label.swift */,
+			);
+			path = Label;
+			sourceTree = "<group>";
+		};
+		2E98852E26FBA1F200A881F7 = {
+			isa = PBXGroup;
+			children = (
+				2E98853926FBA1F200A881F7 /* CampApp */,
+				2E98853826FBA1F200A881F7 /* Products */,
+				DF178F2957180F8E5CB6890F /* Pods */,
+				EA5EA3B90E087148A17AB016 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2E98853826FBA1F200A881F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2E98853726FBA1F200A881F7 /* CampApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2E98853926FBA1F200A881F7 /* CampApp */ = {
+			isa = PBXGroup;
+			children = (
+				2E2CDC0226FDB9410005AE67 /* Components */,
+				2E98859526FD057000A881F7 /* Networking */,
+				2E98856E26FCBAEC00A881F7 /* Base */,
+				2E98856926FCB29E00A881F7 /* Providers */,
+				2E98855226FBB61800A881F7 /* Modules */,
+				2E98854E26FBB53C00A881F7 /* Coordinators */,
+				2E98853A26FBA1F200A881F7 /* AppDelegate.swift */,
+				2E98853E26FBA1F200A881F7 /* ViewController.swift */,
+				2E98854026FBA1F200A881F7 /* Main.storyboard */,
+				2E98854326FBA1F300A881F7 /* Assets.xcassets */,
+				2E98854526FBA1F300A881F7 /* LaunchScreen.storyboard */,
+				2E98859026FCDB1D00A881F7 /* GoogleService-Info.plist */,
+				2E98854826FBA1F300A881F7 /* Info.plist */,
+			);
+			path = CampApp;
+			sourceTree = "<group>";
+		};
+		2E98854E26FBB53C00A881F7 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				2E98854F26FBB56D00A881F7 /* MainCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		2E98855126FBB61100A881F7 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				2E98856626FBBB3F00A881F7 /* Models */,
+				2E98855326FBB62400A881F7 /* Coordinator */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		2E98855226FBB61800A881F7 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2E98856226FBB9A600A881F7 /* Profile */,
+				2E98855E26FBB95200A881F7 /* Favourite */,
+				2E98855A26FBB91B00A881F7 /* Search */,
+				2E98855626FBB8C000A881F7 /* Home */,
+				2E98855126FBB61100A881F7 /* TabBar */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2E98855326FBB62400A881F7 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				2E98855426FBB63A00A881F7 /* MainTabCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		2E98855626FBB8C000A881F7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2E98858226FCC1A100A881F7 /* Interactor */,
+				2E98858126FCC19C00A881F7 /* Presenter */,
+				2E98858026FCC19600A881F7 /* Controller */,
+				2E98855726FBB8E900A881F7 /* Coordinator */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2E98855726FBB8E900A881F7 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				2E98855826FBB8F800A881F7 /* HomeCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		2E98855A26FBB91B00A881F7 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				2E98857F26FCC17C00A881F7 /* Interactor */,
+				2E98857E26FCC17500A881F7 /* Presenter */,
+				2E98857D26FCC16E00A881F7 /* Controller */,
+				2E98855B26FBB92000A881F7 /* Coordinator */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		2E98855B26FBB92000A881F7 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				2E98855C26FBB93400A881F7 /* SearchCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		2E98855E26FBB95200A881F7 /* Favourite */ = {
+			isa = PBXGroup;
+			children = (
+				2E98857A26FCC14E00A881F7 /* Interactor */,
+				2E98857B26FCC15500A881F7 /* Presenter */,
+				2E98857C26FCC15D00A881F7 /* Controller */,
+				2E98855F26FBB97D00A881F7 /* Coordinator */,
+			);
+			path = Favourite;
+			sourceTree = "<group>";
+		};
+		2E98855F26FBB97D00A881F7 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				2E98856026FBB98800A881F7 /* FavouriteCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		2E98856226FBB9A600A881F7 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				2E98857926FCC10D00A881F7 /* Interactor */,
+				2E98857826FCC10700A881F7 /* Presenter */,
+				2E98857726FCC10100A881F7 /* Controller */,
+				2E98856326FBB9B000A881F7 /* Coordinator */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		2E98856326FBB9B000A881F7 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				2E98856426FBB9BF00A881F7 /* ProfileCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		2E98856626FBBB3F00A881F7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2E98856726FBBB4D00A881F7 /* Tabs.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2E98856926FCB29E00A881F7 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				2E98856A26FCB2B400A881F7 /* StringProvider.swift */,
+				2E98856C26FCB53200A881F7 /* ImageProvider.swift */,
+				2E2CDC1526FDF59F0005AE67 /* ColorProvider.swift */,
+				2E2CDC1726FDF77E0005AE67 /* FontProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		2E98856E26FCBAEC00A881F7 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2E98858426FCC29300A881F7 /* ViperProtocols */,
+				2E98858326FCC28300A881F7 /* Controllers */,
+				2E98857426FCBFEB00A881F7 /* Then */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		2E98857426FCBFEB00A881F7 /* Then */ = {
+			isa = PBXGroup;
+			children = (
+				2E98857526FCBFF300A881F7 /* Then.swift */,
+			);
+			path = Then;
+			sourceTree = "<group>";
+		};
+		2E98857726FCC10100A881F7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2E98857826FCC10700A881F7 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2E98857926FCC10D00A881F7 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		2E98857A26FCC14E00A881F7 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		2E98857B26FCC15500A881F7 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2E98857C26FCC15D00A881F7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2E98857D26FCC16E00A881F7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2E98857E26FCC17500A881F7 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2E98857F26FCC17C00A881F7 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		2E98858026FCC19600A881F7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2E98858E26FCC78200A881F7 /* HomeController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2E98858126FCC19C00A881F7 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2E98858226FCC1A100A881F7 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		2E98858326FCC28300A881F7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2E98856F26FCBB0F00A881F7 /* BaseListController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2E98858426FCC29300A881F7 /* ViperProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				2E98858B26FCC31600A881F7 /* View */,
+				2E98858626FCC2E100A881F7 /* Presenter */,
+				2E98858526FCC2D000A881F7 /* Interactor */,
+			);
+			path = ViperProtocols;
+			sourceTree = "<group>";
+		};
+		2E98858526FCC2D000A881F7 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				2E98858726FCC2F500A881F7 /* BaseInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		2E98858626FCC2E100A881F7 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2E98858926FCC2FD00A881F7 /* BasePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2E98858B26FCC31600A881F7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2E98858C26FCC32400A881F7 /* BaseView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2E98859526FD057000A881F7 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				2E98859826FD057900A881F7 /* Models */,
+				2E98859626FD057000A881F7 /* FirebaseNetwork.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		2E98859826FD057900A881F7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2E98859926FD058E00A881F7 /* GenericResult.swift */,
+				2E98859C26FD05EE00A881F7 /* CampModel.swift */,
+				2E98859E26FD0F0600A881F7 /* Extensions.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DF178F2957180F8E5CB6890F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B931465612FB61811CAF0105 /* Pods-CampApp.debug.xcconfig */,
+				4ADDABF7A13CFD7AAC1CE5F1 /* Pods-CampApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EA5EA3B90E087148A17AB016 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				563B635613E820CD082950D7 /* Pods_CampApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2E98853626FBA1F200A881F7 /* CampApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E98854B26FBA1F300A881F7 /* Build configuration list for PBXNativeTarget "CampApp" */;
+			buildPhases = (
+				AFC11233735AA6F53EDEE7EF /* [CP] Check Pods Manifest.lock */,
+				2E98853326FBA1F200A881F7 /* Sources */,
+				2E98853426FBA1F200A881F7 /* Frameworks */,
+				2E98853526FBA1F200A881F7 /* Resources */,
+				0D1717173D7864CD86556B53 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CampApp;
+			productName = CampApp;
+			productReference = 2E98853726FBA1F200A881F7 /* CampApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2E98852F26FBA1F200A881F7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					2E98853626FBA1F200A881F7 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+				};
+			};
+			buildConfigurationList = 2E98853226FBA1F200A881F7 /* Build configuration list for PBXProject "CampApp" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2E98852E26FBA1F200A881F7;
+			productRefGroup = 2E98853826FBA1F200A881F7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2E98853626FBA1F200A881F7 /* CampApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2E98853526FBA1F200A881F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E98854726FBA1F300A881F7 /* LaunchScreen.storyboard in Resources */,
+				2E98859126FCDB1D00A881F7 /* GoogleService-Info.plist in Resources */,
+				2E98854426FBA1F300A881F7 /* Assets.xcassets in Resources */,
+				2E98854226FBA1F200A881F7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D1717173D7864CD86556B53 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AFC11233735AA6F53EDEE7EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CampApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2E98853326FBA1F200A881F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E2CDC1826FDF77E0005AE67 /* FontProvider.swift in Sources */,
+				2E98856526FBB9BF00A881F7 /* ProfileCoordinator.swift in Sources */,
+				2E98859726FD057000A881F7 /* FirebaseNetwork.swift in Sources */,
+				2E98859A26FD058E00A881F7 /* GenericResult.swift in Sources */,
+				2E2CDC0B26FDBCBB0005AE67 /* CampComponentPresenter.swift in Sources */,
+				2E98858A26FCC2FD00A881F7 /* BasePresenter.swift in Sources */,
+				2E98856D26FCB53200A881F7 /* ImageProvider.swift in Sources */,
+				2E98856126FBB98800A881F7 /* FavouriteCoordinator.swift in Sources */,
+				2E2CDC0826FDBA950005AE67 /* CampComponentView.swift in Sources */,
+				2E2CDC1626FDF59F0005AE67 /* ColorProvider.swift in Sources */,
+				2E98853F26FBA1F200A881F7 /* ViewController.swift in Sources */,
+				2E98855026FBB56D00A881F7 /* MainCoordinator.swift in Sources */,
+				2E98857626FCBFF300A881F7 /* Then.swift in Sources */,
+				2E2CDC0E26FDC3650005AE67 /* IconedLabel.swift in Sources */,
+				2E98855926FBB8F800A881F7 /* HomeCoordinator.swift in Sources */,
+				2E98858F26FCC78200A881F7 /* HomeController.swift in Sources */,
+				2E98856826FBBB4D00A881F7 /* Tabs.swift in Sources */,
+				2E98853B26FBA1F200A881F7 /* AppDelegate.swift in Sources */,
+				2E98859F26FD0F0600A881F7 /* Extensions.swift in Sources */,
+				2E98855D26FBB93400A881F7 /* SearchCoordinator.swift in Sources */,
+				2E98855526FBB63A00A881F7 /* MainTabCoordinator.swift in Sources */,
+				2E2CDC1126FDC37E0005AE67 /* IconedLabelPresenter.swift in Sources */,
+				2E98857026FCBB0F00A881F7 /* BaseListController.swift in Sources */,
+				2E98859D26FD05EE00A881F7 /* CampModel.swift in Sources */,
+				2E2CDC0526FDB9CF0005AE67 /* CampComponent.swift in Sources */,
+				2E2CDC1426FDCA6B0005AE67 /* Label.swift in Sources */,
+				2E98856B26FCB2B400A881F7 /* StringProvider.swift in Sources */,
+				2E98858826FCC2F500A881F7 /* BaseInteractor.swift in Sources */,
+				2E98858D26FCC32400A881F7 /* BaseView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2E98854026FBA1F200A881F7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E98854126FBA1F200A881F7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2E98854526FBA1F300A881F7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E98854626FBA1F300A881F7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2E98854926FBA1F300A881F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2E98854A26FBA1F300A881F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2E98854C26FBA1F300A881F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B931465612FB61811CAF0105 /* Pods-CampApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W3475PQ5N9;
+				EXCLUDED_ARCHS = arm64;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CampApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.campApp.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
+			};
+			name = Debug;
+		};
+		2E98854D26FBA1F300A881F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4ADDABF7A13CFD7AAC1CE5F1 /* Pods-CampApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W3475PQ5N9;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CampApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.campApp.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2E98853226FBA1F200A881F7 /* Build configuration list for PBXProject "CampApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E98854926FBA1F300A881F7 /* Debug */,
+				2E98854A26FBA1F300A881F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E98854B26FBA1F300A881F7 /* Build configuration list for PBXNativeTarget "CampApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E98854C26FBA1F300A881F7 /* Debug */,
+				2E98854D26FBA1F300A881F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2E98852F26FBA1F200A881F7 /* Project object */;
+}
