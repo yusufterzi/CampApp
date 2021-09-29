@@ -68,14 +68,14 @@ open class BaseListController<T: BaseListPresenter>: UIViewController {
   @objc private func keyboardWillShow(_ notification: Notification) {
     
     if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-      tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+      tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50 + keyboardSize.height, right: 0)
     }
   }
 
   @objc private func keyboardWillHide(_ notification: Notification) {
     
     if let _ = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-      tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+      tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
     }
   }
 }
@@ -115,7 +115,6 @@ private extension BaseListController {
       $0.contentInset =  UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
       $0.separatorStyle = .none
       $0.backgroundColor = .white
-      $0.contentInset = .zero
       $0.rowHeight = UITableView.automaticDimension
       $0.estimatedRowHeight = 44.0
       $0.setContentHuggingPriority(.defaultLow, for: .vertical)
