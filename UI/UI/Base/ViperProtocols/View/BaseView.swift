@@ -7,12 +7,19 @@
 
 import Carbon
 
+public enum ListViewActions {
+  case title(String)
+  case loader(Bool)
+  case loadData([Section])
+  case emptyScreen
+}
+
 public protocol BaseListView {
-  func viewUpdated(sections: [Section])
+  func sendAction(_ action: ListViewActions)
   func setupTitle(title: String)
 }
 
-public protocol BaseView: class {
+public protocol BaseView {
   associatedtype Presenter
   
   var presenter: Presenter? { get set }

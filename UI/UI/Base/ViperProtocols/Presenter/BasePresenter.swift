@@ -7,6 +7,7 @@
 
 import Foundation
 import XCoordinator
+import Carbon
 
 public protocol BaseComponentPresenter {
   associatedtype BaseViewType
@@ -20,7 +21,7 @@ public protocol BaseListPresenter {
   associatedtype W: BaseListView
 
   var view: W { get }
-  var interactor: Z { get }
+  var interactor: Z? { get }
   var router: UnownedRouter<T> { get }
   
   func loadUI()

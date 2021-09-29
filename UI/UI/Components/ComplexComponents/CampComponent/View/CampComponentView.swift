@@ -10,7 +10,11 @@ import UIKit
 import SDWebImage
 import Common
 
-public final class CampComponentView: UIView, BaseView {
+public protocol CampComponentViewProtocol {
+  
+}
+
+public final class CampComponentView: UIView, BaseView, CampComponentViewProtocol {
   public typealias Presenter = CampComponentPresenter
   
   public var presenter: CampComponentPresenter?

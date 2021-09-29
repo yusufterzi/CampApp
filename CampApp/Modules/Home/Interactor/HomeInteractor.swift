@@ -9,12 +9,20 @@ import Foundation
 import YTUI
 import YTNetwork
 
-final class HomeInteractor: BaseInteractor {
+protocol HomeInteractorProtocol: BaseInteractor {
   
-  func getCampAreas(completion: @escaping ([CampModel]) -> ()) {
-    FirebaseNetwork.shared?.allCampAreas { response in
+  func getCampAreas()
+  
+  var campAreasHandler: (([CampModel]) -> Void)? { get set }
+}
+
+final class HomeInteractor: HomeInteractorProtocol {
+  var campAreasHandler: (([CampModel]) -> Void)?
+
+  func getCampAreas() {
+    FirebaseNetwork.shared?.allCampAreas { [weak self] response in
       if let data = response.value {
-        completion(data)
+        self?.campAreasHandler?(data)
       }
     }
   }

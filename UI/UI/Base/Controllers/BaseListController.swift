@@ -105,7 +105,8 @@ private extension BaseListController {
   func setupConstraints() {
     tableView.snp.makeConstraints {
       $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-      $0.leading.trailing.bottom.equalToSuperview()
+      $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+      $0.leading.trailing.equalToSuperview()
     }
   }
   
@@ -132,8 +133,20 @@ private extension BaseListController {
 
 extension BaseListController: BaseListView {
   
+  public func sendAction(_ action: ListViewActions) {
+    switch action {
+    case .loader(let isActive):
+      break
+    case .loadData(let sections):
+      renderer.render(sections)
+    case .emptyScreen:
+      break
+    }
+    
+  }
+
   public func viewUpdated(sections: [Section]) {
-    renderer.render(sections)
+    
   }
   
   public func setupTitle(title: String) {

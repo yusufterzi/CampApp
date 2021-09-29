@@ -10,7 +10,7 @@ import YTNetwork
 
 public final class CampComponentPresenter: BaseComponentPresenter {
 
-  public var view: CampComponentView?
+  public var view: CampComponentViewProtocol?
   public var interactor: BaseInteractor?
   
   private var item: CampModel
