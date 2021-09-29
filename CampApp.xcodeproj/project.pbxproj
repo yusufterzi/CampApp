@@ -7,31 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		245FBB410E904DC93260B259 /* Pods_CampApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 563B635613E820CD082950D7 /* Pods_CampApp.framework */; };
+		2E1821B82704538300B271CA /* YTUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E1821B72704538300B271CA /* YTUI.framework */; };
+		2E1821B92704538300B271CA /* YTUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E1821B72704538300B271CA /* YTUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2E1821DD270457CC00B271CA /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E1821DC270457CC00B271CA /* Common.framework */; };
+		2E1821DE270457CC00B271CA /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E1821DC270457CC00B271CA /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2E18222A270459F400B271CA /* YTNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E182229270459F400B271CA /* YTNetwork.framework */; };
+		2E18222B270459F400B271CA /* YTNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E182229270459F400B271CA /* YTNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2E1822342704684200B271CA /* FirebaseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1822332704684200B271CA /* FirebaseNetwork.swift */; };
+		2E1822382704689200B271CA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1822372704689100B271CA /* Extensions.swift */; };
+		2E18224A27046B4200B271CA /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E18223C27046B4200B271CA /* Rubik-MediumItalic.ttf */; };
+		2E18224B27046B4200B271CA /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E18223D27046B4200B271CA /* Rubik-Bold.ttf */; };
+		2E18224C27046B4200B271CA /* Rubik-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E18223E27046B4200B271CA /* Rubik-SemiBoldItalic.ttf */; };
+		2E18224D27046B4200B271CA /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E18223F27046B4200B271CA /* Rubik-Light.ttf */; };
+		2E18224E27046B4200B271CA /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E18224027046B4200B271CA /* Rubik-Medium.ttf */; };
+		2E18224F27046B4200B271CA /* Rubik-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E18224127046B4200B271CA /* Rubik-ExtraBoldItalic.ttf */; };
+		2E18225027046B4200B271CA /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E18224227046B4200B271CA /* Rubik-Black.ttf */; };
+		2E18225127046B4200B271CA /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E18224327046B4200B271CA /* Rubik-Italic.ttf */; };
+		2E18225227046B4200B271CA /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E18224427046B4200B271CA /* Rubik-LightItalic.ttf */; };
+		2E18225327046B4200B271CA /* Rubik-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E18224527046B4200B271CA /* Rubik-SemiBold.ttf */; };
+		2E18225427046B4200B271CA /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E18224627046B4200B271CA /* Rubik-BlackItalic.ttf */; };
+		2E18225527046B4200B271CA /* Rubik-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E18224727046B4200B271CA /* Rubik-ExtraBold.ttf */; };
+		2E18225627046B4200B271CA /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E18224827046B4200B271CA /* Rubik-Regular.ttf */; };
+		2E18225727046B4200B271CA /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E18224927046B4200B271CA /* Rubik-BoldItalic.ttf */; };
 		2E26797C2703917E0090F074 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E26797B2703917E0090F074 /* HomePresenter.swift */; };
 		2E26797E270391870090F074 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E26797D270391870090F074 /* HomeInteractor.swift */; };
-		2E2679902703B5140090F074 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2679822703B5140090F074 /* Rubik-Light.ttf */; };
-		2E2679912703B5140090F074 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2679832703B5140090F074 /* Rubik-Bold.ttf */; };
-		2E2679922703B5140090F074 /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2679842703B5140090F074 /* Rubik-Italic.ttf */; };
-		2E2679932703B5140090F074 /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2679852703B5140090F074 /* Rubik-Black.ttf */; };
-		2E2679942703B5140090F074 /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2679862703B5140090F074 /* Rubik-LightItalic.ttf */; };
-		2E2679952703B5140090F074 /* Rubik-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2679872703B5140090F074 /* Rubik-SemiBoldItalic.ttf */; };
-		2E2679962703B5140090F074 /* Rubik-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2679882703B5140090F074 /* Rubik-ExtraBold.ttf */; };
-		2E2679972703B5140090F074 /* Rubik-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E2679892703B5140090F074 /* Rubik-SemiBold.ttf */; };
-		2E2679982703B5140090F074 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E26798A2703B5140090F074 /* Rubik-Regular.ttf */; };
-		2E2679992703B5140090F074 /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E26798B2703B5140090F074 /* Rubik-MediumItalic.ttf */; };
-		2E26799A2703B5140090F074 /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E26798C2703B5140090F074 /* Rubik-BlackItalic.ttf */; };
-		2E26799B2703B5140090F074 /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E26798D2703B5140090F074 /* Rubik-BoldItalic.ttf */; };
-		2E26799C2703B5140090F074 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E26798E2703B5140090F074 /* Rubik-Medium.ttf */; };
-		2E26799D2703B5140090F074 /* Rubik-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E26798F2703B5140090F074 /* Rubik-ExtraBoldItalic.ttf */; };
-		2E2CDC0526FDB9CF0005AE67 /* CampComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CDC0426FDB9CF0005AE67 /* CampComponent.swift */; };
-		2E2CDC0826FDBA950005AE67 /* CampComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CDC0726FDBA950005AE67 /* CampComponentView.swift */; };
-		2E2CDC0B26FDBCBB0005AE67 /* CampComponentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CDC0A26FDBCBB0005AE67 /* CampComponentPresenter.swift */; };
-		2E2CDC0E26FDC3650005AE67 /* IconedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CDC0D26FDC3650005AE67 /* IconedLabel.swift */; };
-		2E2CDC1126FDC37E0005AE67 /* IconedLabelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CDC1026FDC37E0005AE67 /* IconedLabelPresenter.swift */; };
-		2E2CDC1426FDCA6B0005AE67 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CDC1326FDCA6B0005AE67 /* Label.swift */; };
-		2E2CDC1626FDF59F0005AE67 /* ColorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CDC1526FDF59F0005AE67 /* ColorProvider.swift */; };
-		2E2CDC1826FDF77E0005AE67 /* FontProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CDC1726FDF77E0005AE67 /* FontProvider.swift */; };
 		2E98853B26FBA1F200A881F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98853A26FBA1F200A881F7 /* AppDelegate.swift */; };
 		2E98853F26FBA1F200A881F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98853E26FBA1F200A881F7 /* ViewController.swift */; };
 		2E98854226FBA1F200A881F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E98854026FBA1F200A881F7 /* Main.storyboard */; };
@@ -44,46 +43,51 @@
 		2E98856126FBB98800A881F7 /* FavouriteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98856026FBB98800A881F7 /* FavouriteCoordinator.swift */; };
 		2E98856526FBB9BF00A881F7 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98856426FBB9BF00A881F7 /* ProfileCoordinator.swift */; };
 		2E98856826FBBB4D00A881F7 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98856726FBBB4D00A881F7 /* Tabs.swift */; };
-		2E98856B26FCB2B400A881F7 /* StringProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98856A26FCB2B400A881F7 /* StringProvider.swift */; };
-		2E98856D26FCB53200A881F7 /* ImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98856C26FCB53200A881F7 /* ImageProvider.swift */; };
-		2E98857026FCBB0F00A881F7 /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98856F26FCBB0F00A881F7 /* BaseListController.swift */; };
-		2E98857626FCBFF300A881F7 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98857526FCBFF300A881F7 /* Then.swift */; };
-		2E98858826FCC2F500A881F7 /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98858726FCC2F500A881F7 /* BaseInteractor.swift */; };
-		2E98858A26FCC2FD00A881F7 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98858926FCC2FD00A881F7 /* BasePresenter.swift */; };
-		2E98858D26FCC32400A881F7 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98858C26FCC32400A881F7 /* BaseView.swift */; };
 		2E98858F26FCC78200A881F7 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98858E26FCC78200A881F7 /* HomeController.swift */; };
 		2E98859126FCDB1D00A881F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E98859026FCDB1D00A881F7 /* GoogleService-Info.plist */; };
-		2E98859726FD057000A881F7 /* FirebaseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98859626FD057000A881F7 /* FirebaseNetwork.swift */; };
-		2E98859A26FD058E00A881F7 /* GenericResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98859926FD058E00A881F7 /* GenericResult.swift */; };
-		2E98859D26FD05EE00A881F7 /* CampModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98859C26FD05EE00A881F7 /* CampModel.swift */; };
-		2E98859F26FD0F0600A881F7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98859E26FD0F0600A881F7 /* Extensions.swift */; };
+		C9A97605C54A18E7CBCB386A /* Pods_CampApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8AFCA20E9EA1DAD56F59B3 /* Pods_CampApp.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2E1821BA2704538300B271CA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2E18222B270459F400B271CA /* YTNetwork.framework in Embed Frameworks */,
+				2E1821B92704538300B271CA /* YTUI.framework in Embed Frameworks */,
+				2E1821DE270457CC00B271CA /* Common.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		2E182180270451A900B271CA /* libAppUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAppUI.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E1821B32704523200B271CA /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E1821B72704538300B271CA /* YTUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YTUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E1821DC270457CC00B271CA /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E182229270459F400B271CA /* YTNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YTNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E1822332704684200B271CA /* FirebaseNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseNetwork.swift; sourceTree = "<group>"; };
+		2E1822372704689100B271CA /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2E18223C27046B4200B271CA /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
+		2E18223D27046B4200B271CA /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
+		2E18223E27046B4200B271CA /* Rubik-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		2E18223F27046B4200B271CA /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
+		2E18224027046B4200B271CA /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
+		2E18224127046B4200B271CA /* Rubik-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		2E18224227046B4200B271CA /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Black.ttf"; sourceTree = "<group>"; };
+		2E18224327046B4200B271CA /* Rubik-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Italic.ttf"; sourceTree = "<group>"; };
+		2E18224427046B4200B271CA /* Rubik-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-LightItalic.ttf"; sourceTree = "<group>"; };
+		2E18224527046B4200B271CA /* Rubik-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-SemiBold.ttf"; sourceTree = "<group>"; };
+		2E18224627046B4200B271CA /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
+		2E18224727046B4200B271CA /* Rubik-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-ExtraBold.ttf"; sourceTree = "<group>"; };
+		2E18224827046B4200B271CA /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		2E18224927046B4200B271CA /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
 		2E26797B2703917E0090F074 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		2E26797D270391870090F074 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
-		2E2679822703B5140090F074 /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
-		2E2679832703B5140090F074 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
-		2E2679842703B5140090F074 /* Rubik-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Italic.ttf"; sourceTree = "<group>"; };
-		2E2679852703B5140090F074 /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Black.ttf"; sourceTree = "<group>"; };
-		2E2679862703B5140090F074 /* Rubik-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-LightItalic.ttf"; sourceTree = "<group>"; };
-		2E2679872703B5140090F074 /* Rubik-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
-		2E2679882703B5140090F074 /* Rubik-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-ExtraBold.ttf"; sourceTree = "<group>"; };
-		2E2679892703B5140090F074 /* Rubik-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-SemiBold.ttf"; sourceTree = "<group>"; };
-		2E26798A2703B5140090F074 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
-		2E26798B2703B5140090F074 /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
-		2E26798C2703B5140090F074 /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
-		2E26798D2703B5140090F074 /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
-		2E26798E2703B5140090F074 /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
-		2E26798F2703B5140090F074 /* Rubik-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
-		2E2CDC0426FDB9CF0005AE67 /* CampComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampComponent.swift; sourceTree = "<group>"; };
-		2E2CDC0726FDBA950005AE67 /* CampComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampComponentView.swift; sourceTree = "<group>"; };
-		2E2CDC0A26FDBCBB0005AE67 /* CampComponentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampComponentPresenter.swift; sourceTree = "<group>"; };
-		2E2CDC0D26FDC3650005AE67 /* IconedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconedLabel.swift; sourceTree = "<group>"; };
-		2E2CDC1026FDC37E0005AE67 /* IconedLabelPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconedLabelPresenter.swift; sourceTree = "<group>"; };
-		2E2CDC1326FDCA6B0005AE67 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
-		2E2CDC1526FDF59F0005AE67 /* ColorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorProvider.swift; sourceTree = "<group>"; };
-		2E2CDC1726FDF77E0005AE67 /* FontProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontProvider.swift; sourceTree = "<group>"; };
 		2E98853726FBA1F200A881F7 /* CampApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E98853A26FBA1F200A881F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E98853E26FBA1F200A881F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,22 +102,11 @@
 		2E98856026FBB98800A881F7 /* FavouriteCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCoordinator.swift; sourceTree = "<group>"; };
 		2E98856426FBB9BF00A881F7 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		2E98856726FBBB4D00A881F7 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
-		2E98856A26FCB2B400A881F7 /* StringProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringProvider.swift; sourceTree = "<group>"; };
-		2E98856C26FCB53200A881F7 /* ImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
-		2E98856F26FCBB0F00A881F7 /* BaseListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
-		2E98857526FCBFF300A881F7 /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
-		2E98858726FCC2F500A881F7 /* BaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
-		2E98858926FCC2FD00A881F7 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
-		2E98858C26FCC32400A881F7 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		2E98858E26FCC78200A881F7 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		2E98859026FCDB1D00A881F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		2E98859626FD057000A881F7 /* FirebaseNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseNetwork.swift; sourceTree = "<group>"; };
-		2E98859926FD058E00A881F7 /* GenericResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResult.swift; sourceTree = "<group>"; };
-		2E98859C26FD05EE00A881F7 /* CampModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampModel.swift; sourceTree = "<group>"; };
-		2E98859E26FD0F0600A881F7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		4ADDABF7A13CFD7AAC1CE5F1 /* Pods-CampApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampApp.release.xcconfig"; path = "Target Support Files/Pods-CampApp/Pods-CampApp.release.xcconfig"; sourceTree = "<group>"; };
-		563B635613E820CD082950D7 /* Pods_CampApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CampApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B931465612FB61811CAF0105 /* Pods-CampApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampApp.debug.xcconfig"; path = "Target Support Files/Pods-CampApp/Pods-CampApp.debug.xcconfig"; sourceTree = "<group>"; };
+		473946798779F9F4937300F6 /* Pods-CampApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampApp.debug.xcconfig"; path = "Target Support Files/Pods-CampApp/Pods-CampApp.debug.xcconfig"; sourceTree = "<group>"; };
+		A7EDADAF9D77FC0CA6FD83B2 /* Pods-CampApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampApp.release.xcconfig"; path = "Target Support Files/Pods-CampApp/Pods-CampApp.release.xcconfig"; sourceTree = "<group>"; };
+		AD8AFCA20E9EA1DAD56F59B3 /* Pods_CampApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CampApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,126 +114,70 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				245FBB410E904DC93260B259 /* Pods_CampApp.framework in Frameworks */,
+				2E1821DD270457CC00B271CA /* Common.framework in Frameworks */,
+				2E18222A270459F400B271CA /* YTNetwork.framework in Frameworks */,
+				2E1821B82704538300B271CA /* YTUI.framework in Frameworks */,
+				C9A97605C54A18E7CBCB386A /* Pods_CampApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2E26797F2703B4F40090F074 /* Font */ = {
+		2E1822352704684500B271CA /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				2E2679802703B4FE0090F074 /* Fonts */,
-				2E2CDC1726FDF77E0005AE67 /* FontProvider.swift */,
+				2E1822362704688500B271CA /* Extension */,
+				2E1822332704684200B271CA /* FirebaseNetwork.swift */,
 			);
-			path = Font;
+			path = Network;
 			sourceTree = "<group>";
 		};
-		2E2679802703B4FE0090F074 /* Fonts */ = {
+		2E1822362704688500B271CA /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				2E2679812703B5050090F074 /* Rubik */,
+				2E1822372704689100B271CA /* Extensions.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		2E18223927046B3300B271CA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2E18223A27046B4200B271CA /* Fonts */,
+				2E98854326FBA1F300A881F7 /* Assets.xcassets */,
+				2E98859026FCDB1D00A881F7 /* GoogleService-Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2E18223A27046B4200B271CA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2E18223B27046B4200B271CA /* Rubik */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		2E2679812703B5050090F074 /* Rubik */ = {
+		2E18223B27046B4200B271CA /* Rubik */ = {
 			isa = PBXGroup;
 			children = (
-				2E2679852703B5140090F074 /* Rubik-Black.ttf */,
-				2E26798C2703B5140090F074 /* Rubik-BlackItalic.ttf */,
-				2E2679832703B5140090F074 /* Rubik-Bold.ttf */,
-				2E26798D2703B5140090F074 /* Rubik-BoldItalic.ttf */,
-				2E2679882703B5140090F074 /* Rubik-ExtraBold.ttf */,
-				2E26798F2703B5140090F074 /* Rubik-ExtraBoldItalic.ttf */,
-				2E2679842703B5140090F074 /* Rubik-Italic.ttf */,
-				2E2679822703B5140090F074 /* Rubik-Light.ttf */,
-				2E2679862703B5140090F074 /* Rubik-LightItalic.ttf */,
-				2E26798E2703B5140090F074 /* Rubik-Medium.ttf */,
-				2E26798B2703B5140090F074 /* Rubik-MediumItalic.ttf */,
-				2E26798A2703B5140090F074 /* Rubik-Regular.ttf */,
-				2E2679892703B5140090F074 /* Rubik-SemiBold.ttf */,
-				2E2679872703B5140090F074 /* Rubik-SemiBoldItalic.ttf */,
+				2E18223C27046B4200B271CA /* Rubik-MediumItalic.ttf */,
+				2E18223D27046B4200B271CA /* Rubik-Bold.ttf */,
+				2E18223E27046B4200B271CA /* Rubik-SemiBoldItalic.ttf */,
+				2E18223F27046B4200B271CA /* Rubik-Light.ttf */,
+				2E18224027046B4200B271CA /* Rubik-Medium.ttf */,
+				2E18224127046B4200B271CA /* Rubik-ExtraBoldItalic.ttf */,
+				2E18224227046B4200B271CA /* Rubik-Black.ttf */,
+				2E18224327046B4200B271CA /* Rubik-Italic.ttf */,
+				2E18224427046B4200B271CA /* Rubik-LightItalic.ttf */,
+				2E18224527046B4200B271CA /* Rubik-SemiBold.ttf */,
+				2E18224627046B4200B271CA /* Rubik-BlackItalic.ttf */,
+				2E18224727046B4200B271CA /* Rubik-ExtraBold.ttf */,
+				2E18224827046B4200B271CA /* Rubik-Regular.ttf */,
+				2E18224927046B4200B271CA /* Rubik-BoldItalic.ttf */,
 			);
 			path = Rubik;
-			sourceTree = "<group>";
-		};
-		2E26799E2703B8350090F074 /* BasicComponents */ = {
-			isa = PBXGroup;
-			children = (
-				2E2CDC1226FDCA5B0005AE67 /* Label */,
-				2E2CDC0C26FDC3560005AE67 /* IconedLabel */,
-			);
-			path = BasicComponents;
-			sourceTree = "<group>";
-		};
-		2E26799F2703B8420090F074 /* ComplexComponents */ = {
-			isa = PBXGroup;
-			children = (
-				2E2CDC0326FDB94D0005AE67 /* CampComponent */,
-			);
-			path = ComplexComponents;
-			sourceTree = "<group>";
-		};
-		2E2CDC0226FDB9410005AE67 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				2E26799F2703B8420090F074 /* ComplexComponents */,
-				2E26799E2703B8350090F074 /* BasicComponents */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		2E2CDC0326FDB94D0005AE67 /* CampComponent */ = {
-			isa = PBXGroup;
-			children = (
-				2E2CDC0926FDBCA80005AE67 /* Presenter */,
-				2E2CDC0626FDBA8C0005AE67 /* View */,
-				2E2CDC0426FDB9CF0005AE67 /* CampComponent.swift */,
-			);
-			path = CampComponent;
-			sourceTree = "<group>";
-		};
-		2E2CDC0626FDBA8C0005AE67 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				2E2CDC0726FDBA950005AE67 /* CampComponentView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		2E2CDC0926FDBCA80005AE67 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				2E2CDC0A26FDBCBB0005AE67 /* CampComponentPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		2E2CDC0C26FDC3560005AE67 /* IconedLabel */ = {
-			isa = PBXGroup;
-			children = (
-				2E2CDC0F26FDC3700005AE67 /* Presenter */,
-				2E2CDC0D26FDC3650005AE67 /* IconedLabel.swift */,
-			);
-			path = IconedLabel;
-			sourceTree = "<group>";
-		};
-		2E2CDC0F26FDC3700005AE67 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				2E2CDC1026FDC37E0005AE67 /* IconedLabelPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		2E2CDC1226FDCA5B0005AE67 /* Label */ = {
-			isa = PBXGroup;
-			children = (
-				2E2CDC1326FDCA6B0005AE67 /* Label.swift */,
-			);
-			path = Label;
 			sourceTree = "<group>";
 		};
 		2E98852E26FBA1F200A881F7 = {
@@ -264,18 +201,14 @@
 		2E98853926FBA1F200A881F7 /* CampApp */ = {
 			isa = PBXGroup;
 			children = (
-				2E2CDC0226FDB9410005AE67 /* Components */,
-				2E98859526FD057000A881F7 /* Networking */,
-				2E98856E26FCBAEC00A881F7 /* Base */,
-				2E98856926FCB29E00A881F7 /* Providers */,
+				2E18223927046B3300B271CA /* Supporting Files */,
+				2E1822352704684500B271CA /* Network */,
 				2E98855226FBB61800A881F7 /* Modules */,
 				2E98854E26FBB53C00A881F7 /* Coordinators */,
 				2E98853A26FBA1F200A881F7 /* AppDelegate.swift */,
 				2E98853E26FBA1F200A881F7 /* ViewController.swift */,
 				2E98854026FBA1F200A881F7 /* Main.storyboard */,
-				2E98854326FBA1F300A881F7 /* Assets.xcassets */,
 				2E98854526FBA1F300A881F7 /* LaunchScreen.storyboard */,
-				2E98859026FCDB1D00A881F7 /* GoogleService-Info.plist */,
 				2E98854826FBA1F300A881F7 /* Info.plist */,
 			);
 			path = CampApp;
@@ -402,35 +335,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		2E98856926FCB29E00A881F7 /* Providers */ = {
-			isa = PBXGroup;
-			children = (
-				2E26797F2703B4F40090F074 /* Font */,
-				2E98856A26FCB2B400A881F7 /* StringProvider.swift */,
-				2E98856C26FCB53200A881F7 /* ImageProvider.swift */,
-				2E2CDC1526FDF59F0005AE67 /* ColorProvider.swift */,
-			);
-			path = Providers;
-			sourceTree = "<group>";
-		};
-		2E98856E26FCBAEC00A881F7 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				2E98858426FCC29300A881F7 /* ViperProtocols */,
-				2E98858326FCC28300A881F7 /* Controllers */,
-				2E98857426FCBFEB00A881F7 /* Then */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		2E98857426FCBFEB00A881F7 /* Then */ = {
-			isa = PBXGroup;
-			children = (
-				2E98857526FCBFF300A881F7 /* Then.swift */,
-			);
-			path = Then;
-			sourceTree = "<group>";
-		};
 		2E98857726FCC10100A881F7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,72 +422,11 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		2E98858326FCC28300A881F7 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				2E98856F26FCBB0F00A881F7 /* BaseListController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		2E98858426FCC29300A881F7 /* ViperProtocols */ = {
-			isa = PBXGroup;
-			children = (
-				2E98858B26FCC31600A881F7 /* View */,
-				2E98858626FCC2E100A881F7 /* Presenter */,
-				2E98858526FCC2D000A881F7 /* Interactor */,
-			);
-			path = ViperProtocols;
-			sourceTree = "<group>";
-		};
-		2E98858526FCC2D000A881F7 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				2E98858726FCC2F500A881F7 /* BaseInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		2E98858626FCC2E100A881F7 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				2E98858926FCC2FD00A881F7 /* BasePresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		2E98858B26FCC31600A881F7 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				2E98858C26FCC32400A881F7 /* BaseView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		2E98859526FD057000A881F7 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				2E98859826FD057900A881F7 /* Models */,
-				2E98859626FD057000A881F7 /* FirebaseNetwork.swift */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
-		2E98859826FD057900A881F7 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				2E98859926FD058E00A881F7 /* GenericResult.swift */,
-				2E98859C26FD05EE00A881F7 /* CampModel.swift */,
-				2E98859E26FD0F0600A881F7 /* Extensions.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		DF178F2957180F8E5CB6890F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B931465612FB61811CAF0105 /* Pods-CampApp.debug.xcconfig */,
-				4ADDABF7A13CFD7AAC1CE5F1 /* Pods-CampApp.release.xcconfig */,
+				473946798779F9F4937300F6 /* Pods-CampApp.debug.xcconfig */,
+				A7EDADAF9D77FC0CA6FD83B2 /* Pods-CampApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -591,7 +434,12 @@
 		EA5EA3B90E087148A17AB016 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				563B635613E820CD082950D7 /* Pods_CampApp.framework */,
+				2E182229270459F400B271CA /* YTNetwork.framework */,
+				2E1821DC270457CC00B271CA /* Common.framework */,
+				2E1821B72704538300B271CA /* YTUI.framework */,
+				2E1821B32704523200B271CA /* UI.framework */,
+				2E182180270451A900B271CA /* libAppUI.a */,
+				AD8AFCA20E9EA1DAD56F59B3 /* Pods_CampApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -603,11 +451,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E98854B26FBA1F300A881F7 /* Build configuration list for PBXNativeTarget "CampApp" */;
 			buildPhases = (
-				AFC11233735AA6F53EDEE7EF /* [CP] Check Pods Manifest.lock */,
+				0BA5434DA1793EC005D586F7 /* [CP] Check Pods Manifest.lock */,
 				2E98853326FBA1F200A881F7 /* Sources */,
 				2E98853426FBA1F200A881F7 /* Frameworks */,
 				2E98853526FBA1F200A881F7 /* Resources */,
-				0D1717173D7864CD86556B53 /* [CP] Embed Pods Frameworks */,
+				2E1821BA2704538300B271CA /* Embed Frameworks */,
+				030A76196E3B93E54595478E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -657,30 +506,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E98854726FBA1F300A881F7 /* LaunchScreen.storyboard in Resources */,
-				2E26799B2703B5140090F074 /* Rubik-BoldItalic.ttf in Resources */,
-				2E2679912703B5140090F074 /* Rubik-Bold.ttf in Resources */,
-				2E2679932703B5140090F074 /* Rubik-Black.ttf in Resources */,
-				2E2679972703B5140090F074 /* Rubik-SemiBold.ttf in Resources */,
-				2E2679942703B5140090F074 /* Rubik-LightItalic.ttf in Resources */,
-				2E26799A2703B5140090F074 /* Rubik-BlackItalic.ttf in Resources */,
-				2E26799C2703B5140090F074 /* Rubik-Medium.ttf in Resources */,
+				2E18224B27046B4200B271CA /* Rubik-Bold.ttf in Resources */,
 				2E98859126FCDB1D00A881F7 /* GoogleService-Info.plist in Resources */,
-				2E2679902703B5140090F074 /* Rubik-Light.ttf in Resources */,
-				2E2679922703B5140090F074 /* Rubik-Italic.ttf in Resources */,
-				2E2679962703B5140090F074 /* Rubik-ExtraBold.ttf in Resources */,
-				2E26799D2703B5140090F074 /* Rubik-ExtraBoldItalic.ttf in Resources */,
-				2E2679952703B5140090F074 /* Rubik-SemiBoldItalic.ttf in Resources */,
-				2E2679982703B5140090F074 /* Rubik-Regular.ttf in Resources */,
-				2E2679992703B5140090F074 /* Rubik-MediumItalic.ttf in Resources */,
+				2E18225027046B4200B271CA /* Rubik-Black.ttf in Resources */,
+				2E18224A27046B4200B271CA /* Rubik-MediumItalic.ttf in Resources */,
+				2E18225427046B4200B271CA /* Rubik-BlackItalic.ttf in Resources */,
 				2E98854426FBA1F300A881F7 /* Assets.xcassets in Resources */,
+				2E18225727046B4200B271CA /* Rubik-BoldItalic.ttf in Resources */,
+				2E18224D27046B4200B271CA /* Rubik-Light.ttf in Resources */,
+				2E18225227046B4200B271CA /* Rubik-LightItalic.ttf in Resources */,
+				2E18224E27046B4200B271CA /* Rubik-Medium.ttf in Resources */,
+				2E18225127046B4200B271CA /* Rubik-Italic.ttf in Resources */,
 				2E98854226FBA1F200A881F7 /* Main.storyboard in Resources */,
+				2E18224F27046B4200B271CA /* Rubik-ExtraBoldItalic.ttf in Resources */,
+				2E18225627046B4200B271CA /* Rubik-Regular.ttf in Resources */,
+				2E18224C27046B4200B271CA /* Rubik-SemiBoldItalic.ttf in Resources */,
+				2E18225527046B4200B271CA /* Rubik-ExtraBold.ttf in Resources */,
+				2E18225327046B4200B271CA /* Rubik-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0D1717173D7864CD86556B53 /* [CP] Embed Pods Frameworks */ = {
+		030A76196E3B93E54595478E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -697,7 +546,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AFC11233735AA6F53EDEE7EF /* [CP] Check Pods Manifest.lock */ = {
+		0BA5434DA1793EC005D586F7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -726,37 +575,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E2CDC1826FDF77E0005AE67 /* FontProvider.swift in Sources */,
 				2E98856526FBB9BF00A881F7 /* ProfileCoordinator.swift in Sources */,
-				2E98859726FD057000A881F7 /* FirebaseNetwork.swift in Sources */,
 				2E26797C2703917E0090F074 /* HomePresenter.swift in Sources */,
-				2E98859A26FD058E00A881F7 /* GenericResult.swift in Sources */,
-				2E2CDC0B26FDBCBB0005AE67 /* CampComponentPresenter.swift in Sources */,
-				2E98858A26FCC2FD00A881F7 /* BasePresenter.swift in Sources */,
-				2E98856D26FCB53200A881F7 /* ImageProvider.swift in Sources */,
 				2E98856126FBB98800A881F7 /* FavouriteCoordinator.swift in Sources */,
-				2E2CDC0826FDBA950005AE67 /* CampComponentView.swift in Sources */,
 				2E26797E270391870090F074 /* HomeInteractor.swift in Sources */,
-				2E2CDC1626FDF59F0005AE67 /* ColorProvider.swift in Sources */,
+				2E1822342704684200B271CA /* FirebaseNetwork.swift in Sources */,
 				2E98853F26FBA1F200A881F7 /* ViewController.swift in Sources */,
 				2E98855026FBB56D00A881F7 /* MainCoordinator.swift in Sources */,
-				2E98857626FCBFF300A881F7 /* Then.swift in Sources */,
-				2E2CDC0E26FDC3650005AE67 /* IconedLabel.swift in Sources */,
 				2E98855926FBB8F800A881F7 /* HomeCoordinator.swift in Sources */,
 				2E98858F26FCC78200A881F7 /* HomeController.swift in Sources */,
 				2E98856826FBBB4D00A881F7 /* Tabs.swift in Sources */,
 				2E98853B26FBA1F200A881F7 /* AppDelegate.swift in Sources */,
-				2E98859F26FD0F0600A881F7 /* Extensions.swift in Sources */,
 				2E98855D26FBB93400A881F7 /* SearchCoordinator.swift in Sources */,
 				2E98855526FBB63A00A881F7 /* MainTabCoordinator.swift in Sources */,
-				2E2CDC1126FDC37E0005AE67 /* IconedLabelPresenter.swift in Sources */,
-				2E98857026FCBB0F00A881F7 /* BaseListController.swift in Sources */,
-				2E98859D26FD05EE00A881F7 /* CampModel.swift in Sources */,
-				2E2CDC0526FDB9CF0005AE67 /* CampComponent.swift in Sources */,
-				2E2CDC1426FDCA6B0005AE67 /* Label.swift in Sources */,
-				2E98856B26FCB2B400A881F7 /* StringProvider.swift in Sources */,
-				2E98858826FCC2F500A881F7 /* BaseInteractor.swift in Sources */,
-				2E98858D26FCC32400A881F7 /* BaseView.swift in Sources */,
+				2E1822382704689200B271CA /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -900,7 +732,7 @@
 		};
 		2E98854C26FBA1F300A881F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B931465612FB61811CAF0105 /* Pods-CampApp.debug.xcconfig */;
+			baseConfigurationReference = 473946798779F9F4937300F6 /* Pods-CampApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -934,7 +766,7 @@
 		};
 		2E98854D26FBA1F300A881F7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4ADDABF7A13CFD7AAC1CE5F1 /* Pods-CampApp.release.xcconfig */;
+			baseConfigurationReference = A7EDADAF9D77FC0CA6FD83B2 /* Pods-CampApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

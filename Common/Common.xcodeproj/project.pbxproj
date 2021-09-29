@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2E1821D52704576800B271CA /* Common.docc in Sources */ = {isa = PBXBuildFile; fileRef = 2E1821D42704576800B271CA /* Common.docc */; };
+		2E1821D62704576800B271CA /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E1821D32704576800B271CA /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2E1821F9270457FC00B271CA /* ImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1821F6270457EB00B271CA /* ImageProvider.swift */; };
+		2E1821FA270457FC00B271CA /* ColorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1821F7270457EB00B271CA /* ColorProvider.swift */; };
+		2E1821FB270457FC00B271CA /* StringProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1821F5270457EB00B271CA /* StringProvider.swift */; };
+		2E1821FD2704583A00B271CA /* FontProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1821F3270457EB00B271CA /* FontProvider.swift */; };
+		2E1821FE2704583F00B271CA /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E1821E5270457EB00B271CA /* Rubik-Bold.ttf */; };
+		2E1821FF2704583F00B271CA /* Rubik-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E1821F0270457EB00B271CA /* Rubik-SemiBoldItalic.ttf */; };
+		2E1822002704583F00B271CA /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E1821ED270457EB00B271CA /* Rubik-MediumItalic.ttf */; };
+		2E1822012704583F00B271CA /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E1821EC270457EB00B271CA /* Rubik-Medium.ttf */; };
+		2E1822022704583F00B271CA /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E1821E6270457EB00B271CA /* Rubik-BoldItalic.ttf */; };
+		2E1822032704583F00B271CA /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E1821EA270457EB00B271CA /* Rubik-Light.ttf */; };
+		2E1822042704583F00B271CA /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E1821EB270457EB00B271CA /* Rubik-LightItalic.ttf */; };
+		2E1822052704583F00B271CA /* Rubik-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E1821E7270457EB00B271CA /* Rubik-ExtraBold.ttf */; };
+		2E1822062704583F00B271CA /* Rubik-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E1821EF270457EB00B271CA /* Rubik-SemiBold.ttf */; };
+		2E1822072704583F00B271CA /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E1821EE270457EB00B271CA /* Rubik-Regular.ttf */; };
+		2E1822082704583F00B271CA /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E1821E3270457EB00B271CA /* Rubik-Black.ttf */; };
+		2E1822092704583F00B271CA /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E1821E9270457EB00B271CA /* Rubik-Italic.ttf */; };
+		2E18220A2704583F00B271CA /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E1821E4270457EB00B271CA /* Rubik-BlackItalic.ttf */; };
+		2E18220B2704583F00B271CA /* Rubik-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E1821E8270457EB00B271CA /* Rubik-ExtraBoldItalic.ttf */; };
+		9B62BEF29A852E7F8324265E /* Pods_Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5129DFEC6C0FC6F152B859BF /* Pods_Common.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2E1821D02704576800B271CA /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E1821D32704576800B271CA /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		2E1821D42704576800B271CA /* Common.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Common.docc; sourceTree = "<group>"; };
+		2E1821E3270457EB00B271CA /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Black.ttf"; sourceTree = "<group>"; };
+		2E1821E4270457EB00B271CA /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
+		2E1821E5270457EB00B271CA /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
+		2E1821E6270457EB00B271CA /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
+		2E1821E7270457EB00B271CA /* Rubik-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-ExtraBold.ttf"; sourceTree = "<group>"; };
+		2E1821E8270457EB00B271CA /* Rubik-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		2E1821E9270457EB00B271CA /* Rubik-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Italic.ttf"; sourceTree = "<group>"; };
+		2E1821EA270457EB00B271CA /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
+		2E1821EB270457EB00B271CA /* Rubik-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-LightItalic.ttf"; sourceTree = "<group>"; };
+		2E1821EC270457EB00B271CA /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
+		2E1821ED270457EB00B271CA /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
+		2E1821EE270457EB00B271CA /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		2E1821EF270457EB00B271CA /* Rubik-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-SemiBold.ttf"; sourceTree = "<group>"; };
+		2E1821F0270457EB00B271CA /* Rubik-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		2E1821F3270457EB00B271CA /* FontProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontProvider.swift; sourceTree = "<group>"; };
+		2E1821F5270457EB00B271CA /* StringProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringProvider.swift; sourceTree = "<group>"; };
+		2E1821F6270457EB00B271CA /* ImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
+		2E1821F7270457EB00B271CA /* ColorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorProvider.swift; sourceTree = "<group>"; };
+		2E1821FC2704582300B271CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5129DFEC6C0FC6F152B859BF /* Pods_Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55C576D4FC12C14717BDA2D9 /* Pods-Common.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common.debug.xcconfig"; path = "Target Support Files/Pods-Common/Pods-Common.debug.xcconfig"; sourceTree = "<group>"; };
+		DC6828A57E76AF81576DFE87 /* Pods-Common.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common.release.xcconfig"; path = "Target Support Files/Pods-Common/Pods-Common.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2E1821CD2704576800B271CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B62BEF29A852E7F8324265E /* Pods_Common.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2E1821C62704576800B271CA = {
+			isa = PBXGroup;
+			children = (
+				2E1821D22704576800B271CA /* Common */,
+				2E1821D12704576800B271CA /* Products */,
+				43DB18D6F80B99880C761131 /* Pods */,
+				570DDC297CAC73645BBFB857 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2E1821D12704576800B271CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2E1821D02704576800B271CA /* Common.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2E1821D22704576800B271CA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2E1821FC2704582300B271CA /* Info.plist */,
+				2E1821F8270457EB00B271CA /* Providers */,
+				2E1821D32704576800B271CA /* Common.h */,
+				2E1821D42704576800B271CA /* Common.docc */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		2E1821F1270457EB00B271CA /* Rubik */ = {
+			isa = PBXGroup;
+			children = (
+				2E1821E3270457EB00B271CA /* Rubik-Black.ttf */,
+				2E1821E4270457EB00B271CA /* Rubik-BlackItalic.ttf */,
+				2E1821E5270457EB00B271CA /* Rubik-Bold.ttf */,
+				2E1821E6270457EB00B271CA /* Rubik-BoldItalic.ttf */,
+				2E1821E7270457EB00B271CA /* Rubik-ExtraBold.ttf */,
+				2E1821E8270457EB00B271CA /* Rubik-ExtraBoldItalic.ttf */,
+				2E1821E9270457EB00B271CA /* Rubik-Italic.ttf */,
+				2E1821EA270457EB00B271CA /* Rubik-Light.ttf */,
+				2E1821EB270457EB00B271CA /* Rubik-LightItalic.ttf */,
+				2E1821EC270457EB00B271CA /* Rubik-Medium.ttf */,
+				2E1821ED270457EB00B271CA /* Rubik-MediumItalic.ttf */,
+				2E1821EE270457EB00B271CA /* Rubik-Regular.ttf */,
+				2E1821EF270457EB00B271CA /* Rubik-SemiBold.ttf */,
+				2E1821F0270457EB00B271CA /* Rubik-SemiBoldItalic.ttf */,
+			);
+			path = Rubik;
+			sourceTree = "<group>";
+		};
+		2E1821F2270457EB00B271CA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2E1821F1270457EB00B271CA /* Rubik */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		2E1821F4270457EB00B271CA /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				2E1821F2270457EB00B271CA /* Fonts */,
+				2E1821F3270457EB00B271CA /* FontProvider.swift */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		2E1821F8270457EB00B271CA /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				2E1821F4270457EB00B271CA /* Font */,
+				2E1821F5270457EB00B271CA /* StringProvider.swift */,
+				2E1821F6270457EB00B271CA /* ImageProvider.swift */,
+				2E1821F7270457EB00B271CA /* ColorProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		43DB18D6F80B99880C761131 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				55C576D4FC12C14717BDA2D9 /* Pods-Common.debug.xcconfig */,
+				DC6828A57E76AF81576DFE87 /* Pods-Common.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		570DDC297CAC73645BBFB857 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5129DFEC6C0FC6F152B859BF /* Pods_Common.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2E1821CB2704576800B271CA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E1821D62704576800B271CA /* Common.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2E1821CF2704576800B271CA /* Common */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E1821D92704576800B271CA /* Build configuration list for PBXNativeTarget "Common" */;
+			buildPhases = (
+				8F9C6FC34A9A7CE65403EDAB /* [CP] Check Pods Manifest.lock */,
+				2E1821CB2704576800B271CA /* Headers */,
+				2E1821CC2704576800B271CA /* Sources */,
+				2E1821CD2704576800B271CA /* Frameworks */,
+				2E1821CE2704576800B271CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Common;
+			productName = Common;
+			productReference = 2E1821D02704576800B271CA /* Common.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2E1821C72704576800B271CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					2E1821CF2704576800B271CA = {
+						CreatedOnToolsVersion = 13.0;
+					};
+				};
+			};
+			buildConfigurationList = 2E1821CA2704576800B271CA /* Build configuration list for PBXProject "Common" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2E1821C62704576800B271CA;
+			productRefGroup = 2E1821D12704576800B271CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2E1821CF2704576800B271CA /* Common */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2E1821CE2704576800B271CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E1822062704583F00B271CA /* Rubik-SemiBold.ttf in Resources */,
+				2E1822022704583F00B271CA /* Rubik-BoldItalic.ttf in Resources */,
+				2E1822032704583F00B271CA /* Rubik-Light.ttf in Resources */,
+				2E1822082704583F00B271CA /* Rubik-Black.ttf in Resources */,
+				2E1822072704583F00B271CA /* Rubik-Regular.ttf in Resources */,
+				2E1822042704583F00B271CA /* Rubik-LightItalic.ttf in Resources */,
+				2E1821FE2704583F00B271CA /* Rubik-Bold.ttf in Resources */,
+				2E1822002704583F00B271CA /* Rubik-MediumItalic.ttf in Resources */,
+				2E1822092704583F00B271CA /* Rubik-Italic.ttf in Resources */,
+				2E18220A2704583F00B271CA /* Rubik-BlackItalic.ttf in Resources */,
+				2E1821FF2704583F00B271CA /* Rubik-SemiBoldItalic.ttf in Resources */,
+				2E1822052704583F00B271CA /* Rubik-ExtraBold.ttf in Resources */,
+				2E18220B2704583F00B271CA /* Rubik-ExtraBoldItalic.ttf in Resources */,
+				2E1822012704583F00B271CA /* Rubik-Medium.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8F9C6FC34A9A7CE65403EDAB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Common-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2E1821CC2704576800B271CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E1821FA270457FC00B271CA /* ColorProvider.swift in Sources */,
+				2E1821FD2704583A00B271CA /* FontProvider.swift in Sources */,
+				2E1821FB270457FC00B271CA /* StringProvider.swift in Sources */,
+				2E1821F9270457FC00B271CA /* ImageProvider.swift in Sources */,
+				2E1821D52704576800B271CA /* Common.docc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2E1821D72704576800B271CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2E1821D82704576800B271CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2E1821DA2704576800B271CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55C576D4FC12C14717BDA2D9 /* Pods-Common.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = W3475PQ5N9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Common/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CampApp.Common;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2E1821DB2704576800B271CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC6828A57E76AF81576DFE87 /* Pods-Common.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = W3475PQ5N9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Common/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CampApp.Common;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2E1821CA2704576800B271CA /* Build configuration list for PBXProject "Common" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E1821D72704576800B271CA /* Debug */,
+				2E1821D82704576800B271CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E1821D92704576800B271CA /* Build configuration list for PBXNativeTarget "Common" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E1821DA2704576800B271CA /* Debug */,
+				2E1821DB2704576800B271CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2E1821C72704576800B271CA /* Project object */;
+}

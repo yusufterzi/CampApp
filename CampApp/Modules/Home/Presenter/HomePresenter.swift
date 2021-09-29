@@ -7,12 +7,14 @@
 
 import XCoordinator
 import Carbon
+import Common
+import YTUI
 
 final class HomePresenter: BaseListPresenter {
 
-  var view: HomeController
-  var interactor: HomeInteractor
-  var router: UnownedRouter<HomeRoute>
+  internal let view: HomeController
+  internal let interactor: HomeInteractor
+  internal let router: UnownedRouter<HomeRoute>
   
   init(view: HomeController, router: UnownedRouter<HomeRoute>) {
     self.view = view
@@ -21,7 +23,7 @@ final class HomePresenter: BaseListPresenter {
   }
   
   func loadUI() {
-
+    view.setupTitle(title: StringProvider.firstTabTitle)
     interactor.getCampAreas { [weak self] areas in
       guard let self = self else { return }
       var cells: [CellNode] = []
@@ -30,6 +32,9 @@ final class HomePresenter: BaseListPresenter {
         let component = CampComponent(id: area.name ?? "",
                                       presenter: CampComponentPresenter(item: area))
         cells.append(CellNode(component))
+        cells.append(CellNode(component))
+        cells.append(CellNode(component))
+        cells.append(CellNode(component))
       }
       
       let section = Section(id: "", header: nil, cells: cells, footer: nil)
@@ -37,8 +42,7 @@ final class HomePresenter: BaseListPresenter {
       self.view.viewUpdated(sections: [section])
 
     }
-    
-    
+
   }
   
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Common
 
 enum Tabs: Int {
   case home = 0, search, favorite, profile

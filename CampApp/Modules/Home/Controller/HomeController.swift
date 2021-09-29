@@ -7,19 +7,12 @@
 
 import Carbon
 import XCoordinator
+import YTUI
 
 final class HomeController: BaseListController<HomePresenter> {
     
   override func viewDidLoad() {
     super.viewDidLoad()
-  }
-  
-}
-
-extension HomeController: BaseListView {
-  
-  func viewUpdated(sections: [Section]) {
-    renderer.render(sections)
   }
   
 }

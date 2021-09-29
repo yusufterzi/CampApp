@@ -5,6 +5,15 @@
       location = "group:CampApp.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:UI/YTUI.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Common/Common.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:YTNetwork/YTNetwork.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

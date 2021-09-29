@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import YTUI
+import YTNetwork
 
 final class HomeInteractor: BaseInteractor {
   
   func getCampAreas(completion: @escaping ([CampModel]) -> ()) {
-    FirebaseNetwork.shared.allCampAreas { response in
+    FirebaseNetwork.shared?.allCampAreas { response in
       if let data = response.value {
         completion(data)
       }
