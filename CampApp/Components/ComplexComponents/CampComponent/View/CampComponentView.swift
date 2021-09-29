@@ -11,10 +11,9 @@ import SDWebImage
 
 public final class CampComponentView: UIView, BaseView {
   
+  public typealias Presenter = CampComponentPresenter
   
-  typealias Presenter = CampComponentPresenter
-  
-  var presenter: CampComponentPresenter?
+  public var presenter: CampComponentPresenter?
   
   let imageView: UIImageView = UIImageView()
   let pointLabel: IconedLabel = IconedLabel()
@@ -34,19 +33,19 @@ public final class CampComponentView: UIView, BaseView {
     fatalError("init(coder:) has not been implemented")
   }
   
-  func configureView(presenter: CampComponentPresenter) {
+  public func configureView(presenter: CampComponentPresenter) {
     self.presenter = presenter
     presenter.view = self
     
     loadUI()
   }
   
-  func loadUI() {
+  public func loadUI() {
     guard let presenter = presenter else {
       return
     }
 
-    imageView.sd_setImage(with: URL(string: presenter.item?.images?.first ?? ""))
+    imageView.sd_setImage(with: URL(string: presenter.item.images?.first ?? ""))
     
     let starPresenter = IconedLabelPresenter(title: presenter.point,
                                              image: ImageProvider.star,

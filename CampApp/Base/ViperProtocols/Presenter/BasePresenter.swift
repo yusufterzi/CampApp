@@ -8,16 +8,20 @@
 import Foundation
 import XCoordinator
 
-protocol BaseComponentPresenter {
+public protocol BaseComponentPresenter {
   associatedtype BaseViewType
   var view: BaseViewType? { get set }
   var interactor: BaseInteractor? { get set }
 }
 
-protocol BaseListPresenter {
+public protocol BaseListPresenter {
   associatedtype T: Route
-  
-  var view: BaseListView { get set }
-  var interactor: BaseInteractor { get set }
+  associatedtype Z: BaseInteractor
+  associatedtype W: BaseListView
+
+  var view: W { get set }
+  var interactor: Z { get set }
   var router: UnownedRouter<T> { get set }
+  
+  func loadUI()
 }

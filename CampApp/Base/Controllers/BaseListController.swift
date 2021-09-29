@@ -9,8 +9,12 @@ import Foundation
 import UIKit
 import Carbon
 import SnapKit
+import XCoordinator
 
-open class BaseListController: UIViewController {
+open class BaseListController<T: BaseListPresenter>: UIViewController {
+  typealias Presenter = T
+
+  var presenter: Presenter?
   
   var tableViewStyle: UITableView.Style {
     return .grouped
@@ -33,10 +37,16 @@ open class BaseListController: UIViewController {
     initialize()
     
     enableKeyboardOperations()
+    
+    presenter?.loadUI()
   }
   
   public override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+  }
+  
+  func setupPresenter(presenter: Presenter) {
+    self.presenter = presenter
   }
   
   func render(sections: [Section], animated: Bool = true) {
@@ -94,7 +104,8 @@ private extension BaseListController {
   
   func setupConstraints() {
     tableView.snp.makeConstraints {
-      $0.leading.trailing.bottom.top.equalToSuperview()
+      $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+      $0.leading.trailing.bottom.equalToSuperview()
     }
   }
   

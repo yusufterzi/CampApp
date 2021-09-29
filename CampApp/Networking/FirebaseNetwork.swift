@@ -9,10 +9,11 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 final class FirebaseNetwork {
-  var shared: FirebaseNetwork = FirebaseNetwork()
-  var database = Firestore.firestore()
+  static var shared: FirebaseNetwork = FirebaseNetwork()
+  internal var database = Firestore.firestore()
+  
   func allCampAreas(completion: @escaping (GenericResult<[CampModel]>) -> Void) {
-    let ref = database.collection("camps")
+    let ref = database.collection("camp")
     let query = ref.limit(to: 50)
     query.getDocumentsObjects { (result: GenericResult<[CampModel]>) in
       completion(result)

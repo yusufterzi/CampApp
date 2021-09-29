@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol BaseInteractor {
+public protocol BaseInteractor {
   
 }

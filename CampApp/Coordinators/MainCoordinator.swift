@@ -21,10 +21,9 @@ class MainCoordinator: NavigationCoordinator<MainRoute> {
   override func prepareTransition(for route: MainRoute) -> NavigationTransition {
     switch route {
     case .home:
+      rootViewController.navigationBar.isHidden = true
       let coordinator = MainTabCoordinator()
       addChild(coordinator)
-
-        
       return .push(coordinator.rootViewController)
     case .welcome:
       let viewController = ViewController()

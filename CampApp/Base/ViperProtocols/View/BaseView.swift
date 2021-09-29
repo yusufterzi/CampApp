@@ -7,11 +7,11 @@
 
 import Carbon
 
-protocol BaseListView {
+public protocol BaseListView {
   func viewUpdated(sections: [Section])
 }
 
-protocol BaseView: class {
+public protocol BaseView: class {
   associatedtype Presenter
   
   var presenter: Presenter? { get set }

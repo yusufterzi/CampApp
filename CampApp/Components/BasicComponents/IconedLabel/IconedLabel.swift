@@ -10,7 +10,7 @@ import Carbon
 
 open class IconedLabel: UIView, BaseView {
 
-  var presenter: IconedLabelPresenter? = nil
+  public var presenter: IconedLabelPresenter? = nil
   
   let hStackView = UIStackView().then {
     $0.axis = .horizontal
@@ -34,12 +34,12 @@ open class IconedLabel: UIView, BaseView {
     fatalError("init(coder:) has not been implemented")
   }
   
-  func configureView(presenter: IconedLabelPresenter) {
+  public func configureView(presenter: IconedLabelPresenter) {
     self.presenter = presenter
     loadUI()
   }
 
-  func loadUI() {
+  public func loadUI() {
     guard let presenter = presenter else {
       return
     }

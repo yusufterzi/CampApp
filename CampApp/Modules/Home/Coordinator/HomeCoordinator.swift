@@ -20,10 +20,12 @@ class HomeCoordinator: NavigationCoordinator<HomeRoute> {
     switch route {
     case .home:
       let viewController = HomeController()
+      viewController.setupPresenter(presenter: HomePresenter(view: viewController,
+                                                             router: self.unownedRouter))
       viewController.tabBarItem = UITabBarItem(title: Tabs.home.name,
                                                image: Tabs.home.image,
                                                tag: Tabs.home.tag)
-      viewController.view.backgroundColor = .white
+      viewController.view.backgroundColor = UIColor.white
       return .push(viewController)
     }
   }

@@ -6,13 +6,14 @@
 //
 
 import Carbon
+import XCoordinator
 
-final class HomeController: BaseListController {
-  
+final class HomeController: BaseListController<HomePresenter> {
+    
   override func viewDidLoad() {
     super.viewDidLoad()
-    renderer.render([])
   }
+  
 }
 
 extension HomeController: BaseListView {
