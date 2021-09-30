@@ -24,6 +24,12 @@
 		2E1821E1270457D600B271CA /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E1821DF270457D600B271CA /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2E18222D270459FD00B271CA /* YTNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E18222C270459FD00B271CA /* YTNetwork.framework */; };
 		2E18222E270459FD00B271CA /* YTNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E18222C270459FD00B271CA /* YTNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2E4300FB2704F12400B4A381 /* ViewHeaderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4300FA2704F12400B4A381 /* ViewHeaderComponent.swift */; };
+		2E4300FF2704F13B00B4A381 /* ViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4300FE2704F13B00B4A381 /* ViewHeaderView.swift */; };
+		2E4301012704F14400B4A381 /* ViewHeaderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4301002704F14400B4A381 /* ViewHeaderPresenter.swift */; };
+		2E430104270508A600B4A381 /* SegmentSelectionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E430103270508A600B4A381 /* SegmentSelectionComponent.swift */; };
+		2E430108270508BF00B4A381 /* SegmentSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E430107270508BF00B4A381 /* SegmentSelectionView.swift */; };
+		2E43010A270508C900B4A381 /* SegmentSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E430109270508C900B4A381 /* SegmentSelectionPresenter.swift */; };
 		543F2D1CE4C277994D053E6A /* Pods_YTUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE28CAFF264184A4267B456D /* Pods_YTUI.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +65,12 @@
 		2E1821B02704522000B271CA /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		2E1821DF270457D600B271CA /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E18222C270459FD00B271CA /* YTNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YTNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E4300FA2704F12400B4A381 /* ViewHeaderComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHeaderComponent.swift; sourceTree = "<group>"; };
+		2E4300FE2704F13B00B4A381 /* ViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHeaderView.swift; sourceTree = "<group>"; };
+		2E4301002704F14400B4A381 /* ViewHeaderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHeaderPresenter.swift; sourceTree = "<group>"; };
+		2E430103270508A600B4A381 /* SegmentSelectionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentSelectionComponent.swift; sourceTree = "<group>"; };
+		2E430107270508BF00B4A381 /* SegmentSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentSelectionView.swift; sourceTree = "<group>"; };
+		2E430109270508C900B4A381 /* SegmentSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentSelectionPresenter.swift; sourceTree = "<group>"; };
 		5A808E72257160EE67BF7BEE /* Pods-YTUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTUI.release.xcconfig"; path = "Target Support Files/Pods-YTUI/Pods-YTUI.release.xcconfig"; sourceTree = "<group>"; };
 		8F1F97B711C5A07C63A4EFFD /* Pods-YTUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTUI.debug.xcconfig"; path = "Target Support Files/Pods-YTUI/Pods-YTUI.debug.xcconfig"; sourceTree = "<group>"; };
 		DE28CAFF264184A4267B456D /* Pods_YTUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YTUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +148,8 @@
 		2E18219E2704522000B271CA /* ComplexComponents */ = {
 			isa = PBXGroup;
 			children = (
+				2E4301022705088E00B4A381 /* SegmentSelectionComponent */,
+				2E4300F92704F11400B4A381 /* ViewHeaderComponent */,
 				2E18219D2704522000B271CA /* CampComponent */,
 			);
 			path = ComplexComponents;
@@ -242,6 +256,58 @@
 				2E1821B12704522000B271CA /* Then */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		2E4300F92704F11400B4A381 /* ViewHeaderComponent */ = {
+			isa = PBXGroup;
+			children = (
+				2E4300FD2704F12E00B4A381 /* Presenter */,
+				2E4300FC2704F12900B4A381 /* View */,
+				2E4300FA2704F12400B4A381 /* ViewHeaderComponent.swift */,
+			);
+			path = ViewHeaderComponent;
+			sourceTree = "<group>";
+		};
+		2E4300FC2704F12900B4A381 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2E4300FE2704F13B00B4A381 /* ViewHeaderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2E4300FD2704F12E00B4A381 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2E4301002704F14400B4A381 /* ViewHeaderPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2E4301022705088E00B4A381 /* SegmentSelectionComponent */ = {
+			isa = PBXGroup;
+			children = (
+				2E430106270508B400B4A381 /* Presenter */,
+				2E430105270508AB00B4A381 /* View */,
+				2E430103270508A600B4A381 /* SegmentSelectionComponent.swift */,
+			);
+			path = SegmentSelectionComponent;
+			sourceTree = "<group>";
+		};
+		2E430105270508AB00B4A381 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2E430107270508BF00B4A381 /* SegmentSelectionView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2E430106270508B400B4A381 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2E430109270508C900B4A381 /* SegmentSelectionPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		42BC0A83DBD7B4D7120ED439 /* Pods */ = {
@@ -370,18 +436,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E4300FF2704F13B00B4A381 /* ViewHeaderView.swift in Sources */,
 				2E1821C32704550900B271CA /* BaseListController.swift in Sources */,
 				2E1821BC270454EC00B271CA /* CampComponent.swift in Sources */,
 				2E1821C12704550200B271CA /* BasePresenter.swift in Sources */,
 				2E1821C22704550600B271CA /* BaseInteractor.swift in Sources */,
 				2E1821912704520400B271CA /* UI.docc in Sources */,
+				2E430104270508A600B4A381 /* SegmentSelectionComponent.swift in Sources */,
+				2E43010A270508C900B4A381 /* SegmentSelectionPresenter.swift in Sources */,
 				2E1821BF270454F900B271CA /* IconedLabel.swift in Sources */,
 				2E1821BD270454F000B271CA /* Label.swift in Sources */,
+				2E430108270508BF00B4A381 /* SegmentSelectionView.swift in Sources */,
 				2E1821C0270454FF00B271CA /* BaseView.swift in Sources */,
 				2E1821BB270454E800B271CA /* CampComponentPresenter.swift in Sources */,
 				2E1821C52704562F00B271CA /* CampComponentView.swift in Sources */,
 				2E1821BE270454F600B271CA /* IconedLabelPresenter.swift in Sources */,
+				2E4300FB2704F12400B4A381 /* ViewHeaderComponent.swift in Sources */,
 				2E1821C42704550D00B271CA /* Then.swift in Sources */,
+				2E4301012704F14400B4A381 /* ViewHeaderPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,7 +19,6 @@ public final class CampComponent: IdentifiableComponent {
   
   public func render(in content: CampComponentView) {
     content.presenter = presenter
-    presenter?.view = content
     content.loadUI()
   }
 

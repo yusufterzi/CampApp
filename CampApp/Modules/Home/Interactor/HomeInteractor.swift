@@ -17,6 +17,8 @@ protocol HomeInteractorProtocol: BaseInteractor {
 }
 
 final class HomeInteractor: HomeInteractorProtocol {
+  func getItems() { }
+  
   var campAreasHandler: (([CampModel]) -> Void)?
 
   func getCampAreas() {

@@ -10,17 +10,15 @@ import XCoordinator
 import Carbon
 
 public protocol BaseComponentPresenter {
-  associatedtype BaseViewType
-  var view: BaseViewType? { get set }
-  var interactor: BaseInteractor? { get set }
+  
 }
 
 public protocol BaseListPresenter {
   associatedtype T: Route
-  associatedtype Z: BaseInteractor
-  associatedtype W: BaseListView
+  associatedtype Z
+  associatedtype W
 
-  var view: W { get }
+  var view: W? { get }
   var interactor: Z? { get }
   var router: UnownedRouter<T> { get }
   

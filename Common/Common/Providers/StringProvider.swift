@@ -15,4 +15,6 @@ public final class StringProvider {
   
   
   public static let firstTabTitle: String = "Keşfet".localized
+  public static let campAreas: String = "Kamp alanlarını".localized
+  public static let campAreasSecondPart: String = "Keşfet".localized
 }

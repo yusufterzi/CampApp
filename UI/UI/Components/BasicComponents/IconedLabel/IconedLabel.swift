@@ -35,7 +35,7 @@ open class IconedLabel: UIView, BaseView {
     fatalError("init(coder:) has not been implemented")
   }
   
-  public func configureView(presenter: IconedLabelPresenter) {
+  public func configureView(presenter: IconedLabelPresenter?) {
     self.presenter = presenter
     loadUI()
   }

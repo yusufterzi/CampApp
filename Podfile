@@ -12,6 +12,7 @@ target 'CampApp' do
   pod 'Localize'
   pod 'Carbon'
   pod 'SnapKit'
+  pod 'AttributedStringBuilder'
 
   #firebase
   pod 'Firebase/Analytics'
@@ -31,6 +32,7 @@ target 'YTUI' do
   pod 'Localize'
   pod 'Carbon'
   pod 'SnapKit'
+  pod 'AttributedStringBuilder'
 
   pod 'SPPermissions/LocationWhenInUse'
   pod 'SDWebImage'

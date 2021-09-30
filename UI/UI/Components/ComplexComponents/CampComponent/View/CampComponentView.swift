@@ -14,10 +14,9 @@ public protocol CampComponentViewProtocol {
   
 }
 
-public final class CampComponentView: UIView, BaseView, CampComponentViewProtocol {
-  public typealias Presenter = CampComponentPresenter
+public final class CampComponentView: UIView, CampComponentViewProtocol {
   
-  public var presenter: CampComponentPresenter?
+  public var presenter: CampComponentPresenterProtocol?
   
   private let imageView: UIImageView = UIImageView().then {
     $0.layer.cornerRadius = 12
@@ -40,9 +39,8 @@ public final class CampComponentView: UIView, BaseView, CampComponentViewProtoco
     fatalError("init(coder:) has not been implemented")
   }
   
-  public func configureView(presenter: CampComponentPresenter) {
+  public func configureView(presenter: CampComponentPresenterProtocol) {
     self.presenter = presenter
-    presenter.view = self
     
     loadUI()
   }

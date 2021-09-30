@@ -41,7 +41,7 @@ open class BaseListController<T: BaseListPresenter>: UIViewController {
     presenter?.loadUI()
   }
   
-  public override func viewWillAppear(_ animated: Bool) {
+  open override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
   }
   
@@ -141,15 +141,10 @@ extension BaseListController: BaseListView {
       renderer.render(sections)
     case .emptyScreen:
       break
+    case .title(let titleValue):
+      self.title = titleValue
     }
     
   }
 
-  public func viewUpdated(sections: [Section]) {
-    
-  }
-  
-  public func setupTitle(title: String) {
-    self.title = title
-  }
 }

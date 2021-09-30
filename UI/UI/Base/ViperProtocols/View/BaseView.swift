@@ -14,16 +14,13 @@ public enum ListViewActions {
   case emptyScreen
 }
 
-public protocol BaseListView {
+public protocol BaseListView: AnyObject {
   func sendAction(_ action: ListViewActions)
-  func setupTitle(title: String)
 }
 
-public protocol BaseView {
+public protocol BaseView: AnyObject {
   associatedtype Presenter
   
-  var presenter: Presenter? { get set }
-  
   func loadUI()
-  func configureView(presenter: Presenter)
+  func configureView(presenter: Presenter?)
 }

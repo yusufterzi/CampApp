@@ -8,22 +8,25 @@
 import Foundation
 import YTNetwork
 
-public final class CampComponentPresenter: BaseComponentPresenter {
+public protocol CampComponentPresenterProtocol {
+  var point: String { get }
+  var location: String { get }
+  var image: String { get }
+}
 
-  public var view: CampComponentViewProtocol?
-  public var interactor: BaseInteractor?
-  
+public final class CampComponentPresenter: CampComponentPresenterProtocol {
+
   private var item: CampModel
   
-  var point: String {
+  public var point: String {
     String(format: "%.1f", item.point ?? 0)
   }
   
-  var location: String {
+  public var location: String {
     (item.subLocation ?? "") + "/" + (item.city ?? "")
   }
   
-  var image: String {
+  public var image: String {
     item.images?.first ?? ""
   }
   

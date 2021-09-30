@@ -7,6 +7,6 @@
 
 import Foundation
 
-public protocol BaseInteractor {
-  
+public protocol BaseInteractor: AnyObject {
+  func getItems()
 }
