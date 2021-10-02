@@ -15,4 +15,8 @@ public final class FontProvider {
   public static let listMidMedium: UIFont = UIFont(name: fontName + "-Medium", size: 18)!
   public static let bigHeaderRegular: UIFont = UIFont(name: fontName + "-Regular", size: 28)!
   public static let bigHeaderBold: UIFont = UIFont(name: fontName + "-Bold", size: 28)!
+  
+  public static let segmentRegular: UIFont = UIFont(name: fontName + "-Regular", size: 12)!
+  public static let segmentBold: UIFont = UIFont(name: fontName + "-Bold", size: 12)!
+
 }

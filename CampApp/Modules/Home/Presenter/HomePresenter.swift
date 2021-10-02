@@ -22,6 +22,9 @@ final class HomePresenter: HomePresenterProtocol, BaseListPresenter {
   internal var interactor: HomeInteractorProtocol?
   internal var router: UnownedRouter<HomeRoute>
   
+  private var segments: [HomeSegmentEnum] = [.all, .caravan, .tent, .bungalow]
+  private var selectedSegment: HomeSegmentEnum = .all
+  
   init(view: BaseListView, router: UnownedRouter<HomeRoute>) {
     self.view = view
     self.router = router
@@ -39,14 +42,14 @@ final class HomePresenter: HomePresenterProtocol, BaseListPresenter {
   func dataLoaded(areas: [CampModel]) {
     var cells: [CellNode] = []
 
+    cells.append(headerView())
+    cells.append(segmentSelectView())
+    
+    cells.append(carusellView(areas: areas))
+    
     for area in areas {
       let component = CampComponent(id: area.name ?? "",
                                     presenter: CampComponentPresenter(item: area))
-      
-      cells.append(headerView())
-      cells.append(CellNode(component))
-      cells.append(CellNode(component))
-      cells.append(CellNode(component))
       cells.append(CellNode(component))
     }
     
@@ -59,14 +62,14 @@ final class HomePresenter: HomePresenterProtocol, BaseListPresenter {
     
     let firstPartAttributes: [AttributedStringBuilder.Attribute] = [
       .font(FontProvider.bigHeaderRegular),
-      .textColor(ColorProvider.blackTextColor),
+      .textColor(ColorProvider.blackTextColor.color),
     ]
     
     let firstPart: NSAttributedString = AttributedStringBuilder().text(StringProvider.campAreas, attributes: firstPartAttributes).attributedString
     
     let secondPartAttributes: [AttributedStringBuilder.Attribute] = [
       .font(FontProvider.bigHeaderBold),
-      .textColor(ColorProvider.blackTextColor),
+      .textColor(ColorProvider.blackTextColor.color),
     ]
     
     let secondPart: NSAttributedString = AttributedStringBuilder().text(StringProvider.campAreasSecondPart, attributes: secondPartAttributes).attributedString
@@ -75,6 +78,33 @@ final class HomePresenter: HomePresenterProtocol, BaseListPresenter {
                                         presenter: ViewHeaderPresenter(firstPart: firstPart, secondPart: secondPart))
     
     return CellNode(component)
+  }
+  
+  private func segmentSelectView() -> CellNode {
+    var items: [SegmentItemModel] = .init()
+    for segment in segments {
+      items.append(SegmentItemModel(identifier: segment.rawValue,
+                       name: segment.title,
+                       isSelected: segment == selectedSegment))
+    }
+    
+    let component = SegmentSelectionComponent(id: "segment", presenter: SegmentSelectionPresenter(items: items))
+    return CellNode(component)
+  }
+  
+  private func carusellView(areas: [CampModel]) -> CellNode {
+    
+    var areas: [CampModel] = areas
+    areas.append(areas.first!)
+    areas.append(areas.first!)
+    areas.append(areas.first!)
+    areas.append(areas.first!)
+    
+    let presenter: YTCarouselPresenter = YTCarouselPresenter(items: areas)
+    let component: YTCarouselComponent = YTCarouselComponent(id: "", presenter: presenter)
+    
+    return CellNode(component)
+
   }
   
 }

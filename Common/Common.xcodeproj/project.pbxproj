@@ -27,6 +27,7 @@
 		2E1822092704583F00B271CA /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E1821E9270457EB00B271CA /* Rubik-Italic.ttf */; };
 		2E18220A2704583F00B271CA /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E1821E4270457EB00B271CA /* Rubik-BlackItalic.ttf */; };
 		2E18220B2704583F00B271CA /* Rubik-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E1821E8270457EB00B271CA /* Rubik-ExtraBoldItalic.ttf */; };
+		2E770C2827078F7600872550 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E770C2727078F7600872550 /* Typealias.swift */; };
 		9B62BEF29A852E7F8324265E /* Pods_Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5129DFEC6C0FC6F152B859BF /* Pods_Common.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		2E1821F6270457EB00B271CA /* ImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
 		2E1821F7270457EB00B271CA /* ColorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorProvider.swift; sourceTree = "<group>"; };
 		2E1821FC2704582300B271CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2E770C2727078F7600872550 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 		5129DFEC6C0FC6F152B859BF /* Pods_Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C576D4FC12C14717BDA2D9 /* Pods-Common.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common.debug.xcconfig"; path = "Target Support Files/Pods-Common/Pods-Common.debug.xcconfig"; sourceTree = "<group>"; };
 		DC6828A57E76AF81576DFE87 /* Pods-Common.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common.release.xcconfig"; path = "Target Support Files/Pods-Common/Pods-Common.release.xcconfig"; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				2E1821F8270457EB00B271CA /* Providers */,
 				2E1821D32704576800B271CA /* Common.h */,
 				2E1821D42704576800B271CA /* Common.docc */,
+				2E770C2727078F7600872550 /* Typealias.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				2E1821FB270457FC00B271CA /* StringProvider.swift in Sources */,
 				2E1821F9270457FC00B271CA /* ImageProvider.swift in Sources */,
 				2E1821D52704576800B271CA /* Common.docc in Sources */,
+				2E770C2827078F7600872550 /* Typealias.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +450,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
 		};
@@ -477,6 +482,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Release;
 		};

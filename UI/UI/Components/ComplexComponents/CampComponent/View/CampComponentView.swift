@@ -26,7 +26,7 @@ public final class CampComponentView: UIView, CampComponentViewProtocol {
   private let locationLabel: IconedLabel = IconedLabel()
   private let nameLabel: Label = Label().then {
     $0.font = FontProvider.listMidMedium
-    $0.textColor = ColorProvider.darkTextColor
+    $0.textColor = ColorProvider.darkTextColor.color
   }
   
   public init() {
@@ -54,16 +54,14 @@ public final class CampComponentView: UIView, CampComponentViewProtocol {
     
     let starPresenter = IconedLabelPresenter(title: presenter.point,
                                              image: ImageProvider.star,
-                                             textColor: ColorProvider.greenLabel)
+                                             textColor: ColorProvider.greenLabel.color)
     starPresenter.space = 4
     starPresenter.textFont = FontProvider.listSmallRegular
-    pointLabel.configureView(presenter: IconedLabelPresenter(title: presenter.point,
-                                                             image: ImageProvider.star,
-                                                             textColor: ColorProvider.greenLabel))
+    pointLabel.configureView(presenter: starPresenter)
     
     let locationPresenter = IconedLabelPresenter(title: presenter.location,
                                                  image: ImageProvider.mapPin,
-                                                 textColor: ColorProvider.darkTextColor)
+                                                 textColor: ColorProvider.darkTextColor.color)
     locationPresenter.textFont = FontProvider.listSmallRegular
     locationPresenter.space = 4
     locationLabel.configureView(presenter: locationPresenter)

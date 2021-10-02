@@ -9,7 +9,7 @@ import UIKit
 import Carbon
 import Common
 
-open class IconedLabel: UIView, BaseView {
+final class IconedLabel: UIView, BaseView {
 
   public var presenter: IconedLabelPresenter? = nil
   
@@ -47,9 +47,15 @@ open class IconedLabel: UIView, BaseView {
  
     self.nameLabel.text = presenter.title
     self.imageView.image = presenter.image
+    if let tint = presenter.imageTintColor {
+      self.imageView.tintColor = tint
+    }
     if let textColor = presenter.textColor {
       self.nameLabel.textColor  = textColor
     }
+    
+    self.layer.cornerRadius = presenter.radius
+    self.backgroundColor = presenter.backgroundColor
   }
 
   func initialize() {
@@ -68,7 +74,9 @@ open class IconedLabel: UIView, BaseView {
   
   func setupConstraints() {
     hStackView.snp.makeConstraints {
-      $0.leading.top.trailing.bottom.equalToSuperview()
+      $0.top.bottom.equalToSuperview()
+      $0.leading.equalToSuperview().offset(8)
+      $0.trailing.equalToSuperview().offset(-8)
     }
     imageView.snp.makeConstraints {
       $0.width.equalTo(13)

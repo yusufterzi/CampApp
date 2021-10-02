@@ -8,8 +8,21 @@
 import Foundation
 import UIKit
 
-public final class ColorProvider {
-  public static let greenLabel: UIColor = UIColor(named: "greenLabel")!
-  public static let darkTextColor: UIColor = UIColor(named: "darkTextColor")!
-  public static let blackTextColor: UIColor = UIColor(named: "blackTextColor")!
+public enum ColorProvider: String {
+  case greenLabel
+  case darkTextColor
+  case blackTextColor
+  case segmentSelectedColor
+  case segmentItemSelectedText
+  case lightTextColor
+  case whiteTextColor
+  case locationBgColor
+  
+  public var color: UIColor {
+    return colorFromName(self.rawValue)
+  }
+  
+  private func colorFromName(_ name: String) -> UIColor {
+    return UIColor(named: name, in: Bundle.main, compatibleWith: nil)!
+  }
 }

@@ -17,4 +17,11 @@ public final class StringProvider {
   public static let firstTabTitle: String = "Keşfet".localized
   public static let campAreas: String = "Kamp alanlarını".localized
   public static let campAreasSecondPart: String = "Keşfet".localized
+
+  public static let allCampAreas: String = "Hepsi".localized
+  public static let tentAreas: String = "Çadır".localized
+  public static let caravanAreas: String = "Karavan".localized
+  public static let bungalowAreas: String = "Bungalov".localized
+
+
 }

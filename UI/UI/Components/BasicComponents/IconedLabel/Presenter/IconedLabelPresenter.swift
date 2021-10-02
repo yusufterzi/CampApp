@@ -14,7 +14,10 @@ public final class IconedLabelPresenter {
   var textColor: UIColor?
   var textFont: UIFont?
   var space: CGFloat?
-  
+  var backgroundColor: UIColor = .clear
+  var imageTintColor: UIColor? = nil
+  var radius: CGFloat = 0
+
   public init(title: String, image: UIImage?, textColor: UIColor? = nil) {
     self.title = title
     self.image = image

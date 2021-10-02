@@ -30,6 +30,15 @@
 		2E430104270508A600B4A381 /* SegmentSelectionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E430103270508A600B4A381 /* SegmentSelectionComponent.swift */; };
 		2E430108270508BF00B4A381 /* SegmentSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E430107270508BF00B4A381 /* SegmentSelectionView.swift */; };
 		2E43010A270508C900B4A381 /* SegmentSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E430109270508C900B4A381 /* SegmentSelectionPresenter.swift */; };
+		2E4301112706312200B4A381 /* SegmentItemComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4301102706312200B4A381 /* SegmentItemComponent.swift */; };
+		2E4301132706313400B4A381 /* SegmentItemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4301122706313400B4A381 /* SegmentItemPresenter.swift */; };
+		2E4301152706313B00B4A381 /* SegmentItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4301142706313B00B4A381 /* SegmentItemView.swift */; };
+		2E770C192707883600872550 /* YTCarouselComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E770C182707883600872550 /* YTCarouselComponent.swift */; };
+		2E770C1D2707885500872550 /* YTCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E770C1C2707885500872550 /* YTCarouselView.swift */; };
+		2E770C1F2707886000872550 /* YTCarouselPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E770C1E2707886000872550 /* YTCarouselPresenter.swift */; };
+		2E770C2427078CA200872550 /* YTPageStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E770C2327078CA200872550 /* YTPageStackView.swift */; };
+		2E770C2627078CF500872550 /* YTPageStackViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E770C2527078CF500872550 /* YTPageStackViewPresenter.swift */; };
+		2E770C2B2707918500872550 /* Stackview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E770C2A2707918500872550 /* Stackview.swift */; };
 		543F2D1CE4C277994D053E6A /* Pods_YTUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE28CAFF264184A4267B456D /* Pods_YTUI.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +80,15 @@
 		2E430103270508A600B4A381 /* SegmentSelectionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentSelectionComponent.swift; sourceTree = "<group>"; };
 		2E430107270508BF00B4A381 /* SegmentSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentSelectionView.swift; sourceTree = "<group>"; };
 		2E430109270508C900B4A381 /* SegmentSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentSelectionPresenter.swift; sourceTree = "<group>"; };
+		2E4301102706312200B4A381 /* SegmentItemComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemComponent.swift; sourceTree = "<group>"; };
+		2E4301122706313400B4A381 /* SegmentItemPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemPresenter.swift; sourceTree = "<group>"; };
+		2E4301142706313B00B4A381 /* SegmentItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemView.swift; sourceTree = "<group>"; };
+		2E770C182707883600872550 /* YTCarouselComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTCarouselComponent.swift; sourceTree = "<group>"; };
+		2E770C1C2707885500872550 /* YTCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTCarouselView.swift; sourceTree = "<group>"; };
+		2E770C1E2707886000872550 /* YTCarouselPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTCarouselPresenter.swift; sourceTree = "<group>"; };
+		2E770C2327078CA200872550 /* YTPageStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTPageStackView.swift; sourceTree = "<group>"; };
+		2E770C2527078CF500872550 /* YTPageStackViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTPageStackViewPresenter.swift; sourceTree = "<group>"; };
+		2E770C2A2707918500872550 /* Stackview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stackview.swift; sourceTree = "<group>"; };
 		5A808E72257160EE67BF7BEE /* Pods-YTUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTUI.release.xcconfig"; path = "Target Support Files/Pods-YTUI/Pods-YTUI.release.xcconfig"; sourceTree = "<group>"; };
 		8F1F97B711C5A07C63A4EFFD /* Pods-YTUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTUI.debug.xcconfig"; path = "Target Support Files/Pods-YTUI/Pods-YTUI.debug.xcconfig"; sourceTree = "<group>"; };
 		DE28CAFF264184A4267B456D /* Pods_YTUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YTUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +129,7 @@
 		2E18218E2704520400B271CA /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				2E770C292707917900872550 /* Extensions */,
 				2E1821A62704522000B271CA /* Components */,
 				2E1821B22704522000B271CA /* Base */,
 				2E18218F2704520400B271CA /* UI.h */,
@@ -148,6 +167,8 @@
 		2E18219E2704522000B271CA /* ComplexComponents */ = {
 			isa = PBXGroup;
 			children = (
+				2E770C2027078C3B00872550 /* YTPageStack */,
+				2E770C17270787CD00872550 /* YTCarousel */,
 				2E4301022705088E00B4A381 /* SegmentSelectionComponent */,
 				2E4300F92704F11400B4A381 /* ViewHeaderComponent */,
 				2E18219D2704522000B271CA /* CampComponent */,
@@ -287,9 +308,8 @@
 		2E4301022705088E00B4A381 /* SegmentSelectionComponent */ = {
 			isa = PBXGroup;
 			children = (
-				2E430106270508B400B4A381 /* Presenter */,
-				2E430105270508AB00B4A381 /* View */,
-				2E430103270508A600B4A381 /* SegmentSelectionComponent.swift */,
+				2E43010D270630B500B4A381 /* SegmentItemComponent */,
+				2E43010C270630A000B4A381 /* SelectionViewComponent */,
 			);
 			path = SegmentSelectionComponent;
 			sourceTree = "<group>";
@@ -308,6 +328,93 @@
 				2E430109270508C900B4A381 /* SegmentSelectionPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2E43010C270630A000B4A381 /* SelectionViewComponent */ = {
+			isa = PBXGroup;
+			children = (
+				2E430106270508B400B4A381 /* Presenter */,
+				2E430105270508AB00B4A381 /* View */,
+				2E430103270508A600B4A381 /* SegmentSelectionComponent.swift */,
+			);
+			path = SelectionViewComponent;
+			sourceTree = "<group>";
+		};
+		2E43010D270630B500B4A381 /* SegmentItemComponent */ = {
+			isa = PBXGroup;
+			children = (
+				2E43010E2706310E00B4A381 /* Presenter */,
+				2E43010F2706311500B4A381 /* View */,
+				2E4301102706312200B4A381 /* SegmentItemComponent.swift */,
+			);
+			path = SegmentItemComponent;
+			sourceTree = "<group>";
+		};
+		2E43010E2706310E00B4A381 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2E4301122706313400B4A381 /* SegmentItemPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2E43010F2706311500B4A381 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2E4301142706313B00B4A381 /* SegmentItemView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2E770C17270787CD00872550 /* YTCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				2E770C1A2707884200872550 /* Presenter */,
+				2E770C1B2707884A00872550 /* View */,
+				2E770C182707883600872550 /* YTCarouselComponent.swift */,
+			);
+			path = YTCarousel;
+			sourceTree = "<group>";
+		};
+		2E770C1A2707884200872550 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2E770C1E2707886000872550 /* YTCarouselPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2E770C1B2707884A00872550 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2E770C1C2707885500872550 /* YTCarouselView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2E770C2027078C3B00872550 /* YTPageStack */ = {
+			isa = PBXGroup;
+			children = (
+				2E770C2227078C4B00872550 /* Presenter */,
+				2E770C2327078CA200872550 /* YTPageStackView.swift */,
+			);
+			path = YTPageStack;
+			sourceTree = "<group>";
+		};
+		2E770C2227078C4B00872550 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2E770C2527078CF500872550 /* YTPageStackViewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2E770C292707917900872550 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2E770C2A2707918500872550 /* Stackview.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		42BC0A83DBD7B4D7120ED439 /* Pods */ = {
@@ -439,21 +546,30 @@
 				2E4300FF2704F13B00B4A381 /* ViewHeaderView.swift in Sources */,
 				2E1821C32704550900B271CA /* BaseListController.swift in Sources */,
 				2E1821BC270454EC00B271CA /* CampComponent.swift in Sources */,
+				2E4301132706313400B4A381 /* SegmentItemPresenter.swift in Sources */,
+				2E770C2627078CF500872550 /* YTPageStackViewPresenter.swift in Sources */,
 				2E1821C12704550200B271CA /* BasePresenter.swift in Sources */,
 				2E1821C22704550600B271CA /* BaseInteractor.swift in Sources */,
 				2E1821912704520400B271CA /* UI.docc in Sources */,
+				2E770C2B2707918500872550 /* Stackview.swift in Sources */,
+				2E770C1F2707886000872550 /* YTCarouselPresenter.swift in Sources */,
+				2E4301112706312200B4A381 /* SegmentItemComponent.swift in Sources */,
 				2E430104270508A600B4A381 /* SegmentSelectionComponent.swift in Sources */,
 				2E43010A270508C900B4A381 /* SegmentSelectionPresenter.swift in Sources */,
+				2E770C192707883600872550 /* YTCarouselComponent.swift in Sources */,
 				2E1821BF270454F900B271CA /* IconedLabel.swift in Sources */,
 				2E1821BD270454F000B271CA /* Label.swift in Sources */,
 				2E430108270508BF00B4A381 /* SegmentSelectionView.swift in Sources */,
 				2E1821C0270454FF00B271CA /* BaseView.swift in Sources */,
+				2E770C2427078CA200872550 /* YTPageStackView.swift in Sources */,
 				2E1821BB270454E800B271CA /* CampComponentPresenter.swift in Sources */,
 				2E1821C52704562F00B271CA /* CampComponentView.swift in Sources */,
 				2E1821BE270454F600B271CA /* IconedLabelPresenter.swift in Sources */,
 				2E4300FB2704F12400B4A381 /* ViewHeaderComponent.swift in Sources */,
 				2E1821C42704550D00B271CA /* Then.swift in Sources */,
 				2E4301012704F14400B4A381 /* ViewHeaderPresenter.swift in Sources */,
+				2E4301152706313B00B4A381 /* SegmentItemView.swift in Sources */,
+				2E770C1D2707885500872550 /* YTCarouselView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +725,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
 		};
@@ -639,6 +756,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Release;
 		};
