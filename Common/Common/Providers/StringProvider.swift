@@ -22,6 +22,11 @@ public final class StringProvider {
   public static let tentAreas: String = "Çadır".localized
   public static let caravanAreas: String = "Karavan".localized
   public static let bungalowAreas: String = "Bungalov".localized
-
+  public static let nearestAreas: String = "Sana yakın en iyi kamp alanları".localized
+  public static let campCount: String = "%d kamp alanı".localized
+  
+  public static let likes: String = "Beğeni".localized
+  public static let distance: String = "Uzaklık".localized
+  public static let rate: String = "Puanı".localized
 
 }

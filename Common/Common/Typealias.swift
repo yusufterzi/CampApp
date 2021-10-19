@@ -8,4 +8,5 @@
 import Foundation
 
 public typealias Handler<T> = ((T) -> Void)
+public typealias VoidHandler = (() -> Void)
 

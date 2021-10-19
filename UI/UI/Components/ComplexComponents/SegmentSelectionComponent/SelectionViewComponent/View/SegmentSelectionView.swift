@@ -23,7 +23,6 @@ public final class SegmentSelectionView: UIView, SegmentSelectionViewProtocol {
     ($0.collectionViewLayout as? UICollectionViewFlowLayout)?.scrollDirection = .horizontal
     $0.backgroundColor = .clear
     ($0.collectionViewLayout as? UICollectionViewFlowLayout)?.estimatedItemSize = CGSize(width: 78, height: 24)
-
   }
   
   public var presenter: SegmentSelectionPresenterProtocol?

@@ -13,7 +13,7 @@ import YTNetwork
 import AttributedStringBuilder
 
 protocol HomePresenterProtocol {
-  func dataLoaded(areas: [CampModel])
+  
 }
 
 final class HomePresenter: HomePresenterProtocol, BaseListPresenter {
@@ -33,26 +33,40 @@ final class HomePresenter: HomePresenterProtocol, BaseListPresenter {
   
   func loadUI() {
     view?.sendAction(.title(StringProvider.firstTabTitle))
-    interactor?.getCampAreas()
-    interactor?.campAreasHandler = { [weak self] areas in
-      self?.dataLoaded(areas: areas)
+    interactor?.loadData()
+    interactor?.loadHandler = { [weak self] in
+      if (self?.interactor?.camps.count ?? 0) > 0 && (self?.interactor?.areas.count ?? 0) > 0 {
+        self?.dataLoaded()
+      }
     }
   }
   
-  func dataLoaded(areas: [CampModel]) {
+  func dataLoaded() {
+    guard let interactor = interactor else { return }
     var cells: [CellNode] = []
 
     cells.append(headerView())
     cells.append(segmentSelectView())
     
-    cells.append(carusellView(areas: areas))
-    
-    for area in areas {
-      let component = CampComponent(id: area.name ?? "",
-                                    presenter: CampComponentPresenter(item: area))
-      cells.append(CellNode(component))
+    cells.append(headerViewForCorausel())
+    cells.append(carusellView(areas: interactor.camps))
+
+    if let areaView = areasView() {
+      cells.append(areaView)
     }
     
+    for area in interactor.camps {
+      let presenter = CampComponentPresenter(item: area)
+      presenter.onTap = { [weak self] in
+        self?.router.trigger(.campDetail(area), with: TransitionOptions(animated: true))
+      }
+      let component = CampComponent(id: area.name ?? "",
+                                    presenter: presenter)
+      let cell = CellNode(component)
+      cells.append(cell)
+    }
+    
+
     let section = Section(id: "", header: nil, cells: cells, footer: nil)
     
     view?.sendAction(.loadData([section]))
@@ -105,6 +119,26 @@ final class HomePresenter: HomePresenterProtocol, BaseListPresenter {
     
     return CellNode(component)
 
+  }
+  
+  private func headerViewForCorausel() -> CellNode {
+    let label = LabelComponent(id: "header",
+                               presenter: LabelPresenter(
+                                font: FontProvider.regular19,
+                                textColor: ColorProvider.semiDarkTextColor.color,
+                                text: StringProvider.nearestAreas,
+                                insets: UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24)))
+    return CellNode(label)
+  }
+  
+  private func areasView() -> CellNode? {
+    guard let interactor = interactor else {
+      return nil
+    }
+
+    let component = CampAreaComponent(id: "campArea",
+                                      presenter: CampAreaComponentPresenter(items: interactor.areas))
+    return CellNode(component)
   }
   
 }

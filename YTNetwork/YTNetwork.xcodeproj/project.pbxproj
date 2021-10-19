@@ -11,6 +11,7 @@
 		2E18221C2704596C00B271CA /* YTNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E1822192704596C00B271CA /* YTNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2E182226270459D100B271CA /* CampModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E182223270459CB00B271CA /* CampModel.swift */; };
 		2E182228270459D100B271CA /* GenericResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E182222270459CB00B271CA /* GenericResult.swift */; };
+		2E770C3C2708C70900872550 /* CampAreaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E770C3B2708C70900872550 /* CampAreaModel.swift */; };
 		B7758CD33D453F5E2F7AEF31 /* Pods_YTNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F07408A4D3B41D70EEB011 /* Pods_YTNetwork.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +22,7 @@
 		2E18221A2704596C00B271CA /* YTNetwork.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = YTNetwork.docc; sourceTree = "<group>"; };
 		2E182222270459CB00B271CA /* GenericResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResult.swift; sourceTree = "<group>"; };
 		2E182223270459CB00B271CA /* CampModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampModel.swift; sourceTree = "<group>"; };
+		2E770C3B2708C70900872550 /* CampAreaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampAreaModel.swift; sourceTree = "<group>"; };
 		B8D86921B903BB50EA7A822A /* Pods-YTNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTNetwork.debug.xcconfig"; path = "Target Support Files/Pods-YTNetwork/Pods-YTNetwork.debug.xcconfig"; sourceTree = "<group>"; };
 		D49B6BDBCC07CA649D629E4C /* Pods-YTNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTNetwork.release.xcconfig"; path = "Target Support Files/Pods-YTNetwork/Pods-YTNetwork.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +72,7 @@
 			children = (
 				2E182222270459CB00B271CA /* GenericResult.swift */,
 				2E182223270459CB00B271CA /* CampModel.swift */,
+				2E770C3B2708C70900872550 /* CampAreaModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E182226270459D100B271CA /* CampModel.swift in Sources */,
+				2E770C3C2708C70900872550 /* CampAreaModel.swift in Sources */,
 				2E182228270459D100B271CA /* GenericResult.swift in Sources */,
 				2E18221B2704596C00B271CA /* YTNetwork.docc in Sources */,
 			);
@@ -339,6 +343,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";

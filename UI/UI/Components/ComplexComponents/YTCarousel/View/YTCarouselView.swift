@@ -59,7 +59,7 @@ public final class YTCarouselView: UIView, YTCarouselViewProtocol {
     guard let presenter = presenter else {
       return
     }
-    
+
     setupPageView()
     setupBackLeft()
     setupBackRight()
@@ -99,7 +99,7 @@ private extension YTCarouselView {
     setupViews()
     setupConstraints()
   }
-  
+
   func setupBackRight() {
     guard let presenter = presenter else {
       return

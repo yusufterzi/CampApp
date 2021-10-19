@@ -7,15 +7,18 @@
 
 import Foundation
 import YTNetwork
+import Common
 
 public protocol CampComponentPresenterProtocol {
   var point: String { get }
   var location: String { get }
   var image: String { get }
+  var name: String { get }
+  var onTap: VoidHandler? { get set }
 }
 
 public final class CampComponentPresenter: CampComponentPresenterProtocol {
-
+  public var onTap: VoidHandler?
   private var item: CampModel
   
   public var point: String {
@@ -32,5 +35,9 @@ public final class CampComponentPresenter: CampComponentPresenterProtocol {
   
   public init(item: CampModel) {
     self.item = item
+  }
+  
+  public var name: String {
+    item.name ?? ""
   }
 }

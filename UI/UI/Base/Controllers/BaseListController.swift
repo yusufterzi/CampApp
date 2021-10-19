@@ -19,6 +19,7 @@ open class BaseListController<T: BaseListPresenter>: UIViewController {
   var tableViewStyle: UITableView.Style {
     return .grouped
   }
+  public var topSafeEnabled: Bool = true
   
   internal var tableView: UITableView!
   
@@ -37,7 +38,6 @@ open class BaseListController<T: BaseListPresenter>: UIViewController {
     initialize()
     
     enableKeyboardOperations()
-    
     presenter?.loadUI()
   }
   
@@ -104,7 +104,11 @@ private extension BaseListController {
   
   func setupConstraints() {
     tableView.snp.makeConstraints {
-      $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+      if topSafeEnabled {
+        $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+      } else {
+        $0.top.equalToSuperview()
+      }
       $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
       $0.leading.trailing.equalToSuperview()
     }
@@ -116,6 +120,8 @@ private extension BaseListController {
       $0.contentInset =  UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
       $0.separatorStyle = .none
       $0.backgroundColor = .white
+      $0.contentInsetAdjustmentBehavior = .never
+
       $0.rowHeight = UITableView.automaticDimension
       $0.estimatedRowHeight = 44.0
       $0.setContentHuggingPriority(.defaultLow, for: .vertical)

@@ -14,8 +14,8 @@ public protocol CampComponentViewProtocol {
   
 }
 
-public final class CampComponentView: UIView, CampComponentViewProtocol {
-  
+public final class CampComponentView: UIView, Tappable, CampComponentViewProtocol {
+
   public var presenter: CampComponentPresenterProtocol?
   
   private let imageView: UIImageView = UIImageView().then {
@@ -43,6 +43,7 @@ public final class CampComponentView: UIView, CampComponentViewProtocol {
     self.presenter = presenter
     
     loadUI()
+    
   }
   
   public func loadUI() {
@@ -54,17 +55,25 @@ public final class CampComponentView: UIView, CampComponentViewProtocol {
     
     let starPresenter = IconedLabelPresenter(title: presenter.point,
                                              image: ImageProvider.star,
-                                             textColor: ColorProvider.greenLabel.color)
+                                             textColor: ColorProvider.darkTextColor.color)
     starPresenter.space = 4
     starPresenter.textFont = FontProvider.listSmallRegular
+    starPresenter.imageTintColor = ColorProvider.starYellow.color
     pointLabel.configureView(presenter: starPresenter)
     
     let locationPresenter = IconedLabelPresenter(title: presenter.location,
                                                  image: ImageProvider.mapPin,
-                                                 textColor: ColorProvider.darkTextColor.color)
+                                                 textColor: ColorProvider.greenLabel.color)
     locationPresenter.textFont = FontProvider.listSmallRegular
     locationPresenter.space = 4
+    locationPresenter.imageTintColor = ColorProvider.greenLabel.color
     locationLabel.configureView(presenter: locationPresenter)
+    
+    nameLabel.text = presenter.name
+    
+    onTap { [weak self] in
+      self?.presenter?.onTap?()
+    }
   }
 }
 
@@ -91,20 +100,20 @@ extension CampComponentView {
     
     pointLabel.snp.makeConstraints {
       $0.trailing.equalToSuperview().offset(-16)
-      $0.top.equalTo(imageView.snp.bottom).offset(16)
+      $0.top.equalTo(imageView.snp.bottom).offset(8)
       $0.height.equalTo(18)
     }
     
     locationLabel.snp.makeConstraints {
-      $0.leading.equalToSuperview().offset(16)
-      $0.top.equalTo(imageView.snp.bottom).offset(16)
+      $0.leading.equalToSuperview().offset(9)
+      $0.top.equalTo(imageView.snp.bottom).offset(8)
       $0.height.equalTo(18)
     }
     
     nameLabel.snp.makeConstraints {
       $0.leading.equalToSuperview().offset(16)
       $0.trailing.equalToSuperview().offset(-16)
-      $0.top.equalTo(imageView.snp.bottom).offset(16)
+      $0.top.equalTo(locationLabel.snp.bottom).offset(8)
       $0.bottom.equalToSuperview().offset(-16)
     }
   }

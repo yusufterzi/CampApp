@@ -15,5 +15,9 @@ public final class ImageProvider {
   public static let tabProfile: UIImage = UIImage(named: "tabProfile")!
   public static let star: UIImage = UIImage(named: "star")!
   public static let mapPin: UIImage = UIImage(named: "mapPin")!
-
+  public static let back: UIImage = UIImage(named: "back")!
+  public static let favorite: UIImage = UIImage(named: "favorite")!
+  public static let expand: UIImage = UIImage(named: "expand")!
+  public static let distance: UIImage = UIImage(named: "distance")!
+  
 }

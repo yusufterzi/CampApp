@@ -8,12 +8,13 @@
 import Carbon
 import XCoordinator
 import YTUI
+import Common
 
 final class HomeController: BaseListController<HomePresenter> {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    self.view.backgroundColor = ColorProvider.whiteTextColor.color
   }
   
   override func viewWillAppear(_ animated: Bool) {

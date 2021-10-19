@@ -32,6 +32,9 @@
 		2E26797C2703917E0090F074 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E26797B2703917E0090F074 /* HomePresenter.swift */; };
 		2E26797E270391870090F074 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E26797D270391870090F074 /* HomeInteractor.swift */; };
 		2E770C162706543300872550 /* HomeSegmentEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E770C152706543300872550 /* HomeSegmentEnum.swift */; };
+		2E7BB7E6270B784500B2DCBB /* CampDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7BB7E5270B784500B2DCBB /* CampDetailController.swift */; };
+		2E7BB7E8270B788000B2DCBB /* CampDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7BB7E7270B788000B2DCBB /* CampDetailPresenter.swift */; };
+		2E7BB7EA270B78D600B2DCBB /* CampDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7BB7E9270B78D600B2DCBB /* CampDetailInteractor.swift */; };
 		2E98853B26FBA1F200A881F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98853A26FBA1F200A881F7 /* AppDelegate.swift */; };
 		2E98853F26FBA1F200A881F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98853E26FBA1F200A881F7 /* ViewController.swift */; };
 		2E98854226FBA1F200A881F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E98854026FBA1F200A881F7 /* Main.storyboard */; };
@@ -46,7 +49,7 @@
 		2E98856826FBBB4D00A881F7 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98856726FBBB4D00A881F7 /* Tabs.swift */; };
 		2E98858F26FCC78200A881F7 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98858E26FCC78200A881F7 /* HomeController.swift */; };
 		2E98859126FCDB1D00A881F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E98859026FCDB1D00A881F7 /* GoogleService-Info.plist */; };
-		E74D327489F1C1530716089B /* Pods_CampApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CCF399182D1FCD4760CF1B /* Pods_CampApp.framework */; };
+		B4463B7156A38C16644A9491 /* Pods_CampApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98E0C43C2DC4A1EF3973F9C /* Pods_CampApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -66,8 +69,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		07CCF399182D1FCD4760CF1B /* Pods_CampApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CampApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		15DB4E69E59CB5F3A6B16CAD /* Pods-CampApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampApp.debug.xcconfig"; path = "Target Support Files/Pods-CampApp/Pods-CampApp.debug.xcconfig"; sourceTree = "<group>"; };
 		2E182180270451A900B271CA /* libAppUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAppUI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E1821B32704523200B271CA /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E1821B72704538300B271CA /* YTUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YTUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +93,9 @@
 		2E26797B2703917E0090F074 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		2E26797D270391870090F074 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		2E770C152706543300872550 /* HomeSegmentEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSegmentEnum.swift; sourceTree = "<group>"; };
+		2E7BB7E5270B784500B2DCBB /* CampDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampDetailController.swift; sourceTree = "<group>"; };
+		2E7BB7E7270B788000B2DCBB /* CampDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampDetailPresenter.swift; sourceTree = "<group>"; };
+		2E7BB7E9270B78D600B2DCBB /* CampDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampDetailInteractor.swift; sourceTree = "<group>"; };
 		2E98853726FBA1F200A881F7 /* CampApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E98853A26FBA1F200A881F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E98853E26FBA1F200A881F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,7 +112,9 @@
 		2E98856726FBBB4D00A881F7 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		2E98858E26FCC78200A881F7 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		2E98859026FCDB1D00A881F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CAB28B301DA7D4F93F54984F /* Pods-CampApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampApp.release.xcconfig"; path = "Target Support Files/Pods-CampApp/Pods-CampApp.release.xcconfig"; sourceTree = "<group>"; };
+		8CC9508C5CB5EB79899951A3 /* Pods-CampApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampApp.debug.xcconfig"; path = "Target Support Files/Pods-CampApp/Pods-CampApp.debug.xcconfig"; sourceTree = "<group>"; };
+		A876846A721CE15299C0B7D6 /* Pods-CampApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampApp.release.xcconfig"; path = "Target Support Files/Pods-CampApp/Pods-CampApp.release.xcconfig"; sourceTree = "<group>"; };
+		D98E0C43C2DC4A1EF3973F9C /* Pods_CampApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CampApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +125,7 @@
 				2E1821DD270457CC00B271CA /* Common.framework in Frameworks */,
 				2E18222A270459F400B271CA /* YTNetwork.framework in Frameworks */,
 				2E1821B82704538300B271CA /* YTUI.framework in Frameworks */,
-				E74D327489F1C1530716089B /* Pods_CampApp.framework in Frameworks */,
+				B4463B7156A38C16644A9491 /* Pods_CampApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +196,40 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		2E7BB7E0270B77C000B2DCBB /* CampDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2E7BB7E4270B77EA00B2DCBB /* Interactor */,
+				2E7BB7E2270B77D600B2DCBB /* Presenter */,
+				2E7BB7E3270B77E000B2DCBB /* Controller */,
+			);
+			path = CampDetail;
+			sourceTree = "<group>";
+		};
+		2E7BB7E2270B77D600B2DCBB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2E7BB7E7270B788000B2DCBB /* CampDetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2E7BB7E3270B77E000B2DCBB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2E7BB7E5270B784500B2DCBB /* CampDetailController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2E7BB7E4270B77EA00B2DCBB /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				2E7BB7E9270B78D600B2DCBB /* CampDetailInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		2E98852E26FBA1F200A881F7 = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +284,7 @@
 		2E98855226FBB61800A881F7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2E7BB7E0270B77C000B2DCBB /* CampDetail */,
 				2E98856226FBB9A600A881F7 /* Profile */,
 				2E98855E26FBB95200A881F7 /* Favourite */,
 				2E98855A26FBB91B00A881F7 /* Search */,
@@ -436,8 +477,8 @@
 		DF178F2957180F8E5CB6890F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				15DB4E69E59CB5F3A6B16CAD /* Pods-CampApp.debug.xcconfig */,
-				CAB28B301DA7D4F93F54984F /* Pods-CampApp.release.xcconfig */,
+				8CC9508C5CB5EB79899951A3 /* Pods-CampApp.debug.xcconfig */,
+				A876846A721CE15299C0B7D6 /* Pods-CampApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -450,7 +491,7 @@
 				2E1821B72704538300B271CA /* YTUI.framework */,
 				2E1821B32704523200B271CA /* UI.framework */,
 				2E182180270451A900B271CA /* libAppUI.a */,
-				07CCF399182D1FCD4760CF1B /* Pods_CampApp.framework */,
+				D98E0C43C2DC4A1EF3973F9C /* Pods_CampApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -462,12 +503,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E98854B26FBA1F300A881F7 /* Build configuration list for PBXNativeTarget "CampApp" */;
 			buildPhases = (
-				201BA86A3F72DAE8DFA9DE5B /* [CP] Check Pods Manifest.lock */,
+				A3E5713F55211EC7DB822255 /* [CP] Check Pods Manifest.lock */,
 				2E98853326FBA1F200A881F7 /* Sources */,
 				2E98853426FBA1F200A881F7 /* Frameworks */,
 				2E98853526FBA1F200A881F7 /* Resources */,
 				2E1821BA2704538300B271CA /* Embed Frameworks */,
-				3009D4FE05C71310E4B22890 /* [CP] Embed Pods Frameworks */,
+				84BB55E1301F9007BD669F9F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -540,7 +581,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		201BA86A3F72DAE8DFA9DE5B /* [CP] Check Pods Manifest.lock */ = {
+		84BB55E1301F9007BD669F9F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3E5713F55211EC7DB822255 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -562,23 +620,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3009D4FE05C71310E4B22890 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -594,12 +635,15 @@
 				2E770C162706543300872550 /* HomeSegmentEnum.swift in Sources */,
 				2E98853F26FBA1F200A881F7 /* ViewController.swift in Sources */,
 				2E98855026FBB56D00A881F7 /* MainCoordinator.swift in Sources */,
+				2E7BB7E8270B788000B2DCBB /* CampDetailPresenter.swift in Sources */,
 				2E98855926FBB8F800A881F7 /* HomeCoordinator.swift in Sources */,
 				2E98858F26FCC78200A881F7 /* HomeController.swift in Sources */,
 				2E98856826FBBB4D00A881F7 /* Tabs.swift in Sources */,
 				2E98853B26FBA1F200A881F7 /* AppDelegate.swift in Sources */,
 				2E98855D26FBB93400A881F7 /* SearchCoordinator.swift in Sources */,
+				2E7BB7E6270B784500B2DCBB /* CampDetailController.swift in Sources */,
 				2E98855526FBB63A00A881F7 /* MainTabCoordinator.swift in Sources */,
+				2E7BB7EA270B78D600B2DCBB /* CampDetailInteractor.swift in Sources */,
 				2E1822382704689200B271CA /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -744,7 +788,7 @@
 		};
 		2E98854C26FBA1F300A881F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15DB4E69E59CB5F3A6B16CAD /* Pods-CampApp.debug.xcconfig */;
+			baseConfigurationReference = 8CC9508C5CB5EB79899951A3 /* Pods-CampApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -752,7 +796,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W3475PQ5N9;
-				EXCLUDED_ARCHS = arm64;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CampApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -766,6 +811,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.campApp.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -778,7 +824,7 @@
 		};
 		2E98854D26FBA1F300A881F7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CAB28B301DA7D4F93F54984F /* Pods-CampApp.release.xcconfig */;
+			baseConfigurationReference = A876846A721CE15299C0B7D6 /* Pods-CampApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

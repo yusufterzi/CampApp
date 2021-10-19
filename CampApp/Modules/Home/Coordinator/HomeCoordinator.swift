@@ -6,9 +6,11 @@
 //
 
 import XCoordinator
+import YTNetwork
 
 enum HomeRoute: Route {
   case home
+  case campDetail(CampModel)
 }
 
 class HomeCoordinator: NavigationCoordinator<HomeRoute> {
@@ -25,7 +27,12 @@ class HomeCoordinator: NavigationCoordinator<HomeRoute> {
       viewController.tabBarItem = UITabBarItem(title: Tabs.home.name,
                                                image: Tabs.home.image,
                                                tag: Tabs.home.tag)
-      viewController.view.backgroundColor = UIColor.white
+      return .push(viewController)
+    case .campDetail(let item):
+      let viewController = CampDetailController()
+      viewController.setupPresenter(presenter: CampDetailPresenter(view: viewController,
+                                                                   router: self.unownedRouter,
+                                                                   item: item))
       return .push(viewController)
     }
   }

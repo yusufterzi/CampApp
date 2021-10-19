@@ -17,7 +17,13 @@ public enum ColorProvider: String {
   case lightTextColor
   case whiteTextColor
   case locationBgColor
-  
+  case semiDarkTextColor
+  case darkGrayTextColor
+  case starYellow
+  case semiTransparentBg
+  case lowTextColor
+  case highTextColor
+
   public var color: UIColor {
     return colorFromName(self.rawValue)
   }

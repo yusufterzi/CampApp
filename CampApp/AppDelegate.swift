@@ -27,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     FirebaseApp.configure()
     FirebaseNetwork(Firestore.firestore())
-    
     router.setRoot(for: window!)
     
     return true

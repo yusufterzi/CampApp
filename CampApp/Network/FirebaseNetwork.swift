@@ -18,10 +18,18 @@ public final class FirebaseNetwork {
     FirebaseNetwork.shared = self
   }
   
-  public func allCampAreas(completion: @escaping (GenericResult<[CampModel]>) -> Void) {
+  public func allCamps(completion: @escaping (GenericResult<[CampModel]>) -> Void) {
     let ref = database.collection("camp")
     let query = ref.limit(to: 50)
     query.getDocumentsObjects { (result: GenericResult<[CampModel]>) in
+      completion(result)
+    }
+  }
+  
+  public func allCampAreas(completion: @escaping (GenericResult<[CampAreaModel]>) -> Void) {
+    let ref = database.collection("areas")
+    let query = ref.limit(to: 50)
+    query.getDocumentsObjects { (result: GenericResult<[CampAreaModel]>) in
       completion(result)
     }
   }
