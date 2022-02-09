@@ -12,7 +12,6 @@ target 'CampApp' do
   pod 'Localize'
   pod 'Carbon'
   pod 'SnapKit'
-  pod 'AttributedStringBuilder'
 
   #firebase
   pod 'Firebase/Analytics'
@@ -21,6 +20,7 @@ target 'CampApp' do
   pod 'FirebaseFirestoreSwift'
   pod 'SPPermissions/LocationWhenInUse'
   pod 'SDWebImage'
+  pod 'AttributedStringBuilder'
   pod 'ActionKit'
 end
 
@@ -33,12 +33,11 @@ target 'YTUI' do
   pod 'Localize'
   pod 'Carbon'
   pod 'SnapKit'
-  pod 'AttributedStringBuilder'
+  pod 'ActionKit'
 
   pod 'SPPermissions/LocationWhenInUse'
   pod 'SDWebImage'
-  pod 'ActionKit'
-
+  pod 'AttributedStringBuilder'
 end
 
 target 'Common' do
@@ -47,7 +46,6 @@ target 'Common' do
   project 'Common/Common.xcodeproj'
 
   pod 'Localize'
-  pod 'ActionKit'
 
 end
 
@@ -59,9 +57,4 @@ target 'YTNetwork' do
 
 end
 
-post_install do |installer|
-  installer.pods_project.build_configurations.each do |config|
-    config.build_settings['VALID_ARCHS'] = 'arm64, arm64e, x86_64'
-  end
-end
 
