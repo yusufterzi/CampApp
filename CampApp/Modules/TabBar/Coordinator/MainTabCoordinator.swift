@@ -28,8 +28,7 @@ class MainTabCoordinator: TabBarCoordinator<MainTabRoute> {
   override func prepareTransition(for route: MainTabRoute) -> TabBarTransition{
     switch route {
     case .home:
-      return .multiple(.set([homeRouter, searchRouter, favouriteRouter, profileRouter]),
-                       .select(homeRouter))
+      return .multiple(.set([homeRouter, searchRouter, favouriteRouter, profileRouter]),.select(homeRouter))
     case .search:
       return .select(searchRouter)
     case .favorite:

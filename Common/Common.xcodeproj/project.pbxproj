@@ -28,6 +28,8 @@
 		2E18220A2704583F00B271CA /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E1821E4270457EB00B271CA /* Rubik-BlackItalic.ttf */; };
 		2E18220B2704583F00B271CA /* Rubik-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E1821E8270457EB00B271CA /* Rubik-ExtraBoldItalic.ttf */; };
 		2E770C2827078F7600872550 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E770C2727078F7600872550 /* Typealias.swift */; };
+		3C6DB88827BAD79F0005D050 /* CampDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DB88627BAD79F0005D050 /* CampDefaultsKey.swift */; };
+		3C6DB88927BAD79F0005D050 /* CampDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DB88727BAD79F0005D050 /* CampDefaults.swift */; };
 		9B62BEF29A852E7F8324265E /* Pods_Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5129DFEC6C0FC6F152B859BF /* Pods_Common.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +57,8 @@
 		2E1821F7270457EB00B271CA /* ColorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorProvider.swift; sourceTree = "<group>"; };
 		2E1821FC2704582300B271CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2E770C2727078F7600872550 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
+		3C6DB88627BAD79F0005D050 /* CampDefaultsKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampDefaultsKey.swift; sourceTree = "<group>"; };
+		3C6DB88727BAD79F0005D050 /* CampDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampDefaults.swift; sourceTree = "<group>"; };
 		5129DFEC6C0FC6F152B859BF /* Pods_Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C576D4FC12C14717BDA2D9 /* Pods-Common.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common.debug.xcconfig"; path = "Target Support Files/Pods-Common/Pods-Common.debug.xcconfig"; sourceTree = "<group>"; };
 		DC6828A57E76AF81576DFE87 /* Pods-Common.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Common.release.xcconfig"; path = "Target Support Files/Pods-Common/Pods-Common.release.xcconfig"; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 			children = (
 				2E1821FC2704582300B271CA /* Info.plist */,
 				2E1821F8270457EB00B271CA /* Providers */,
+				3C6DB88527BAD79F0005D050 /* Defaults */,
 				2E1821D32704576800B271CA /* Common.h */,
 				2E1821D42704576800B271CA /* Common.docc */,
 				2E770C2727078F7600872550 /* Typealias.swift */,
@@ -149,6 +154,15 @@
 				2E1821F7270457EB00B271CA /* ColorProvider.swift */,
 			);
 			path = Providers;
+			sourceTree = "<group>";
+		};
+		3C6DB88527BAD79F0005D050 /* Defaults */ = {
+			isa = PBXGroup;
+			children = (
+				3C6DB88627BAD79F0005D050 /* CampDefaultsKey.swift */,
+				3C6DB88727BAD79F0005D050 /* CampDefaults.swift */,
+			);
+			path = Defaults;
 			sourceTree = "<group>";
 		};
 		43DB18D6F80B99880C761131 /* Pods */ = {
@@ -289,10 +303,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E1821FA270457FC00B271CA /* ColorProvider.swift in Sources */,
+				3C6DB88827BAD79F0005D050 /* CampDefaultsKey.swift in Sources */,
 				2E1821FD2704583A00B271CA /* FontProvider.swift in Sources */,
 				2E1821FB270457FC00B271CA /* StringProvider.swift in Sources */,
 				2E1821F9270457FC00B271CA /* ImageProvider.swift in Sources */,
 				2E1821D52704576800B271CA /* Common.docc in Sources */,
+				3C6DB88927BAD79F0005D050 /* CampDefaults.swift in Sources */,
 				2E770C2827078F7600872550 /* Typealias.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
