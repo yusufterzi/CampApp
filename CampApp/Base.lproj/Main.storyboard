@@ -155,7 +155,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ySt-P1-Kmf" userLabel="Main View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ySt-P1-Kmf" userLabel="Main View">
                                 <rect key="frame" x="20" y="216" width="374" height="383"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N82-of-6Hp" userLabel="Caravan View">
@@ -189,7 +189,7 @@
                                             <constraint firstItem="VJy-Bo-LV3" firstAttribute="leading" secondItem="N82-of-6Hp" secondAttribute="leading" id="nYg-fA-oGQ"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CL0-9v-WPC" userLabel="Tent View">
+                                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CL0-9v-WPC" userLabel="Tent View">
                                         <rect key="frame" x="218" y="0.0" width="156" height="180"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="706-bt-U3Y" userLabel="Tent Image View">
@@ -220,7 +220,7 @@
                                             <constraint firstItem="706-bt-U3Y" firstAttribute="top" secondItem="CL0-9v-WPC" secondAttribute="top" constant="21" id="g9k-Pp-DMp"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6G9-HJ-ThX" userLabel="Bungalow View">
+                                    <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6G9-HJ-ThX" userLabel="Bungalow View">
                                         <rect key="frame" x="109" y="203" width="156" height="180"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SBT-wR-zt5" userLabel="Bungalow Image View">

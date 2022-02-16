@@ -20,12 +20,10 @@ protocol CampSelectionPresenterProtocol {
 
 final class CampSelectionPresenter: CampSelectionPresenterProtocol {
     internal var router: UnownedRouter<MainRoute>
-    public var onTap: VoidHandler?
     
     init(router: UnownedRouter<MainRoute>) {
         self.router = router
     }
-    
     public func loadUI(viewController: CampSelectionController) {
         setupLabel(viewController: viewController)
         setupViews(viewController: viewController)
@@ -67,9 +65,6 @@ final class CampSelectionPresenter: CampSelectionPresenterProtocol {
     }
     public func setupViews(viewController: CampSelectionController) {
         
-        viewController.mainView.backgroundColor = UIColor(white: 1, alpha: 0)
-        viewController.mainView.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
-        
         viewController.caravanView.backgroundColor = UIColor(white: 1, alpha: 1)
         viewController.caravanView.layer.cornerRadius = 34
         viewController.caravanView.layer.borderWidth = 1
@@ -85,10 +80,28 @@ final class CampSelectionPresenter: CampSelectionPresenterProtocol {
         viewController.bungalowView.layer.borderWidth = 1
         viewController.bungalowView.layer.borderColor = ColorProvider.campSelectionFrameColor.color.cgColor
     }
-    
     public func setupImages(viewController: CampSelectionController) {
         viewController.caravanImageView.image = ImageProvider.caravan
         viewController.tentImageView.image = ImageProvider.tent
         viewController.bungalowImageView.image = ImageProvider.bungalow
+        
+        let caravanTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewTapped(sender:)))
+        viewController.caravanView.addGestureRecognizer(caravanTapGestureRecognizer)
+        viewController.caravanView.isUserInteractionEnabled = true
+        
+        let tentTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewTapped(sender:)))
+        viewController.tentView.isUserInteractionEnabled = true
+        viewController.tentView.addGestureRecognizer(tentTapGestureRecognizer)
+        
+        let bungalowTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewTapped(sender:)))
+        viewController.bungalowView.isUserInteractionEnabled = true
+        viewController.bungalowView.addGestureRecognizer(bungalowTapGestureRecognizer)
+    }
+    @objc func viewTapped(sender: UITapGestureRecognizer)
+    {
+        if let view = sender.view {
+            print("View tapped: \(view.tag)")
+            router.trigger(.home, with: TransitionOptions(animated: true))
+        }
     }
 }
