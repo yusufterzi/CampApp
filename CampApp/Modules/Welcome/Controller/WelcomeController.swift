@@ -35,13 +35,13 @@ final class WelcomeController: UIViewController, Storyboarded {
 extension WelcomeController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter?.slides.count ?? 0
+        return presenter?.images.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SliderCell.identifier, for: indexPath) as! SliderCell
-        cell.setup(presenter?.slides[indexPath.item] ?? SliderData(name: "", image: UIImage()))
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WelcomeCell.identifier, for: indexPath) as! WelcomeCell
+        cell.setup(presenter?.images[indexPath.item] ?? WelcomeData(name: "", image: UIImage()))
         return cell
     }
     

@@ -1,5 +1,5 @@
 //
-//  SliderCell.swift
+//  WelcomeCell.swift
 //  CampApp
 //
 //  Created by Nurullah Vural on 14.02.2022.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-class SliderCell: UICollectionViewCell {
+class WelcomeCell: UICollectionViewCell {
     
-    static let identifier = String(describing: SliderCell.self)
+    static let identifier = String(describing: WelcomeCell.self)
     @IBOutlet private var imageView: UIImageView!
     
-    func setup(_ slide: SliderData)  {
+    func setup(_ slide: WelcomeData)  {
         imageView.image = slide.image
     }
     

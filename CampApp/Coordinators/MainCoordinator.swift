@@ -17,15 +17,12 @@ enum MainRoute: Route {
 class MainCoordinator: NavigationCoordinator<MainRoute> {
     private var initialRoute: RouteType = .welcome
     init() {
-        
         CampDefaults.setup(with: PersistentDomain.test)
-        
         let appFirstLaunch : Bool = CampDefaults.shared.retrieve(with: .appFirstLaunch) ?? true
         if appFirstLaunch {
             CampDefaults.shared.storeFlag(with: .appFirstLaunch, value: false)
             initialRoute = .welcome
         }
-        
         super.init(initialRoute: initialRoute)
     }
     

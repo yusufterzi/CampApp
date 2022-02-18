@@ -23,19 +23,20 @@ final class WelcomePresenter: WelcomePresenterProtocol {
     internal var router: UnownedRouter<MainRoute>
     
     public var currentPage = 0
-    public var slides: [SliderData] = [
-        SliderData(name : "Marmara", image: ImageProvider.onboarding),
-        SliderData(name : "Ege", image: ImageProvider.onboarding),
-        SliderData(name : "Karadeniz", image: ImageProvider.onboarding),
-        SliderData(name : "Akdeniz", image: ImageProvider.onboarding)
+    public var images: [WelcomeData] = [
+        WelcomeData(name : "Marmara", image: ImageProvider.onboarding),
+        WelcomeData(name : "Ege", image: ImageProvider.onboarding),
+        WelcomeData(name : "Karadeniz", image: ImageProvider.onboarding),
+        WelcomeData(name : "Akdeniz", image: ImageProvider.onboarding)
     ]
     
     init(router: UnownedRouter<MainRoute>) {
         self.router = router
+        CampDefaults.setup(with: PersistentDomain.test)
     }
     public func loadUI(viewController: WelcomeController) {
         
-        viewController.pageControl.numberOfPages = slides.count
+        viewController.pageControl.numberOfPages = images.count
         setupOnboardingHeader(vc: viewController)
         setupWhiteFrame(vc: viewController)
         setupButton(vc: viewController)
@@ -82,7 +83,7 @@ final class WelcomePresenter: WelcomePresenterProtocol {
             .font(FontProvider.onboardingButton),
             .textColor(ColorProvider.onboardingYellowButtonText.color),
         ]
-        let buttonText: NSAttributedString = AttributedStringBuilder().text(slides[vc.pageControl.currentPage].name, attributes: buttonTextFont).attributedString
+        let buttonText: NSAttributedString = AttributedStringBuilder().text(images[vc.pageControl.currentPage].name, attributes: buttonTextFont).attributedString
         vc.button.setAttributedTitle(buttonText, for: .normal)
         vc.button.backgroundColor = ColorProvider.onboardingButtonBackground.color
         vc.button.addTarget(self, action: #selector(onBtnClick), for: .touchUpInside)
@@ -92,6 +93,7 @@ final class WelcomePresenter: WelcomePresenterProtocol {
     
     @objc private func onBtnClick(_ sender: UIButton) {
         print("touched \(sender.tag)")
+        CampDefaults.shared.store(with: .onboardingAreaSelection, value: sender.titleLabel?.text)
         router.trigger(.campSelection, with: TransitionOptions(animated: true))
     }
 }
