@@ -18,6 +18,7 @@ public final class ImageProvider {
     public static let back: UIImage = UIImage(named: "back")!
     public static let favorite: UIImage = UIImage(named: "favorite")!
     public static let expand: UIImage = UIImage(named: "expand")!
+    public static let minimize: UIImage = UIImage(named: "minimize")!
     public static let distance: UIImage = UIImage(named: "distance")!
     public static let onboarding: UIImage = UIImage(named: "ege")!
     public static let caravan: UIImage = UIImage(named: "caravan")!

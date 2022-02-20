@@ -40,6 +40,12 @@ final class CampDetailPresenter: CampDetailPresenterProtocol, BaseListPresenter 
     var cells: [CellNode] = []
 
     let campDetailPresenter = CampDetailComponentPresenter(item: self.item)
+    campDetailPresenter.backButtonTapped = { [weak self] in
+        self?.router.trigger(.home, with: TransitionOptions(animated: true))
+    }
+    campDetailPresenter.maximizeButtonTapped = {
+          
+    }
     let campComponent = CampDetailComponent(id: "", presenter: campDetailPresenter)
     
     cells.append(CellNode(campComponent))

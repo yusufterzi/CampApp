@@ -60,6 +60,7 @@
 		2E7BB7F9270E2D6700B2DCBB /* CampDetailDistancePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7BB7F8270E2D6700B2DCBB /* CampDetailDistancePresenter.swift */; };
 		2E7BB7FC270E2F8700B2DCBB /* TwoRowIconedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7BB7FB270E2F8700B2DCBB /* TwoRowIconedLabel.swift */; };
 		2E7BB7FF270E2FA300B2DCBB /* TwoRowIconedLabelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7BB7FE270E2FA300B2DCBB /* TwoRowIconedLabelPresenter.swift */; };
+		3C6DB89B27C273880005D050 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DB89A27C273880005D050 /* UIView.swift */; };
 		543F2D1CE4C277994D053E6A /* Pods_YTUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE28CAFF264184A4267B456D /* Pods_YTUI.framework */; };
 /* End PBXBuildFile section */
 
@@ -131,6 +132,7 @@
 		2E7BB7F8270E2D6700B2DCBB /* CampDetailDistancePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampDetailDistancePresenter.swift; sourceTree = "<group>"; };
 		2E7BB7FB270E2F8700B2DCBB /* TwoRowIconedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoRowIconedLabel.swift; sourceTree = "<group>"; };
 		2E7BB7FE270E2FA300B2DCBB /* TwoRowIconedLabelPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoRowIconedLabelPresenter.swift; sourceTree = "<group>"; };
+		3C6DB89A27C273880005D050 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		5A808E72257160EE67BF7BEE /* Pods-YTUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTUI.release.xcconfig"; path = "Target Support Files/Pods-YTUI/Pods-YTUI.release.xcconfig"; sourceTree = "<group>"; };
 		8F1F97B711C5A07C63A4EFFD /* Pods-YTUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTUI.debug.xcconfig"; path = "Target Support Files/Pods-YTUI/Pods-YTUI.debug.xcconfig"; sourceTree = "<group>"; };
 		DE28CAFF264184A4267B456D /* Pods_YTUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YTUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -490,6 +492,7 @@
 			isa = PBXGroup;
 			children = (
 				2E770C2A2707918500872550 /* Stackview.swift */,
+				3C6DB89A27C273880005D050 /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -785,6 +788,7 @@
 				2E7BB7DD270B711200B2DCBB /* ImageView.swift in Sources */,
 				2E7BB7DB270B70FF00B2DCBB /* ImageComponent.swift in Sources */,
 				2E7BB7F5270E2D1E00B2DCBB /* CampDetailDistanceComponent.swift in Sources */,
+				3C6DB89B27C273880005D050 /* UIView.swift in Sources */,
 				2E770C3A2708C3A000872550 /* CampAreaComponentPresenter.swift in Sources */,
 				2E4300FF2704F13B00B4A381 /* ViewHeaderView.swift in Sources */,
 				2E770C382708C38C00872550 /* CampAreaComponentView.swift in Sources */,

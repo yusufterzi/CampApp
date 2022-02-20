@@ -20,6 +20,7 @@ public enum ColorProvider: String {
     case semiDarkTextColor
     case darkGrayTextColor
     case starYellow
+    case starRed
     case semiTransparentBg
     case lowTextColor
     case highTextColor

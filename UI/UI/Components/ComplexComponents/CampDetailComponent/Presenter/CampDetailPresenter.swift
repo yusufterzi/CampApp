@@ -8,6 +8,7 @@
 import Foundation
 import YTNetwork
 import Carbon
+import Common
 
 public protocol CampDetailComponentPresenterProtocol {
   var point: String { get }
@@ -15,11 +16,15 @@ public protocol CampDetailComponentPresenterProtocol {
   var images: [String] { get }
   var name: String { get }
   var sections: [Section] { get }
+  var description: String { get }
   var imageIndex: Int { get set }
+  var backButtonTapped: VoidHandler? { get set }
+  var maximizeButtonTapped: VoidHandler? { get set }
 }
 
 public final class CampDetailComponentPresenter: CampDetailComponentPresenterProtocol {
-
+  public var backButtonTapped: VoidHandler?
+  public var maximizeButtonTapped: VoidHandler?
   private var item: CampModel
   public var imageIndex: Int = 0 
   
@@ -41,6 +46,9 @@ public final class CampDetailComponentPresenter: CampDetailComponentPresenterPro
   
   public var name: String {
     item.name ?? ""
+  }
+  public var description:  String {
+      item.description ?? ""
   }
   
   public var sections: [Section] {
