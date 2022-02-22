@@ -343,6 +343,25 @@
                                     <constraint firstAttribute="height" constant="20" id="vEJ-4W-Yvb"/>
                                 </constraints>
                             </pageControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dxy-4F-EDB">
+                                <rect key="frame" x="350" y="786" width="44" height="44"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4bs-SW-6ub">
+                                        <rect key="frame" x="12" y="12" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="R11-lJ-LRA"/>
+                                            <constraint firstAttribute="height" constant="20" id="rL9-ld-B64"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="LVc-h6-XW8"/>
+                                    <constraint firstItem="4bs-SW-6ub" firstAttribute="centerX" secondItem="Dxy-4F-EDB" secondAttribute="centerX" id="VuD-JF-Lxd"/>
+                                    <constraint firstItem="4bs-SW-6ub" firstAttribute="centerY" secondItem="Dxy-4F-EDB" secondAttribute="centerY" id="dr7-no-LeH"/>
+                                    <constraint firstAttribute="width" constant="44" id="zDc-7Y-PGJ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NHs-nK-bZ5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -351,13 +370,17 @@
                             <constraint firstItem="tbK-ig-alL" firstAttribute="trailing" secondItem="NHs-nK-bZ5" secondAttribute="trailing" id="471-C8-Q9x"/>
                             <constraint firstItem="tbK-ig-alL" firstAttribute="leading" secondItem="NHs-nK-bZ5" secondAttribute="leading" id="4NC-vK-VLp"/>
                             <constraint firstItem="tbK-ig-alL" firstAttribute="top" secondItem="alj-bH-EGr" secondAttribute="top" id="4he-BY-3iA"/>
+                            <constraint firstItem="NHs-nK-bZ5" firstAttribute="trailing" secondItem="Dxy-4F-EDB" secondAttribute="trailing" constant="20" id="Wiy-rr-4xV"/>
                             <constraint firstItem="NHs-nK-bZ5" firstAttribute="trailing" secondItem="zgP-Yh-8Wn" secondAttribute="trailing" constant="88" id="cJY-J0-ccV"/>
+                            <constraint firstItem="NHs-nK-bZ5" firstAttribute="bottom" secondItem="Dxy-4F-EDB" secondAttribute="bottom" constant="32" id="d0S-so-o05"/>
                             <constraint firstAttribute="bottom" secondItem="tbK-ig-alL" secondAttribute="bottom" id="hfe-QO-NXm"/>
                             <constraint firstItem="NHs-nK-bZ5" firstAttribute="bottom" secondItem="zgP-Yh-8Wn" secondAttribute="bottom" constant="7" id="jbs-Ds-V2N"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="tbK-ig-alL" id="mRL-V8-X6o"/>
+                        <outlet property="containerView" destination="Dxy-4F-EDB" id="xQ9-Tp-VLe"/>
+                        <outlet property="minimizeImageView" destination="4bs-SW-6ub" id="dbw-jA-Hi8"/>
                         <outlet property="pageControl" destination="zgP-Yh-8Wn" id="bo7-Z4-CNa"/>
                     </connections>
                 </viewController>

@@ -36,9 +36,12 @@ final class ImageSliderPresenter: ImageSliderPresenterProtocol {
         
     }
     public func setupButton(vc: ImageSliderController) {
-        vc.minimizeImageView.image = ImageProvider.minimize
         vc.containerView.cornerRadius = 18
-        vc.containerView.layer.opacity = 0.8
+        vc.minimizeImageView.image = ImageProvider.minimize
+        vc.containerView.isOpaque = true
+        vc.containerView.backgroundColor = UIColor.white.withAlphaComponent(0.6)
+
+
     
         let caravanTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewTapped(sender:)))
         vc.containerView.addGestureRecognizer(caravanTapGestureRecognizer)

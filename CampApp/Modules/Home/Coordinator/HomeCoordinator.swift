@@ -38,6 +38,7 @@ class HomeCoordinator: NavigationCoordinator<HomeRoute> {
         case .imageSlider(let images):
             let viewController = ImageSliderController.instantiate()
             viewController.setupPresenter(presenter: ImageSliderPresenter(router: self.unownedRouter, images: images))
+            viewController.modalPresentationStyle = .fullScreen
             viewController.modalTransitionStyle = .coverVertical
             return .present(viewController)
             

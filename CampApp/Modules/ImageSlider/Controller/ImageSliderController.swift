@@ -13,8 +13,8 @@ final class ImageSliderController: UIViewController, Storyboarded  {
 
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var pageControl: UIPageControl!
-    @IBOutlet var containerView: UIView!
     @IBOutlet var minimizeImageView: UIImageView!
+    @IBOutlet var containerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
