@@ -47,9 +47,9 @@ public final class CampDetailComponentView: UIView, CampDetailComponentViewProto
     internal let textView = UITextView().then {
         $0.textColor = ColorProvider.blackTextColor.color
         $0.font = FontProvider.campDetailTextFont
-        $0.isScrollEnabled = true
+        $0.isScrollEnabled = false
+        $0.sizeToFit()
         $0.textAlignment = .left
-        $0.isUserInteractionEnabled = true
     }
     
     private let backButton: UIButton = UIButton().then {
@@ -62,7 +62,9 @@ public final class CampDetailComponentView: UIView, CampDetailComponentViewProto
         $0.setImage(ImageProvider.favorite, for: .normal)
     }
     
-    private let maximizeButton: UIButton = UIButton()
+    private let maximizeButton: UIButton = UIButton().then {
+        $0.setImage(ImageProvider.expand, for: .normal)
+    }
     
     private let nameLabel: Label = Label().then {
         $0.font = FontProvider.bigHeaderRegular
@@ -71,7 +73,6 @@ public final class CampDetailComponentView: UIView, CampDetailComponentViewProto
     
     private let pageView: YTPageStackView = YTPageStackView()
     private let distanceView: CampDetailDistanceView = CampDetailDistanceView()
-    private var isMaximized: Bool = false
     
     public init() {
         super.init(frame: .zero)
@@ -104,7 +105,7 @@ public final class CampDetailComponentView: UIView, CampDetailComponentViewProto
             self?.setupPageView()
         }
         
-
+        
     }
     
     public func loadUI() {
@@ -121,12 +122,6 @@ public final class CampDetailComponentView: UIView, CampDetailComponentViewProto
     private func setupButtons() {
         backButton.addTarget(self, action: #selector(backButtonClicked), for: .touchUpInside)
         maximizeButton.addTarget(self, action: #selector(maximizeButtonClicked), for: .touchUpInside)
-        
-        if isMaximized {
-            maximizeButton.setImage(ImageProvider.minimize, for: .normal)
-        } else {
-            maximizeButton.setImage(ImageProvider.expand, for: .normal)
-        }
     }
     private func setupLocationLabel(presenter: CampDetailComponentPresenterProtocol) {
         let locationPresenter = IconedLabelPresenter(title: presenter.location,
@@ -157,11 +152,8 @@ public final class CampDetailComponentView: UIView, CampDetailComponentViewProto
         }
     }
     @objc func maximizeButtonClicked () {
-        isMaximized.toggle()
-        if isMaximized {
-            maximizeButton.setImage(ImageProvider.minimize , for: .normal)
-        } else {
-            maximizeButton.setImage(ImageProvider.expand , for: .normal)
+        if let maximizeButtonTapped = self.presenter?.maximizeButtonTapped {
+            maximizeButtonTapped(presenter?.images ?? [])
         }
     }
 }
@@ -244,13 +236,12 @@ extension CampDetailComponentView {
             $0.top.equalTo(distanceView.snp.bottom)
             $0.leading.equalToSuperview()
             $0.trailing.equalToSuperview()
-            $0.height.equalTo(190)
+            $0.bottom.equalTo(textView.snp.bottom).offset(32)
         }
         textView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(32)
             $0.leading.equalToSuperview().offset(16)
             $0.trailing.equalToSuperview().offset(-16)
-            $0.height.equalTo(100)
         }
     }
 }

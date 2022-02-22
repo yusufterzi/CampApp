@@ -19,12 +19,12 @@ public protocol CampDetailComponentPresenterProtocol {
   var description: String { get }
   var imageIndex: Int { get set }
   var backButtonTapped: VoidHandler? { get set }
-  var maximizeButtonTapped: VoidHandler? { get set }
+  var maximizeButtonTapped: Handler<[String]>? { get set }
 }
 
 public final class CampDetailComponentPresenter: CampDetailComponentPresenterProtocol {
   public var backButtonTapped: VoidHandler?
-  public var maximizeButtonTapped: VoidHandler?
+  public var maximizeButtonTapped: Handler<[String]>?
   private var item: CampModel
   public var imageIndex: Int = 0 
   

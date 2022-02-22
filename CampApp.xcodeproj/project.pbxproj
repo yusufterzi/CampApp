@@ -54,6 +54,9 @@
 		3C600F0C27BA5DB300D2E692 /* UIStroyboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C600F0B27BA5DB300D2E692 /* UIStroyboard+Extensions.swift */; };
 		3C600F0F27BA672B00D2E692 /* WelcomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C600F0E27BA672B00D2E692 /* WelcomeCell.swift */; };
 		3C600F1127BA678000D2E692 /* WelcomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C600F1027BA678000D2E692 /* WelcomeData.swift */; };
+		3C65B95F27C41C1E0069A832 /* ImageSliderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C65B95E27C41C1E0069A832 /* ImageSliderController.swift */; };
+		3C65B96827C423650069A832 /* ImageSliderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C65B96727C423650069A832 /* ImageSliderPresenter.swift */; };
+		3C65B96A27C426D40069A832 /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C65B96927C426D40069A832 /* ImageViewCell.swift */; };
 		3C6DB88C27BADA620005D050 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DB88B27BADA620005D050 /* WelcomePresenter.swift */; };
 		3C6DB89527BBF3AF0005D050 /* CampSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DB89427BBF3AF0005D050 /* CampSelectionController.swift */; };
 		3C6DB89727BBF3CD0005D050 /* CampSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DB89627BBF3CD0005D050 /* CampSelectionPresenter.swift */; };
@@ -126,6 +129,9 @@
 		3C600F0B27BA5DB300D2E692 /* UIStroyboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStroyboard+Extensions.swift"; sourceTree = "<group>"; };
 		3C600F0E27BA672B00D2E692 /* WelcomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCell.swift; sourceTree = "<group>"; };
 		3C600F1027BA678000D2E692 /* WelcomeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeData.swift; sourceTree = "<group>"; };
+		3C65B95E27C41C1E0069A832 /* ImageSliderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSliderController.swift; sourceTree = "<group>"; };
+		3C65B96727C423650069A832 /* ImageSliderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSliderPresenter.swift; sourceTree = "<group>"; };
+		3C65B96927C426D40069A832 /* ImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
 		3C6DB88B27BADA620005D050 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
 		3C6DB89427BBF3AF0005D050 /* CampSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampSelectionController.swift; sourceTree = "<group>"; };
 		3C6DB89627BBF3CD0005D050 /* CampSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampSelectionPresenter.swift; sourceTree = "<group>"; };
@@ -302,6 +308,7 @@
 		2E98855226FBB61800A881F7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3C65B95C27C41C020069A832 /* ImageSlider */,
 				3C6DB88E27BBF2600005D050 /* CampSelection */,
 				3C600F0227BA5B4400D2E692 /* Welcome */,
 				2E7BB7E0270B77C000B2DCBB /* CampDetail */,
@@ -532,6 +539,32 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		3C65B95C27C41C020069A832 /* ImageSlider */ = {
+			isa = PBXGroup;
+			children = (
+				3C65B96627C423540069A832 /* Presenter */,
+				3C65B95D27C41C0B0069A832 /* Controller */,
+			);
+			path = ImageSlider;
+			sourceTree = "<group>";
+		};
+		3C65B95D27C41C0B0069A832 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3C65B95E27C41C1E0069A832 /* ImageSliderController.swift */,
+				3C65B96927C426D40069A832 /* ImageViewCell.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3C65B96627C423540069A832 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3C65B96727C423650069A832 /* ImageSliderPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		3C6DB88A27BADA460005D050 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -737,6 +770,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C65B95F27C41C1E0069A832 /* ImageSliderController.swift in Sources */,
 				2E98856526FBB9BF00A881F7 /* ProfileCoordinator.swift in Sources */,
 				3CA85FD327BA7C5400CFAB05 /* NSAttributedString+Extensions.swift in Sources */,
 				3C600F0F27BA672B00D2E692 /* WelcomeCell.swift in Sources */,
@@ -763,6 +797,8 @@
 				3C6DB89727BBF3CD0005D050 /* CampSelectionPresenter.swift in Sources */,
 				2E7BB7EA270B78D600B2DCBB /* CampDetailInteractor.swift in Sources */,
 				3C600F0C27BA5DB300D2E692 /* UIStroyboard+Extensions.swift in Sources */,
+				3C65B96827C423650069A832 /* ImageSliderPresenter.swift in Sources */,
+				3C65B96A27C426D40069A832 /* ImageViewCell.swift in Sources */,
 				2E1822382704689200B271CA /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
