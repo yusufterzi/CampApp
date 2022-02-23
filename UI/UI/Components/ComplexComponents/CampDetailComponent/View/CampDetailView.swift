@@ -44,12 +44,10 @@ public final class CampDetailComponentView: UIView, CampDetailComponentViewProto
         $0.isUserInteractionEnabled = true
     }
     
-    internal let textView = UITextView().then {
+    internal let textView = UILabel().then {
         $0.textColor = ColorProvider.blackTextColor.color
         $0.font = FontProvider.campDetailTextFont
-        $0.isScrollEnabled = false
-        $0.sizeToFit()
-        $0.textAlignment = .left
+        $0.numberOfLines = 0
     }
     
     private let backButton: UIButton = UIButton().then {
@@ -173,8 +171,7 @@ extension CampDetailComponentView {
         addSubview(nameLabel)
         addSubview(pageView)
         addSubview(distanceView)
-        textContainerView.addSubview(textView)
-        addSubview(textContainerView)
+        addSubview(textView)
     }
     
     func setupConstraints() {
@@ -182,7 +179,6 @@ extension CampDetailComponentView {
             $0.leading.top.equalToSuperview()
             $0.trailing.equalToSuperview()
             $0.height.equalTo(350)
-            $0.bottom.equalToSuperview()
         }
         
         backButton.snp.makeConstraints {
@@ -232,16 +228,12 @@ extension CampDetailComponentView {
             $0.height.equalTo(110)
             
         }
-        textContainerView.snp.makeConstraints {
-            $0.top.equalTo(distanceView.snp.bottom)
-            $0.leading.equalToSuperview()
-            $0.trailing.equalToSuperview()
-            $0.bottom.equalTo(textView.snp.bottom).offset(32)
-        }
+
         textView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(32)
-            $0.leading.equalToSuperview().offset(16)
-            $0.trailing.equalToSuperview().offset(-16)
+            $0.top.equalTo(distanceView.snp.bottom).offset(16)
+            $0.bottom.equalToSuperview().offset(-16)
+            $0.leading.equalToSuperview().offset(32)
+            $0.trailing.equalToSuperview().offset(-32)
         }
     }
 }

@@ -103,7 +103,7 @@ final class CampSelectionPresenter: CampSelectionPresenterProtocol {
         if let view = sender.view {
             print("View tapped: \(view.tag)")
             CampDefaults.shared.store(with: .onboardingCampSelection, value: view.tag)
-            router.trigger(.home, with: TransitionOptions(animated: true))
+            router.trigger(.home(category: view.tag), with: TransitionOptions(animated: true))
         }
     }
 }

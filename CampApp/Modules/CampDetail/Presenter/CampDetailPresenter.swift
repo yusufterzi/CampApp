@@ -41,7 +41,7 @@ final class CampDetailPresenter: CampDetailPresenterProtocol, BaseListPresenter 
 
     let campDetailPresenter = CampDetailComponentPresenter(item: self.item)
     campDetailPresenter.backButtonTapped = { [weak self] in
-        self?.router.trigger(.home, with: TransitionOptions(animated: true))
+        self?.router.trigger(.back)
     }
     campDetailPresenter.maximizeButtonTapped = { [weak self] item in
         self?.router.trigger(.imageSlider(item), with: TransitionOptions(animated: true))

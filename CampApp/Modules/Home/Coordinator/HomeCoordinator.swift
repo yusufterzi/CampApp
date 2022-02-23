@@ -9,25 +9,28 @@ import XCoordinator
 import YTNetwork
 
 enum HomeRoute: Route {
-    case home
+    case home(category: Int?)
     case campDetail(CampModel)
     case imageSlider ([String])
+    case back
 }
 
 class HomeCoordinator: NavigationCoordinator<HomeRoute> {
-    init() {
-        super.init(initialRoute: .home)
+        
+    init(category: Int?) {
+        super.init(initialRoute: .home(category: category))
     }
     
     override func prepareTransition(for route: HomeRoute) -> NavigationTransition {
         switch route {
-        case .home:
+        case .home(let category):
             let viewController = HomeController()
             viewController.setupPresenter(presenter: HomePresenter(view: viewController,
                                                                    router: self.unownedRouter))
             viewController.tabBarItem = UITabBarItem(title: Tabs.home.name,
                                                      image: Tabs.home.image,
                                                      tag: Tabs.home.tag)
+            
             return .push(viewController)
         case .campDetail(let item):
             let viewController = CampDetailController()
@@ -42,7 +45,8 @@ class HomeCoordinator: NavigationCoordinator<HomeRoute> {
             viewController.modalTransitionStyle = .coverVertical
             return .present(viewController)
             
-            
+        case .back:
+            return .pop()
         }
     }
 }
