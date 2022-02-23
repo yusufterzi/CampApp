@@ -39,12 +39,7 @@ public final class CampDetailComponentView: UIView, CampDetailComponentViewProto
         updater: UICollectionViewUpdater()
     )
     
-    internal let textContainerView = UIView().then {
-        $0.backgroundColor = ColorProvider.whiteTextColor.color
-        $0.isUserInteractionEnabled = true
-    }
-    
-    internal let textView = UILabel().then {
+    internal let textLabel = UILabel().then {
         $0.textColor = ColorProvider.blackTextColor.color
         $0.font = FontProvider.campDetailTextFont
         $0.numberOfLines = 0
@@ -53,7 +48,6 @@ public final class CampDetailComponentView: UIView, CampDetailComponentViewProto
     private let backButton: UIButton = UIButton().then {
         $0.setImage(ImageProvider.back, for: .normal)
     }
-    
     private let locationLabel: IconedLabel = IconedLabel()
     
     private let favoriteButton: UIButton = UIButton().then {
@@ -84,26 +78,21 @@ public final class CampDetailComponentView: UIView, CampDetailComponentViewProto
     
     public func configureView(presenter: CampDetailComponentPresenterProtocol) {
         self.presenter = presenter
-        
         loadUI()
-        
         layoutIfNeeded()
-        
         if let flow = (collectionView.collectionViewLayout as? UICollectionViewFlowLayout) {
             flow.minimumInteritemSpacing = 0
             flow.minimumLineSpacing = 0
             flow.estimatedItemSize = CGSize(width: UIScreen.main.bounds.width, height: 350)
         }
-        
+        collectionView.layer.cornerRadius = 32
+        collectionView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         renderer.target = collectionView
         renderer.render(presenter.sections)
-        
         renderer.adapter.itemShowedAtIndex = { [weak self] index in
             self?.presenter?.imageIndex = index
             self?.setupPageView()
         }
-        
-        
     }
     
     public func loadUI() {
@@ -111,7 +100,7 @@ public final class CampDetailComponentView: UIView, CampDetailComponentViewProto
             return
         }
         nameLabel.text = presenter.name
-        textView.text = presenter.description
+        textLabel.text = presenter.description
         setupLocationLabel(presenter: presenter)
         setupPageView()
         setupDistanceView()
@@ -164,14 +153,14 @@ extension CampDetailComponentView {
     
     func setupViews() {
         addSubview(collectionView)
+        addSubview(distanceView)
         addSubview(backButton)
         addSubview(favoriteButton)
         addSubview(maximizeButton)
         addSubview(locationLabel)
         addSubview(nameLabel)
         addSubview(pageView)
-        addSubview(distanceView)
-        addSubview(textView)
+        addSubview(textLabel)
     }
     
     func setupConstraints() {
@@ -180,7 +169,14 @@ extension CampDetailComponentView {
             $0.trailing.equalToSuperview()
             $0.height.equalTo(350)
         }
-        
+        distanceView.snp.makeConstraints {
+            $0.top.equalTo(collectionView.snp.bottom)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.height.equalTo(110)
+            
+        }
+
         backButton.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(16)
             $0.leading.equalToSuperview()
@@ -202,8 +198,8 @@ extension CampDetailComponentView {
         }
         
         maximizeButton.snp.makeConstraints {
-            $0.trailing.equalToSuperview().offset(-16)
-            $0.bottom.equalToSuperview().offset(-32)
+            $0.trailing.equalToSuperview().offset(-20)
+            $0.bottom.equalTo(collectionView.snp.bottom).offset(-32)
             $0.height.equalTo(40)
             $0.width.equalTo(40)
         }
@@ -221,15 +217,7 @@ extension CampDetailComponentView {
             $0.top.equalTo(nameLabel.snp.bottom).offset(8)
         }
         
-        distanceView.snp.makeConstraints {
-            $0.top.equalTo(collectionView.snp.bottom)
-            $0.leading.equalToSuperview()
-            $0.trailing.equalToSuperview()
-            $0.height.equalTo(110)
-            
-        }
-
-        textView.snp.makeConstraints {
+        textLabel.snp.makeConstraints {
             $0.top.equalTo(distanceView.snp.bottom).offset(16)
             $0.bottom.equalToSuperview().offset(-16)
             $0.leading.equalToSuperview().offset(32)
