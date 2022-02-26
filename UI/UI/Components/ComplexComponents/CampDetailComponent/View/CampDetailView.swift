@@ -50,12 +50,17 @@ public final class CampDetailComponentView: UIView, CampDetailComponentViewProto
     }
     private let locationLabel: IconedLabel = IconedLabel()
     
-    private let favoriteButton: UIButton = UIButton().then {
-        $0.setImage(ImageProvider.favorite, for: .normal)
+    private let favoriteView: UIView = UIView().then {
+        $0.isUserInteractionEnabled = true
     }
-    
-    private let maximizeButton: UIButton = UIButton().then {
-        $0.setImage(ImageProvider.expand, for: .normal)
+    private let favoriteImageView: UIImageView = UIImageView().then {
+        $0.image = ImageProvider.heart
+    }
+    private let expandView: UIView = UIView().then {
+        $0.isUserInteractionEnabled = true
+    }
+    private let expandImageView: UIImageView = UIImageView().then {
+        $0.image = ImageProvider.maximize
     }
     
     private let nameLabel: Label = Label().then {
@@ -108,7 +113,15 @@ public final class CampDetailComponentView: UIView, CampDetailComponentViewProto
     }
     private func setupButtons() {
         backButton.addTarget(self, action: #selector(backButtonClicked), for: .touchUpInside)
-        maximizeButton.addTarget(self, action: #selector(maximizeButtonClicked), for: .touchUpInside)
+        favoriteView.applyBlurEffect(style: .regular)
+        expandView.applyBlurEffect(style: .regular)
+        
+        let expandViewTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(maximizeButtonClicked(sender:)))
+        expandView.addGestureRecognizer(expandViewTapRecognizer)
+        
+        let favoriteViewTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(favoriteButtonClicked(sender:)))
+        favoriteView.addGestureRecognizer(favoriteViewTapRecognizer)
+
     }
     private func setupLocationLabel(presenter: CampDetailComponentPresenterProtocol) {
         let locationPresenter = IconedLabelPresenter(title: presenter.location,
@@ -138,11 +151,16 @@ public final class CampDetailComponentView: UIView, CampDetailComponentViewProto
             backButtonTapped()
         }
     }
-    @objc func maximizeButtonClicked () {
+    @objc func maximizeButtonClicked (sender: UITapGestureRecognizer) {
         if let maximizeButtonTapped = self.presenter?.maximizeButtonTapped {
             maximizeButtonTapped(presenter?.images ?? [])
         }
     }
+    
+    @objc func favoriteButtonClicked (sender: UITapGestureRecognizer) {
+       
+    }
+
 }
 
 extension CampDetailComponentView {
@@ -155,8 +173,10 @@ extension CampDetailComponentView {
         addSubview(collectionView)
         addSubview(distanceView)
         addSubview(backButton)
-        addSubview(favoriteButton)
-        addSubview(maximizeButton)
+        favoriteView.addSubview(favoriteImageView)
+        addSubview(favoriteView)
+        expandView.addSubview(expandImageView)
+        addSubview(expandView)
         addSubview(locationLabel)
         addSubview(nameLabel)
         addSubview(pageView)
@@ -176,32 +196,40 @@ extension CampDetailComponentView {
             $0.height.equalTo(110)
             
         }
-
         backButton.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(16)
             $0.leading.equalToSuperview()
             $0.height.equalTo(40)
             $0.width.equalTo(40)
         }
-        
-        favoriteButton.snp.makeConstraints {
+        favoriteView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(16)
-            $0.trailing.equalToSuperview()
+            $0.trailing.equalToSuperview().offset(-16)
             $0.height.equalTo(40)
             $0.width.equalTo(40)
         }
-        
+        favoriteImageView.snp.makeConstraints {
+            $0.centerX.centerY.equalToSuperview()
+            $0.height.equalTo(22)
+            $0.width.equalTo(22)
+        }
         locationLabel.snp.makeConstraints {
-            $0.trailing.equalTo(favoriteButton.snp.leading).offset(-4)
-            $0.centerY.equalTo(favoriteButton.snp.centerY)
+            $0.trailing.equalTo(favoriteView.snp.leading).offset(-4)
+            $0.centerY.equalTo(favoriteView.snp.centerY)
             $0.height.equalTo(20)
         }
         
-        maximizeButton.snp.makeConstraints {
+        expandView.snp.makeConstraints {
             $0.trailing.equalToSuperview().offset(-20)
             $0.bottom.equalTo(collectionView.snp.bottom).offset(-32)
-            $0.height.equalTo(40)
-            $0.width.equalTo(40)
+            $0.height.equalTo(44)
+            $0.width.equalTo(44)
+        }
+        
+        expandImageView.snp.makeConstraints {
+            $0.centerX.centerY.equalToSuperview()
+            $0.height.equalTo(20)
+            $0.width.equalTo(20)
         }
         
         nameLabel.snp.makeConstraints {

@@ -49,9 +49,7 @@
 		2E98856826FBBB4D00A881F7 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98856726FBBB4D00A881F7 /* Tabs.swift */; };
 		2E98858F26FCC78200A881F7 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98858E26FCC78200A881F7 /* HomeController.swift */; };
 		2E98859126FCDB1D00A881F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E98859026FCDB1D00A881F7 /* GoogleService-Info.plist */; };
-		3C5DCE0127BA6B5E00A763A5 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5DCE0027BA6B5E00A763A5 /* UIView+Extensions.swift */; };
 		3C600F0627BA5B7D00D2E692 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C600F0427BA5B7C00D2E692 /* WelcomeController.swift */; };
-		3C600F0C27BA5DB300D2E692 /* UIStroyboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C600F0B27BA5DB300D2E692 /* UIStroyboard+Extensions.swift */; };
 		3C600F0F27BA672B00D2E692 /* WelcomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C600F0E27BA672B00D2E692 /* WelcomeCell.swift */; };
 		3C600F1127BA678000D2E692 /* WelcomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C600F1027BA678000D2E692 /* WelcomeData.swift */; };
 		3C65B95F27C41C1E0069A832 /* ImageSliderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C65B95E27C41C1E0069A832 /* ImageSliderController.swift */; };
@@ -60,7 +58,6 @@
 		3C6DB88C27BADA620005D050 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DB88B27BADA620005D050 /* WelcomePresenter.swift */; };
 		3C6DB89527BBF3AF0005D050 /* CampSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DB89427BBF3AF0005D050 /* CampSelectionController.swift */; };
 		3C6DB89727BBF3CD0005D050 /* CampSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DB89627BBF3CD0005D050 /* CampSelectionPresenter.swift */; };
-		3CA85FD327BA7C5400CFAB05 /* NSAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA85FD227BA7C5400CFAB05 /* NSAttributedString+Extensions.swift */; };
 		4059F9A8C73B9BF0D5380D86 /* Pods_CampApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5BBEBF3905FF3C5605AF50 /* Pods_CampApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -124,9 +121,7 @@
 		2E98856726FBBB4D00A881F7 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		2E98858E26FCC78200A881F7 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		2E98859026FCDB1D00A881F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3C5DCE0027BA6B5E00A763A5 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		3C600F0427BA5B7C00D2E692 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
-		3C600F0B27BA5DB300D2E692 /* UIStroyboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStroyboard+Extensions.swift"; sourceTree = "<group>"; };
 		3C600F0E27BA672B00D2E692 /* WelcomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCell.swift; sourceTree = "<group>"; };
 		3C600F1027BA678000D2E692 /* WelcomeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeData.swift; sourceTree = "<group>"; };
 		3C65B95E27C41C1E0069A832 /* ImageSliderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSliderController.swift; sourceTree = "<group>"; };
@@ -135,7 +130,6 @@
 		3C6DB88B27BADA620005D050 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
 		3C6DB89427BBF3AF0005D050 /* CampSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampSelectionController.swift; sourceTree = "<group>"; };
 		3C6DB89627BBF3CD0005D050 /* CampSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampSelectionPresenter.swift; sourceTree = "<group>"; };
-		3CA85FD227BA7C5400CFAB05 /* NSAttributedString+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extensions.swift"; sourceTree = "<group>"; };
 		7B9CBDF7BBF35105A31A620A /* Pods-CampApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampApp.release.xcconfig"; path = "Target Support Files/Pods-CampApp/Pods-CampApp.release.xcconfig"; sourceTree = "<group>"; };
 		CF5BBEBF3905FF3C5605AF50 /* Pods_CampApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CampApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8110DDEA3A4C0A6A35890D6 /* Pods-CampApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampApp.debug.xcconfig"; path = "Target Support Files/Pods-CampApp/Pods-CampApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -505,7 +499,6 @@
 			isa = PBXGroup;
 			children = (
 				3C600F0D27BA626100D2E692 /* Models */,
-				3C600F0A27BA5DA100D2E692 /* Extensions */,
 				3C6DB88A27BADA460005D050 /* Presenter */,
 				3C600F0327BA5B5F00D2E692 /* Controller */,
 			);
@@ -519,16 +512,6 @@
 				3C600F0E27BA672B00D2E692 /* WelcomeCell.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		3C600F0A27BA5DA100D2E692 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				3C600F0B27BA5DB300D2E692 /* UIStroyboard+Extensions.swift */,
-				3C5DCE0027BA6B5E00A763A5 /* UIView+Extensions.swift */,
-				3CA85FD227BA7C5400CFAB05 /* NSAttributedString+Extensions.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		3C600F0D27BA626100D2E692 /* Models */ = {
@@ -772,7 +755,6 @@
 			files = (
 				3C65B95F27C41C1E0069A832 /* ImageSliderController.swift in Sources */,
 				2E98856526FBB9BF00A881F7 /* ProfileCoordinator.swift in Sources */,
-				3CA85FD327BA7C5400CFAB05 /* NSAttributedString+Extensions.swift in Sources */,
 				3C600F0F27BA672B00D2E692 /* WelcomeCell.swift in Sources */,
 				2E26797C2703917E0090F074 /* HomePresenter.swift in Sources */,
 				2E98856126FBB98800A881F7 /* FavouriteCoordinator.swift in Sources */,
@@ -785,7 +767,6 @@
 				2E98855026FBB56D00A881F7 /* MainCoordinator.swift in Sources */,
 				2E7BB7E8270B788000B2DCBB /* CampDetailPresenter.swift in Sources */,
 				2E98855926FBB8F800A881F7 /* HomeCoordinator.swift in Sources */,
-				3C5DCE0127BA6B5E00A763A5 /* UIView+Extensions.swift in Sources */,
 				3C6DB89527BBF3AF0005D050 /* CampSelectionController.swift in Sources */,
 				2E98858F26FCC78200A881F7 /* HomeController.swift in Sources */,
 				2E98856826FBBB4D00A881F7 /* Tabs.swift in Sources */,
@@ -796,7 +777,6 @@
 				3C6DB88C27BADA620005D050 /* WelcomePresenter.swift in Sources */,
 				3C6DB89727BBF3CD0005D050 /* CampSelectionPresenter.swift in Sources */,
 				2E7BB7EA270B78D600B2DCBB /* CampDetailInteractor.swift in Sources */,
-				3C600F0C27BA5DB300D2E692 /* UIStroyboard+Extensions.swift in Sources */,
 				3C65B96827C423650069A832 /* ImageSliderPresenter.swift in Sources */,
 				3C65B96A27C426D40069A832 /* ImageViewCell.swift in Sources */,
 				2E1822382704689200B271CA /* Extensions.swift in Sources */,

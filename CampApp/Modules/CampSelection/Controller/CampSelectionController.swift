@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Common
 
 final class CampSelectionController: UIViewController, Storyboarded {
     
