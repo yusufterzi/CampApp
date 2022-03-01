@@ -5,25 +5,22 @@
 //  Created by Nurullah Vural on 28.02.2022.
 //
 
-import UIKit
+import Carbon
+import XCoordinator
+import YTUI
+import Common
 
-class ProfileController: UIViewController {
-
+class ProfileController: BaseListController<ProfilePresenter>{
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.view.backgroundColor = ColorProvider.whiteTextColor.color
+        navigationController?.navigationBar.prefersLargeTitles = true
+        self.title  = StringProvider.tabProfile
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
-    */
-
 }

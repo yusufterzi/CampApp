@@ -26,5 +26,6 @@ public final class ImageProvider {
     public static let caravan: UIImage = UIImage(named: "caravan")!
     public static let tent: UIImage = UIImage(named: "tent")!
     public static let bungalow: UIImage = UIImage(named: "bungalow")!
-    
+    public static let arrowRight: UIImage = UIImage(named: "arrowRight")!
+
 }

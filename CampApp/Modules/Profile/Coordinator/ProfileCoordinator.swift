@@ -19,7 +19,9 @@ class ProfileCoordinator: NavigationCoordinator<ProfileRoute> {
   override func prepareTransition(for route: ProfileRoute) -> NavigationTransition {
     switch route {
     case .profile:
-      let viewController = ViewController()
+      let viewController = ProfileController()
+      viewController.setupPresenter(presenter: ProfilePresenter(view: viewController,
+                                                               router: self.unownedRouter))
       viewController.tabBarItem = UITabBarItem(title: Tabs.profile.name,
                                                image: Tabs.profile.image,
                                                tag: Tabs.profile.tag)

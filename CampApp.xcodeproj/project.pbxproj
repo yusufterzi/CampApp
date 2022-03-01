@@ -58,6 +58,9 @@
 		3C6DB88C27BADA620005D050 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DB88B27BADA620005D050 /* WelcomePresenter.swift */; };
 		3C6DB89527BBF3AF0005D050 /* CampSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DB89427BBF3AF0005D050 /* CampSelectionController.swift */; };
 		3C6DB89727BBF3CD0005D050 /* CampSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DB89627BBF3CD0005D050 /* CampSelectionPresenter.swift */; };
+		3C8111C327CC1DD100E6832C /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8111C227CC1DD100E6832C /* ProfileController.swift */; };
+		3C8111C527CC1EAC00E6832C /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8111C427CC1EAC00E6832C /* ProfilePresenter.swift */; };
+		3C8111C727CC1F2C00E6832C /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8111C627CC1F2C00E6832C /* ProfileInteractor.swift */; };
 		4059F9A8C73B9BF0D5380D86 /* Pods_CampApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5BBEBF3905FF3C5605AF50 /* Pods_CampApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +133,9 @@
 		3C6DB88B27BADA620005D050 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
 		3C6DB89427BBF3AF0005D050 /* CampSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampSelectionController.swift; sourceTree = "<group>"; };
 		3C6DB89627BBF3CD0005D050 /* CampSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampSelectionPresenter.swift; sourceTree = "<group>"; };
+		3C8111C227CC1DD100E6832C /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileController.swift; path = Common/Common/Extensions/ProfileController.swift; sourceTree = SOURCE_ROOT; };
+		3C8111C427CC1EAC00E6832C /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfilePresenter.swift; path = Common/Common/Extensions/ProfilePresenter.swift; sourceTree = SOURCE_ROOT; };
+		3C8111C627CC1F2C00E6832C /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileInteractor.swift; path = Common/Common/Extensions/ProfileInteractor.swift; sourceTree = SOURCE_ROOT; };
 		7B9CBDF7BBF35105A31A620A /* Pods-CampApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampApp.release.xcconfig"; path = "Target Support Files/Pods-CampApp/Pods-CampApp.release.xcconfig"; sourceTree = "<group>"; };
 		CF5BBEBF3905FF3C5605AF50 /* Pods_CampApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CampApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8110DDEA3A4C0A6A35890D6 /* Pods-CampApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampApp.debug.xcconfig"; path = "Target Support Files/Pods-CampApp/Pods-CampApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -411,6 +417,7 @@
 		2E98857726FCC10100A881F7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3C8111C227CC1DD100E6832C /* ProfileController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -418,6 +425,7 @@
 		2E98857826FCC10700A881F7 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				3C8111C427CC1EAC00E6832C /* ProfilePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -425,6 +433,7 @@
 		2E98857926FCC10D00A881F7 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				3C8111C627CC1F2C00E6832C /* ProfileInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -760,6 +769,7 @@
 				2E98856126FBB98800A881F7 /* FavouriteCoordinator.swift in Sources */,
 				3C600F0627BA5B7D00D2E692 /* WelcomeController.swift in Sources */,
 				2E26797E270391870090F074 /* HomeInteractor.swift in Sources */,
+				3C8111C327CC1DD100E6832C /* ProfileController.swift in Sources */,
 				2E1822342704684200B271CA /* FirebaseNetwork.swift in Sources */,
 				2E770C162706543300872550 /* HomeSegmentEnum.swift in Sources */,
 				3C600F1127BA678000D2E692 /* WelcomeData.swift in Sources */,
@@ -773,9 +783,11 @@
 				2E98853B26FBA1F200A881F7 /* AppDelegate.swift in Sources */,
 				2E98855D26FBB93400A881F7 /* SearchCoordinator.swift in Sources */,
 				2E7BB7E6270B784500B2DCBB /* CampDetailController.swift in Sources */,
+				3C8111C527CC1EAC00E6832C /* ProfilePresenter.swift in Sources */,
 				2E98855526FBB63A00A881F7 /* MainTabCoordinator.swift in Sources */,
 				3C6DB88C27BADA620005D050 /* WelcomePresenter.swift in Sources */,
 				3C6DB89727BBF3CD0005D050 /* CampSelectionPresenter.swift in Sources */,
+				3C8111C727CC1F2C00E6832C /* ProfileInteractor.swift in Sources */,
 				2E7BB7EA270B78D600B2DCBB /* CampDetailInteractor.swift in Sources */,
 				3C65B96827C423650069A832 /* ImageSliderPresenter.swift in Sources */,
 				3C65B96A27C426D40069A832 /* ImageViewCell.swift in Sources */,

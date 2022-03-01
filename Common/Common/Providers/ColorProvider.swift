@@ -29,6 +29,8 @@ public enum ColorProvider: String {
     case onboardingButtonBackground
     case campSelectionFrameColor
     case campSelectionLabelColor
+    case lightGray
+
     
     public var color: UIColor {
         return colorFromName(self.rawValue)

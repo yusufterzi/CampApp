@@ -29,4 +29,6 @@ public final class FontProvider {
     public static let onboardingButton: UIFont = UIFont(name: fontName + "-Bold", size: 18)!
     public static let campSelectionFont: UIFont = UIFont(name: fontName + "-Medium", size: 16)!
     public static let campDetailTextFont: UIFont = UIFont(name: fontName + "-Light", size: 16)!
+    public static let profileRowTextFont: UIFont = UIFont(name: fontName + "-Regular", size: 16)!
+
 }
