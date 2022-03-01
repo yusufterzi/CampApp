@@ -41,10 +41,15 @@ final class ProfilePresenter: HomePresenterProtocol, BaseListPresenter {
     }
     
     private func addCampRow() -> CellNode {
-        let addCampRow = TextRowComponent(id: "addCamping", presenter: TextRowPresenter(text: "Kamp alanı ekle",
-                                                                                        color: ColorProvider.blackTextColor.color,
-                                                                                        font: FontProvider.profileRowTextFont,
-                                                                                        image: ImageProvider.arrowRight) )
+        let presenter = TextRowPresenter(text: StringProvider.addCampArea,
+                                         color: ColorProvider.blackTextColor.color,
+                                         font: FontProvider.profileRowTextFont,
+                                         image: ImageProvider.arrowRight)
+        presenter.onTap = { [weak self] in
+            print("add camping tapped")
+            self?.router.trigger(.addCampArea, with: TransitionOptions(animated: true))
+        }
+        let addCampRow = TextRowComponent(id: "addCamping", presenter: presenter)
         return CellNode(addCampRow)
     }
     

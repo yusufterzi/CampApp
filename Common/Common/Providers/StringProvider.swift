@@ -37,5 +37,7 @@ public final class StringProvider {
     
     public static let campSelectionFirstPart: String = "Nasıl Konaklamak".localized
     public static let campSelectionSecondPart: String = " İstersin?".localized
+    public static let addCampArea: String = "Kamp alanı ekle".localized
+
     
 }

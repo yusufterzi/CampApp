@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Common
 
-public final class TextRow: UIView {
+public final class TextRow: UIView, Tappable {
     
     public var presenter: TextRowPresenterProtocol?
     private let rowLabel: Label = Label()
@@ -38,6 +38,10 @@ public final class TextRow: UIView {
         rowLabel.textColor = presenter.color
         rowLabel.font = presenter.font
         imageView.image = presenter.image
+        
+        onTap { [weak self] in
+          self?.presenter?.onTap?()
+        }
     }
 }
 
@@ -56,7 +60,7 @@ extension TextRow {
             $0.top.equalToSuperview().offset(10)
             $0.bottom.equalToSuperview().offset(-10)
             $0.leading.equalToSuperview().offset(20)
-            $0.width.equalTo(200)
+            $0.height.equalTo(60)
         }
         imageView.snp.makeConstraints {
             $0.trailing.equalToSuperview().offset(-20)
