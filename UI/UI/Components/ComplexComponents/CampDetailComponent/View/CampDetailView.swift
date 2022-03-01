@@ -234,22 +234,22 @@ extension CampDetailComponentView {
         
         nameLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(16)
-            $0.trailing.equalToSuperview().offset(-16)
+            $0.trailing.equalTo(expandView.snp.leading).offset(-20)
+            $0.bottom.equalTo(pageView.snp.top).offset(-8)
         }
         
         pageView.snp.makeConstraints {
             $0.leading.greaterThanOrEqualToSuperview().offset(16)
             $0.trailing.lessThanOrEqualToSuperview().offset(-16)
             $0.centerX.equalToSuperview()
-            $0.bottom.equalToSuperview().offset(-8)
-            $0.top.equalTo(nameLabel.snp.bottom).offset(8)
+            $0.bottom.equalTo(collectionView.snp.bottom).offset(-8)
         }
         
         textLabel.snp.makeConstraints {
             $0.top.equalTo(distanceView.snp.bottom).offset(16)
             $0.bottom.equalToSuperview().offset(-16)
-            $0.leading.equalToSuperview().offset(32)
-            $0.trailing.equalToSuperview().offset(-32)
+            $0.leading.equalToSuperview().offset(16)
+            $0.trailing.equalToSuperview().offset(-16)
         }
     }
 }
