@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WelcomeCell: UICollectionViewCell {
+final class WelcomeCell: UICollectionViewCell {
     
     static let identifier = String(describing: WelcomeCell.self)
     @IBOutlet private var imageView: UIImageView!

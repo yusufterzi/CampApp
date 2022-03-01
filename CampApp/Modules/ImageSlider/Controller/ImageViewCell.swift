@@ -8,9 +8,9 @@
 import UIKit
 import SDWebImage
 
-class ImageViewCell: UICollectionViewCell {
+final class ImageViewCell: UICollectionViewCell {
     static let identifier = String(describing: ImageViewCell.self)
-    @IBOutlet var imageView: UIImageView!
+    @IBOutlet private var imageView: UIImageView!
     func setup(_ image: String)  {
         imageView.sd_setImage(with: URL(string: image))
     }

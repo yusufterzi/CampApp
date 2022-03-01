@@ -15,39 +15,32 @@ import AttributedStringBuilder
 import UIKit
 
 protocol ImageSliderPresenterProtocol {
+    func cellForRow(at indexPath: IndexPath, to collectionView: UICollectionView) -> ImageViewCell
     
 }
 
 final class ImageSliderPresenter: ImageSliderPresenterProtocol {
-    
     internal var router: UnownedRouter<HomeRoute>
     public var currentPage = 0
     public var images: [String]
     
+    func cellForRow(at indexPath: IndexPath, to collectionView : UICollectionView) -> ImageViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageViewCell.identifier, for: indexPath) as! ImageViewCell
+        cell.setup(images[indexPath.item])
+        return cell
+    }
+    
+  
     
     init(router: UnownedRouter<HomeRoute>, images: [String]) {
         self.router = router
         self.images = images
     }
     
-    public func loadUI(viewController: ImageSliderController) {
-        viewController.pageControl.numberOfPages = images.count
-        setupButton(vc: viewController)
+    public func loadUI() {
         
-    }
-    public func setupButton(vc: ImageSliderController) {
-        vc.minimizeImageView.image = ImageProvider.minimize
-        vc.containerView.cornerRadius = 20
-        vc.containerView.applyBlurEffect(style: .regular)
-        
-        let caravanTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewTapped(sender:)))
-        vc.containerView.addGestureRecognizer(caravanTapGestureRecognizer)
-        vc.containerView.isUserInteractionEnabled = true
     }
     
-    @objc public func viewTapped(sender: UITapGestureRecognizer) {
-        router.viewController.dismiss(animated: true)
-    }
 }
 
 
