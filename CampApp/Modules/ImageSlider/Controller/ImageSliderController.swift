@@ -7,6 +7,7 @@
 import Foundation
 import UIKit
 import Common
+import XCoordinator
 
 final class ImageSliderController: UIViewController, Storyboarded  {
     private var presenter: ImageSliderPresenter!
@@ -44,8 +45,7 @@ final class ImageSliderController: UIViewController, Storyboarded  {
     }
     
     @objc public func viewTapped(sender: UITapGestureRecognizer) {
-        //Fixme: dismiss
-        presenter.router.viewController.dismiss(animated: true)
+        presenter.router.trigger(.dismiss, with: TransitionOptions(animated: true))
     }
 }
 extension ImageSliderController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

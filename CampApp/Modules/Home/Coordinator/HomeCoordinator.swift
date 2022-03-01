@@ -13,6 +13,8 @@ enum HomeRoute: Route {
     case campDetail(CampModel)
     case imageSlider ([String])
     case back
+    case dismiss
+
 }
 
 class HomeCoordinator: NavigationCoordinator<HomeRoute> {
@@ -47,6 +49,9 @@ class HomeCoordinator: NavigationCoordinator<HomeRoute> {
             
         case .back:
             return .pop()
+        case .dismiss:
+            return .dismiss()
+            
         }
     }
 }
