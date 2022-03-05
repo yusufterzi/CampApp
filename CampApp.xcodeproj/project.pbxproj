@@ -58,6 +58,9 @@
 		3C6DB88C27BADA620005D050 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DB88B27BADA620005D050 /* WelcomePresenter.swift */; };
 		3C6DB89527BBF3AF0005D050 /* CampSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DB89427BBF3AF0005D050 /* CampSelectionController.swift */; };
 		3C6DB89727BBF3CD0005D050 /* CampSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DB89627BBF3CD0005D050 /* CampSelectionPresenter.swift */; };
+		3C71204227CFC49B003F2EEE /* CampAddingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C71204127CFC49B003F2EEE /* CampAddingController.swift */; };
+		3C71204427CFC51C003F2EEE /* CampAddingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C71204327CFC51C003F2EEE /* CampAddingPresenter.swift */; };
+		3C71204627CFC64F003F2EEE /* CampAddingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C71204527CFC64F003F2EEE /* CampAddingInteractor.swift */; };
 		3C8111C327CC1DD100E6832C /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8111C227CC1DD100E6832C /* ProfileController.swift */; };
 		3C8111C527CC1EAC00E6832C /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8111C427CC1EAC00E6832C /* ProfilePresenter.swift */; };
 		3C8111C727CC1F2C00E6832C /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8111C627CC1F2C00E6832C /* ProfileInteractor.swift */; };
@@ -133,6 +136,9 @@
 		3C6DB88B27BADA620005D050 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
 		3C6DB89427BBF3AF0005D050 /* CampSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampSelectionController.swift; sourceTree = "<group>"; };
 		3C6DB89627BBF3CD0005D050 /* CampSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampSelectionPresenter.swift; sourceTree = "<group>"; };
+		3C71204127CFC49B003F2EEE /* CampAddingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampAddingController.swift; sourceTree = "<group>"; };
+		3C71204327CFC51C003F2EEE /* CampAddingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampAddingPresenter.swift; sourceTree = "<group>"; };
+		3C71204527CFC64F003F2EEE /* CampAddingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampAddingInteractor.swift; sourceTree = "<group>"; };
 		3C8111C227CC1DD100E6832C /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileController.swift; path = Common/Common/Extensions/ProfileController.swift; sourceTree = SOURCE_ROOT; };
 		3C8111C427CC1EAC00E6832C /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfilePresenter.swift; path = Common/Common/Extensions/ProfilePresenter.swift; sourceTree = SOURCE_ROOT; };
 		3C8111C627CC1F2C00E6832C /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileInteractor.swift; path = Common/Common/Extensions/ProfileInteractor.swift; sourceTree = SOURCE_ROOT; };
@@ -312,6 +318,7 @@
 				3C6DB88E27BBF2600005D050 /* CampSelection */,
 				3C600F0227BA5B4400D2E692 /* Welcome */,
 				2E7BB7E0270B77C000B2DCBB /* CampDetail */,
+				3C71203D27CFC3E3003F2EEE /* CampAdding */,
 				2E98856226FBB9A600A881F7 /* Profile */,
 				2E98855E26FBB95200A881F7 /* Favourite */,
 				2E98855A26FBB91B00A881F7 /* Search */,
@@ -590,6 +597,40 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		3C71203D27CFC3E3003F2EEE /* CampAdding */ = {
+			isa = PBXGroup;
+			children = (
+				3C71204027CFC47B003F2EEE /* Interactor */,
+				3C71203F27CFC472003F2EEE /* Presenter */,
+				3C71203E27CFC465003F2EEE /* Controller */,
+			);
+			path = CampAdding;
+			sourceTree = "<group>";
+		};
+		3C71203E27CFC465003F2EEE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3C71204127CFC49B003F2EEE /* CampAddingController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3C71203F27CFC472003F2EEE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3C71204327CFC51C003F2EEE /* CampAddingPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3C71204027CFC47B003F2EEE /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				3C71204527CFC64F003F2EEE /* CampAddingInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		DF178F2957180F8E5CB6890F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -774,13 +815,16 @@
 				2E770C162706543300872550 /* HomeSegmentEnum.swift in Sources */,
 				3C600F1127BA678000D2E692 /* WelcomeData.swift in Sources */,
 				2E98853F26FBA1F200A881F7 /* ViewController.swift in Sources */,
+				3C71204227CFC49B003F2EEE /* CampAddingController.swift in Sources */,
 				2E98855026FBB56D00A881F7 /* MainCoordinator.swift in Sources */,
 				2E7BB7E8270B788000B2DCBB /* CampDetailPresenter.swift in Sources */,
 				2E98855926FBB8F800A881F7 /* HomeCoordinator.swift in Sources */,
+				3C71204627CFC64F003F2EEE /* CampAddingInteractor.swift in Sources */,
 				3C6DB89527BBF3AF0005D050 /* CampSelectionController.swift in Sources */,
 				2E98858F26FCC78200A881F7 /* HomeController.swift in Sources */,
 				2E98856826FBBB4D00A881F7 /* Tabs.swift in Sources */,
 				2E98853B26FBA1F200A881F7 /* AppDelegate.swift in Sources */,
+				3C71204427CFC51C003F2EEE /* CampAddingPresenter.swift in Sources */,
 				2E98855D26FBB93400A881F7 /* SearchCoordinator.swift in Sources */,
 				2E7BB7E6270B784500B2DCBB /* CampDetailController.swift in Sources */,
 				3C8111C527CC1EAC00E6832C /* ProfilePresenter.swift in Sources */,

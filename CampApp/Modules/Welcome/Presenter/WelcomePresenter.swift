@@ -80,7 +80,7 @@ final class WelcomePresenter: WelcomePresenterProtocol {
     
     public func setupButton(vc: WelcomeController) {
         let buttonTextFont: [AttributedStringBuilder.Attribute] = [
-            .font(FontProvider.onboardingButton),
+            .font(FontProvider.bold18),
             .textColor(ColorProvider.onboardingYellowButtonText.color),
         ]
         let buttonText: NSAttributedString = AttributedStringBuilder().text(images[vc.pageControl.currentPage].name, attributes: buttonTextFont).attributedString

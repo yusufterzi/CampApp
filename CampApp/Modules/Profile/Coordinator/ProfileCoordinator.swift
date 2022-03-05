@@ -10,7 +10,6 @@ import XCoordinator
 enum ProfileRoute: Route {
     case profile
     case addCampArea
-    
 }
 
 class ProfileCoordinator: NavigationCoordinator<ProfileRoute> {
@@ -30,8 +29,12 @@ class ProfileCoordinator: NavigationCoordinator<ProfileRoute> {
             
             return .push(viewController)
         case .addCampArea:
-            let viewController = ViewController()
+            let viewController = CampAddingController()
+            viewController.setupPresenter(presenter: CampAddingPresenter(view: viewController, router: self.unownedRouter))
             return .push(viewController)
+            
         }
     }
 }
+
+
