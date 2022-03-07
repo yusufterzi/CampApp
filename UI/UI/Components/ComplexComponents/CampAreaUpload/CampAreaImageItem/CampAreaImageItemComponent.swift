@@ -19,6 +19,8 @@ public final class CampAreaImageItemComponent: IdentifiableComponent {
   }
   
   public func render(in content: CampAreaImageView) {
+      content.presenter = presenter
+      content.loadUI()
   }
 
   public func shouldContentUpdate(with next: CampAreaImageItemComponent) -> Bool {
@@ -31,7 +33,6 @@ public final class CampAreaImageItemComponent: IdentifiableComponent {
   
   public func renderContent() -> CampAreaImageView {
     let view = CampAreaImageView()
-    view.configureView(presenter: presenter)
     return view
   }
 }

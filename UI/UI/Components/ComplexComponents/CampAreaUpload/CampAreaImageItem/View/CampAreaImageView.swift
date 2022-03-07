@@ -88,7 +88,9 @@ public final class CampAreaImageView: UIView, CampAreaImageViewProtocol {
 
     }
     @objc func removeImageButtonTapped(sender: UITapGestureRecognizer) {
-
+        if let image = image.image {
+            self.presenter?.removeImageHandler?(image)
+        }
     }
 }
 
@@ -125,13 +127,12 @@ extension CampAreaImageView {
             $0.width.equalTo(20)
         }
         textLabel.snp.makeConstraints {
-            $0.bottom.equalToSuperview().offset(-6)
+            $0.bottom.equalToSuperview().offset(-4)
             $0.centerX.equalToSuperview()
             $0.trailing.equalToSuperview().offset(-17)
             $0.leading.equalToSuperview().offset(17)
-            $0.height.equalTo(15)
+            $0.height.equalTo(14)
         }
-        
         
     }
 }

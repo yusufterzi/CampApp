@@ -21,7 +21,7 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
     internal weak var view: BaseListView?
     internal var interactor: CampAddingInteractorProtocol?
     internal var router: UnownedRouter<ProfileRoute>
-    
+
     init(view: BaseListView, router: UnownedRouter<ProfileRoute>) {
         self.view = view
         self.router = router

@@ -49,12 +49,10 @@ public final class CampAreaCollectionView: UIView, CampAreaCollectionViewProtoco
         layoutIfNeeded()
         (collectionView.collectionViewLayout as? UICollectionViewFlowLayout)?.estimatedItemSize = CGSize(width: 120, height: 120)
         renderer.target = collectionView
-        
         self.presenter?.reloadData = { [weak self] in
-            self?.renderer.data = self?.presenter?.sections ?? []
+            self?.renderer.render(self?.presenter?.sections ?? [])
         }
         renderer.render(presenter.sections)
-        
     }
     
 }
