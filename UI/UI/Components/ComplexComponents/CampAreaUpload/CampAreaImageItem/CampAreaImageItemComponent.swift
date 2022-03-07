@@ -19,7 +19,6 @@ public final class CampAreaImageItemComponent: IdentifiableComponent {
   }
   
   public func render(in content: CampAreaImageView) {
-    content.presenter = presenter
   }
 
   public func shouldContentUpdate(with next: CampAreaImageItemComponent) -> Bool {

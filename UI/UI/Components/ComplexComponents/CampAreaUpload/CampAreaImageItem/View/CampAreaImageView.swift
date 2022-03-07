@@ -30,6 +30,7 @@ public final class CampAreaImageView: UIView, CampAreaImageViewProtocol {
     internal let textLabel = UILabel().then {
         $0.textColor = ColorProvider.whiteTextColor.color
         $0.font = FontProvider.bold12
+        $0.textAlignment = .center
     }
     
     public var presenter: CampAreaImageItemPresenterProtocol?
@@ -37,7 +38,6 @@ public final class CampAreaImageView: UIView, CampAreaImageViewProtocol {
     public init() {
         super.init(frame: .zero)
         initialize()
-        
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -61,15 +61,13 @@ public final class CampAreaImageView: UIView, CampAreaImageViewProtocol {
         addImage.image = presenter?.addImage
         removeImage.image = presenter?.removeImage
         image.image = presenter?.image
+        image.cornerRadius = 10
         textLabel.text = presenter?.text
         
         image.isUserInteractionEnabled = true
-        if addImage.image != nil {
-            addImage.isUserInteractionEnabled = true
-        }
-        if removeImage.image != nil {
-            removeImage.isUserInteractionEnabled = true
-        }
+        
+        addImage.isUserInteractionEnabled = addImage.image != nil
+        removeImage.isUserInteractionEnabled = removeImage.image != nil
       
     }
     
@@ -86,13 +84,11 @@ public final class CampAreaImageView: UIView, CampAreaImageViewProtocol {
         let picker = UIImagePickerController()
         picker.allowsEditing = true
         picker.delegate = self
-        
-        //present(picker, animated: true)
-        //picker.present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+        self.parentViewController?.present(picker, animated: true)
 
     }
     @objc func removeImageButtonTapped(sender: UITapGestureRecognizer) {
-       
+
     }
 }
 
@@ -129,7 +125,8 @@ extension CampAreaImageView {
             $0.width.equalTo(20)
         }
         textLabel.snp.makeConstraints {
-            $0.bottom.equalToSuperview().offset(-4)
+            $0.bottom.equalToSuperview().offset(-6)
+            $0.centerX.equalToSuperview()
             $0.trailing.equalToSuperview().offset(-17)
             $0.leading.equalToSuperview().offset(17)
             $0.height.equalTo(15)
@@ -144,8 +141,8 @@ extension CampAreaImageView: UIImagePickerControllerDelegate, UINavigationContro
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.editedImage] as? UIImage else { return }
         picker.dismiss(animated: true)
-        selectedImages.insert(image, at: 0)
-
+        selectedImages.append(image)
+        self.presenter?.addImageHandler?(image)
     }
     
 }

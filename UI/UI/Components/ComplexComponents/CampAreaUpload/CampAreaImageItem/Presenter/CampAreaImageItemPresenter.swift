@@ -14,6 +14,9 @@ public protocol CampAreaImageItemPresenterProtocol {
     var addImage: UIImage? { get set }
     var removeImage: UIImage? { get set }
     var text: String? { get set }
+    var addImageHandler: Handler<UIImage>? { get set }
+    var removeImageHandler: Handler<UIImage>? { get set }
+
 }
 
 public final class CampAreaImageItemPresenter: CampAreaImageItemPresenterProtocol {
@@ -21,6 +24,8 @@ public final class CampAreaImageItemPresenter: CampAreaImageItemPresenterProtoco
     public var addImage: UIImage?
     public var removeImage: UIImage?
     public var text: String?
+    public var addImageHandler: Handler<UIImage>?
+    public var removeImageHandler: Handler<UIImage>?
     
     public init(image: UIImage?, addImage: UIImage?, removeImage: UIImage?, text: String?) {
         self.image = image

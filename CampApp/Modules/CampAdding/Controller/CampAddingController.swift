@@ -11,8 +11,7 @@ import YTUI
 import Common
 
 class CampAddingController: BaseListController<CampAddingPresenter> {
-    private var selectedImages: [UIImage] = [UIImage]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = ColorProvider.whiteTextColor.color

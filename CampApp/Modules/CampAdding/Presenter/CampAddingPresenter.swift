@@ -37,11 +37,11 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
         var cells: [CellNode] = []
         
         cells.append(campAreaNameView())
-        cells.append(camlLocationSearchView())
+        cells.append(campLocationSearchView())
         cells.append(campLocationView())
         cells.append(campDescriptionView())
         cells.append(campUploadImageView())
-        cells.append(campUploadButtonView())
+        cells.append(saveButtonView())
 
 
         let section = Section(id: "", header: nil, cells: cells, footer: nil)
@@ -61,7 +61,7 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
                                       presenter: presenter)
         return CellNode(component)
     }
-    private func camlLocationSearchView() -> CellNode {
+    private func campLocationSearchView() -> CellNode {
         
         let presenter = TextFieldPresenter(headerTitle: StringProvider.location,
                                            headerFont: FontProvider.regular12,
@@ -106,7 +106,7 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
         return CellNode(component)
     }
     
-    private func campUploadButtonView() -> CellNode {
+    private func saveButtonView() -> CellNode {
         
         let presenter = ButtonPresenter(textFont: FontProvider.bold18,
                                         textColor: ColorProvider.onboardingYellowButtonText.color,
