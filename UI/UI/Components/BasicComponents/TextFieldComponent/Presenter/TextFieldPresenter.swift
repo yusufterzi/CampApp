@@ -19,7 +19,9 @@ public protocol TextFieldPresenterProtocol {
     var image: UIImage? { get set }
     var isUserInteractionEnabled: Bool { get set }
     var onTap: VoidHandler? { get set }
-
+    var textEdited: Handler<String>? { get set }
+    
+    
 }
 
 public final class TextFieldPresenter: TextFieldPresenterProtocol {
@@ -31,6 +33,8 @@ public final class TextFieldPresenter: TextFieldPresenterProtocol {
     public var image: UIImage?
     public var isUserInteractionEnabled: Bool
     public var onTap: VoidHandler?
+    public var textEdited: Handler<String>?
+    
     
     public init(headerTitle: String, headerFont: UIFont, headerColor: UIColor, headerEdgeInsets: UIEdgeInsets, placeHolder: String, image: UIImage? = nil, isUserInteractionEnabled: Bool = true) {
         self.headerTitle = headerTitle

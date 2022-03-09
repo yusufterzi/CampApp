@@ -37,6 +37,7 @@ class HomeCoordinator: NavigationCoordinator<HomeRoute> {
             viewController.setupPresenter(presenter: CampDetailPresenter(view: viewController,
                                                                          router: self.unownedRouter,
                                                                          item: item))
+            
             return .push(viewController)
         case .imageSlider(let images):
             let viewController = ImageSliderController.instantiate()

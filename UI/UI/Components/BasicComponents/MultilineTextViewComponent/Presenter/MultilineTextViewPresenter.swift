@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Common
 
 public protocol MultilineTextViewPresenterProtocol {
     var headerTitle: String { get set }
@@ -14,6 +15,8 @@ public protocol MultilineTextViewPresenterProtocol {
     var headerColor: UIColor { get set }
     var headerEdgeInsets: UIEdgeInsets? { get set }
     var placeHolder: String { get set }
+    var textEdited: Handler<String>? { get set }
+
 }
 
 public final class MultilineTextViewPresenter: MultilineTextViewPresenterProtocol {
@@ -22,7 +25,8 @@ public final class MultilineTextViewPresenter: MultilineTextViewPresenterProtoco
     public var headerColor: UIColor
     public var headerEdgeInsets: UIEdgeInsets?
     public var placeHolder: String
-    
+    public var textEdited: Handler<String>?
+
     public init(headerTitle: String, headerFont: UIFont, headerColor: UIColor, headerEdgeInsets: UIEdgeInsets, placeHolder: String) {
         self.headerTitle = headerTitle
         self.headerFont = headerFont

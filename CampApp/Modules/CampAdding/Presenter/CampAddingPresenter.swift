@@ -13,6 +13,7 @@ import YTNetwork
 import AttributedStringBuilder
 
 protocol CampAddingPresenterProtocol {
+    var camp: CampModel { get set }
     
 }
 
@@ -21,11 +22,13 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
     internal weak var view: BaseListView?
     internal var interactor: CampAddingInteractorProtocol?
     internal var router: UnownedRouter<ProfileRoute>
+    public var camp: CampModel
 
     init(view: BaseListView, router: UnownedRouter<ProfileRoute>) {
         self.view = view
         self.router = router
         self.interactor = CampAddingInteractor()
+        self.camp = CampModel ()
     }
     
     func loadUI() {
@@ -55,6 +58,11 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
                                            headerFont: FontProvider.regular12,
                                            headerColor: ColorProvider.semiDarkTextColor.color,
                                            headerEdgeInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 24), placeHolder: StringProvider.campAreaNamePlaceHolder)
+       
+        presenter.textEdited = { [weak self] campName in
+            print("Kamp Alanı İsmi:\(campName)")
+            self?.camp.name = campName
+        }
         
         
         let component = TextFieldComponent(id: "",
@@ -71,8 +79,9 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
                                            isUserInteractionEnabled: false)
         presenter.onTap = { [weak self] in
             print("Open Apple Maps!")
-            
+            self?.router.trigger(.maps, with: TransitionOptions(animated: true))
         }
+        
         let component = TextFieldComponent(id: "",
                                       presenter: presenter)
         return CellNode(component)
@@ -83,6 +92,11 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
                                            headerFont: FontProvider.regular12,
                                            headerColor: ColorProvider.semiDarkTextColor.color,
                                            headerEdgeInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 24), placeHolder: StringProvider.locationNamePlaceHolder)
+        presenter.textEdited = { [weak self] location in
+            print("Lokasyon İsmi:\(location)")
+            self?.camp.subLocation = location
+        }
+        
         let component = TextFieldComponent(id: "",
                                       presenter: presenter)
         return CellNode(component)
@@ -93,6 +107,10 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
                                            headerFont: FontProvider.regular12,
                                            headerColor: ColorProvider.semiDarkTextColor.color,
                                            headerEdgeInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 24), placeHolder: StringProvider.descriptionPlaceHolder)
+        presenter.textEdited = { [weak self] description in
+            print("Açıklama:\(description)")
+            self?.camp.description = description
+        }
         let component = MultilineTextViewComponent(id: "",
                                       presenter: presenter)
         return CellNode(component)
@@ -113,7 +131,7 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
                                         text: StringProvider.save,
                                         backgroundColor: ColorProvider.onboardingRedColor.color)
         presenter.tapped = { [weak self] in
-            print("Save Button Tapped!")
+            print("Açıklama: \(self?.camp.description)--- Kamp alanı İsmi : \(self?.camp.name)--- Lokasyon İsmi: \(self?.camp.subLocation)")
         }
         let component = ButtonComponent(id: "",
                                       presenter: presenter)

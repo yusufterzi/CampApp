@@ -85,9 +85,7 @@ extension MultilineTextView: UITextViewDelegate {
     }
     
     public func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
-           setupTextView()
-        }
+        textView.text.isEmpty ? setupViews() : self.presenter?.textEdited?(textView.text)
     }
 }
 

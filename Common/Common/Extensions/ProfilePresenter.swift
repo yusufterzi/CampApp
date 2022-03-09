@@ -16,7 +16,7 @@ protocol ProfilePresenterProtocol {
     
 }
 
-final class ProfilePresenter: HomePresenterProtocol, BaseListPresenter {
+final class ProfilePresenter: ProfilePresenterProtocol, BaseListPresenter {
     
     internal weak var view: BaseListView?
     internal var interactor: ProfileInteractorProtocol?

@@ -15,9 +15,10 @@ public final class TextField: UIView ,Tappable {
     private var header: Label = Label()
     private let textField: UITextField = UITextField()
     private let imageView: UIImageView = UIImageView()
-
+    
     public init() {
         super.init(frame: .zero)
+        textField.delegate = self
         initialize()
     }
     
@@ -42,8 +43,6 @@ public final class TextField: UIView ,Tappable {
             self?.presenter?.onTap?()
         }
         
-        
-        
     }
     private func setupTextField(){
         textField.placeholder = presenter?.placeHolder
@@ -53,7 +52,7 @@ public final class TextField: UIView ,Tappable {
     }
 }
 
-extension TextField {
+extension TextField: UITextFieldDelegate {
     func initialize() {
         setupViews()
         setupConstraints()
@@ -62,10 +61,9 @@ extension TextField {
         addSubview(header)
         addSubview(textField)
         addSubview(imageView)
-
+        
         
     }
-    
     func setupConstraints() {
         
         header.snp.makeConstraints{
@@ -82,14 +80,21 @@ extension TextField {
             $0.height.equalTo(40)
             $0.bottom.equalToSuperview().offset(-7)
         }
-       
+        
         imageView.snp.makeConstraints {
             $0.top.equalTo(textField.snp.top).offset(8)
             $0.trailing.equalTo(textField.snp.trailing).offset(-8)
             $0.height.equalTo(24)
             $0.width.equalTo(24)
         }
-        
-     
     }
+    
+    public func textFieldDidEndEditing(_ textField: UITextField) {
+        if let text = textField.text {
+            if !text.isEmpty {
+                self.presenter?.textEdited?(text)
+            }
+        }
+    }
+    
 }
