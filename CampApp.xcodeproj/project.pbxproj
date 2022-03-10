@@ -50,9 +50,11 @@
 		2E98858F26FCC78200A881F7 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98858E26FCC78200A881F7 /* HomeController.swift */; };
 		2E98859126FCDB1D00A881F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E98859026FCDB1D00A881F7 /* GoogleService-Info.plist */; };
 		3C0AF38627D7A5FB00A36CE1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0AF38427D7A5FB00A36CE1 /* MapViewController.swift */; };
-		3C0AF38727D7A5FB00A36CE1 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C0AF38527D7A5FB00A36CE1 /* MapViewController.xib */; };
 		3C0AF38927D7A65900A36CE1 /* MapViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0AF38827D7A65900A36CE1 /* MapViewPresenter.swift */; };
 		3C0AF38C27D7C3CD00A36CE1 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0AF38B27D7C3CC00A36CE1 /* LocationManager.swift */; };
+		3C0AF38E27DA692E00A36CE1 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0AF38D27DA692D00A36CE1 /* Location.swift */; };
+		3C0AF39027DA6DFC00A36CE1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0AF38F27DA6DFC00A36CE1 /* SearchViewController.swift */; };
+		3C0AF39227DA818A00A36CE1 /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0AF39127DA818A00A36CE1 /* SearchViewCell.swift */; };
 		3C600F0627BA5B7D00D2E692 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C600F0427BA5B7C00D2E692 /* WelcomeController.swift */; };
 		3C600F0F27BA672B00D2E692 /* WelcomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C600F0E27BA672B00D2E692 /* WelcomeCell.swift */; };
 		3C600F1127BA678000D2E692 /* WelcomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C600F1027BA678000D2E692 /* WelcomeData.swift */; };
@@ -132,9 +134,11 @@
 		2E98858E26FCC78200A881F7 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		2E98859026FCDB1D00A881F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3C0AF38427D7A5FB00A36CE1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		3C0AF38527D7A5FB00A36CE1 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		3C0AF38827D7A65900A36CE1 /* MapViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewPresenter.swift; sourceTree = "<group>"; };
 		3C0AF38B27D7C3CC00A36CE1 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		3C0AF38D27DA692D00A36CE1 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		3C0AF38F27DA6DFC00A36CE1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		3C0AF39127DA818A00A36CE1 /* SearchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
 		3C600F0427BA5B7C00D2E692 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		3C600F0E27BA672B00D2E692 /* WelcomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCell.swift; sourceTree = "<group>"; };
 		3C600F1027BA678000D2E692 /* WelcomeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeData.swift; sourceTree = "<group>"; };
@@ -533,8 +537,8 @@
 		3C0AF38227D7A5C000A36CE1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3C0AF38F27DA6DFC00A36CE1 /* SearchViewController.swift */,
 				3C0AF38427D7A5FB00A36CE1 /* MapViewController.swift */,
-				3C0AF38527D7A5FB00A36CE1 /* MapViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -551,6 +555,8 @@
 			isa = PBXGroup;
 			children = (
 				3C0AF38B27D7C3CC00A36CE1 /* LocationManager.swift */,
+				3C0AF38D27DA692D00A36CE1 /* Location.swift */,
+				3C0AF39127DA818A00A36CE1 /* SearchViewCell.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -765,7 +771,6 @@
 				2E18225027046B4200B271CA /* Rubik-Black.ttf in Resources */,
 				2E18224A27046B4200B271CA /* Rubik-MediumItalic.ttf in Resources */,
 				2E18225427046B4200B271CA /* Rubik-BlackItalic.ttf in Resources */,
-				3C0AF38727D7A5FB00A36CE1 /* MapViewController.xib in Resources */,
 				2E98854426FBA1F300A881F7 /* Assets.xcassets in Resources */,
 				2E18225727046B4200B271CA /* Rubik-BoldItalic.ttf in Resources */,
 				2E18224D27046B4200B271CA /* Rubik-Light.ttf in Resources */,
@@ -852,6 +857,7 @@
 				2E98856526FBB9BF00A881F7 /* ProfileCoordinator.swift in Sources */,
 				3C600F0F27BA672B00D2E692 /* WelcomeCell.swift in Sources */,
 				2E26797C2703917E0090F074 /* HomePresenter.swift in Sources */,
+				3C0AF39027DA6DFC00A36CE1 /* SearchViewController.swift in Sources */,
 				2E98856126FBB98800A881F7 /* FavouriteCoordinator.swift in Sources */,
 				3C600F0627BA5B7D00D2E692 /* WelcomeController.swift in Sources */,
 				2E26797E270391870090F074 /* HomeInteractor.swift in Sources */,
@@ -860,9 +866,11 @@
 				2E1822342704684200B271CA /* FirebaseNetwork.swift in Sources */,
 				2E770C162706543300872550 /* HomeSegmentEnum.swift in Sources */,
 				3C600F1127BA678000D2E692 /* WelcomeData.swift in Sources */,
+				3C0AF39227DA818A00A36CE1 /* SearchViewCell.swift in Sources */,
 				2E98853F26FBA1F200A881F7 /* ViewController.swift in Sources */,
 				3C71204227CFC49B003F2EEE /* CampAddingController.swift in Sources */,
 				2E98855026FBB56D00A881F7 /* MainCoordinator.swift in Sources */,
+				3C0AF38E27DA692E00A36CE1 /* Location.swift in Sources */,
 				2E7BB7E8270B788000B2DCBB /* CampDetailPresenter.swift in Sources */,
 				3C0AF38927D7A65900A36CE1 /* MapViewPresenter.swift in Sources */,
 				2E98855926FBB8F800A881F7 /* HomeCoordinator.swift in Sources */,

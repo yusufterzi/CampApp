@@ -49,6 +49,9 @@ public final class StringProvider {
     public static let descriptionPlaceHolder: String = "Kamp alanı ile ilgili detayları gir".localized
     public static let Ok: String = "Tamam".localized
     public static let save: String = "Kaydet".localized
+    public static let searchHeader: String = "Kamp Alanı Bul".localized
+    public static let searchPlaceHodler: String = "Ara".localized
+
 
 
 }

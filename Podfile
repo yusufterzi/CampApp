@@ -22,6 +22,7 @@ target 'CampApp' do
   pod 'SDWebImage'
   pod 'AttributedStringBuilder'
   pod 'ActionKit'
+  pod 'FloatingPanel'
 end
 
 target 'YTUI' do

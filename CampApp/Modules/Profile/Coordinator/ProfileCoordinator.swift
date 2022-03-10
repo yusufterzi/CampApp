@@ -34,7 +34,7 @@ class ProfileCoordinator: NavigationCoordinator<ProfileRoute> {
             viewController.setupPresenter(presenter: CampAddingPresenter(view: viewController, router: self.unownedRouter))
             return .push(viewController)
         case .maps:
-            let viewController = MapViewController(nibName: "MapViewController", bundle: nil)
+            let viewController = MapViewController()
             viewController.setupPresenter(presenter: MapViewPresenter(router: self.unownedRouter))
             viewController.hidesBottomBarWhenPushed = true
             

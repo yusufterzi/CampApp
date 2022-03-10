@@ -28,6 +28,43 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
         
     }
     
+    public func findLocation(with query: String, completion: @escaping Handler<[Location]>) {
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(query) { places, error in
+            guard let places = places, error == nil else {
+                completion([])
+                return
+            }
+            
+            let models: [Location] = places.compactMap({ places in
+                var name = ""
+                
+                if let locationName = places.name {
+                    name += locationName
+                }
+                
+                if let adminRegion = places.administrativeArea {
+                    name += ", \(adminRegion)"
+                }
+                
+                if let locality = places.locality {
+                    name += ", \(locality)"
+                }
+                
+                if let country = places.country {
+                    name += ", \(country)"
+                }
+                
+                let result = Location(title: name, coordinate: places.location?.coordinate)
+                return result
+            })
+            
+            completion(models)
+            
+        }
+
+    }
+    //Düxenle
     public func resolveLocationName(with location: CLLocation, completion: @escaping Handler<String?>) {
         
         let geocoder = CLGeocoder()
