@@ -55,7 +55,7 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
                     name += ", \(country)"
                 }
                 
-                let result = Location(title: name, coordinate: places.location?.coordinate)
+                let result = Location(address: name, coordinate: places.location?.coordinate)
                 return result
             })
             
@@ -64,8 +64,8 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
         }
 
     }
-    //Düxenle
-    public func resolveLocationName(with location: CLLocation, completion: @escaping Handler<String?>) {
+    
+    public func resolveLocationName(with location: CLLocation, completion: @escaping Handler<Location?>) {
         
         let geocoder = CLGeocoder()
         geocoder.reverseGeocodeLocation(location, preferredLocale: .current) { placeMarks, error in
@@ -82,7 +82,7 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
             if let adminRegion = place.administrativeArea {
                 name  += ", \(adminRegion)"
             }
-            completion(name)
+            completion(Location(address: name, coordinate: location.coordinate))
         }
         
     }

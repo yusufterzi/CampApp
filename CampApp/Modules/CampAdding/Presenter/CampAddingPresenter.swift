@@ -28,7 +28,7 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
         self.view = view
         self.router = router
         self.interactor = CampAddingInteractor()
-        self.camp = CampModel ()
+        self.camp = CampModel()
     }
     
     func loadUI() {
@@ -78,8 +78,7 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
                                            image: ImageProvider.arrowBottom,
                                            isUserInteractionEnabled: false)
         presenter.onTap = { [weak self] in
-            print("Open Apple Maps!")
-            self?.router.trigger(.maps, with: TransitionOptions(animated: true))
+            self?.router.trigger(.maps(self?.camp), with: TransitionOptions(animated: true))
         }
         
         let component = TextFieldComponent(id: "",
@@ -131,7 +130,7 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
                                         text: StringProvider.save,
                                         backgroundColor: ColorProvider.onboardingRedColor.color)
         presenter.tapped = { [weak self] in
-            print("Açıklama: \(self?.camp.description)--- Kamp alanı İsmi : \(self?.camp.name)--- Lokasyon İsmi: \(self?.camp.subLocation)")
+            print("Kamp alanı İsmi : \(self?.camp.name)---Longitude: \(self?.camp.longitude)--Latitude: \(self?.camp.latitude)---Adress: \(self?.camp.city)---Lokasyon İsmi: \(self?.camp.subLocation)---Açıklama: \(self?.camp.description)")
         }
         let component = ButtonComponent(id: "",
                                       presenter: presenter)

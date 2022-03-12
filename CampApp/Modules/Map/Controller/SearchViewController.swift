@@ -97,9 +97,8 @@ extension SearchViewController: UITextFieldDelegate {
         return true
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        if let text = field.text, !text.isEmpty {
+    public func textFieldDidChangeSelection(_ textField: UITextField) {
+        if let text = field.text, !text.isEmpty,text.count > 3 {
             LocationManager.shared.findLocation(with: text) { [weak self] locations in
                 DispatchQueue.main.async {
                     self?.locations = locations
@@ -108,7 +107,6 @@ extension SearchViewController: UITextFieldDelegate {
             }
         }
     }
-    
 }
 
 
@@ -119,11 +117,12 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SearchViewCell.identifier, for: indexPath) as! SearchViewCell
-        cell.setup(locations[indexPath.row].title)
+        cell.setup(locations[indexPath.row].address)
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        field.resignFirstResponder()
         delegate?.searchViewController(self, didUserSearchWith: locations[indexPath.row])
         
     }

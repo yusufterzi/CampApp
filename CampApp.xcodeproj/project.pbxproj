@@ -61,6 +61,7 @@
 		3C65B95F27C41C1E0069A832 /* ImageSliderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C65B95E27C41C1E0069A832 /* ImageSliderController.swift */; };
 		3C65B96827C423650069A832 /* ImageSliderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C65B96727C423650069A832 /* ImageSliderPresenter.swift */; };
 		3C65B96A27C426D40069A832 /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C65B96927C426D40069A832 /* ImageViewCell.swift */; };
+		3C6B247A27DCAEE50051821D /* CustomFloatingPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B247927DCAEE50051821D /* CustomFloatingPanelLayout.swift */; };
 		3C6DB88C27BADA620005D050 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DB88B27BADA620005D050 /* WelcomePresenter.swift */; };
 		3C6DB89527BBF3AF0005D050 /* CampSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DB89427BBF3AF0005D050 /* CampSelectionController.swift */; };
 		3C6DB89727BBF3CD0005D050 /* CampSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DB89627BBF3CD0005D050 /* CampSelectionPresenter.swift */; };
@@ -145,6 +146,7 @@
 		3C65B95E27C41C1E0069A832 /* ImageSliderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSliderController.swift; sourceTree = "<group>"; };
 		3C65B96727C423650069A832 /* ImageSliderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSliderPresenter.swift; sourceTree = "<group>"; };
 		3C65B96927C426D40069A832 /* ImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
+		3C6B247927DCAEE50051821D /* CustomFloatingPanelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFloatingPanelLayout.swift; sourceTree = "<group>"; };
 		3C6DB88B27BADA620005D050 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
 		3C6DB89427BBF3AF0005D050 /* CampSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampSelectionController.swift; sourceTree = "<group>"; };
 		3C6DB89627BBF3CD0005D050 /* CampSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampSelectionPresenter.swift; sourceTree = "<group>"; };
@@ -557,6 +559,7 @@
 				3C0AF38B27D7C3CC00A36CE1 /* LocationManager.swift */,
 				3C0AF38D27DA692D00A36CE1 /* Location.swift */,
 				3C0AF39127DA818A00A36CE1 /* SearchViewCell.swift */,
+				3C6B247927DCAEE50051821D /* CustomFloatingPanelLayout.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -884,6 +887,7 @@
 				2E7BB7E6270B784500B2DCBB /* CampDetailController.swift in Sources */,
 				3C8111C527CC1EAC00E6832C /* ProfilePresenter.swift in Sources */,
 				2E98855526FBB63A00A881F7 /* MainTabCoordinator.swift in Sources */,
+				3C6B247A27DCAEE50051821D /* CustomFloatingPanelLayout.swift in Sources */,
 				3C6DB88C27BADA620005D050 /* WelcomePresenter.swift in Sources */,
 				3C6DB89727BBF3CD0005D050 /* CampSelectionPresenter.swift in Sources */,
 				3C8111C727CC1F2C00E6832C /* ProfileInteractor.swift in Sources */,
@@ -1039,10 +1043,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = W3475PQ5N9;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1061,7 +1065,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.campApp.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = camp_app_dev;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1075,10 +1079,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = W3475PQ5N9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CampApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1094,7 +1098,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.campApp.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = camp_app_dev;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

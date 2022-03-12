@@ -10,23 +10,56 @@ import Foundation
 import MapKit
 import CoreLocation
 import FloatingPanel
+import Common
+import XCoordinator
+import SwiftUI
+import YTNetwork
 
-final class MapViewController: UIViewController {
-
-    private var presenter: MapViewPresenter?
-    let panel = FloatingPanelController()
-    private var locationName: String?
+final class MapViewController: UIViewController, FloatingPanelControllerDelegate {
     
+    private var presenter: MapViewPresenter?
+    private let panel = FloatingPanelController()
+    private var locationName: String?
+    private let trackMeButton: UIButton = {
+        let button = UIButton()
+        let configuration = UIImage.SymbolConfiguration(pointSize: 24)
+        button.frame = CGRect(x: 5, y: 5, width: 35, height: 35)
+        button.setImage(UIImage(systemName: "location.fill", withConfiguration: configuration) , for: .normal)
+        button.backgroundColor = .clear
+        button.addTarget(self, action: #selector(trackMeButtonClicked), for: .touchUpInside)
+        return button
+    }()
+    public var comletionHandler: Handler<Location>?
+    public var selectedLocation: Location = {
+        var location = Location(address: "" , coordinate: nil)
+        return location
+    }()
     private let map: MKMapView = {
         let map = MKMapView()
         return map
     } ()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        map.delegate = self
-        view.addSubview(map)
-        
+        self.navigationItem.largeTitleDisplayMode = .never
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneClicked))
+        setupView()
+        setupConstraints()
+        setupFloatingPanel()
+        prepareMap()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    override func viewDidLayoutSubviews() {
+        self.map.frame = view.bounds
+    }
+    public func setupPresenter(presenter: MapViewPresenter) {
+        self.presenter = presenter
+    }
+    
+    private func setupFloatingPanel() {
         let searchVC = SearchViewController()
         searchVC.delegate = self
         searchVC.keyboardWillShowHandler = { [weak self] in
@@ -36,42 +69,43 @@ final class MapViewController: UIViewController {
             self?.panel.move(to: .half, animated: true)
         }
         panel.set(contentViewController: searchVC)
+        panel.delegate = self
+        panel.layout = CustomFloatingPanelLayout()
         panel.addPanel(toParent: self)
-        
-        
+    }
+    private func prepareMap() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(longPressed))
-        self.map.addGestureRecognizer(tapGestureRecognizer)
+        map.addGestureRecognizer(tapGestureRecognizer)
         LocationManager.shared.getUserLocation { [weak self] location in
             DispatchQueue.main.async {
                 guard let strongSelf = self else {
                     return
                 }
-                strongSelf.addMapPin(with: location)
+                strongSelf.selectedLocation.coordinate = location.coordinate
+                strongSelf.map.setUserTrackingMode( .followWithHeading, animated: true)
             }
         }
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: true)
+    private func setupView(){
+        view.addSubview(map)
+        map.addSubview(trackMeButton)
     }
-    override func viewDidLayoutSubviews() {
-        self.map.frame = view.bounds
-    }
-    public func setupPresenter(presenter: MapViewPresenter) {
-        self.presenter = presenter
-    }
-    private func addMapPin(with location: CLLocation) {
-        let pin = MKPointAnnotation()
-        pin.coordinate = location.coordinate
-        pin.title = "Konumunuz"
-        self.map.setRegion(MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.7, longitudeDelta: 0.7)), animated: true)
-        self.map.addAnnotation(pin)
-        
-        LocationManager.shared.resolveLocationName(with: location) { [weak self] locationName in
-            self?.title = locationName
+    private func setupConstraints() {
+        trackMeButton.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.leading.equalToSuperview().offset(8)
+            $0.height.equalTo(44)
+            $0.width.equalTo(44)
         }
-        
     }
+    @objc func trackMeButtonClicked() {
+        map.setUserTrackingMode( .follow, animated: true)
+    }
+    @objc func doneClicked() {
+        self.presenter?.router.trigger(.back, with: TransitionOptions(animated: true))
+        self.comletionHandler?(selectedLocation)
+    }
+    
     @objc func longPressed(sender: UILongPressGestureRecognizer) {
         let point = sender.location(in: self.map)
         let coordinate = self.map.convert(point, toCoordinateFrom: self.map)
@@ -79,29 +113,16 @@ final class MapViewController: UIViewController {
         
         let pin = MKPointAnnotation()
         pin.coordinate = coordinate
-        self.map.removeAnnotations(self.map.annotations)
-        self.map.addAnnotation(pin)
-        self.panel.move(to: .tip, animated: true)
+        map.removeAnnotations(map.annotations)
+        map.addAnnotation(pin)
+        map.setRegion(MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)), animated: true)
+        panel.move(to: .tip, animated: true)
         
-        LocationManager.shared.resolveLocationName(with: location) { [weak self] locationName in
-            self?.title = locationName
+        LocationManager.shared.resolveLocationName(with: location) { [weak self] location in
+            self?.selectedLocation = location ?? Location(address: "", coordinate: nil)
         }
     }
     
-}
-extension MapViewController: MKMapViewDelegate {
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if annotation.title != "Konumunuz" {
-            let annotationView = mapView.view(for: annotation) as? MKPinAnnotationView ?? MKPinAnnotationView(annotation: annotation, reuseIdentifier: nil)
-            annotationView.pinTintColor = UIColor.red
-            annotationView.animatesDrop = true
-            annotationView.canShowCallout = true
-            return annotationView
-        }
-        return nil
-        
-    }
-        
 }
 extension MapViewController: SearchViewControllerDelegate {
     
@@ -114,8 +135,13 @@ extension MapViewController: SearchViewControllerDelegate {
         let pin = MKPointAnnotation()
         pin.coordinate = coordinate
         map.addAnnotation(pin)
-        self.map.setRegion(MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.7, longitudeDelta: 0.7)), animated: true)
-        self.title = location.title
+        map.setRegion(MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)), animated: true)
         
+        let clLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        LocationManager.shared.resolveLocationName(with: clLocation) { [weak self] location in
+            self?.selectedLocation = location ?? Location(address: "", coordinate: nil)
+        }
     }
 }
+
+

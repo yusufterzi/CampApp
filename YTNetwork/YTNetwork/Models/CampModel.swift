@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct CampModel: Codable {
+public class CampModel: Codable {
     public var name: String?
     public var subLocation: String?
     public var city: String?
