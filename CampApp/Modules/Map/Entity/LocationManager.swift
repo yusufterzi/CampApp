@@ -55,7 +55,7 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
                     name += ", \(country)"
                 }
                 
-                let result = Location(address: name, coordinate: places.location?.coordinate)
+                let result = Location(address: name, coordinate: places.location?.coordinate, city: places.administrativeArea ?? "")
                 return result
             })
             
@@ -82,7 +82,7 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
             if let adminRegion = place.administrativeArea {
                 name  += ", \(adminRegion)"
             }
-            completion(Location(address: name, coordinate: location.coordinate))
+            completion(Location(address: name, coordinate: location.coordinate, city: place.administrativeArea ?? ""))
         }
         
     }

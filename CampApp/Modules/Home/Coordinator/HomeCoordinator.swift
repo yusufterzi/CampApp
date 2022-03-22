@@ -7,11 +7,13 @@
 
 import XCoordinator
 import YTNetwork
+import YTUI
+import FirebaseUI
 
 enum HomeRoute: Route {
     case home(category: Int?)
-    case campDetail(CampModel)
-    case imageSlider ([String])
+    case campDetail(CampComponentViewModel)
+    case imageSlider ([StorageReference])
     case back
 }
 

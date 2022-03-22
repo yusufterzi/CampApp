@@ -12,14 +12,14 @@ import YTNetwork
 public typealias Parameters = [String: Any]
 
 extension Parameters {
-  func decoded<T: Decodable>() -> T? {
-    do {
-      let jsonData = try JSONSerialization.data(withJSONObject: self)
-      return try jsonData.decoded() as T
-    } catch {
-      return nil
+    func decoded<T: Decodable>() -> T? {
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: self)
+            return try jsonData.decoded() as T
+        } catch {
+            return nil
+        }
     }
-  }
 }
 
 extension Encodable {
@@ -35,24 +35,24 @@ extension Data {
 }
 
 extension Query {
-  func getDocumentsObjects<T: Decodable>(completion: @escaping (GenericResult<[T]>) -> Void) {
-    var responseArray: [T] = .init()
-    self.getDocuments { snapshot, error in
-      if let error = error {
-        completion(.failure(error))
-      } else {
-        guard let snapshot = snapshot else {
-          completion(.failure(CampError.snapshotFailed))
-          return
+    func getDocumentsObjects<T: Decodable>(completion: @escaping (GenericResult<[T]>) -> Void) {
+        var responseArray: [T] = .init()
+        self.getDocuments { snapshot, error in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                guard let snapshot = snapshot else {
+                    completion(.failure(CampError.snapshotFailed))
+                    return
+                }
+                
+                for document in snapshot.documents {
+                    if let item = document.data().decoded() as T? {
+                        responseArray.append(item)
+                    }
+                }
+                completion(.success(responseArray))
+            }
         }
-        
-        for document in snapshot.documents {
-          if let item = document.data().decoded() as T? {
-            responseArray.append(item)
-          }
-        }
-        completion(.success(responseArray))
-      }
     }
-  }
 }

@@ -11,6 +11,7 @@ import UIKit
 import Common
 
 public protocol TextFieldPresenterProtocol {
+    var text: String? { get set }
     var headerTitle: String { get set }
     var headerFont: UIFont { get set }
     var headerColor: UIColor { get set }
@@ -25,6 +26,7 @@ public protocol TextFieldPresenterProtocol {
 }
 
 public final class TextFieldPresenter: TextFieldPresenterProtocol {
+    public var text: String?
     public var headerTitle: String
     public var headerFont: UIFont
     public var headerColor: UIColor
@@ -36,7 +38,7 @@ public final class TextFieldPresenter: TextFieldPresenterProtocol {
     public var textEdited: Handler<String>?
     
     
-    public init(headerTitle: String, headerFont: UIFont, headerColor: UIColor, headerEdgeInsets: UIEdgeInsets, placeHolder: String, image: UIImage? = nil, isUserInteractionEnabled: Bool = true) {
+    public init(headerTitle: String, headerFont: UIFont, headerColor: UIColor, headerEdgeInsets: UIEdgeInsets, placeHolder: String, image: UIImage? = nil, isUserInteractionEnabled: Bool = true, text: String?) {
         self.headerTitle = headerTitle
         self.headerFont = headerFont
         self.headerColor = headerColor
@@ -44,5 +46,6 @@ public final class TextFieldPresenter: TextFieldPresenterProtocol {
         self.placeHolder = placeHolder
         self.image = image
         self.isUserInteractionEnabled = isUserInteractionEnabled
+        self.text = text
     }
 }

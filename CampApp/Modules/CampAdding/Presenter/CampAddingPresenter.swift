@@ -14,16 +14,17 @@ import AttributedStringBuilder
 
 protocol CampAddingPresenterProtocol {
     var camp: CampModel { get set }
-    
+    var campImages: [CampImageModel]? { get set }
 }
 
 final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter {
-    
+    public var campImages: [CampImageModel]?
     internal weak var view: BaseListView?
     internal var interactor: CampAddingInteractorProtocol?
     internal var router: UnownedRouter<ProfileRoute>
     public var camp: CampModel
-
+    private var imageArray: [UIImage]?
+    
     init(view: BaseListView, router: UnownedRouter<ProfileRoute>) {
         self.view = view
         self.router = router
@@ -32,11 +33,6 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
     }
     
     func loadUI() {
-        self.dataLoaded()
-    }
-    
-    func dataLoaded() {
-        //guard let interactor = interactor else { return }
         var cells: [CellNode] = []
         
         cells.append(campAreaNameView())
@@ -45,8 +41,7 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
         cells.append(campDescriptionView())
         cells.append(campUploadImageView())
         cells.append(saveButtonView())
-
-
+        
         let section = Section(id: "", header: nil, cells: cells, footer: nil)
         
         view?.sendAction(.loadData([section]))
@@ -57,16 +52,16 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
         let presenter = TextFieldPresenter(headerTitle: StringProvider.campAreaName,
                                            headerFont: FontProvider.regular12,
                                            headerColor: ColorProvider.semiDarkTextColor.color,
-                                           headerEdgeInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 24), placeHolder: StringProvider.campAreaNamePlaceHolder)
-       
+                                           headerEdgeInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 24), placeHolder: StringProvider.campAreaNamePlaceHolder,
+                                           text: self.camp.name)
+        
         presenter.textEdited = { [weak self] campName in
-            print("Kamp Alanı İsmi:\(campName)")
             self?.camp.name = campName
         }
         
         
         let component = TextFieldComponent(id: "",
-                                      presenter: presenter)
+                                           presenter: presenter)
         return CellNode(component)
     }
     private func campLocationSearchView() -> CellNode {
@@ -76,13 +71,21 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
                                            headerColor: ColorProvider.semiDarkTextColor.color,
                                            headerEdgeInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 24), placeHolder: StringProvider.locationPlaceHolder,
                                            image: ImageProvider.arrowBottom,
-                                           isUserInteractionEnabled: false)
+                                           isUserInteractionEnabled: false,
+                                           text: self.camp.address)
         presenter.onTap = { [weak self] in
-            self?.router.trigger(.maps(self?.camp), with: TransitionOptions(animated: true))
+            
+            self?.router.trigger(.maps({ location in
+                self?.camp.longitude = location.coordinate?.longitude
+                self?.camp.latitude = location.coordinate?.latitude
+                self?.camp.city = location.city
+                self?.camp.address = location.address
+                self?.loadUI()
+            }), with: TransitionOptions(animated: true))
         }
         
         let component = TextFieldComponent(id: "",
-                                      presenter: presenter)
+                                           presenter: presenter)
         return CellNode(component)
     }
     private func campLocationView() -> CellNode {
@@ -90,36 +93,41 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
         let presenter = TextFieldPresenter(headerTitle: StringProvider.locationName,
                                            headerFont: FontProvider.regular12,
                                            headerColor: ColorProvider.semiDarkTextColor.color,
-                                           headerEdgeInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 24), placeHolder: StringProvider.locationNamePlaceHolder)
+                                           headerEdgeInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 24), placeHolder: StringProvider.locationNamePlaceHolder,
+                                           text: self.camp.subLocation)
         presenter.textEdited = { [weak self] location in
-            print("Lokasyon İsmi:\(location)")
             self?.camp.subLocation = location
         }
         
         let component = TextFieldComponent(id: "",
-                                      presenter: presenter)
+                                           presenter: presenter)
         return CellNode(component)
     }
     private func campDescriptionView() -> CellNode {
         
         let presenter = MultilineTextViewPresenter(headerTitle: StringProvider.description,
-                                           headerFont: FontProvider.regular12,
-                                           headerColor: ColorProvider.semiDarkTextColor.color,
-                                           headerEdgeInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 24), placeHolder: StringProvider.descriptionPlaceHolder)
+                                                   headerFont: FontProvider.regular12,
+                                                   headerColor: ColorProvider.semiDarkTextColor.color,
+                                                   headerEdgeInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 24),
+                                                   placeHolder: StringProvider.descriptionPlaceHolder,
+                                                   text: self.camp.description)
         presenter.textEdited = { [weak self] description in
-            print("Açıklama:\(description)")
             self?.camp.description = description
         }
         let component = MultilineTextViewComponent(id: "",
-                                      presenter: presenter)
+                                                   presenter: presenter)
         return CellNode(component)
     }
     
     private func campUploadImageView() -> CellNode {
         
         let presenter = CampAreaCollectionPresenter()
+        presenter.selectedImagesHandler = { [weak self] images in
+            self?.campImages = presenter.selectedImages.compactMap( { CampImageModel(campImage: $0) } )
+        }
+        
         let component = CampAreaCollectionComponent(id: "",
-                                      presenter: presenter)
+                                                    presenter: presenter)
         return CellNode(component)
     }
     
@@ -130,15 +138,16 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
                                         text: StringProvider.save,
                                         backgroundColor: ColorProvider.onboardingRedColor.color)
         presenter.tapped = { [weak self] in
-            print("Kamp alanı İsmi : \(self?.camp.name)---Longitude: \(self?.camp.longitude)--Latitude: \(self?.camp.latitude)---Adress: \(self?.camp.city)---Lokasyon İsmi: \(self?.camp.subLocation)---Açıklama: \(self?.camp.description)")
+            self?.interactor?.campImages = self?.campImages ?? .init()
+            self?.interactor?.camp = self?.camp ?? .init()
+            self?.interactor?.camp.images = self?.campImages?.compactMap( {$0.uuid})
+            self?.interactor?.uploadData()
+            self?.router.trigger(.back, with: TransitionOptions(animated: true))
         }
         let component = ButtonComponent(id: "",
-                                      presenter: presenter)
+                                        presenter: presenter)
         return CellNode(component)
     }
-    
-  
-
     
     
 }

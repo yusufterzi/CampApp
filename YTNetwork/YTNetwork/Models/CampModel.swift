@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 public class CampModel: Codable {
     public var name: String?
@@ -16,8 +17,11 @@ public class CampModel: Codable {
     public var latitude: Double?
     public var longitude: Double?
     public var point: Double?
+    public var address: String?
+    public var id: String
+
     
-    public init(name: String? = nil, subLocation: String? = nil , city: String? = nil, description: String? = nil, images: [String]? = nil, latitude: Double? = nil, longitude: Double? = nil, point: Double? = nil) {
+    public init(name: String? = nil, subLocation: String? = nil , city: String? = nil, description: String? = nil, images: [String]? = nil, latitude: Double? = nil, longitude: Double? = nil, point: Double? = nil, address:String? = nil) {
         
         self.name = name
         self.subLocation = subLocation
@@ -27,5 +31,18 @@ public class CampModel: Codable {
         self.latitude = latitude
         self.longitude = longitude
         self.point = point
+        self.address = address
+        self.id = UUID().uuidString
+    }
+}
+
+
+public class CampImageModel {
+    public var campImage: UIImage
+    public var uuid: String
+    
+    public init(campImage: UIImage) {
+        self.campImage = campImage
+        self.uuid = UUID().uuidString
     }
 }

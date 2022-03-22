@@ -17,6 +17,7 @@ target 'CampApp' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
   pod 'FirebaseFirestoreSwift'
   pod 'SPPermissions/LocationWhenInUse'
   pod 'SDWebImage'
@@ -39,6 +40,7 @@ target 'YTUI' do
   pod 'SPPermissions/LocationWhenInUse'
   pod 'SDWebImage'
   pod 'AttributedStringBuilder'
+  pod 'FirebaseUI/Storage'
 end
 
 target 'Common' do

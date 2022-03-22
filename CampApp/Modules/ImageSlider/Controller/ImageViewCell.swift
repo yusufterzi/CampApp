@@ -7,11 +7,12 @@
 
 import UIKit
 import SDWebImage
+import FirebaseUI
 
 class ImageViewCell: UICollectionViewCell {
     static let identifier = String(describing: ImageViewCell.self)
     @IBOutlet var imageView: UIImageView!
-    func setup(_ image: String)  {
-        imageView.sd_setImage(with: URL(string: image))
+    func setup(_ image: StorageReference)  {
+        imageView.sd_setImage(with: image)
     }
 }

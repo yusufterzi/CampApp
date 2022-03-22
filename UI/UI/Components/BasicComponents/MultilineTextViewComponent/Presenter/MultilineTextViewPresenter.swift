@@ -16,10 +16,12 @@ public protocol MultilineTextViewPresenterProtocol {
     var headerEdgeInsets: UIEdgeInsets? { get set }
     var placeHolder: String { get set }
     var textEdited: Handler<String>? { get set }
+    var text: String? { get set }
 
 }
 
 public final class MultilineTextViewPresenter: MultilineTextViewPresenterProtocol {
+    public var text: String?
     public var headerTitle: String
     public var headerFont: UIFont
     public var headerColor: UIColor
@@ -27,11 +29,12 @@ public final class MultilineTextViewPresenter: MultilineTextViewPresenterProtoco
     public var placeHolder: String
     public var textEdited: Handler<String>?
 
-    public init(headerTitle: String, headerFont: UIFont, headerColor: UIColor, headerEdgeInsets: UIEdgeInsets, placeHolder: String) {
+    public init(headerTitle: String, headerFont: UIFont, headerColor: UIColor, headerEdgeInsets: UIEdgeInsets, placeHolder: String, text: String?) {
         self.headerTitle = headerTitle
         self.headerFont = headerFont
         self.headerColor = headerColor
         self.headerEdgeInsets = headerEdgeInsets
         self.placeHolder = placeHolder
+        self.text = text
     }
 }

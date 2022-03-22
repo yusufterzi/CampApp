@@ -10,9 +10,11 @@ import CoreLocation
 public class Location {
     var address: String
     var coordinate: CLLocationCoordinate2D?
+    var city: String
     
-    init(address: String, coordinate: CLLocationCoordinate2D?){
+    init(address: String, coordinate: CLLocationCoordinate2D?, city: String){
         self.address = address
         self.coordinate = coordinate
+        self.city = city
     }
 }

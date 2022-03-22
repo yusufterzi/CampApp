@@ -51,7 +51,7 @@ public final class CampComponentView: UIView, Tappable, CampComponentViewProtoco
       return
     }
 
-    imageView.sd_setImage(with: URL(string: presenter.image))
+      imageView.sd_setImage(with: presenter.image)
     
     let starPresenter = IconedLabelPresenter(title: presenter.point,
                                              image: ImageProvider.star,

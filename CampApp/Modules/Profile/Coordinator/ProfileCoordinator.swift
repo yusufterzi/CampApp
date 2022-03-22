@@ -7,11 +7,12 @@
 
 import XCoordinator
 import YTNetwork
+import Common
 
 enum ProfileRoute: Route {
     case profile
     case addCampArea
-    case maps(CampModel?)
+    case maps(_ handler: Handler<Location>?)
     case back
 }
 
@@ -35,16 +36,11 @@ class ProfileCoordinator: NavigationCoordinator<ProfileRoute> {
             let viewController = CampAddingController()
             viewController.setupPresenter(presenter: CampAddingPresenter(view: viewController, router: self.unownedRouter))
             return .push(viewController)
-        case .maps(var camp):
+        case .maps(let handler):
             let viewController = MapViewController()
             viewController.setupPresenter(presenter: MapViewPresenter(router: self.unownedRouter))
+            viewController.comletionHandler = handler
             viewController.hidesBottomBarWhenPushed = true
-            viewController.comletionHandler = {  location in
-                camp?.longitude = location.coordinate?.longitude
-                camp?.latitude = location.coordinate?.latitude
-                camp?.city = location.address
-            }
-            
             return .push(viewController)
         case .back:
             return .pop()

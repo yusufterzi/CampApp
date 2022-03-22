@@ -31,7 +31,7 @@ final class MapViewController: UIViewController, FloatingPanelControllerDelegate
     }()
     public var comletionHandler: Handler<Location>?
     public var selectedLocation: Location = {
-        var location = Location(address: "" , coordinate: nil)
+        var location = Location(address: "" , coordinate: nil, city: "")
         return location
     }()
     private let map: MKMapView = {
@@ -119,7 +119,7 @@ final class MapViewController: UIViewController, FloatingPanelControllerDelegate
         panel.move(to: .tip, animated: true)
         
         LocationManager.shared.resolveLocationName(with: location) { [weak self] location in
-            self?.selectedLocation = location ?? Location(address: "", coordinate: nil)
+            self?.selectedLocation = location ?? Location(address: "", coordinate: nil, city: "")
         }
     }
     
@@ -139,7 +139,7 @@ extension MapViewController: SearchViewControllerDelegate {
         
         let clLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
         LocationManager.shared.resolveLocationName(with: clLocation) { [weak self] location in
-            self?.selectedLocation = location ?? Location(address: "", coordinate: nil)
+            self?.selectedLocation = location ?? Location(address: "", coordinate: nil, city: "")
         }
     }
 }

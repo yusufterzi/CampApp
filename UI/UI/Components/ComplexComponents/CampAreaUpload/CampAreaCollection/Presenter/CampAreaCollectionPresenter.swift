@@ -14,9 +14,12 @@ import Common
 public protocol CampAreaCollectionPresenterProtocol {
     var sections: [Section] { get }
     var reloadData: VoidHandler? { get set }
+    var selectedImages: [UIImage] { get set }
+    var selectedImagesHandler: Handler<[UIImage]>? { get set }
 }
 
 public final class CampAreaCollectionPresenter: CampAreaCollectionPresenterProtocol {
+    public var selectedImagesHandler: Handler<[UIImage]>?
     public var removeImageHandler: Handler<UIImage>?
     public var reloadData: VoidHandler?
     public var selectedImages: [UIImage] = [UIImage]() {
@@ -25,6 +28,7 @@ public final class CampAreaCollectionPresenter: CampAreaCollectionPresenterProto
             reloadData?()
         }
     }
+    
     public var sections: [Section] = .init()
     var cells: [CellNode] = .init()
     

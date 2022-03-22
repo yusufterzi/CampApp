@@ -41,7 +41,9 @@ extension ImageSliderController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageViewCell.identifier, for: indexPath) as! ImageViewCell
-        cell.setup(presenter?.images[indexPath.item] ?? "")
+        if let ref = presenter?.images[indexPath.item] {
+            cell.setup(ref)
+        }
         return cell
     }
     

@@ -45,6 +45,7 @@ public final class TextField: UIView ,Tappable {
         
     }
     private func setupTextField(){
+        textField.text = presenter?.text 
         textField.placeholder = presenter?.placeHolder
         textField.backgroundColor = ColorProvider.lightGray.color
         textField.isUserInteractionEnabled = presenter?.isUserInteractionEnabled ?? true

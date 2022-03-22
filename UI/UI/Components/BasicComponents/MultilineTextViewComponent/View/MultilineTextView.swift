@@ -43,9 +43,9 @@ public final class MultilineTextView: UIView {
         
     }
     private func setupTextView() {
-        textView.text = presenter?.placeHolder
+        textView.text = presenter?.text != nil ? presenter?.text : presenter?.placeHolder
         textView.font = UIFont.systemFont(ofSize: 17)
-        textView.textColor = UIColor.placeholderText
+        textView.textColor = presenter?.text != nil  ? UIColor.black : UIColor.placeholderText
         textView.backgroundColor = ColorProvider.lightGray.color
         textView.cornerRadius = 10
     }
@@ -78,14 +78,22 @@ extension MultilineTextView: UITextViewDelegate {
         }
     }
     public func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == UIColor.placeholderText {
+        if textView.text == StringProvider.descriptionPlaceHolder {
             textView.text = nil
             textView.textColor = ColorProvider.blackTextColor.color
         }
     }
     
     public func textViewDidEndEditing(_ textView: UITextView) {
-        textView.text.isEmpty ? setupViews() : self.presenter?.textEdited?(textView.text)
+        if textView.text.isEmpty {
+            textView.text = nil
+            presenter?.text = nil
+            self.presenter?.textEdited?(textView.text)
+            configureView()
+        } else {
+            self.presenter?.textEdited?(textView.text)
+
+        }
     }
 }
 

@@ -13,6 +13,7 @@ import YTUI
 import YTNetwork
 import AttributedStringBuilder
 import UIKit
+import FirebaseUI
 
 protocol ImageSliderPresenterProtocol {
     
@@ -22,10 +23,10 @@ final class ImageSliderPresenter: ImageSliderPresenterProtocol {
     
     internal var router: UnownedRouter<HomeRoute>
     public var currentPage = 0
-    public var images: [String]
+    public var images: [StorageReference]
     
     
-    init(router: UnownedRouter<HomeRoute>, images: [String]) {
+    init(router: UnownedRouter<HomeRoute>, images: [StorageReference]) {
         self.router = router
         self.images = images
     }
