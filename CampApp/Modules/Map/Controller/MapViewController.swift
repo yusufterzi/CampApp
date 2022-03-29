@@ -81,11 +81,18 @@ final class MapViewController: UIViewController, FloatingPanelControllerDelegate
                 guard let strongSelf = self else {
                     return
                 }
-                strongSelf.selectedLocation.coordinate = location.coordinate
+                strongSelf.getLocationInfo(clLocation: location)
                 strongSelf.map.setUserTrackingMode( .followWithHeading, animated: true)
             }
         }
     }
+    
+    private func getLocationInfo(clLocation: CLLocation){
+        LocationManager.shared.resolveLocationName(with: clLocation) { location in
+            self.selectedLocation = location ?? Location(address: "", coordinate: nil, city: "")
+        }
+    }
+    
     private func setupView(){
         view.addSubview(map)
         map.addSubview(trackMeButton)
