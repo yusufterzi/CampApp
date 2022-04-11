@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct WelcomeData {
+public struct WelcomeData {
     let name: String
     let image: UIImage
 }

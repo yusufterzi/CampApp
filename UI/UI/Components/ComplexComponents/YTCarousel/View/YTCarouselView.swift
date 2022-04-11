@@ -10,7 +10,7 @@ import Carbon
 import SnapKit
 import UIKit
 import SDWebImage
-
+import FirebaseUI
 public protocol YTCarouselViewProtocol: BaseView {
   
 }
@@ -42,7 +42,7 @@ public final class YTCarouselView: UIView, YTCarouselViewProtocol {
 
   public init() {
     super.init(frame: .zero)
-    initialize()
+      initialize()
   }
   
   required init?(coder: NSCoder) {
@@ -65,8 +65,8 @@ public final class YTCarouselView: UIView, YTCarouselViewProtocol {
     setupBackRight()
 
     let currentItem = presenter.items[presenter.index]
-    if let image = currentItem.images?.first {
-      frontImageView.sd_setImage(with: URL(string: image))
+      if let ref = currentItem.imageReference?.first {
+        frontImageView.sd_setImage(with: ref)
     } else {
       frontImageView.image = nil
     }
@@ -105,8 +105,8 @@ private extension YTCarouselView {
       return
     }
     if presenter.index < (presenter.items.count - 1) {
-      if let image = presenter.items[presenter.index + 1].images?.first {
-        backRightImageView.sd_setImage(with: URL(string: image))
+      if let ref = presenter.items[presenter.index + 1].imageReference?.first {
+        backRightImageView.sd_setImage(with: ref)
         backRightImageView.isHidden = false
       }
     } else {
@@ -129,8 +129,8 @@ private extension YTCarouselView {
       return
     }
     if presenter.index != 0 {
-      if let image = presenter.items[presenter.index - 1].images?.first {
-        backLeftImageView.sd_setImage(with: URL(string: image))
+      if let ref = presenter.items[presenter.index - 1].imageReference?.first {
+        backLeftImageView.sd_setImage(with: ref)
         backLeftImageView.isHidden = false
       }
     } else {

@@ -16,6 +16,18 @@ public extension UIView {
             self.layer.cornerRadius = newValue
         }
     }
+    
+    var parentViewController: UIViewController? {
+        var parentResponder: UIResponder? = self.next
+        while parentResponder != nil {
+            if let viewController = parentResponder as? UIViewController {
+                return viewController
+            }
+            parentResponder = parentResponder?.next
+        }
+        return nil
+    }
+    
     func addCircleShadow() {
         let roundedShapeLayer = CAShapeLayer()
         roundedShapeLayer.fillColor = UIColor.white.cgColor

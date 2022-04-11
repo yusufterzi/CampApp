@@ -6,22 +6,29 @@
 //
 
 import UIKit
+import FirebaseUI
+
+public class ImageViewModel {
+    public var size: CGSize
+    public var imageReference: StorageReference
+    public var cornerRadius: CGFloat
+    
+    public init(size: CGSize, imageReference: StorageReference, cornerRadius: CGFloat) {
+        self.size = size
+        self.imageReference = imageReference
+        self.cornerRadius = cornerRadius
+    }
+}
 
 public protocol ImagePresenterProtocol {
-  var size: CGSize { get }
-  var image: String { get }
-  var cornerRadius: CGFloat { get }
+    var item: ImageViewModel { get }
 }
 
 public final class ImagePresenter: ImagePresenterProtocol {
-  public var size: CGSize
-  public var image: String
-  public var cornerRadius: CGFloat
-  
-  public init(size: CGSize, image: String, cornerRadius: CGFloat) {
-    self.size = size
-    self.image = image
-    self.cornerRadius = cornerRadius
-  }
-  
+    
+    public var item: ImageViewModel
+    
+    public init(item: ImageViewModel) {
+        self.item = item
+    }
 }

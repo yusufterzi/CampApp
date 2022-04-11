@@ -23,9 +23,9 @@ final class CampDetailPresenter: CampDetailPresenterProtocol, BaseListPresenter 
   internal weak var view: BaseListView?
   internal var interactor: CampDetailInteractorProtocol?
   internal var router: UnownedRouter<HomeRoute>
-  internal var item: CampModel
+  internal var item: CampComponentViewModel
   
-  init(view: BaseListView, router: UnownedRouter<HomeRoute>, item: CampModel) {
+  init(view: BaseListView, router: UnownedRouter<HomeRoute>, item: CampComponentViewModel) {
     self.view = view
     self.router = router
     self.interactor = CampDetailInteractor()
@@ -43,8 +43,8 @@ final class CampDetailPresenter: CampDetailPresenterProtocol, BaseListPresenter 
     campDetailPresenter.backButtonTapped = { [weak self] in
         self?.router.trigger(.back)
     }
-    campDetailPresenter.maximizeButtonTapped = { [weak self] item in
-        self?.router.trigger(.imageSlider(item), with: TransitionOptions(animated: true))
+    campDetailPresenter.maximizeButtonTapped = { [weak self] references in
+        self?.router.trigger(.imageSlider(references), with: TransitionOptions(animated: true))
     }
     let campComponent = CampDetailComponent(id: "", presenter: campDetailPresenter)
     
