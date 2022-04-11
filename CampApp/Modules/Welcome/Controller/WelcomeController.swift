@@ -71,7 +71,7 @@ final class WelcomeController: UIViewController, Storyboarded {
     }
     private func setupButton() {
         let buttonTextFont: [AttributedStringBuilder.Attribute] = [
-            .font(FontProvider.onboardingButton),
+            .font(FontProvider.bold18),
             .textColor(ColorProvider.onboardingYellowButtonText.color),
         ]
         let buttonText: NSAttributedString = AttributedStringBuilder().text(presenter.images[pageControl.currentPage].name, attributes: buttonTextFont).attributedString
