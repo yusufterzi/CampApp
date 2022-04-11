@@ -15,6 +15,8 @@ enum HomeRoute: Route {
     case campDetail(CampComponentViewModel)
     case imageSlider ([StorageReference])
     case back
+    case dismiss
+
 }
 
 class HomeCoordinator: NavigationCoordinator<HomeRoute> {
@@ -50,6 +52,9 @@ class HomeCoordinator: NavigationCoordinator<HomeRoute> {
             
         case .back:
             return .pop()
+        case .dismiss:
+            return .dismiss()
+            
         }
     }
 }

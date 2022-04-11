@@ -7,21 +7,22 @@
 import Foundation
 import UIKit
 import Common
+import XCoordinator
 
 final class ImageSliderController: UIViewController, Storyboarded  {
-    private var presenter: ImageSliderPresenter?
+    private var presenter: ImageSliderPresenter!
 
-    @IBOutlet var collectionView: UICollectionView!
-    @IBOutlet var pageControl: UIPageControl!
-    @IBOutlet var minimizeImageView: UIImageView!
-    @IBOutlet var containerView: UIView!
+    @IBOutlet private var collectionView: UICollectionView!
+    @IBOutlet private var pageControl: UIPageControl!
+    @IBOutlet private var minimizeImageView: UIImageView!
+    @IBOutlet private var containerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = ColorProvider.whiteTextColor.color
         collectionView.delegate = self
         collectionView.dataSource = self
-        presenter?.loadUI(viewController: self)
+        setupButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,20 +32,30 @@ final class ImageSliderController: UIViewController, Storyboarded  {
     public func setupPresenter(presenter: ImageSliderPresenter) {
       self.presenter = presenter
     }
+    
+    private func setupButton() {
+        pageControl.numberOfPages = presenter.images.count
+        minimizeImageView.image = ImageProvider.minimize
+        containerView.cornerRadius = 20
+        containerView.applyBlurEffect(style: .regular)
+        
+        let caravanTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewTapped(sender:)))
+        containerView.addGestureRecognizer(caravanTapGestureRecognizer)
+        containerView.isUserInteractionEnabled = true
+    }
+    
+    @objc public func viewTapped(sender: UITapGestureRecognizer) {
+        presenter.router.trigger(.dismiss, with: TransitionOptions(animated: true))
+    }
 }
 extension ImageSliderController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter?.images.count ?? 0
+        return presenter.images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageViewCell.identifier, for: indexPath) as! ImageViewCell
-        if let ref = presenter?.images[indexPath.item] {
-            cell.setup(ref)
-        }
-        return cell
+        return presenter.cellForRow(at: indexPath, to: collectionView)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
