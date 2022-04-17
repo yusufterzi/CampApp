@@ -37,5 +37,21 @@ public final class StringProvider {
     
     public static let campSelectionFirstPart: String = "Nasıl Konaklamak".localized
     public static let campSelectionSecondPart: String = " İstersin?".localized
-    
+    public static let addCampArea: String = "Kamp alanı ekle".localized
+    public static let addCamp: String = "Kamp ekle".localized
+    public static let campAreaName: String = "Kamp Alanı İsmi".localized
+    public static let campAreaNamePlaceHolder: String = "İsim girin".localized
+    public static let location: String = "Lokasyon".localized
+    public static let locationPlaceHolder: String = "Haritadan Seç".localized
+    public static let locationName: String = "Lokasyon İsmi".localized
+    public static let locationNamePlaceHolder: String = "Kullanıcı dostu bir isim gir".localized
+    public static let description: String = "Açıklama".localized
+    public static let descriptionPlaceHolder: String = "Kamp alanı ile ilgili detayları gir".localized
+    public static let Ok: String = "Tamam".localized
+    public static let save: String = "Kaydet".localized
+    public static let searchHeader: String = "Kamp Alanı Bul".localized
+    public static let searchPlaceHodler: String = "Ara".localized
+
+
+
 }

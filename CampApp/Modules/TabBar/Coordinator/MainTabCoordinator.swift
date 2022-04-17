@@ -8,33 +8,39 @@
 import XCoordinator
 
 enum MainTabRoute: Route {
-  case home
-  case search
-  case favorite
-  case profile
+    case home(category: Int?)
+    case search
+    case favorite
+    case profile
 }
 
 class MainTabCoordinator: TabBarCoordinator<MainTabRoute> {
-  private lazy var homeRouter = HomeCoordinator().strongRouter
-  private lazy var profileRouter = ProfileCoordinator().strongRouter
-  private lazy var searchRouter = SearchCoordinator().strongRouter
-  private lazy var favouriteRouter = FavouriteCoordinator().strongRouter
-  
-  init() {
-    super.init(rootViewController: UITabBarController(), initialRoute: .home)
-    rootViewController.modalPresentationStyle = .fullScreen
-  }
-  
-  override func prepareTransition(for route: MainTabRoute) -> TabBarTransition{
-    switch route {
-    case .home:
-      return .multiple(.set([homeRouter, searchRouter, favouriteRouter, profileRouter]),.select(homeRouter))
-    case .search:
-      return .select(searchRouter)
-    case .favorite:
-      return .select(favouriteRouter)
-    case .profile:
-      return .select(profileRouter)
+    private var homeRouter: StrongRouter<HomeRoute>!
+    private lazy var profileRouter = ProfileCoordinator().strongRouter
+    private lazy var searchRouter = SearchCoordinator().strongRouter
+    private lazy var favouriteRouter = FavouriteCoordinator().strongRouter
+    
+    init() {
+        super.init(rootViewController: UITabBarController(), initialRoute: .home(category: nil))
+        rootViewController.modalPresentationStyle = .fullScreen
     }
-  }
+    
+    init(with categoryID: Int?) {
+        homeRouter = HomeCoordinator(category: categoryID).strongRouter
+        super.init(rootViewController: UITabBarController(), initialRoute: .home(category: categoryID))
+        rootViewController.modalPresentationStyle = .fullScreen
+    }
+    
+    override func prepareTransition(for route: MainTabRoute) -> TabBarTransition{
+        switch route {
+        case .home(let category):
+            return .multiple(.set([homeRouter, searchRouter, favouriteRouter, profileRouter]),.select(homeRouter))
+        case .search:
+            return .select(searchRouter)
+        case .favorite:
+            return .select(favouriteRouter)
+        case .profile:
+            return .select(profileRouter)
+        }
+    }
 }

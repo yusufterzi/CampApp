@@ -17,11 +17,18 @@ public final class ImageProvider {
     public static let mapPin: UIImage = UIImage(named: "mapPin")!
     public static let back: UIImage = UIImage(named: "back")!
     public static let favorite: UIImage = UIImage(named: "favorite")!
+    public static let heart: UIImage = UIImage(named: "heart")!
     public static let expand: UIImage = UIImage(named: "expand")!
+    public static let maximize: UIImage = UIImage(named: "maximize")!
+    public static let minimize: UIImage = UIImage(named: "minimize")!
     public static let distance: UIImage = UIImage(named: "distance")!
     public static let onboarding: UIImage = UIImage(named: "ege")!
     public static let caravan: UIImage = UIImage(named: "caravan")!
     public static let tent: UIImage = UIImage(named: "tent")!
     public static let bungalow: UIImage = UIImage(named: "bungalow")!
-    
+    public static let arrowRight: UIImage = UIImage(named: "arrowRight")!
+    public static let arrowBottom: UIImage = UIImage(named: "arrowBottom")!
+    public static let addButton: UIImage = UIImage(named: "addButton")!
+    public static let removeButton: UIImage = UIImage(named: "removeButton")!
+
 }

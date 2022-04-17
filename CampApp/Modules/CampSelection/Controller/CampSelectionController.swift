@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Common
 
 final class CampSelectionController: UIViewController, Storyboarded {
     
@@ -30,5 +31,5 @@ final class CampSelectionController: UIViewController, Storyboarded {
         self.presenter = presenter
         
     }
-    
+   
 }

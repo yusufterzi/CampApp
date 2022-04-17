@@ -20,6 +20,7 @@ public enum ColorProvider: String {
     case semiDarkTextColor
     case darkGrayTextColor
     case starYellow
+    case starRed
     case semiTransparentBg
     case lowTextColor
     case highTextColor
@@ -28,6 +29,8 @@ public enum ColorProvider: String {
     case onboardingButtonBackground
     case campSelectionFrameColor
     case campSelectionLabelColor
+    case lightGray
+
     
     public var color: UIColor {
         return colorFromName(self.rawValue)

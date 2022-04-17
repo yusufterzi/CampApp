@@ -60,7 +60,7 @@ open class BaseListController<T: BaseListPresenter>: UIViewController {
   }
   
   private func enableKeyboardOperations() {
-    tableView.keyboardDismissMode = .interactive
+    tableView.keyboardDismissMode = .onDrag
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
   }

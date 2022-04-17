@@ -11,6 +11,7 @@ import Common
 import YTUI
 import YTNetwork
 import AttributedStringBuilder
+import FirebaseStorage
 
 protocol HomePresenterProtocol {
   
@@ -24,7 +25,8 @@ final class HomePresenter: HomePresenterProtocol, BaseListPresenter {
   
   private var segments: [HomeSegmentEnum] = [.all, .caravan, .tent, .bungalow]
   private var selectedSegment: HomeSegmentEnum = .all
-  
+  private let storageRef = Storage.storage().reference()
+
   init(view: BaseListView, router: UnownedRouter<HomeRoute>) {
     self.view = view
     self.router = router
@@ -49,18 +51,30 @@ final class HomePresenter: HomePresenterProtocol, BaseListPresenter {
     cells.append(segmentSelectView())
     
     cells.append(headerViewForCorausel())
-    cells.append(carusellView(areas: interactor.camps))
+    cells.append(carusellView(camps: interactor.camps))
 
     if let areaView = areasView() {
       cells.append(areaView)
     }
     
-    for area in interactor.camps {
-      let presenter = CampComponentPresenter(item: area)
-      presenter.onTap = { [weak self] in
-        self?.router.trigger(.campDetail(area), with: TransitionOptions(animated: true))
+      let campComponentViews = interactor.camps.compactMap { item in
+          return CampComponentViewModel(name: item.name,
+                                       subLocation: item.subLocation,
+                                       city: item.city,
+                                       description: item.description,
+                                       imageReference: item.images?.compactMap { image in return self.storageRef.child("images/\(image).jpg") },
+                                       latitude: item.latitude,
+                                       longitude: item.longitude,
+                                       point: item.point,
+                                       address: item.address,
+                                       id: item.id)
       }
-      let component = CampComponent(id: area.name ?? "",
+    for camp in campComponentViews {
+      let presenter = CampComponentPresenter(item: camp)
+      presenter.onTap = { [weak self] in
+        self?.router.trigger(.campDetail(camp), with: TransitionOptions(animated: true))
+      }
+      let component = CampComponent(id: camp.name ?? "",
                                     presenter: presenter)
       let cell = CellNode(component)
       cells.append(cell)
@@ -106,15 +120,21 @@ final class HomePresenter: HomePresenterProtocol, BaseListPresenter {
     return CellNode(component)
   }
   
-  private func carusellView(areas: [CampModel]) -> CellNode {
+  private func carusellView(camps: [CampModel]) -> CellNode {
+      let carouselViewModel = camps.compactMap { item in
+          return CampCarouselViewModel(name: item.name,
+                                       subLocation: item.subLocation,
+                                       city: item.city,
+                                       description: item.description,
+                                       imageReference: item.images?.compactMap { image in return self.storageRef.child("images/\(image).jpg") },
+                                       latitude: item.latitude,
+                                       longitude: item.longitude,
+                                       point: item.point,
+                                       address: item.address,
+                                       id: item.id)
+      }
     
-    var areas: [CampModel] = areas
-    areas.append(areas.first!)
-    areas.append(areas.first!)
-    areas.append(areas.first!)
-    areas.append(areas.first!)
-    
-    let presenter: YTCarouselPresenter = YTCarouselPresenter(items: areas)
+    let presenter: YTCarouselPresenter = YTCarouselPresenter(items: carouselViewModel)
     let component: YTCarouselComponent = YTCarouselComponent(id: "", presenter: presenter)
     
     return CellNode(component)

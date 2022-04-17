@@ -9,7 +9,7 @@ import XCoordinator
 import Common
 
 enum MainRoute: Route {
-    case home
+    case home(category: Int?)
     case welcome
     case campSelection
 }
@@ -17,23 +17,20 @@ enum MainRoute: Route {
 class MainCoordinator: NavigationCoordinator<MainRoute> {
     private var initialRoute: RouteType = .welcome
     init() {
-        
         CampDefaults.setup(with: PersistentDomain.test)
-        
         let appFirstLaunch : Bool = CampDefaults.shared.retrieve(with: .appFirstLaunch) ?? true
         if appFirstLaunch {
             CampDefaults.shared.storeFlag(with: .appFirstLaunch, value: false)
             initialRoute = .welcome
         }
-        
         super.init(initialRoute: initialRoute)
     }
     
     override func prepareTransition(for route: MainRoute) -> NavigationTransition {
         switch route {
-        case .home:
+        case .home(let category):
             rootViewController.navigationBar.isHidden = true
-            let coordinator = MainTabCoordinator()
+            let coordinator = MainTabCoordinator(with: category)
             addChild(coordinator)
             return .push(coordinator.rootViewController)
         case .welcome:
