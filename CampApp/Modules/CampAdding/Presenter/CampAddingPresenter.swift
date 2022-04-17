@@ -12,15 +12,15 @@ import YTUI
 import YTNetwork
 import AttributedStringBuilder
 
-enum Constant {
-    static let headerEdge = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 24)
-}
 protocol CampAddingPresenterProtocol {
     var camp: CampModel { get set }
     var campImages: [CampImageModel]? { get set }
 }
 
 final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter {
+    enum Constant {
+        static let headerEdge = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 24)
+    }
     public var campImages: [CampImageModel]?
     internal weak var view: BaseListView?
     internal var interactor: CampAddingInteractorProtocol?
