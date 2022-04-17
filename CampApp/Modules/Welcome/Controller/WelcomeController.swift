@@ -80,7 +80,7 @@ final class WelcomeController: UIViewController, Storyboarded {
         button.addTarget(self, action: #selector(onBtnClick), for: .touchUpInside)
     }
     @objc private func onBtnClick(_ sender: UIButton) {
-        print("touched \(sender.tag)")
+        debugPrint("touched \(sender.tag)")
         CampDefaults.shared.store(with: .onboardingAreaSelection, value: sender.titleLabel?.text)
         presenter.router.trigger(.campSelection, with: TransitionOptions(animated: true))
     }

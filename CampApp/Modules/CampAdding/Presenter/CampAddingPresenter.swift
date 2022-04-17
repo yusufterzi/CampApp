@@ -12,6 +12,9 @@ import YTUI
 import YTNetwork
 import AttributedStringBuilder
 
+enum Constant {
+    static let headerEdge = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 24)
+}
 protocol CampAddingPresenterProtocol {
     var camp: CampModel { get set }
     var campImages: [CampImageModel]? { get set }
@@ -52,7 +55,8 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
         let presenter = TextFieldPresenter(headerTitle: StringProvider.campAreaName,
                                            headerFont: FontProvider.regular12,
                                            headerColor: ColorProvider.semiDarkTextColor.color,
-                                           headerEdgeInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 24), placeHolder: StringProvider.campAreaNamePlaceHolder,
+                                           headerEdgeInsets: Constant.headerEdge,
+                                           placeHolder: StringProvider.campAreaNamePlaceHolder,
                                            text: self.camp.name)
         
         presenter.textEdited = { [weak self] campName in
@@ -69,7 +73,8 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
         let presenter = TextFieldPresenter(headerTitle: StringProvider.location,
                                            headerFont: FontProvider.regular12,
                                            headerColor: ColorProvider.semiDarkTextColor.color,
-                                           headerEdgeInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 24), placeHolder: StringProvider.locationPlaceHolder,
+                                           headerEdgeInsets: Constant.headerEdge,
+                                           placeHolder: StringProvider.locationPlaceHolder,
                                            image: ImageProvider.arrowBottom,
                                            isUserInteractionEnabled: false,
                                            text: self.camp.address)
@@ -93,7 +98,8 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
         let presenter = TextFieldPresenter(headerTitle: StringProvider.locationName,
                                            headerFont: FontProvider.regular12,
                                            headerColor: ColorProvider.semiDarkTextColor.color,
-                                           headerEdgeInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 24), placeHolder: StringProvider.locationNamePlaceHolder,
+                                           headerEdgeInsets: Constant.headerEdge,
+                                           placeHolder: StringProvider.locationNamePlaceHolder,
                                            text: self.camp.subLocation)
         presenter.textEdited = { [weak self] location in
             self?.camp.subLocation = location
@@ -108,7 +114,7 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
         let presenter = MultilineTextViewPresenter(headerTitle: StringProvider.description,
                                                    headerFont: FontProvider.regular12,
                                                    headerColor: ColorProvider.semiDarkTextColor.color,
-                                                   headerEdgeInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 24),
+                                                   headerEdgeInsets: Constant.headerEdge,
                                                    placeHolder: StringProvider.descriptionPlaceHolder,
                                                    text: self.camp.description)
         presenter.textEdited = { [weak self] description in
@@ -138,11 +144,12 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
                                         text: StringProvider.save,
                                         backgroundColor: ColorProvider.onboardingRedColor.color)
         presenter.tapped = { [weak self] in
-            self?.interactor?.campImages = self?.campImages ?? .init()
-            self?.interactor?.camp = self?.camp ?? .init()
-            self?.interactor?.camp.images = self?.campImages?.compactMap( {$0.uuid})
-            self?.interactor?.uploadData()
-            self?.router.trigger(.back, with: TransitionOptions(animated: true))
+            guard let self = self else { return }
+            self.interactor?.campImages = self.campImages ?? .init()
+            self.interactor?.camp = self.camp 
+            self.interactor?.camp.images = self.campImages?.compactMap( {$0.uuid})
+            self.interactor?.uploadData()
+            self.router.trigger(.back, with: TransitionOptions(animated: true))
         }
         let component = ButtonComponent(id: "",
                                         presenter: presenter)
