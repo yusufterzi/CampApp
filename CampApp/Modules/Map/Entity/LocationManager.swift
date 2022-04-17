@@ -74,7 +74,7 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
                 completion(nil)
                 return
             }
-            print (place)
+            debugPrint (place)
             var name = ""
             if let locality = place.locality {
                 name += locality

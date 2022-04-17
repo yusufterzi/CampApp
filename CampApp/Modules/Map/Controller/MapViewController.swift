@@ -49,10 +49,9 @@ final class MapViewController: UIViewController, FloatingPanelControllerDelegate
         setupFloatingPanel()
         prepareMap()
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
+    
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         self.map.frame = view.bounds
     }
     public func setupPresenter(presenter: MapViewPresenter) {
@@ -105,7 +104,7 @@ final class MapViewController: UIViewController, FloatingPanelControllerDelegate
             $0.width.equalTo(44)
         }
     }
-    @objc func trackMeButtonClicked() {
+    @objc private func trackMeButtonClicked() {
         map.setUserTrackingMode( .follow, animated: true)
     }
     @objc func doneClicked() {

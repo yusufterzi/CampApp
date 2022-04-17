@@ -39,12 +39,12 @@ final class ImageSliderController: UIViewController, Storyboarded  {
         containerView.cornerRadius = 20
         containerView.applyBlurEffect(style: .regular)
         
-        let caravanTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewTapped(sender:)))
-        containerView.addGestureRecognizer(caravanTapGestureRecognizer)
+        let minimizeGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewTapped(sender:)))
+        containerView.addGestureRecognizer(minimizeGestureRecognizer)
         containerView.isUserInteractionEnabled = true
     }
     
-    @objc public func viewTapped(sender: UITapGestureRecognizer) {
+    @objc private func viewTapped(sender: UITapGestureRecognizer) {
         presenter.router.trigger(.dismiss, with: TransitionOptions(animated: true))
     }
 }

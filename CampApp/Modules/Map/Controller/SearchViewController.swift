@@ -59,6 +59,7 @@ final class SearchViewController: UIViewController {
         tableView.dataSource = self
     }
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         label.sizeToFit()
         label.frame = CGRect(x: 10, y: 10, width: label.frame.width, height: label.frame.height)
         field.frame = CGRect(x: 10, y: 20 + label.frame.height , width: view.frame.size.width - 20, height: 50)

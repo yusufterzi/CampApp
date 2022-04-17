@@ -22,7 +22,6 @@ final class CampAddingInteractor: CampAddingInteractorProtocol {
     var camp: CampModel = .init()
     var campImages: [CampImageModel] = .init()
     
-    
     public func getItems() {}
     var uploadHandler: VoidHandler?
     
@@ -43,8 +42,5 @@ final class CampAddingInteractor: CampAddingInteractorProtocol {
                 self?.uploadHandler?()
             }
         }
-        
     }
-    
-    
 }

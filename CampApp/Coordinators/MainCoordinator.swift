@@ -13,8 +13,7 @@ enum MainRoute: Route {
     case welcome
     case campSelection
 }
-
-class MainCoordinator: NavigationCoordinator<MainRoute> {
+final class MainCoordinator: NavigationCoordinator<MainRoute> {
     private var initialRoute: RouteType = .welcome
     init() {
         CampDefaults.setup(with: PersistentDomain.test)

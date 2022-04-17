@@ -43,7 +43,7 @@ public final class FirebaseNetwork {
         do {
             try ref.setData(from: data) { err in
                 if let err = err {
-                    print("Error adding document: \(err)")
+                    debugPrint("Error adding document: \(err)")
                     completion(.failure(err))
                 } else {
                     completion(.success(true))
@@ -52,7 +52,7 @@ public final class FirebaseNetwork {
             }
             
         } catch let error {
-            print("Error writing to Firestore: \(error)")
+            debugPrint("Error writing to Firestore: \(error)")
             completion(.failure(error))
         }
     }
@@ -68,19 +68,19 @@ public final class FirebaseNetwork {
             let ref = self.storage.reference().child("images/\(image.uuid).jpg")
             ref.putData(imageData, metadata: nil) { (metadata , error) in
                 if let err = error {
-                    print (err.localizedDescription)
+                    debugPrint (err.localizedDescription)
                     return
                 }
                 ref.downloadURL{ (url, error) in
                     if let err = error {
-                        print (err.localizedDescription)
+                        debugPrint (err.localizedDescription)
                         return
                     }
                     guard let url = url else {
                         return
                     }
                     
-                    print("URL: \(url.absoluteString)")
+                    debugPrint("URL: \(url.absoluteString)")
                 }
                 
             }

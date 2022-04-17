@@ -46,7 +46,7 @@ final class ProfilePresenter: ProfilePresenterProtocol, BaseListPresenter {
                                          font: FontProvider.profileRowTextFont,
                                          image: ImageProvider.arrowRight)
         presenter.onTap = { [weak self] in
-            print("add camping tapped")
+            debugPrint("add camping tapped")
             self?.router.trigger(.addCampArea, with: TransitionOptions(animated: true))
         }
         let addCampRow = TextRowComponent(id: "addCamping", presenter: presenter)

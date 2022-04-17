@@ -279,7 +279,7 @@ private extension YTCarouselView {
         if ratio > 0.7 {
           ratio = 0.7
         }
-        print(ratio)
+        debugPrint(ratio)
         rightBlurEffectView.layer.opacity = Float(1 - ratio)
         sendSubviewToBack(backLeftImageView)
       } else {
@@ -294,7 +294,7 @@ private extension YTCarouselView {
       
     } else if sender.state == .cancelled || sender.state == .ended {
       let velocity = presenter.velocityArray.reduce(0, +) / 10
-      print(velocity)
+      debugPrint(velocity)
       if velocity > 1 && presenter.index < (presenter.items.count - 1){
         sendImageToSpace(imageView: frontImageView, isRight: true)
       } else if velocity < -1 && presenter.index > 0{
