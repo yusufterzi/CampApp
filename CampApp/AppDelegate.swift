@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import YTNetwork
+import GooglePlaces
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     FirebaseApp.configure()
     FirebaseNetwork(Firestore.firestore())
     router.setRoot(for: window!)
+    GMSPlacesClient.provideAPIKey("AIzaSyDfgZ54ZmQdrnCJKL4wz1Se6IhCi0ac1-0")
     
     return true
   }

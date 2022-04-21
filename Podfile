@@ -24,6 +24,7 @@ target 'CampApp' do
   pod 'AttributedStringBuilder'
   pod 'ActionKit'
   pod 'FloatingPanel'
+  pod 'GooglePlaces'
 end
 
 target 'YTUI' do

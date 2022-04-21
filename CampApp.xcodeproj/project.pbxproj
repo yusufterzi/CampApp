@@ -49,6 +49,11 @@
 		2E98856826FBBB4D00A881F7 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98856726FBBB4D00A881F7 /* Tabs.swift */; };
 		2E98858F26FCC78200A881F7 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98858E26FCC78200A881F7 /* HomeController.swift */; };
 		2E98859126FCDB1D00A881F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E98859026FCDB1D00A881F7 /* GoogleService-Info.plist */; };
+		2EAE5C0D2811EA3E004495D9 /* SearchPlacePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE5C042811EA3D004495D9 /* SearchPlacePresenter.swift */; };
+		2EAE5C0E2811EA3E004495D9 /* SearchPlaceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE5C062811EA3D004495D9 /* SearchPlaceCoordinator.swift */; };
+		2EAE5C0F2811EA3E004495D9 /* SearchPlaceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE5C082811EA3E004495D9 /* SearchPlaceEntity.swift */; };
+		2EAE5C102811EA3E004495D9 /* SearchPlaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE5C0A2811EA3E004495D9 /* SearchPlaceController.swift */; };
+		2EAE5C112811EA3E004495D9 /* SearchPlaceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE5C0C2811EA3E004495D9 /* SearchPlaceInteractor.swift */; };
 		3C0AF38627D7A5FB00A36CE1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0AF38427D7A5FB00A36CE1 /* MapViewController.swift */; };
 		3C0AF38927D7A65900A36CE1 /* MapViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0AF38827D7A65900A36CE1 /* MapViewPresenter.swift */; };
 		3C0AF38C27D7C3CD00A36CE1 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0AF38B27D7C3CC00A36CE1 /* LocationManager.swift */; };
@@ -134,6 +139,11 @@
 		2E98856726FBBB4D00A881F7 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		2E98858E26FCC78200A881F7 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		2E98859026FCDB1D00A881F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2EAE5C042811EA3D004495D9 /* SearchPlacePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPlacePresenter.swift; sourceTree = "<group>"; };
+		2EAE5C062811EA3D004495D9 /* SearchPlaceCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPlaceCoordinator.swift; sourceTree = "<group>"; };
+		2EAE5C082811EA3E004495D9 /* SearchPlaceEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPlaceEntity.swift; sourceTree = "<group>"; };
+		2EAE5C0A2811EA3E004495D9 /* SearchPlaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPlaceController.swift; sourceTree = "<group>"; };
+		2EAE5C0C2811EA3E004495D9 /* SearchPlaceInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPlaceInteractor.swift; sourceTree = "<group>"; };
 		3C0AF38427D7A5FB00A36CE1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3C0AF38827D7A65900A36CE1 /* MapViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewPresenter.swift; sourceTree = "<group>"; };
 		3C0AF38B27D7C3CC00A36CE1 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -328,6 +338,7 @@
 		2E98855226FBB61800A881F7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2EAE5C012811EA0F004495D9 /* SearchPlace */,
 				3C0AF38127D7A5AE00A36CE1 /* Map */,
 				3C65B95C27C41C020069A832 /* ImageSlider */,
 				3C6DB88E27BBF2600005D050 /* CampSelection */,
@@ -526,6 +537,58 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		2EAE5C012811EA0F004495D9 /* SearchPlace */ = {
+			isa = PBXGroup;
+			children = (
+				2EAE5C092811EA3E004495D9 /* Controller */,
+				2EAE5C052811EA3D004495D9 /* Coordinator */,
+				2EAE5C072811EA3E004495D9 /* Entity */,
+				2EAE5C0B2811EA3E004495D9 /* Interactor */,
+				2EAE5C032811EA3D004495D9 /* Presenter */,
+			);
+			path = SearchPlace;
+			sourceTree = "<group>";
+		};
+		2EAE5C032811EA3D004495D9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2EAE5C042811EA3D004495D9 /* SearchPlacePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2EAE5C052811EA3D004495D9 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				2EAE5C062811EA3D004495D9 /* SearchPlaceCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		2EAE5C072811EA3E004495D9 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				2EAE5C082811EA3E004495D9 /* SearchPlaceEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		2EAE5C092811EA3E004495D9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2EAE5C0A2811EA3E004495D9 /* SearchPlaceController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2EAE5C0B2811EA3E004495D9 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				2EAE5C0C2811EA3E004495D9 /* SearchPlaceInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		3C0AF38127D7A5AE00A36CE1 /* Map */ = {
 			isa = PBXGroup;
 			children = (
@@ -720,6 +783,7 @@
 				2E98853526FBA1F200A881F7 /* Resources */,
 				2E1821BA2704538300B271CA /* Embed Frameworks */,
 				EB2E1F9C1D4D91D8748C846D /* [CP] Embed Pods Frameworks */,
+				F82761D1E02F85C759E2CA54 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -807,8 +871,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "
-";
+			shellScript = "\n";
 		};
 		5891D51E5F949FE4FDE2D7EA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -849,6 +912,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F82761D1E02F85C759E2CA54 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -861,6 +941,7 @@
 				3C600F0F27BA672B00D2E692 /* WelcomeCell.swift in Sources */,
 				2E26797C2703917E0090F074 /* HomePresenter.swift in Sources */,
 				3C0AF39027DA6DFC00A36CE1 /* SearchViewController.swift in Sources */,
+				2EAE5C0E2811EA3E004495D9 /* SearchPlaceCoordinator.swift in Sources */,
 				2E98856126FBB98800A881F7 /* FavouriteCoordinator.swift in Sources */,
 				3C600F0627BA5B7D00D2E692 /* WelcomeController.swift in Sources */,
 				2E26797E270391870090F074 /* HomeInteractor.swift in Sources */,
@@ -874,17 +955,21 @@
 				3C71204227CFC49B003F2EEE /* CampAddingController.swift in Sources */,
 				2E98855026FBB56D00A881F7 /* MainCoordinator.swift in Sources */,
 				3C0AF38E27DA692E00A36CE1 /* Location.swift in Sources */,
+				2EAE5C0F2811EA3E004495D9 /* SearchPlaceEntity.swift in Sources */,
 				2E7BB7E8270B788000B2DCBB /* CampDetailPresenter.swift in Sources */,
 				3C0AF38927D7A65900A36CE1 /* MapViewPresenter.swift in Sources */,
 				2E98855926FBB8F800A881F7 /* HomeCoordinator.swift in Sources */,
 				3C71204627CFC64F003F2EEE /* CampAddingInteractor.swift in Sources */,
+				2EAE5C102811EA3E004495D9 /* SearchPlaceController.swift in Sources */,
 				3C6DB89527BBF3AF0005D050 /* CampSelectionController.swift in Sources */,
 				2E98858F26FCC78200A881F7 /* HomeController.swift in Sources */,
 				2E98856826FBBB4D00A881F7 /* Tabs.swift in Sources */,
 				2E98853B26FBA1F200A881F7 /* AppDelegate.swift in Sources */,
 				3C71204427CFC51C003F2EEE /* CampAddingPresenter.swift in Sources */,
 				2E98855D26FBB93400A881F7 /* SearchCoordinator.swift in Sources */,
+				2EAE5C0D2811EA3E004495D9 /* SearchPlacePresenter.swift in Sources */,
 				2E7BB7E6270B784500B2DCBB /* CampDetailController.swift in Sources */,
+				2EAE5C112811EA3E004495D9 /* SearchPlaceInteractor.swift in Sources */,
 				3C8111C527CC1EAC00E6832C /* ProfilePresenter.swift in Sources */,
 				2E98855526FBB63A00A881F7 /* MainTabCoordinator.swift in Sources */,
 				3C6B247A27DCAEE50051821D /* CustomFloatingPanelLayout.swift in Sources */,
