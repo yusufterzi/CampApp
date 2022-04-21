@@ -40,7 +40,7 @@ public class CampComponentViewModel {
 public protocol CampComponentPresenterProtocol {
     var point: String { get }
     var location: String { get }
-    var image: StorageReference { get }
+    var image: StorageReference? { get }
     var name: String { get }
     var onTap: VoidHandler? { get set }
 }
@@ -57,8 +57,8 @@ public final class CampComponentPresenter: CampComponentPresenterProtocol {
         (item.subLocation ?? "") + "/" + (item.city ?? "")
     }
     
-    public var image: StorageReference {
-        item.imageReference?.first ?? Storage.storage().reference()
+    public var image: StorageReference? {
+        item.imageReference?.first 
     }
     
     public init(item: CampComponentViewModel) {
