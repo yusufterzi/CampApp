@@ -33,8 +33,8 @@ class ProfileCoordinator: NavigationCoordinator<ProfileRoute> {
             
             return .push(viewController)
         case .addCampArea:
-            let viewController = CampAddingController()
-            viewController.setupPresenter(presenter: CampAddingPresenter(view: viewController, router: self.unownedRouter))
+            let viewController = SearchPlaceController()
+            viewController.setupPresenter(presenter: SearchPlacePresenter(view: viewController, router: self.unownedRouter))
             return .push(viewController)
         case .maps(let handler):
             let viewController = MapViewController()

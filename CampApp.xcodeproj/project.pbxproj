@@ -50,7 +50,6 @@
 		2E98858F26FCC78200A881F7 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98858E26FCC78200A881F7 /* HomeController.swift */; };
 		2E98859126FCDB1D00A881F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E98859026FCDB1D00A881F7 /* GoogleService-Info.plist */; };
 		2EAE5C0D2811EA3E004495D9 /* SearchPlacePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE5C042811EA3D004495D9 /* SearchPlacePresenter.swift */; };
-		2EAE5C0E2811EA3E004495D9 /* SearchPlaceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE5C062811EA3D004495D9 /* SearchPlaceCoordinator.swift */; };
 		2EAE5C0F2811EA3E004495D9 /* SearchPlaceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE5C082811EA3E004495D9 /* SearchPlaceEntity.swift */; };
 		2EAE5C102811EA3E004495D9 /* SearchPlaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE5C0A2811EA3E004495D9 /* SearchPlaceController.swift */; };
 		2EAE5C112811EA3E004495D9 /* SearchPlaceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAE5C0C2811EA3E004495D9 /* SearchPlaceInteractor.swift */; };
@@ -140,7 +139,6 @@
 		2E98858E26FCC78200A881F7 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		2E98859026FCDB1D00A881F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2EAE5C042811EA3D004495D9 /* SearchPlacePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPlacePresenter.swift; sourceTree = "<group>"; };
-		2EAE5C062811EA3D004495D9 /* SearchPlaceCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPlaceCoordinator.swift; sourceTree = "<group>"; };
 		2EAE5C082811EA3E004495D9 /* SearchPlaceEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPlaceEntity.swift; sourceTree = "<group>"; };
 		2EAE5C0A2811EA3E004495D9 /* SearchPlaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPlaceController.swift; sourceTree = "<group>"; };
 		2EAE5C0C2811EA3E004495D9 /* SearchPlaceInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPlaceInteractor.swift; sourceTree = "<group>"; };
@@ -560,7 +558,6 @@
 		2EAE5C052811EA3D004495D9 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				2EAE5C062811EA3D004495D9 /* SearchPlaceCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -871,7 +868,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\n";
+			shellScript = "
+";
 		};
 		5891D51E5F949FE4FDE2D7EA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -941,7 +939,6 @@
 				3C600F0F27BA672B00D2E692 /* WelcomeCell.swift in Sources */,
 				2E26797C2703917E0090F074 /* HomePresenter.swift in Sources */,
 				3C0AF39027DA6DFC00A36CE1 /* SearchViewController.swift in Sources */,
-				2EAE5C0E2811EA3E004495D9 /* SearchPlaceCoordinator.swift in Sources */,
 				2E98856126FBB98800A881F7 /* FavouriteCoordinator.swift in Sources */,
 				3C600F0627BA5B7D00D2E692 /* WelcomeController.swift in Sources */,
 				2E26797E270391870090F074 /* HomeInteractor.swift in Sources */,

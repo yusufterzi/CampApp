@@ -21,10 +21,10 @@ final class SearchPlacePresenter: SearchPlacePresenterProtocol, BaseListPresente
 
   weak var view: BaseListView?
   var interactor: SearchPlaceInteractorProtocol?
-  var router: UnownedRouter<SearchPlaceRoute>
+  var router: UnownedRouter<ProfileRoute>
   
 
-  init(view: BaseListView, router: UnownedRouter<SearchPlaceRoute>) {
+  init(view: BaseListView, router: UnownedRouter<ProfileRoute>) {
     self.view = view
     self.router = router
     self.interactor = SearchPlaceInteractor()
