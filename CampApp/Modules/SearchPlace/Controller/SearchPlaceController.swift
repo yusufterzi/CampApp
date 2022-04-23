@@ -10,14 +10,14 @@ import XCoordinator
 import YTUI
 import Common
 import GooglePlaces
+import YTNetwork
 
 final class SearchPlaceController: BaseListController<SearchPlacePresenter> {
   
   private var searchController: UISearchController?
   
   lazy private var resultsViewController = GMSAutocompleteResultsViewController()
-
-  
+  public var camp: CampModel = .init()
   override func viewDidLoad() {
     super.viewDidLoad()
     self.view.backgroundColor = ColorProvider.whiteTextColor.color
@@ -33,6 +33,8 @@ final class SearchPlaceController: BaseListController<SearchPlacePresenter> {
     navigationItem.searchController = searchController
     definesPresentationContext = true
     searchController?.hidesNavigationBarDuringPresentation = false
+
+  
     
   }
   
@@ -46,14 +48,19 @@ extension SearchPlaceController: GMSAutocompleteResultsViewControllerDelegate {
   func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
                          didAutocompleteWith place: GMSPlace) {
     searchController?.isActive = false
-    print("Place name: \(place.name)")
-    print("Place address: \(place.formattedAddress)")
-    print("Place nurullah özel istek: \(place.coordinate)")
-    print("Place attributions: \(place.attributions)")
-    print("Place id: \(place.placeID)")
-    print("Place photo count: \(place.photos?.count ?? 0)")
+    camp.name = place.name
+    camp.longitude = place.coordinate.longitude
+    camp.latitude = place.coordinate.latitude
+    camp.description = ""
+    camp.address = place.formattedAddress
+    camp.subLocation = place.addressComponents?.first?.name
+    //camp.images = place.photos
     
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+      self?.presenter?.router.trigger(.addCampArea(self?.camp ?? CampModel()), with: TransitionOptions(animated: true))
+    }
   }
+  
 
   func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
                          didFailAutocompleteWithError error: Error){

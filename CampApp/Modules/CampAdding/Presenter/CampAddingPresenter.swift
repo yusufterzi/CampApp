@@ -28,11 +28,11 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
     public var camp: CampModel
     private var imageArray: [UIImage]?
     
-    init(view: BaseListView, router: UnownedRouter<ProfileRoute>) {
+  init(view: BaseListView, router: UnownedRouter<ProfileRoute>, camp: CampModel) {
         self.view = view
         self.router = router
         self.interactor = CampAddingInteractor()
-        self.camp = CampModel()
+        self.camp = camp
     }
     
     func loadUI() {
@@ -80,7 +80,7 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
                                            text: self.camp.address)
         presenter.onTap = { [weak self] in
             
-            self?.router.trigger(.maps({ location in
+            self?.router.trigger(.maps( { location in
                 self?.camp.longitude = location.coordinate?.longitude
                 self?.camp.latitude = location.coordinate?.latitude
                 self?.camp.city = location.city
