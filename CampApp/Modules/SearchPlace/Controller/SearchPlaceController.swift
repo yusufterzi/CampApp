@@ -18,6 +18,8 @@ final class SearchPlaceController: BaseListController<SearchPlacePresenter> {
   
   lazy private var resultsViewController = GMSAutocompleteResultsViewController()
   public var camp: CampModel = .init()
+  public var googleClient: GoogleClient = .init()
+  public var place_id: String = ""
   override func viewDidLoad() {
     super.viewDidLoad()
     self.view.backgroundColor = ColorProvider.whiteTextColor.color
@@ -33,8 +35,8 @@ final class SearchPlaceController: BaseListController<SearchPlacePresenter> {
     navigationItem.searchController = searchController
     definesPresentationContext = true
     searchController?.hidesNavigationBarDuringPresentation = false
-
-  
+    
+    
     
   }
   
@@ -51,21 +53,25 @@ extension SearchPlaceController: GMSAutocompleteResultsViewControllerDelegate {
     camp.name = place.name
     camp.longitude = place.coordinate.longitude
     camp.latitude = place.coordinate.latitude
-    camp.description = ""
     camp.address = place.formattedAddress
     camp.subLocation = place.addressComponents?.first?.name
-    //camp.images = place.photos
+    self.place_id = place.placeID ?? ""
     
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
-      self?.presenter?.router.trigger(.addCampArea(self?.camp ?? CampModel()), with: TransitionOptions(animated: true))
+      self?.googleClient.getGooglePlacesDetailsData(place_id: self?.place_id ?? ""){ (response) in
+        if let response = response {
+          print("Passed response here:", response)
+          
+        }
+        
+      }
     }
   }
   
-
   func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
                          didFailAutocompleteWithError error: Error){
     // TODO: handle the error.
     print("Error: ", error.localizedDescription)
   }
-
+  
 }
