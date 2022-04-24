@@ -41,6 +41,17 @@ public extension UIView {
     self.layer.cornerRadius = 18
   }
   func applyBlurEffect(style: UIBlurEffect.Style, cornerRadius: CGFloat = 0) {
+    self.backgroundColor = .clear
+    let blurEffect = UIBlurEffect(style: style)
+    let blurEffectView = UIVisualEffectView(effect: blurEffect)
+    blurEffectView.frame = self.bounds
+    blurEffectView.clipsToBounds = true
+    blurEffectView.layer.cornerRadius = cornerRadius
+    blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    self.insertSubview(blurEffectView, at: 0)
+  }
+  
+  func applyBlurredMask(style: UIBlurEffect.Style, cornerRadius: CGFloat = 0, maskLayer: CAShapeLayer) {
     guard self.subviews.first is UIVisualEffectView  else {
       
       self.backgroundColor = .clear
@@ -48,6 +59,7 @@ public extension UIView {
       let blurEffectView = UIVisualEffectView(effect: blurEffect)
       blurEffectView.frame = self.bounds
       blurEffectView.clipsToBounds = true
+      blurEffectView.layer.mask = maskLayer
       blurEffectView.layer.cornerRadius = cornerRadius
       blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
       blurEffectView.alpha = 0.8
@@ -55,6 +67,6 @@ public extension UIView {
       
       return
     }
- 
+    
   }
 }
