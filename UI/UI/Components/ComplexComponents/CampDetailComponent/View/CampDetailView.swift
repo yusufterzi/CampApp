@@ -113,8 +113,8 @@ public final class CampDetailComponentView: UIView, CampDetailComponentViewProto
     }
     private func setupButtons() {
         backButton.addTarget(self, action: #selector(backButtonClicked), for: .touchUpInside)
-        favoriteView.applyBlurEffect(style: .regular)
-        expandView.applyBlurEffect(style: .regular)
+        favoriteView.applyBlurEffect(style: .regular, cornerRadius: 20)
+        expandView.applyBlurEffect(style: .regular, cornerRadius: 20)
         
         let expandViewTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(maximizeButtonClicked(sender:)))
         expandView.addGestureRecognizer(expandViewTapRecognizer)

@@ -21,10 +21,12 @@ protocol WelcomePresenterProtocol {
 
 final class WelcomePresenter: WelcomePresenterProtocol {
     public var images: [WelcomeData] = [
-        WelcomeData(name : "Marmara", image: ImageProvider.onboarding),
-        WelcomeData(name : "Ege", image: ImageProvider.onboarding),
-        WelcomeData(name : "Karadeniz", image: ImageProvider.onboarding),
-        WelcomeData(name : "Akdeniz", image: ImageProvider.onboarding)
+        WelcomeData(name : "Ege", image: ImageProvider.onboardingEge),
+        WelcomeData(name : "Karadeniz", image: ImageProvider.onboardingKaradeniz),
+        WelcomeData(name : "Akdeniz", image: ImageProvider.onboardingAkdeniz),
+        WelcomeData(name : "Marmara", image: ImageProvider.onboardingMarmara),
+        WelcomeData(name : "İç Anadolu", image: ImageProvider.onboardingIcAnadolu),
+        WelcomeData(name : "Doğu Anadolu", image: ImageProvider.onboardingDoguAnadolu)
     ]
     internal var router: UnownedRouter<MainRoute>
     
@@ -38,7 +40,7 @@ final class WelcomePresenter: WelcomePresenterProtocol {
     
     public func cellForRow(at indexPath: IndexPath, to collectionView: UICollectionView) -> WelcomeCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WelcomeCell.identifier, for: indexPath) as! WelcomeCell
-        cell.setup(images[indexPath.item])
+        //cell.setup(images[indexPath.item])
         return cell
     }
     

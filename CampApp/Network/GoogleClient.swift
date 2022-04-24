@@ -35,7 +35,7 @@ final class GoogleClient: GoogleClientRequest {
         completionHandler(nil)
         return
       }
-      // for decode data 
+      // for decode data
       var string = data.base64EncodedString()
       let detailsResponse = try? JSONDecoder().decode(GooglePlacesDetailsResponse.self, from: data)
       completionHandler(detailsResponse)

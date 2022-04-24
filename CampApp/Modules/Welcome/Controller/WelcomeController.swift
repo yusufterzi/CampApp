@@ -55,7 +55,7 @@ final class WelcomeController: UIViewController, Storyboarded {
         
         let onboardingBigHeaderFontSecondPart: [AttributedStringBuilder.Attribute] = [
             .font(FontProvider.onboardingBigBold),
-            .textColor(ColorProvider.onboardingRedColor.color),
+            .textColor(ColorProvider.onboardingYellowButtonText.color),
         ]
         
         let onboardingBigHeaderTextSecondPart: NSAttributedString = AttributedStringBuilder().text(StringProvider.onboardingBigTextPartTwo,
@@ -76,7 +76,7 @@ final class WelcomeController: UIViewController, Storyboarded {
         ]
         let buttonText: NSAttributedString = AttributedStringBuilder().text(presenter.images[pageControl.currentPage].name, attributes: buttonTextFont).attributedString
         button.setAttributedTitle(buttonText, for: .normal)
-        button.backgroundColor = ColorProvider.onboardingButtonBackground.color
+        button.backgroundColor = ColorProvider.onboardingRedColor.color
         button.addTarget(self, action: #selector(onBtnClick), for: .touchUpInside)
     }
     @objc private func onBtnClick(_ sender: UIButton) {
@@ -94,7 +94,9 @@ extension WelcomeController: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return presenter.cellForRow(at: indexPath, to: collectionView)
+      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WelcomeCell.identifier, for: indexPath) as! WelcomeCell
+      cell.setup(presenter.images[indexPath.item], frameView: frameView)
+      return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
