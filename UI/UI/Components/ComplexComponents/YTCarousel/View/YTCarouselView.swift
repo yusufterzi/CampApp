@@ -15,7 +15,7 @@ public protocol YTCarouselViewProtocol: BaseView {
   
 }
 
-public final class YTCarouselView: UIView, YTCarouselViewProtocol {
+public final class YTCarouselView: UIView, Tappable, YTCarouselViewProtocol {
   
   private let backLeftImageView: UIImageView = UIImageView().then {
     $0.layer.cornerRadius = 5
@@ -90,6 +90,10 @@ public final class YTCarouselView: UIView, YTCarouselViewProtocol {
     locationPresenter.backgroundColor = ColorProvider.locationBgColor.color
     locationPresenter.imageTintColor = ColorProvider.segmentItemSelectedText.color
     locationLabel.configureView(presenter: locationPresenter)
+    
+    onTap { [weak self] in
+        self?.presenter?.onTap?()
+    }
     
   }
 }
