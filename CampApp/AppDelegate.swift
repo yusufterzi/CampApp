@@ -29,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     FirebaseNetwork(Firestore.firestore())
     router.setRoot(for: window!)
     
+    SessionHelper.shared.loginAnymous()
+    
     return true
   }
   
