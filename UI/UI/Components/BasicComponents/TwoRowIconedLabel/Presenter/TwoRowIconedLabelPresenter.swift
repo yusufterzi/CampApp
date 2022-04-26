@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Common
 
 public final class TwoRowIconedLabelPresenter {
 
@@ -13,6 +14,7 @@ public final class TwoRowIconedLabelPresenter {
   var secondTitle: String
   var image: UIImage
   var imageTintColor: UIColor? = nil
+  var onTap: VoidHandler?
 
   public init(title: String, secondTitle: String, image: UIImage) {
     self.title = title

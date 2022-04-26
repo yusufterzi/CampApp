@@ -40,6 +40,7 @@ public final class FirebaseNetwork {
     
     public func addCamp(data: CampModel?, completion: @escaping (GenericResult<Bool>) -> Void) {
         let ref = database.collection("camp").document()
+        data?.id = ref.documentID
         do {
             try ref.setData(from: data) { err in
                 if let err = err {
