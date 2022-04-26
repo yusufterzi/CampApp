@@ -35,6 +35,7 @@
 		2E7BB7E6270B784500B2DCBB /* CampDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7BB7E5270B784500B2DCBB /* CampDetailController.swift */; };
 		2E7BB7E8270B788000B2DCBB /* CampDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7BB7E7270B788000B2DCBB /* CampDetailPresenter.swift */; };
 		2E7BB7EA270B78D600B2DCBB /* CampDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7BB7E9270B78D600B2DCBB /* CampDetailInteractor.swift */; };
+		2E825C86281879D700D5F75F /* SessionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E825C85281879D700D5F75F /* SessionHelper.swift */; };
 		2E98853B26FBA1F200A881F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98853A26FBA1F200A881F7 /* AppDelegate.swift */; };
 		2E98853F26FBA1F200A881F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98853E26FBA1F200A881F7 /* ViewController.swift */; };
 		2E98854226FBA1F200A881F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E98854026FBA1F200A881F7 /* Main.storyboard */; };
@@ -118,6 +119,7 @@
 		2E7BB7E5270B784500B2DCBB /* CampDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampDetailController.swift; sourceTree = "<group>"; };
 		2E7BB7E7270B788000B2DCBB /* CampDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampDetailPresenter.swift; sourceTree = "<group>"; };
 		2E7BB7E9270B78D600B2DCBB /* CampDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampDetailInteractor.swift; sourceTree = "<group>"; };
+		2E825C85281879D700D5F75F /* SessionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionHelper.swift; sourceTree = "<group>"; };
 		2E98853726FBA1F200A881F7 /* CampApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E98853A26FBA1F200A881F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E98853E26FBA1F200A881F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -274,6 +276,14 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		2E825C84281879C600D5F75F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2E825C85281879D700D5F75F /* SessionHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		2E98852E26FBA1F200A881F7 = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +309,7 @@
 				2E1822352704684500B271CA /* Network */,
 				2E98855226FBB61800A881F7 /* Modules */,
 				2E98854E26FBB53C00A881F7 /* Coordinators */,
+				2E825C84281879C600D5F75F /* Helpers */,
 				2E98853A26FBA1F200A881F7 /* AppDelegate.swift */,
 				2E98853E26FBA1F200A881F7 /* ViewController.swift */,
 				2E98854026FBA1F200A881F7 /* Main.storyboard */,
@@ -863,6 +874,7 @@
 				3C0AF39027DA6DFC00A36CE1 /* SearchViewController.swift in Sources */,
 				2E98856126FBB98800A881F7 /* FavouriteCoordinator.swift in Sources */,
 				3C600F0627BA5B7D00D2E692 /* WelcomeController.swift in Sources */,
+				2E825C86281879D700D5F75F /* SessionHelper.swift in Sources */,
 				2E26797E270391870090F074 /* HomeInteractor.swift in Sources */,
 				3C8111C327CC1DD100E6832C /* ProfileController.swift in Sources */,
 				3C0AF38C27D7C3CD00A36CE1 /* LocationManager.swift in Sources */,
