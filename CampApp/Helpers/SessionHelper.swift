@@ -9,19 +9,23 @@ import Foundation
 import FirebaseAuth
 
 final class SessionHelper {
+  
   static var shared: SessionHelper = SessionHelper()
   
-  var userID: String?
-  
+  var user: CampUser?
+
   func loginAnymous() {
-    if let userID = UserDefaults.standard.string(forKey: "userID"){
-      self.userID = userID
-    } else {
-      Auth.auth().signInAnonymously() { [weak self] (user, error) in
-        if let user = user, let self = self {
-          self.userID = user.user.uid
-          UserDefaults.standard.set(self.userID, forKey: "userID")
-        }}
+    if Auth.auth().currentUser != nil {
+      getUser()
+      return
     }
+
+    Auth.auth().signInAnonymously() { [weak self] (_, _) in
+      self?.getUser()
+    }
+  }
+  
+  func getUser() {
+    FirebaseNetwork.shared?.getUser()
   }
 }

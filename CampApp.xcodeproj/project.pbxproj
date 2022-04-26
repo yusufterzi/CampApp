@@ -36,6 +36,8 @@
 		2E7BB7E8270B788000B2DCBB /* CampDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7BB7E7270B788000B2DCBB /* CampDetailPresenter.swift */; };
 		2E7BB7EA270B78D600B2DCBB /* CampDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7BB7E9270B78D600B2DCBB /* CampDetailInteractor.swift */; };
 		2E825C86281879D700D5F75F /* SessionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E825C85281879D700D5F75F /* SessionHelper.swift */; };
+		2E825C882818857100D5F75F /* FirebaseNetwork+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E825C872818857100D5F75F /* FirebaseNetwork+User.swift */; };
+		2E825C8A28188D9300D5F75F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E825C8928188D9300D5F75F /* User.swift */; };
 		2E98853B26FBA1F200A881F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98853A26FBA1F200A881F7 /* AppDelegate.swift */; };
 		2E98853F26FBA1F200A881F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98853E26FBA1F200A881F7 /* ViewController.swift */; };
 		2E98854226FBA1F200A881F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E98854026FBA1F200A881F7 /* Main.storyboard */; };
@@ -120,6 +122,8 @@
 		2E7BB7E7270B788000B2DCBB /* CampDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampDetailPresenter.swift; sourceTree = "<group>"; };
 		2E7BB7E9270B78D600B2DCBB /* CampDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampDetailInteractor.swift; sourceTree = "<group>"; };
 		2E825C85281879D700D5F75F /* SessionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionHelper.swift; sourceTree = "<group>"; };
+		2E825C872818857100D5F75F /* FirebaseNetwork+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseNetwork+User.swift"; sourceTree = "<group>"; };
+		2E825C8928188D9300D5F75F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2E98853726FBA1F200A881F7 /* CampApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E98853A26FBA1F200A881F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E98853E26FBA1F200A881F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 			children = (
 				2E1822362704688500B271CA /* Extension */,
 				2E1822332704684200B271CA /* FirebaseNetwork.swift */,
+				2E825C872818857100D5F75F /* FirebaseNetwork+User.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				2E825C85281879D700D5F75F /* SessionHelper.swift */,
+				2E825C8928188D9300D5F75F /* User.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -899,6 +905,7 @@
 				2E7BB7E6270B784500B2DCBB /* CampDetailController.swift in Sources */,
 				3C8111C527CC1EAC00E6832C /* ProfilePresenter.swift in Sources */,
 				2E98855526FBB63A00A881F7 /* MainTabCoordinator.swift in Sources */,
+				2E825C882818857100D5F75F /* FirebaseNetwork+User.swift in Sources */,
 				3C6B247A27DCAEE50051821D /* CustomFloatingPanelLayout.swift in Sources */,
 				3C6DB88C27BADA620005D050 /* WelcomePresenter.swift in Sources */,
 				3C6DB89727BBF3CD0005D050 /* CampSelectionPresenter.swift in Sources */,
@@ -908,6 +915,7 @@
 				3C65B96A27C426D40069A832 /* ImageViewCell.swift in Sources */,
 				2E1822382704689200B271CA /* Extensions.swift in Sources */,
 				3C0AF38627D7A5FB00A36CE1 /* MapViewController.swift in Sources */,
+				2E825C8A28188D9300D5F75F /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
