@@ -59,7 +59,6 @@
 		3C0AF38E27DA692E00A36CE1 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0AF38D27DA692D00A36CE1 /* Location.swift */; };
 		3C0AF39027DA6DFC00A36CE1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0AF38F27DA6DFC00A36CE1 /* SearchViewController.swift */; };
 		3C0AF39227DA818A00A36CE1 /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0AF39127DA818A00A36CE1 /* SearchViewCell.swift */; };
-		3C38229D28143EDF00CBF86C /* GoogleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C38229C28143EDF00CBF86C /* GoogleClient.swift */; };
 		3C600F0627BA5B7D00D2E692 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C600F0427BA5B7C00D2E692 /* WelcomeController.swift */; };
 		3C600F0F27BA672B00D2E692 /* WelcomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C600F0E27BA672B00D2E692 /* WelcomeCell.swift */; };
 		3C600F1127BA678000D2E692 /* WelcomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C600F1027BA678000D2E692 /* WelcomeData.swift */; };
@@ -149,7 +148,6 @@
 		3C0AF38D27DA692D00A36CE1 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		3C0AF38F27DA6DFC00A36CE1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3C0AF39127DA818A00A36CE1 /* SearchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
-		3C38229C28143EDF00CBF86C /* GoogleClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleClient.swift; sourceTree = "<group>"; };
 		3C600F0427BA5B7C00D2E692 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		3C600F0E27BA672B00D2E692 /* WelcomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCell.swift; sourceTree = "<group>"; };
 		3C600F1027BA678000D2E692 /* WelcomeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeData.swift; sourceTree = "<group>"; };
@@ -191,7 +189,6 @@
 			children = (
 				2E1822362704688500B271CA /* Extension */,
 				2E1822332704684200B271CA /* FirebaseNetwork.swift */,
-				3C38229C28143EDF00CBF86C /* GoogleClient.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -965,7 +962,6 @@
 				2E98858F26FCC78200A881F7 /* HomeController.swift in Sources */,
 				2E98856826FBBB4D00A881F7 /* Tabs.swift in Sources */,
 				2E98853B26FBA1F200A881F7 /* AppDelegate.swift in Sources */,
-				3C38229D28143EDF00CBF86C /* GoogleClient.swift in Sources */,
 				3C71204427CFC51C003F2EEE /* CampAddingPresenter.swift in Sources */,
 				2E98855D26FBB93400A881F7 /* SearchCoordinator.swift in Sources */,
 				2EAE5C0D2811EA3E004495D9 /* SearchPlacePresenter.swift in Sources */,

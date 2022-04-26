@@ -11,6 +11,7 @@ import YTUI
 import Common
 import GooglePlaces
 import YTNetwork
+import UIKit
 
 final class SearchPlaceController: BaseListController<SearchPlacePresenter> {
   
@@ -18,8 +19,9 @@ final class SearchPlaceController: BaseListController<SearchPlacePresenter> {
   
   lazy private var resultsViewController = GMSAutocompleteResultsViewController()
   public var camp: CampModel = .init()
-  public var googleClient: GoogleClient = .init()
   public var place_id: String = ""
+  public var campImages: [UIImage] = []
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     self.view.backgroundColor = ColorProvider.whiteTextColor.color
@@ -54,18 +56,28 @@ extension SearchPlaceController: GMSAutocompleteResultsViewControllerDelegate {
     camp.longitude = place.coordinate.longitude
     camp.latitude = place.coordinate.latitude
     camp.address = place.formattedAddress
-    camp.subLocation = place.addressComponents?.first?.name
-    self.place_id = place.placeID ?? ""
+    camp.subLocation = place.addressComponents?.filter { $0.types.first == "administrative_area_level_2" }.first?.name
+    camp.city = place.addressComponents?.filter { $0.types.first == "administrative_area_level_1" }.first?.name
     
-    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
-      self?.googleClient.getGooglePlacesDetailsData(place_id: self?.place_id ?? ""){ (response) in
-        if let response = response {
-          print("Passed response here:", response)
-          
+    let dispatchGroup = DispatchGroup()
+    
+    for photo in place.photos ?? [] {
+      dispatchGroup.enter()
+      GMSPlacesClient.shared().loadPlacePhoto(photo, callback: { (photo, error) -> Void in
+        if let error = error {
+          print("Error loading photo metadata: \(error.localizedDescription)")
+          return
         }
-        
-      }
+        guard let image = photo else { return }
+        self.campImages.append(image)
+        dispatchGroup.leave()
+      })
     }
+    
+    dispatchGroup.notify(queue: .main) {
+      self.presenter?.router.trigger(.addCampArea(self.camp, self.campImages), with: TransitionOptions(animated: true))
+    }
+    
   }
   
   func resultsController(_ resultsController: GMSAutocompleteResultsViewController,

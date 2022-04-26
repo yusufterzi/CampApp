@@ -8,10 +8,11 @@
 import XCoordinator
 import YTNetwork
 import Common
+import AttributedStringBuilder
 
 enum ProfileRoute: Route {
     case profile
-    case addCampArea(CampModel)
+    case addCampArea(CampModel, [UIImage])
     case searchCampArea
     case maps(_ handler: Handler<Location>?)
     case back
@@ -37,9 +38,11 @@ class ProfileCoordinator: NavigationCoordinator<ProfileRoute> {
             let viewController = SearchPlaceController()
             viewController.setupPresenter(presenter: SearchPlacePresenter(view: viewController, router: self.unownedRouter))
             return .push(viewController)
-        case .addCampArea(let campModel):
+        case .addCampArea(let campModel, let campImages):
             let viewController = CampAddingController()
-            viewController.setupPresenter(presenter: CampAddingPresenter(view: viewController, router: self.unownedRouter, camp: campModel))
+            let presenter = CampAddingPresenter(view: viewController, router: self.unownedRouter, camp: campModel)
+            presenter.campGoogleImages = campImages
+            viewController.setupPresenter(presenter: presenter)
             return .push(viewController)
         case .maps(let handler):
             let viewController = MapViewController()
