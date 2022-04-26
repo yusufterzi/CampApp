@@ -15,6 +15,12 @@ import UIKit
 
 final class SearchPlaceController: BaseListController<SearchPlacePresenter> {
   
+  private enum AddressConstant {
+    static let subLocation: String = "administrative_area_level_2"
+    static let city: String = "administrative_area_level_1"
+
+  }
+  
   private var searchController: UISearchController?
   
   lazy private var resultsViewController = GMSAutocompleteResultsViewController()
@@ -56,8 +62,8 @@ extension SearchPlaceController: GMSAutocompleteResultsViewControllerDelegate {
     camp.longitude = place.coordinate.longitude
     camp.latitude = place.coordinate.latitude
     camp.address = place.formattedAddress
-    camp.subLocation = place.addressComponents?.filter { $0.types.first == "administrative_area_level_2" }.first?.name
-    camp.city = place.addressComponents?.filter { $0.types.first == "administrative_area_level_1" }.first?.name
+    camp.subLocation = place.addressComponents?.filter { $0.types.first == AddressConstant.subLocation }.first?.name
+    camp.city = place.addressComponents?.filter { $0.types.first == AddressConstant.city}.first?.name
     
     let dispatchGroup = DispatchGroup()
     
