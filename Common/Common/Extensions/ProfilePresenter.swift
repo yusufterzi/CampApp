@@ -47,7 +47,7 @@ final class ProfilePresenter: ProfilePresenterProtocol, BaseListPresenter {
                                          image: ImageProvider.arrowRight)
         presenter.onTap = { [weak self] in
             debugPrint("add camping tapped")
-            self?.router.trigger(.addCampArea, with: TransitionOptions(animated: true))
+            self?.router.trigger(.searchCampArea, with: TransitionOptions(animated: true))
         }
         let addCampRow = TextRowComponent(id: "addCamping", presenter: presenter)
         return CellNode(addCampRow)

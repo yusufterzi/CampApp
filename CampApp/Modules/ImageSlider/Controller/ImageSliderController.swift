@@ -37,7 +37,7 @@ final class ImageSliderController: UIViewController, Storyboarded  {
         pageControl.numberOfPages = presenter.images.count
         minimizeImageView.image = ImageProvider.minimize
         containerView.cornerRadius = 20
-        containerView.applyBlurEffect(style: .regular)
+        containerView.applyBlurEffect(style: .regular, cornerRadius: 20)
         
         let minimizeGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewTapped(sender:)))
         containerView.addGestureRecognizer(minimizeGestureRecognizer)

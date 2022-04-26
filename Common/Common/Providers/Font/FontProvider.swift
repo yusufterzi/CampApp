@@ -29,7 +29,7 @@ public final class FontProvider {
     public static let campSelectionFont: UIFont = UIFont(name: fontName + "-Medium", size: 16)!
     public static let campDetailTextFont: UIFont = UIFont(name: fontName + "-Light", size: 16)!
     public static let profileRowTextFont: UIFont = UIFont(name: fontName + "-Regular", size: 16)!
-    public static let bold18: UIFont = UIFont(name: fontName + "-Bold", size: 18)!
+    public static let bold18: UIFont = UIFont(name: fontName + "-Bold", size: 19)!
     public static let bold12: UIFont = UIFont(name: fontName + "-Bold", size: 12)!
 
 

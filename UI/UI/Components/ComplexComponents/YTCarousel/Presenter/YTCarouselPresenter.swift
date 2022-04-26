@@ -40,7 +40,7 @@ public class CampCarouselViewModel {
 
 
 public protocol YTCarouselPresenterProtocol {
-  var items: [CampCarouselViewModel] { get set }
+  var items: [CampComponentViewModel] { get set }
   var index: Int { get set }
   
   var image: StorageReference { get }
@@ -50,23 +50,24 @@ public protocol YTCarouselPresenterProtocol {
 
   var gestureStartPoint: CGPoint { get set }
   var gestureLastPoint: CGPoint { get set }
-  
+  var onTap: VoidHandler? { get set }
   func addVelocity(value: CGFloat)
 }
 
 public final class YTCarouselPresenter: YTCarouselPresenterProtocol {
-  public var items: [CampCarouselViewModel]
+  public var items: [CampComponentViewModel]
   public var index: Int = 0
+  public var onTap: VoidHandler?
 
   public var gestureStartPoint: CGPoint = CGPoint(x: 0, y: 0)
   public var gestureLastPoint: CGPoint = CGPoint(x: 0, y: 0)
   public var velocityArray: [CGFloat] = .init()
 
-  public init(items: [CampCarouselViewModel]) {
+  public init(items: [CampComponentViewModel]) {
     self.items = items
   }
   
-  private var item: CampCarouselViewModel {
+  private var item: CampComponentViewModel {
     return items[index]
   }
   

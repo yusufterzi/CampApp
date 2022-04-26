@@ -57,18 +57,19 @@ final class HomePresenter: HomePresenterProtocol, BaseListPresenter {
       cells.append(areaView)
     }
     
-      let campComponentViews = interactor.camps.compactMap { item in
-          return CampComponentViewModel(name: item.name,
-                                       subLocation: item.subLocation,
-                                       city: item.city,
-                                       description: item.description,
-                                       imageReference: item.images?.compactMap { image in return self.storageRef.child("images/\(image).jpg") },
-                                       latitude: item.latitude,
-                                       longitude: item.longitude,
-                                       point: item.point,
-                                       address: item.address,
-                                       id: item.id)
-      }
+    let campComponentViews = interactor.camps.compactMap { item in
+      return CampComponentViewModel(name: item.name,
+                                    subLocation: item.subLocation,
+                                    city: item.city,
+                                    description: item.description,
+                                    imageReference: item.images?.compactMap { image in return self.storageRef.child("images/\(image).jpg") },
+                                    latitude: item.latitude,
+                                    longitude: item.longitude,
+                                    point: item.point,
+                                    address: item.address,
+                                    id: item.id)
+    }
+    
     for camp in campComponentViews {
       let presenter = CampComponentPresenter(item: camp)
       presenter.onTap = { [weak self] in
@@ -121,8 +122,8 @@ final class HomePresenter: HomePresenterProtocol, BaseListPresenter {
   }
   
   private func carusellView(camps: [CampModel]) -> CellNode {
-      let carouselViewModel = camps.compactMap { item in
-          return CampCarouselViewModel(name: item.name,
+      let campComponentViewModel = camps.compactMap { item in
+          return CampComponentViewModel(name: item.name,
                                        subLocation: item.subLocation,
                                        city: item.city,
                                        description: item.description,
@@ -134,7 +135,10 @@ final class HomePresenter: HomePresenterProtocol, BaseListPresenter {
                                        id: item.id)
       }
     
-    let presenter: YTCarouselPresenter = YTCarouselPresenter(items: carouselViewModel)
+    let presenter: YTCarouselPresenter = YTCarouselPresenter(items: campComponentViewModel)
+    presenter.onTap = { [weak self] in
+      self?.router.trigger(.campDetail(presenter.items[presenter.index]), with: TransitionOptions(animated: true))
+    }
     let component: YTCarouselComponent = YTCarouselComponent(id: "", presenter: presenter)
     
     return CellNode(component)
