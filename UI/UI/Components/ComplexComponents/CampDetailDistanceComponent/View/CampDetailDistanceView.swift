@@ -42,8 +42,11 @@ public final class CampDetailDistanceView: UIView {
         
         let startPresenter = TwoRowIconedLabelPresenter(title: StringProvider.likes,
                                                         secondTitle: "4.8 (3.2k)",
-                                                        image: ImageProvider.star)
-        startPresenter.imageTintColor = ColorProvider.starYellow.color
+                                                        image: ImageProvider.heart)
+        startPresenter.imageTintColor = ColorProvider.onboardingRedColor.color
+        startPresenter.onTap = { [weak self] in
+            debugPrint("Beğeni butonu tıklandı")
+        }
         starView.configureView(presenter: startPresenter)
         
         let distancePresenter = TwoRowIconedLabelPresenter(title: StringProvider.distance,
@@ -51,10 +54,10 @@ public final class CampDetailDistanceView: UIView {
                                                            image: ImageProvider.distance)
         distanceView.configureView(presenter: distancePresenter)
         
-        let pointPresenter = TwoRowIconedLabelPresenter(title: StringProvider.rate,
+        let pointPresenter = TwoRowIconedLabelPresenter(title: StringProvider.likes,
                                                         secondTitle: "85",
                                                         image: ImageProvider.star)
-        pointPresenter.imageTintColor = ColorProvider.starRed.color
+        pointPresenter.imageTintColor = ColorProvider.starYellow.color
         pointView.configureView(presenter: pointPresenter)
         
     }

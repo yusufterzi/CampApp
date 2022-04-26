@@ -49,13 +49,7 @@ public final class CampDetailComponentView: UIView, CampDetailComponentViewProto
         $0.setImage(ImageProvider.back, for: .normal)
     }
     private let locationLabel: IconedLabel = IconedLabel()
-    
-    private let favoriteView: UIView = UIView().then {
-        $0.isUserInteractionEnabled = true
-    }
-    private let favoriteImageView: UIImageView = UIImageView().then {
-        $0.image = ImageProvider.heart
-    }
+  
     private let expandView: UIView = UIView().then {
         $0.isUserInteractionEnabled = true
     }
@@ -113,14 +107,11 @@ public final class CampDetailComponentView: UIView, CampDetailComponentViewProto
     }
     private func setupButtons() {
         backButton.addTarget(self, action: #selector(backButtonClicked), for: .touchUpInside)
-        favoriteView.applyBlurEffect(style: .regular, cornerRadius: 20)
         expandView.applyBlurEffect(style: .regular, cornerRadius: 20)
         
         let expandViewTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(maximizeButtonClicked(sender:)))
         expandView.addGestureRecognizer(expandViewTapRecognizer)
         
-        let favoriteViewTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(favoriteButtonClicked(sender:)))
-        favoriteView.addGestureRecognizer(favoriteViewTapRecognizer)
 
     }
     private func setupLocationLabel(presenter: CampDetailComponentPresenterProtocol) {
@@ -156,10 +147,7 @@ public final class CampDetailComponentView: UIView, CampDetailComponentViewProto
             maximizeButtonTapped(presenter?.images ?? [])
         }
     }
-    
-    @objc func favoriteButtonClicked (sender: UITapGestureRecognizer) {
-       
-    }
+  
 
 }
 
@@ -173,8 +161,7 @@ extension CampDetailComponentView {
         addSubview(collectionView)
         addSubview(distanceView)
         addSubview(backButton)
-        favoriteView.addSubview(favoriteImageView)
-        addSubview(favoriteView)
+       
         expandView.addSubview(expandImageView)
         addSubview(expandView)
         addSubview(locationLabel)
@@ -202,20 +189,10 @@ extension CampDetailComponentView {
             $0.height.equalTo(40)
             $0.width.equalTo(40)
         }
-        favoriteView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(16)
-            $0.trailing.equalToSuperview().offset(-16)
-            $0.height.equalTo(40)
-            $0.width.equalTo(40)
-        }
-        favoriteImageView.snp.makeConstraints {
-            $0.centerX.centerY.equalToSuperview()
-            $0.height.equalTo(22)
-            $0.width.equalTo(22)
-        }
+  
         locationLabel.snp.makeConstraints {
-            $0.trailing.equalTo(favoriteView.snp.leading).offset(-4)
-            $0.centerY.equalTo(favoriteView.snp.centerY)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(35)
+            $0.trailing.equalToSuperview().offset(-20)
             $0.height.equalTo(20)
         }
         
