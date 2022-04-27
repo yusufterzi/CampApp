@@ -87,6 +87,10 @@ final class HomePresenter: HomePresenterProtocol, BaseListPresenter {
     view?.sendAction(.loadData([section]))
   }
   
+  func needOpenForMe() {
+    router.trigger(.campsForMe)
+  }
+  
   private func headerView() -> CellNode {
     
     let firstPartAttributes: [AttributedStringBuilder.Attribute] = [

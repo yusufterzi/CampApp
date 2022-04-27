@@ -15,6 +15,12 @@ final class HomeController: BaseListController<HomePresenter> {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.view.backgroundColor = ColorProvider.whiteTextColor.color
+    
+    if let needOpenForMe: Bool = CampDefaults.shared.retrieve(with: .needOpenForMe), needOpenForMe {
+      CampDefaults.shared.store(with: .needOpenForMe, value: false)
+      presenter?.needOpenForMe()
+    }
+    
   }
   
   override func viewWillAppear(_ animated: Bool) {
