@@ -11,6 +11,11 @@ import Carbon
 import Common
 import FirebaseUI
 
+public enum FavoriteType {
+    case add
+    case delete
+}
+
 public protocol CampDetailComponentPresenterProtocol {
     var point: String { get }
     var location: String { get }
@@ -21,7 +26,8 @@ public protocol CampDetailComponentPresenterProtocol {
     var imageIndex: Int { get set }
     var backButtonTapped: VoidHandler? { get set }
     var maximizeButtonTapped: Handler<[StorageReference]>? { get set }
-    var liked: VoidHandler? { get set }
+    var favoriteButtonHandler: Handler<FavoriteType>? { get set }
+    var userFavorite: Bool {get set}
 
 }
 
@@ -30,7 +36,9 @@ public final class CampDetailComponentPresenter: CampDetailComponentPresenterPro
     public var maximizeButtonTapped: Handler<[StorageReference]>?
     private var item: CampComponentViewModel
     public var imageIndex: Int = 0
-    public var liked: VoidHandler?
+    public var favoriteButtonHandler: Handler<FavoriteType>?
+    public var userFavorite: Bool = false
+
     
     public var point: String {
         String(format: "%.1f", item.point ?? 0)

@@ -132,12 +132,15 @@ public final class CampDetailComponentView: UIView, CampDetailComponentViewProto
   }
   
   private func setupDistanceView() {
+    guard let presenter = presenter else { return }
+
     let width = UIScreen.main.bounds.width
-    let presenter = CampDetailDistancePresenter(size: CGSize(width: width, height: 110), image: "", cornerRadius: 0)
-    presenter.likeHandler = { [weak self] in
-      self?.presenter?.liked?()
+    let campDetailDistancePresenter = CampDetailDistancePresenter(size: CGSize(width: width, height: 110), image: "", cornerRadius: 0)
+    campDetailDistancePresenter.userFavorite = presenter.userFavorite
+    campDetailDistancePresenter.favoriteHandler = { [weak self] favoriteType in
+      self?.presenter?.favoriteButtonHandler?(favoriteType)
     }
-    distanceView.configureView(presenter: presenter)
+    distanceView.configureView(presenter: campDetailDistancePresenter)
     
   }
   @objc func backButtonClicked () {

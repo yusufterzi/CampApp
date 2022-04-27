@@ -10,15 +10,15 @@ import FirebaseFirestore
 final class CampUser {
   
   enum Keys {
-    static let favouriteAreas: String = "favouriteAreas"
+    static let favouriteCamps: String = "favouriteCamps"
   }
   
   let userID: String
-  var favouriteAreas: [String]
+  var favouriteCamps: [String]
   
   init(userID: String, snapshotValue: [String: Any]) {
     self.userID = userID
-    self.favouriteAreas = (snapshotValue[Keys.favouriteAreas] as? [String]) ?? []
+    self.favouriteCamps = (snapshotValue[Keys.favouriteCamps] as? [String]) ?? []
 
   }
   

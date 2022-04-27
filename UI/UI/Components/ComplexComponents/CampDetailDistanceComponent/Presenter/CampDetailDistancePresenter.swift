@@ -12,7 +12,9 @@ public protocol CampDetailDistancePresenterProtocol {
   var size: CGSize { get }
   var image: String { get }
   var cornerRadius: CGFloat { get }
-  var likeHandler: VoidHandler? { get set }
+  var favoriteHandler: Handler<FavoriteType>? { get set }
+  var userFavorite: Bool { get set }
+
 
 }
 
@@ -20,8 +22,8 @@ public final class CampDetailDistancePresenter: CampDetailDistancePresenterProto
   public var size: CGSize
   public var image: String
   public var cornerRadius: CGFloat
-  public var likeHandler: VoidHandler? 
-
+  public var favoriteHandler: Handler<FavoriteType>?
+  public var userFavorite: Bool = false
   
   public init(size: CGSize, image: String, cornerRadius: CGFloat) {
     self.size = size

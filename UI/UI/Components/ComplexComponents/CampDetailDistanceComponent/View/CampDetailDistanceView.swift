@@ -21,7 +21,7 @@ public final class CampDetailDistanceView: UIView {
     $0.spacing = 21
     $0.distribution = .fillEqually
   }
-  
+  private var favorited: Bool = false
   public init() {
     super.init(frame: .zero)
     initialize()
@@ -39,14 +39,17 @@ public final class CampDetailDistanceView: UIView {
   }
   
   public func loadUI() {
-    
+
     let startPresenter = TwoRowIconedLabelPresenter(title: StringProvider.likes,
                                                     secondTitle: "4.8 (3.2k)",
                                                     image: ImageProvider.heart)
-    startPresenter.imageTintColor = ColorProvider.onboardingRedColor.color
+    
+    startPresenter.imageTintColor = self.presenter?.userFavorite ?? false ? ColorProvider.onboardingRedColor.color : ColorProvider.blackTextColor.color
     startPresenter.onTap = { [weak self] in
-      debugPrint("Beğeni butonu tıklandı")
-      self?.presenter?.likeHandler?()
+      self?.presenter?.userFavorite.toggle()
+      self?.loadUI()
+      self?.presenter?.favoriteHandler?(self?.presenter?.userFavorite ?? false ? FavoriteType.add : FavoriteType.delete )
+      
     }
     starView.configureView(presenter: startPresenter)
     
