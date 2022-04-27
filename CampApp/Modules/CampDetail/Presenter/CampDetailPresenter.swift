@@ -46,6 +46,10 @@ final class CampDetailPresenter: CampDetailPresenterProtocol, BaseListPresenter 
     campDetailPresenter.maximizeButtonTapped = { [weak self] references in
         self?.router.trigger(.imageSlider(references), with: TransitionOptions(animated: true))
     }
+    campDetailPresenter.liked = { [weak self]  in
+      self?.interactor?.setFavorite(campId: self?.item.id ?? "") { response in 
+      }
+    }
     let campComponent = CampDetailComponent(id: "", presenter: campDetailPresenter)
     
     cells.append(CellNode(campComponent))

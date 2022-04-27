@@ -38,15 +38,15 @@ extension FirebaseNetwork {
     
     let ref = database.collection("user").document("\(currentUser.uid)")
     ref.getDocument { snapshot, error in
-      if error != nil {
-        guard let data = snapshot?.data(),
-              let documentID = snapshot?.documentID else {
-          return
-        }
-        
-        let user = CampUser(userID: documentID, snapshotValue: data)
-        SessionHelper.shared.user = user
+      guard let data = snapshot?.data(),
+            let documentID = snapshot?.documentID else {
+        SessionHelper.shared.user = CampUser(userID: currentUser.uid, snapshotValue: Parameters())
+        return
       }
+      
+      let user = CampUser(userID: documentID, snapshotValue: data)
+      SessionHelper.shared.user = user
     }
   }
+  
 }

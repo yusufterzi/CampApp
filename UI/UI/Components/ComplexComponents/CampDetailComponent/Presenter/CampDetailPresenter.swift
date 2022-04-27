@@ -21,6 +21,8 @@ public protocol CampDetailComponentPresenterProtocol {
     var imageIndex: Int { get set }
     var backButtonTapped: VoidHandler? { get set }
     var maximizeButtonTapped: Handler<[StorageReference]>? { get set }
+    var liked: VoidHandler? { get set }
+
 }
 
 public final class CampDetailComponentPresenter: CampDetailComponentPresenterProtocol {
@@ -28,6 +30,7 @@ public final class CampDetailComponentPresenter: CampDetailComponentPresenterPro
     public var maximizeButtonTapped: Handler<[StorageReference]>?
     private var item: CampComponentViewModel
     public var imageIndex: Int = 0
+    public var liked: VoidHandler?
     
     public var point: String {
         String(format: "%.1f", item.point ?? 0)

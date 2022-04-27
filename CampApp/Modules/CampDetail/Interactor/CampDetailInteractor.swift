@@ -7,10 +7,14 @@
 
 import Common
 import YTUI
+import YTNetwork
+
 
 protocol CampDetailInteractorProtocol: BaseInteractor {
   
     var loadHandler: VoidHandler? { get set }
+    func setFavorite(campId: String, completion: @escaping (GenericResult<Void>) -> Void)
+
 }
 
 final class CampDetailInteractor: CampDetailInteractorProtocol {
@@ -19,6 +23,10 @@ final class CampDetailInteractor: CampDetailInteractorProtocol {
   
   func getItems() {
     
+  }
+  
+  func setFavorite(campId: String, completion: @escaping (GenericResult<Void>) -> Void) {
+    FirebaseNetwork.shared?.setFavourite(campId: campId, completion: completion)
   }
   
 }
