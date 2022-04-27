@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E17278D2819CDE100438393 /* CampAreasForMeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17278C2819CDE100438393 /* CampAreasForMeInteractor.swift */; };
+		2E17278F2819CE9F00438393 /* CampAreasForMePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17278E2819CE9F00438393 /* CampAreasForMePresenter.swift */; };
+		2E1727912819D0A300438393 /* CampAreasForMeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1727902819D0A300438393 /* CampAreasForMeController.swift */; };
 		2E1821B82704538300B271CA /* YTUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E1821B72704538300B271CA /* YTUI.framework */; };
 		2E1821B92704538300B271CA /* YTUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E1821B72704538300B271CA /* YTUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2E1821DD270457CC00B271CA /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E1821DC270457CC00B271CA /* Common.framework */; };
@@ -98,6 +101,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2E17278C2819CDE100438393 /* CampAreasForMeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampAreasForMeInteractor.swift; sourceTree = "<group>"; };
+		2E17278E2819CE9F00438393 /* CampAreasForMePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampAreasForMePresenter.swift; sourceTree = "<group>"; };
+		2E1727902819D0A300438393 /* CampAreasForMeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampAreasForMeController.swift; sourceTree = "<group>"; };
 		2E182180270451A900B271CA /* libAppUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAppUI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E1821B32704523200B271CA /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E1821B72704538300B271CA /* YTUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YTUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +196,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E1727872819CD0C00438393 /* CampAreasForMe */ = {
+			isa = PBXGroup;
+			children = (
+				2E1727882819CD3800438393 /* Entity */,
+				2E1727892819CD3F00438393 /* Interactor */,
+				2E17278A2819CD4900438393 /* Presenter */,
+				2E17278B2819CD4E00438393 /* Controller */,
+			);
+			path = CampAreasForMe;
+			sourceTree = "<group>";
+		};
+		2E1727882819CD3800438393 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		2E1727892819CD3F00438393 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				2E17278C2819CDE100438393 /* CampAreasForMeInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		2E17278A2819CD4900438393 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2E17278E2819CE9F00438393 /* CampAreasForMePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2E17278B2819CD4E00438393 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2E1727902819D0A300438393 /* CampAreasForMeController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		2E1822352704684500B271CA /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,6 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				2EAE5C012811EA0F004495D9 /* SearchPlace */,
+				2E1727872819CD0C00438393 /* CampAreasForMe */,
 				3C0AF38127D7A5AE00A36CE1 /* Map */,
 				3C65B95C27C41C020069A832 /* ImageSlider */,
 				3C6DB88E27BBF2600005D050 /* CampSelection */,
@@ -979,13 +1028,16 @@
 				3C6DB89527BBF3AF0005D050 /* CampSelectionController.swift in Sources */,
 				2E98858F26FCC78200A881F7 /* HomeController.swift in Sources */,
 				2E98856826FBBB4D00A881F7 /* Tabs.swift in Sources */,
+				2E17278D2819CDE100438393 /* CampAreasForMeInteractor.swift in Sources */,
 				2E98853B26FBA1F200A881F7 /* AppDelegate.swift in Sources */,
 				3C71204427CFC51C003F2EEE /* CampAddingPresenter.swift in Sources */,
 				2E98855D26FBB93400A881F7 /* SearchCoordinator.swift in Sources */,
 				2EAE5C0D2811EA3E004495D9 /* SearchPlacePresenter.swift in Sources */,
+				2E17278F2819CE9F00438393 /* CampAreasForMePresenter.swift in Sources */,
 				2E7BB7E6270B784500B2DCBB /* CampDetailController.swift in Sources */,
 				2EAE5C112811EA3E004495D9 /* SearchPlaceInteractor.swift in Sources */,
 				3C8111C527CC1EAC00E6832C /* ProfilePresenter.swift in Sources */,
+				2E1727912819D0A300438393 /* CampAreasForMeController.swift in Sources */,
 				2E98855526FBB63A00A881F7 /* MainTabCoordinator.swift in Sources */,
 				2E825C882818857100D5F75F /* FirebaseNetwork+User.swift in Sources */,
 				3C6B247A27DCAEE50051821D /* CustomFloatingPanelLayout.swift in Sources */,
