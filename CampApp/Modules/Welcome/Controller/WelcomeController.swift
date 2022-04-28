@@ -21,7 +21,9 @@ final class WelcomeController: UIViewController, Storyboarded {
     @IBOutlet public var frameView: UIView!
     @IBOutlet public var pageControl: UIPageControl!
     @IBOutlet public var button: UIButton!
-    
+  
+  
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         CampDefaults.setup(with: PersistentDomain.test)

@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -263,12 +264,28 @@
                                     <constraint firstItem="N82-of-6Hp" firstAttribute="leading" secondItem="ySt-P1-Kmf" secondAttribute="leading" id="yJA-sn-QG2"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" tag="3" contentMode="center" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="262-gv-kt0">
+                                <rect key="frame" x="16" y="762" width="382" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="BYF-HY-IFK"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrowRightYellow" title="Button">
+                                    <color key="baseForegroundColor" name="segmentItemSelectedText"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="doesntMatter:" destination="eid-Tw-RjH" eventType="touchUpInside" id="IUV-7C-Kav"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Xfj-pe-gP1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Xfj-pe-gP1" firstAttribute="trailing" secondItem="ySt-P1-Kmf" secondAttribute="trailing" constant="20" id="ASS-FA-LbL"/>
+                            <constraint firstItem="Xfj-pe-gP1" firstAttribute="bottom" secondItem="262-gv-kt0" secondAttribute="bottom" constant="40" id="Ho9-P4-y5l"/>
                             <constraint firstItem="ySt-P1-Kmf" firstAttribute="top" secondItem="F0o-Lj-Bmb" secondAttribute="bottom" constant="42" id="Ldx-Gi-Bza"/>
+                            <constraint firstItem="Xfj-pe-gP1" firstAttribute="trailing" secondItem="262-gv-kt0" secondAttribute="trailing" constant="16" id="QxZ-OS-MU1"/>
+                            <constraint firstItem="262-gv-kt0" firstAttribute="leading" secondItem="Xfj-pe-gP1" secondAttribute="leading" constant="16" id="UeO-px-67r"/>
                             <constraint firstItem="F0o-Lj-Bmb" firstAttribute="leading" secondItem="Xfj-pe-gP1" secondAttribute="leading" constant="32" id="VJq-qk-lFa"/>
                             <constraint firstItem="ySt-P1-Kmf" firstAttribute="leading" secondItem="Xfj-pe-gP1" secondAttribute="leading" constant="20" id="lrZ-jc-Lae"/>
                             <constraint firstItem="Xfj-pe-gP1" firstAttribute="trailing" secondItem="F0o-Lj-Bmb" secondAttribute="trailing" constant="32" id="niG-aT-0Mj"/>
@@ -282,6 +299,7 @@
                         <outlet property="caravanImageView" destination="wGs-Ld-sRf" id="YlW-NO-SLi"/>
                         <outlet property="caravanLabel" destination="VJy-Bo-LV3" id="MIJ-Le-1lY"/>
                         <outlet property="caravanView" destination="N82-of-6Hp" id="Gcj-hx-PrA"/>
+                        <outlet property="doesntMatterButton" destination="262-gv-kt0" id="jU3-gZ-ETh"/>
                         <outlet property="mainView" destination="ySt-P1-Kmf" id="YxJ-M3-Xzm"/>
                         <outlet property="tentImageView" destination="706-bt-U3Y" id="jPg-qU-arB"/>
                         <outlet property="tentLabel" destination="dsc-co-vUY" id="4h6-pM-G9w"/>
@@ -290,6 +308,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kga-pe-G5K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="eid-Tw-RjH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="678.26086956521749" y="48.883928571428569"/>
         </scene>
@@ -390,6 +409,9 @@
     </scenes>
     <resources>
         <image name="arrowRightYellow" width="24" height="24"/>
+        <namedColor name="segmentItemSelectedText">
+            <color red="0.9137254901960784" green="0.54509803921568623" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
