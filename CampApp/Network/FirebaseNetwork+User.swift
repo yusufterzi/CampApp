@@ -21,7 +21,7 @@ extension FirebaseNetwork {
     
     var parameter = Parameters()
     parameter[CampUser.Keys.favouriteCamps] = favouriteCamps
-
+    
     document.setData(parameter, merge: true) { error in
       if let error = error {
         completion?(.failure(error))
@@ -42,7 +42,7 @@ extension FirebaseNetwork {
     
     var parameter = Parameters()
     parameter[CampUser.Keys.favouriteCamps] = favouriteCamps
-
+    
     document.setData(parameter, merge: true) { error in
       if let error = error {
         completion?(.failure(error))

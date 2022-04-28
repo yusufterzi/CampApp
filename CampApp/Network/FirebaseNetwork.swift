@@ -37,7 +37,14 @@ public final class FirebaseNetwork {
             completion(result)
         }
     }
-    
+    public func getFavouriteCamps(completion: @escaping (GenericResult<[CampModel]>) -> Void) {
+      guard let user = SessionHelper.shared.user else { return }
+      let ref = database.collection("camp").whereField("id", in: user.favouriteCamps)
+      ref.getDocumentsObjects { (result: GenericResult<[CampModel]>) in
+            completion(result)
+      }
+    }
+  
     public func addCamp(data: CampModel?, completion: @escaping (GenericResult<Bool>) -> Void) {
         let ref = database.collection("camp").document()
         data?.id = ref.documentID

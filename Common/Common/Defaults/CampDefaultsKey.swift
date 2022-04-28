@@ -9,6 +9,7 @@ import UIKit
 
 public enum CampDefaultsKey {
     case appFirstLaunch
+    case favouritesFirstOpen
     case onboardingAreaSelection
     case onboardingCampSelection
     
