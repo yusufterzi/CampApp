@@ -38,7 +38,10 @@ public final class FirebaseNetwork {
         }
     }
     public func getFavouriteCamps(completion: @escaping (GenericResult<[CampModel]>) -> Void) {
-      guard let user = SessionHelper.shared.user else { return }
+      guard let user = SessionHelper.shared.user, user.favouriteCamps.count > 0 else {
+        completion(.success([]))
+        return
+      }
       let ref = database.collection("camp").whereField("id", in: user.favouriteCamps)
       ref.getDocumentsObjects { (result: GenericResult<[CampModel]>) in
             completion(result)

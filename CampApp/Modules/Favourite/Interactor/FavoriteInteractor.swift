@@ -16,6 +16,8 @@ protocol FavoriteInteractorProtocol: BaseInteractor {
   func loadData()
   var camps: [CampModel] { get set }
   var loadHandler: VoidHandler? { get set }
+  var emptyHandler: VoidHandler? { get set }
+
 }
 
 final class FavoriteInteractor: FavoriteInteractorProtocol {
@@ -23,6 +25,8 @@ final class FavoriteInteractor: FavoriteInteractorProtocol {
   func getItems() { }
   
   var loadHandler: VoidHandler?
+  var emptyHandler: VoidHandler?
+
   var camps: [CampModel] = .init()
   
   
@@ -33,8 +37,12 @@ final class FavoriteInteractor: FavoriteInteractorProtocol {
   private func getFavouriteCamps() {
     FirebaseNetwork.shared?.getFavouriteCamps { [weak self] response in
       if let data = response.value {
-        self?.camps = data
-        self?.loadHandler?()
+        if data.count > 0 {
+          self?.camps = data
+          self?.loadHandler?()
+          return
+        }
+        self?.emptyHandler?()
       }
     }
   }

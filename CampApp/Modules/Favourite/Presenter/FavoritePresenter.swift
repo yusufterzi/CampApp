@@ -34,12 +34,15 @@ final class FavoritePresenter: FavoritePresenterProtocol, BaseListPresenter {
   
   func loadUI() {
     view?.sendAction(.title(StringProvider.tabFavorite))
-    interactor?.loadData()
     interactor?.loadHandler = { [weak self] in
-      if (self?.interactor?.camps.count ?? 0) > 0 {
         self?.dataLoaded()
-      }
     }
+    interactor?.emptyHandler = { [weak self] in
+        //Fixme: Empty State 
+        self?.emptySateLoad()
+    }
+    interactor?.loadData()
+
   }
   
   func dataLoaded() {
@@ -75,6 +78,17 @@ final class FavoritePresenter: FavoritePresenterProtocol, BaseListPresenter {
     
     view?.sendAction(.loadData([section]))
   }
+  
+  func emptySateLoad() {
+    guard let interactor = interactor else { return }
+    var cells: [CellNode] = []
+    cells.append(headerView())
+    
+    let section = Section(id: "", header: nil, cells: cells, footer: nil)
+    
+    view?.sendAction(.loadData([section]))
+  }
+  
   
   private func headerView() -> CellNode {
     
