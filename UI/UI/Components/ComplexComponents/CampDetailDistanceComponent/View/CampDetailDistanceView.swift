@@ -44,7 +44,7 @@ public final class CampDetailDistanceView: UIView {
                                                     secondTitle: "4.8 (3.2k)",
                                                     image: ImageProvider.heart)
     
-    startPresenter.imageTintColor = self.presenter?.userFavorite ?? false ? ColorProvider.onboardingRedColor.color : ColorProvider.blackTextColor.color
+    startPresenter.imageTintColor = self.presenter?.userFavorite ?? false ? ColorProvider.like.color : ColorProvider.unlike.color
     startPresenter.onTap = { [weak self] in
       self?.presenter?.userFavorite.toggle()
       self?.loadUI()
