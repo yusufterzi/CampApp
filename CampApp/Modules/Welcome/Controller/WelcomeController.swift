@@ -47,7 +47,7 @@ final class WelcomeController: UIViewController, Storyboarded {
         
         let onboardingBigHeaderFontFirstPart: [AttributedStringBuilder.Attribute] = [
             .font(FontProvider.onboardingBigRegular),
-            .textColor(ColorProvider.blackTextColor.color),
+            .textColor(ColorProvider.whiteTextColor.color),
         ]
         
         let onboardingBigHeaderTextFirstPart: NSAttributedString = AttributedStringBuilder().text(StringProvider.onboardingBigTextPartOne,
