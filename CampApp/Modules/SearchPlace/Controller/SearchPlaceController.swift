@@ -43,9 +43,7 @@ final class SearchPlaceController: BaseListController<SearchPlacePresenter> {
     navigationItem.searchController = searchController
     definesPresentationContext = true
     searchController?.hidesNavigationBarDuringPresentation = false
-    
-    
-    
+
   }
   
   override func viewWillAppear(_ animated: Bool) {
