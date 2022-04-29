@@ -18,13 +18,13 @@ target 'CampApp' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
-  pod 'FirebaseFirestoreSwift'
   pod 'SPPermissions/LocationWhenInUse'
   pod 'SDWebImage'
   pod 'AttributedStringBuilder'
   pod 'ActionKit'
   pod 'FloatingPanel'
   pod 'GooglePlaces'
+  pod 'Geofirestore'
 end
 
 target 'YTUI' do

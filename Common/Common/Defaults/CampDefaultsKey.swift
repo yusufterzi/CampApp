@@ -8,29 +8,30 @@
 import UIKit
 
 public enum CampDefaultsKey {
-    case appFirstLaunch
-    case favouritesFirstOpen
-    case onboardingAreaSelection
-    case onboardingCampSelection
-    
-    case string(value: String)
+  case appFirstLaunch
+  case favouritesFirstOpen
+  case onboardingAreaSelection
+  case onboardingCampSelection
+  case needOpenForMe
+  
+  case string(value: String)
 }
 
 extension CampDefaultsKey: RawRepresentable {
-    
-    public typealias RawValue = String
-    
-    public init?(rawValue: String) {
-        fatalError("this enum should not be initialized.")
+  
+  public typealias RawValue = String
+  
+  public init?(rawValue: String) {
+    fatalError("this enum should not be initialized.")
+  }
+  
+  public var rawValue: String {
+    switch self {
+    case .string(let value):
+      return value
+    default:
+      return String(describing: self)
     }
-    
-    public var rawValue: String {
-        switch self {
-        case .string(let value):
-            return value
-        default:
-            return String(describing: self)
-        }
-    }
-    
+  }
+  
 }

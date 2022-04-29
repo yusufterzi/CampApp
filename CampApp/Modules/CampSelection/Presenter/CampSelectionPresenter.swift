@@ -32,6 +32,8 @@ final class CampSelectionPresenter: CampSelectionPresenterProtocol {
     setupButton(viewController: viewController)
     
   }
+  
+  
   public func setupLabel(viewController: CampSelectionController) {
     
     let titleFontFirstPart: [AttributedStringBuilder.Attribute] = [
@@ -82,7 +84,7 @@ final class CampSelectionPresenter: CampSelectionPresenterProtocol {
     viewController.bungalowView.layer.borderWidth = 1
     viewController.bungalowView.layer.borderColor = ColorProvider.campSelectionFrameColor.color.cgColor
     
-   
+    
   }
   public func setupImages(viewController: CampSelectionController) {
     viewController.caravanImageView.image = ImageProvider.caravan
@@ -101,6 +103,7 @@ final class CampSelectionPresenter: CampSelectionPresenterProtocol {
     viewController.bungalowView.isUserInteractionEnabled = true
     viewController.bungalowView.addGestureRecognizer(bungalowTapGestureRecognizer)
   }
+  
   private func setupButton(viewController: CampSelectionController) {
     let buttonTextFont: [AttributedStringBuilder.Attribute] = [
       .font(FontProvider.bold18),
@@ -112,18 +115,18 @@ final class CampSelectionPresenter: CampSelectionPresenterProtocol {
     viewController.doesntMatterButton.addTarget(self, action: #selector(onBtnClick), for: .touchUpInside)
   }
   
-  @objc func viewTapped(sender: UITapGestureRecognizer)
-  {
-    if let view = sender.view {
-      debugPrint("Select: \(view.tag)")
-      CampDefaults.shared.store(with: .onboardingCampSelection, value: view.tag)
-      router.trigger(.home(category: view.tag), with: TransitionOptions(animated: true))
-    }
+  @objc private func onBtnClick(_ sender: UIButton) {
+    debugPrint("Select: \(sender.tag)")
+    CampDefaults.shared.store(with: .onboardingAreaSelection, value: sender.tag)
+    router.trigger(.home(category: sender.tag), with: TransitionOptions(animated: true))
   }
   
-  @objc private func onBtnClick(_ sender: UIButton) {
-      debugPrint("Select: \(sender.tag)")
-      CampDefaults.shared.store(with: .onboardingAreaSelection, value: sender.tag)
-      router.trigger(.home(category: sender.tag), with: TransitionOptions(animated: true))
+  @objc func viewTapped(sender: UITapGestureRecognizer) {
+    if let view = sender.view {
+      debugPrint("View tapped: \(view.tag)")
+      CampDefaults.shared.store(with: .onboardingCampSelection, value: view.tag)
+      CampDefaults.shared.store(with: .needOpenForMe, value: true)
+      router.trigger(.home, with: TransitionOptions(animated: true))
+    }
   }
 }

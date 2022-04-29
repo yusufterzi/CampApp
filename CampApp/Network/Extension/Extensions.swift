@@ -6,7 +6,6 @@
 //
 
 import FirebaseFirestore
-import FirebaseFirestoreSwift
 import YTNetwork
 
 public typealias Parameters = [String: Any]

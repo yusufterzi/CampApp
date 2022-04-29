@@ -5,8 +5,7 @@
 //  Created by yusuf terzi on 4.10.2021.
 //
 
-import Foundation
-
+import MapKit
 import XCoordinator
 import Carbon
 import Common
@@ -22,10 +21,10 @@ final class CampDetailPresenter: CampDetailPresenterProtocol, BaseListPresenter 
 
   internal weak var view: BaseListView?
   internal var interactor: CampDetailInteractorProtocol?
-  internal var router: UnownedRouter<HomeRoute>
+  internal var router: UnownedRouter<CampDetailRoute>
   internal var item: CampComponentViewModel
   
-  init(view: BaseListView, router: UnownedRouter<HomeRoute>, item: CampComponentViewModel) {
+  init(view: BaseListView, router: UnownedRouter<CampDetailRoute>, item: CampComponentViewModel) {
     self.view = view
     self.router = router
     self.interactor = CampDetailInteractor()
@@ -34,6 +33,24 @@ final class CampDetailPresenter: CampDetailPresenterProtocol, BaseListPresenter 
   
   func loadUI() {
     dataLoaded()
+    
+//    saveItemLocation()
+    
+  }
+  
+  private func saveItemLocation() {
+    if let lat = item.latitude, let lng = item.longitude {
+      FirebaseNetwork.shared?.geoFirestore.setLocation(
+        location: CLLocation(latitude: lat,
+                             longitude: lng),
+        forDocumentWithID: item.id) { (error) in
+          if let error = error {
+              print("An error occured: \(error)")
+          } else {
+              print("Saved location successfully!")
+          }
+      }
+    }
   }
   
   func dataLoaded() {
