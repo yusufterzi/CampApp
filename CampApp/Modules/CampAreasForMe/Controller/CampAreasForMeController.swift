@@ -1,8 +1,8 @@
 //
-//  HomeController.swift
+//  CampAreasForMeController.swift
 //  CampApp
 //
-//  Created by yusuf terzi on 23.09.2021.
+//  Created by yusuf terzi on 27/04/2022.
 //
 
 import Carbon
@@ -10,17 +10,11 @@ import XCoordinator
 import YTUI
 import Common
 
-final class HomeController: BaseListController<HomePresenter> {
+final class CampAreasForMeController: BaseListController<CampAreasForMePresenter> {
   
   override func viewDidLoad() {
     super.viewDidLoad()
     self.view.backgroundColor = ColorProvider.whiteTextColor.color
-    
-    if let needOpenForMe: Bool = CampDefaults.shared.retrieve(with: .needOpenForMe), needOpenForMe {
-      CampDefaults.shared.store(with: .needOpenForMe, value: false)
-      presenter?.needOpenForMe()
-    }
-    
   }
   
   override func viewWillAppear(_ animated: Bool) {
