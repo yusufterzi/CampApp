@@ -13,7 +13,6 @@ import FirebaseUI
 enum HomeRoute: Route {
   case home(category: Int?)
   case campDetail(CampComponentViewModel)
-  case imageSlider ([StorageReference])
   case back
   case dismiss
   case campsForMe
@@ -27,12 +26,10 @@ class HomeCoordinator: NavigationCoordinator<HomeRoute> {
   
   override func prepareTransition(for route: HomeRoute) -> NavigationTransition {
     switch route {
-    case .home(let category):
+    case .home:
       return showHomeController()
     case .campDetail(let item):
       return showCampDetailController(item: item)
-    case .imageSlider(let images):
-      return showImageSlider(images: images)
     case .back:
       return .pop()
     case .dismiss:
@@ -60,18 +57,9 @@ class HomeCoordinator: NavigationCoordinator<HomeRoute> {
   }
   
   private func showCampDetailController(item: CampComponentViewModel) -> NavigationTransition {
-    let viewController = CampDetailController()
-    viewController.setupPresenter(presenter: CampDetailPresenter(view: viewController,
-                                                                 router: self.unownedRouter,
-                                                                 item: item))
-    return .push(viewController)
-    
+    let coordinator = CampDetailCoordinator(camp: item, root: self.rootViewController)
+    addChild(coordinator)
+    return .none()
   }
-  private func showImageSlider(images: [StorageReference]) -> NavigationTransition {
-    let viewController = ImageSliderController.instantiate()
-    viewController.setupPresenter(presenter: ImageSliderPresenter(router: self.unownedRouter, images: images))
-    viewController.modalPresentationStyle = .fullScreen
-    viewController.modalTransitionStyle = .coverVertical
-    return .present(viewController)
-  }
+
 }

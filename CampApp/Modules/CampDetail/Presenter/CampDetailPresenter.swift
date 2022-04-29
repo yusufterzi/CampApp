@@ -21,10 +21,10 @@ final class CampDetailPresenter: CampDetailPresenterProtocol, BaseListPresenter 
 
   internal weak var view: BaseListView?
   internal var interactor: CampDetailInteractorProtocol?
-  internal var router: UnownedRouter<HomeRoute>
+  internal var router: UnownedRouter<CampDetailRoute>
   internal var item: CampComponentViewModel
   
-  init(view: BaseListView, router: UnownedRouter<HomeRoute>, item: CampComponentViewModel) {
+  init(view: BaseListView, router: UnownedRouter<CampDetailRoute>, item: CampComponentViewModel) {
     self.view = view
     self.router = router
     self.interactor = CampDetailInteractor()

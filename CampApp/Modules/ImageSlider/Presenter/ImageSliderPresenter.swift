@@ -21,7 +21,7 @@ protocol ImageSliderPresenterProtocol {
 }
 
 final class ImageSliderPresenter: ImageSliderPresenterProtocol {
-    internal var router: UnownedRouter<HomeRoute>
+    internal var router: UnownedRouter<CampDetailRoute>
     public var currentPage = 0
     public var images: [StorageReference]
     
@@ -33,7 +33,7 @@ final class ImageSliderPresenter: ImageSliderPresenterProtocol {
     
   
     
-    init(router: UnownedRouter<HomeRoute>, images: [StorageReference]) {
+    init(router: UnownedRouter<CampDetailRoute>, images: [StorageReference]) {
         self.router = router
         self.images = images
     }

@@ -39,6 +39,7 @@
 		2E7BB7E8270B788000B2DCBB /* CampDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7BB7E7270B788000B2DCBB /* CampDetailPresenter.swift */; };
 		2E7BB7EA270B78D600B2DCBB /* CampDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7BB7E9270B78D600B2DCBB /* CampDetailInteractor.swift */; };
 		2E802A5C281B320E00842018 /* Codable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E802A5B281B320E00842018 /* Codable+Extensions.swift */; };
+		2E802A67281C705800842018 /* CampDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E802A66281C705800842018 /* CampDetailCoordinator.swift */; };
 		2E825C86281879D700D5F75F /* SessionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E825C85281879D700D5F75F /* SessionHelper.swift */; };
 		2E825C882818857100D5F75F /* FirebaseNetwork+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E825C872818857100D5F75F /* FirebaseNetwork+User.swift */; };
 		2E825C8A28188D9300D5F75F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E825C8928188D9300D5F75F /* User.swift */; };
@@ -133,6 +134,7 @@
 		2E7BB7E7270B788000B2DCBB /* CampDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampDetailPresenter.swift; sourceTree = "<group>"; };
 		2E7BB7E9270B78D600B2DCBB /* CampDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampDetailInteractor.swift; sourceTree = "<group>"; };
 		2E802A5B281B320E00842018 /* Codable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Codable+Extensions.swift"; sourceTree = "<group>"; };
+		2E802A66281C705800842018 /* CampDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampDetailCoordinator.swift; sourceTree = "<group>"; };
 		2E825C85281879D700D5F75F /* SessionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionHelper.swift; sourceTree = "<group>"; };
 		2E825C872818857100D5F75F /* FirebaseNetwork+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseNetwork+User.swift"; sourceTree = "<group>"; };
 		2E825C8928188D9300D5F75F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -340,6 +342,14 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		2E802A65281C704400842018 /* CampDetailCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				2E802A66281C705800842018 /* CampDetailCoordinator.swift */,
+			);
+			path = CampDetailCoordinator;
+			sourceTree = "<group>";
+		};
 		2E825C84281879C600D5F75F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -432,6 +442,7 @@
 		2E98855626FBB8C000A881F7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2E802A65281C704400842018 /* CampDetailCoordinator */,
 				2E770C142706541B00872550 /* Entity */,
 				2E98858226FCC1A100A881F7 /* Interactor */,
 				2E98858126FCC19C00A881F7 /* Presenter */,
@@ -1009,6 +1020,7 @@
 				2E802A5C281B320E00842018 /* Codable+Extensions.swift in Sources */,
 				2E26797C2703917E0090F074 /* HomePresenter.swift in Sources */,
 				3C0AF39027DA6DFC00A36CE1 /* SearchViewController.swift in Sources */,
+				2E802A67281C705800842018 /* CampDetailCoordinator.swift in Sources */,
 				2E98856126FBB98800A881F7 /* FavouriteCoordinator.swift in Sources */,
 				3C600F0627BA5B7D00D2E692 /* WelcomeController.swift in Sources */,
 				2E825C86281879D700D5F75F /* SessionHelper.swift in Sources */,
