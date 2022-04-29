@@ -20,7 +20,8 @@ enum CampDetailRoute: Route {
 class CampDetailCoordinator: NavigationCoordinator<CampDetailRoute> {
   
   init(camp: CampComponentViewModel, root: RootViewController) {
-    super.init(rootViewController: root, initialRoute: CampDetailRoute.initialize(camp))
+    super.init(rootViewController: root)
+    self.trigger(.initialize(camp))
   }
   
   override func prepareTransition(for route: CampDetailRoute) -> NavigationTransition {
@@ -41,7 +42,7 @@ class CampDetailCoordinator: NavigationCoordinator<CampDetailRoute> {
     viewController.setupPresenter(presenter: CampDetailPresenter(view: viewController,
                                                                  router: self.unownedRouter,
                                                                  item: item))
-    return .push(viewController)
+    return .push(viewController, animation: .default)
     
   }
   private func showImageSlider(images: [StorageReference]) -> NavigationTransition {
