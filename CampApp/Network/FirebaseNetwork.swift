@@ -63,26 +63,18 @@ public final class FirebaseNetwork {
   public func addCamp(data: CampModel?, completion: @escaping (GenericResult<Bool>) -> Void) {
     let ref = database.collection("camp").document()
     data?.id = ref.documentID
-    do {
-      try ref.setData(from: data) { err in
-        if let err = err {
-          debugPrint("Error adding document: \(err)")
-          completion(.failure(err))
-        } else {
-          completion(.success(true))
-        }
-        
+    
+    guard let parameters = data?.getParameters() else { return }
+    ref.setData(parameters) { err in
+      if let err = err {
+        debugPrint("Error adding document: \(err)")
+        completion(.failure(err))
+      } else {
+        completion(.success(true))
       }
-      
-    } catch let error {
-      debugPrint("Error writing to Firestore: \(error)")
-      completion(.failure(error))
     }
   }
-  
-    }
-  }
-  
+
   public func nearestCamps() {
     let center = CLLocation(latitude: 37.7832889, longitude: -122.4056973)
     let circleQuery = geoFirestore.query(withCenter: center, radius: 0.6)
@@ -100,31 +92,7 @@ public final class FirebaseNetwork {
       }
     })
   }
-  
-  public func allCampAreas(completion: @escaping (GenericResult<[CampAreaModel]>) -> Void) {
-    let ref = database.collection("areas")
-    let query = ref.limit(to: 50)
-    query.getDocumentsObjects { (result: GenericResult<[CampAreaModel]>) in
-      completion(result)
-    }
-  }
-  
-  public func addCamp(data: CampModel?, completion: @escaping (GenericResult<Bool>) -> Void) {
-    let ref = database.collection("camp").document()
-    data?.id = ref.documentID
-    
-    guard let parameters = data?.getParameters() else { return }
-    ref.setData(parameters) { err in
-      if let err = err {
-        debugPrint("Error adding document: \(err)")
-        completion(.failure(err))
-      } else {
-        completion(.success(true))
-      }
-      
-    }
-  }
-  
+ 
   public func uploadCampImage(images: [CampImageModel]?, completion: @escaping (GenericResult<Bool>) -> Void) {
     guard let images = images else {
       return

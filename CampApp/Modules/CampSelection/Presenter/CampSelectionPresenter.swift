@@ -126,7 +126,7 @@ final class CampSelectionPresenter: CampSelectionPresenterProtocol {
       debugPrint("View tapped: \(view.tag)")
       CampDefaults.shared.store(with: .onboardingCampSelection, value: view.tag)
       CampDefaults.shared.store(with: .needOpenForMe, value: true)
-      router.trigger(.home, with: TransitionOptions(animated: true))
+      router.trigger(.home(category: view.tag), with: TransitionOptions(animated: true))
     }
   }
 }
