@@ -14,7 +14,6 @@ import FirebaseUI
 enum FavouriteRoute: Route {
   case favorite
   case campDetail(CampComponentViewModel)
-  case imageSlider ([StorageReference])
   case back
   case dismiss
 }
@@ -34,14 +33,18 @@ class FavouriteCoordinator: NavigationCoordinator<FavouriteRoute> {
       viewController.setupPresenter(presenter: FavoritePresenter(view: viewController, router: self.unownedRouter))
       return .push(viewController)
     case .campDetail(let item):
-      return .dismiss()
-    case .imageSlider(let images):
-      return .dismiss()
+      return showCampDetailController(item: item)
     case .back:
       return .pop()
     case .dismiss:
       return .dismiss()
     }
+  }
+  
+  private func showCampDetailController(item: CampComponentViewModel) -> NavigationTransition {
+    let coordinator = CampDetailCoordinator(camp: item, root: self.rootViewController)
+    addChild(coordinator)
+    return .none()
   }
   
 }

@@ -65,7 +65,7 @@ final class FavoritePresenter: FavoritePresenterProtocol, BaseListPresenter {
     for camp in campComponentViews {
       let presenter = CampComponentPresenter(item: camp)
       presenter.onTap = { [weak self] in
-        
+        self?.router.trigger(.campDetail(camp), with: TransitionOptions(animated: true))
       }
       let component = CampComponent(id: camp.name ?? "",
                                     presenter: presenter)

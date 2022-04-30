@@ -46,7 +46,7 @@ public final class FirebaseNetwork {
       completion(.success([]))
       return
     }
-    let ref = database.collection("camp").whereField("id", in: user.favouriteCamps)
+    let ref = database.collection("camp")
     ref.getDocumentsObjects { (result: GenericResult<[CampModel]>) in
       completion(result)
     }
