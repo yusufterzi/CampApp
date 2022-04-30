@@ -14,7 +14,6 @@ final class WelcomeController: UIViewController, Storyboarded {
   
   private var presenter: WelcomePresenter!
   
-  
   @IBOutlet public var collectionView: UICollectionView!
   @IBOutlet public var onboardingSmallLabel: UILabel!
   @IBOutlet public var onboardingBigLabel: UILabel!
@@ -26,16 +25,10 @@ final class WelcomeController: UIViewController, Storyboarded {
   override func viewDidLoad() {
     super.viewDidLoad()
     CampDefaults.setup(with: PersistentDomain.test)
-    presenter.completionHandler = { [weak self] in
-      self?.pageControl.numberOfPages = self?.presenter.onboardingImages.count ?? 0
-      self?.setupOnboardingHeader()
-      self?.setupWhiteFrame()
-      self?.setupButton()
-      self?.collectionView.reloadData()
-    }
-    presenter.loadUI()
-
-    
+    pageControl.numberOfPages = self.presenter.images.count ?? 0
+    setupOnboardingHeader()
+    setupWhiteFrame()
+    setupButton()
   }
   public func setupPresenter(presenter: WelcomePresenter) {
     self.presenter = presenter
@@ -79,7 +72,7 @@ final class WelcomeController: UIViewController, Storyboarded {
       .font(FontProvider.bold18),
       .textColor(ColorProvider.onboardingYellowButtonText.color),
     ]
-    let buttonText: NSAttributedString = AttributedStringBuilder().text(self.presenter.onboardingImages[pageControl.currentPage].name, attributes: buttonTextFont).attributedString
+    let buttonText: NSAttributedString = AttributedStringBuilder().text(self.presenter.images[pageControl.currentPage].name, attributes: buttonTextFont).attributedString
     button.setAttributedTitle(buttonText, for: .normal)
     button.backgroundColor = ColorProvider.onboardingRedColor.color
     button.addTarget(self, action: #selector(onBtnClick), for: .touchUpInside)
@@ -95,14 +88,15 @@ final class WelcomeController: UIViewController, Storyboarded {
 extension WelcomeController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return self.presenter.onboardingImages.count
+    return self.presenter.images.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WelcomeCell.identifier, for: indexPath) as! WelcomeCell
-    cell.setup(self.presenter.onboardingImages[indexPath.item], frameView: frameView)
+    cell.setup(presenter.images[indexPath.item], frameView: frameView)
     return cell
   }
+  
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)

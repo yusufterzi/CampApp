@@ -52,14 +52,6 @@ public final class FirebaseNetwork {
     }
   }
   
-  public func getOnboardingImages(completion: @escaping (GenericResult<[OnboardingImageModel]>) -> Void) {
-    let ref = database.collection("onboardingImages")
-    let query = ref.limit(to: 50).order(by: "sequence")
-    query.getDocumentsObjects { (result: GenericResult<[OnboardingImageModel]>) in
-      completion(result)
-    }
-  }
-  
   public func addCamp(data: CampModel?, completion: @escaping (GenericResult<Bool>) -> Void) {
     let ref = database.collection("camp").document()
     data?.id = ref.documentID

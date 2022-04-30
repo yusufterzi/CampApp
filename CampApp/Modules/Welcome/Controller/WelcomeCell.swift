@@ -7,20 +7,14 @@
 
 import UIKit
 import Foundation
-import SDWebImage
-import FirebaseStorage
-import YTNetwork
-
 
 final class WelcomeCell: UICollectionViewCell {
   
   static let identifier = String(describing: WelcomeCell.self)
-  private let storageRef = Storage.storage().reference()
   @IBOutlet private var imageView: UIImageView!
   
-  func setup(_ image: OnboardingImageModel, frameView: UIView)  {
-    let storageRef = self.storageRef.child("onboardingImages/\(image.id).png")
-    imageView.sd_setImage(with: storageRef)
+  func setup(_ data: WelcomeData, frameView: UIView)  {
+    imageView.image = data.image
     
     let roundedRect = CGRect (
       x: frameView.frame.minX,

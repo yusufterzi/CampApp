@@ -14,7 +14,7 @@ enum MainRoute: Route {
     case campSelection
 }
 final class MainCoordinator: NavigationCoordinator<MainRoute> {
-    private var initialRoute: RouteType = .home(category: 3)
+    private var initialRoute: RouteType = .welcome
     init() {
         CampDefaults.setup(with: PersistentDomain.test)
         let appFirstLaunch : Bool = CampDefaults.shared.retrieve(with: .appFirstLaunch) ?? true

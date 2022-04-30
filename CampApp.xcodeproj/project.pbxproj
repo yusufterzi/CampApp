@@ -83,6 +83,7 @@
 		3C8111C527CC1EAC00E6832C /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8111C427CC1EAC00E6832C /* ProfilePresenter.swift */; };
 		3C8111C727CC1F2C00E6832C /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8111C627CC1F2C00E6832C /* ProfileInteractor.swift */; };
 		3CB4BA0F281C183600E5C0C2 /* WelcomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB4BA0E281C183600E5C0C2 /* WelcomeInteractor.swift */; };
+		3CB4BA13281D5B8800E5C0C2 /* WelcomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB4BA12281D5B8800E5C0C2 /* WelcomeData.swift */; };
 		3CDECA952819F1EE001C8113 /* FavoriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDECA942819F1EE001C8113 /* FavoriteController.swift */; };
 		3CDECA992819F232001C8113 /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDECA982819F232001C8113 /* FavoritePresenter.swift */; };
 		3CDECA9B2819F245001C8113 /* FavoriteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDECA9A2819F245001C8113 /* FavoriteInteractor.swift */; };
@@ -183,6 +184,7 @@
 		3C8111C427CC1EAC00E6832C /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfilePresenter.swift; path = Common/Common/Extensions/ProfilePresenter.swift; sourceTree = SOURCE_ROOT; };
 		3C8111C627CC1F2C00E6832C /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileInteractor.swift; path = Common/Common/Extensions/ProfileInteractor.swift; sourceTree = SOURCE_ROOT; };
 		3CB4BA0E281C183600E5C0C2 /* WelcomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInteractor.swift; sourceTree = "<group>"; };
+		3CB4BA12281D5B8800E5C0C2 /* WelcomeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeData.swift; sourceTree = SOURCE_ROOT; };
 		3CDECA942819F1EE001C8113 /* FavoriteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteController.swift; sourceTree = "<group>"; };
 		3CDECA982819F232001C8113 /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
 		3CDECA9A2819F245001C8113 /* FavoriteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteInteractor.swift; sourceTree = "<group>"; };
@@ -712,6 +714,7 @@
 		3C600F0D27BA626100D2E692 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3CB4BA12281D5B8800E5C0C2 /* WelcomeData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -987,7 +990,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\n";
+			shellScript = "
+";
 		};
 		50BC18705944DD3D53D603F5 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1040,6 +1044,7 @@
 				2E98856126FBB98800A881F7 /* FavouriteCoordinator.swift in Sources */,
 				3CDECA992819F232001C8113 /* FavoritePresenter.swift in Sources */,
 				3C600F0627BA5B7D00D2E692 /* WelcomeController.swift in Sources */,
+				3CB4BA13281D5B8800E5C0C2 /* WelcomeData.swift in Sources */,
 				3CDECA952819F1EE001C8113 /* FavoriteController.swift in Sources */,
 				2E825C86281879D700D5F75F /* SessionHelper.swift in Sources */,
 				2E26797E270391870090F074 /* HomeInteractor.swift in Sources */,

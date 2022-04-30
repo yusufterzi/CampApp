@@ -15,16 +15,21 @@ import AttributedStringBuilder
 import UIKit
 
 protocol WelcomePresenterProtocol {
-  var completionHandler: VoidHandler? { get set }
 
 }
 
 final class WelcomePresenter: WelcomePresenterProtocol {
   
+  public var images: [WelcomeData] = [
+      WelcomeData(name : "Ege", image: ImageProvider.onboardingEge),
+      WelcomeData(name : "Karadeniz", image: ImageProvider.onboardingKaradeniz),
+      WelcomeData(name : "Akdeniz", image: ImageProvider.onboardingAkdeniz),
+      WelcomeData(name : "Marmara", image: ImageProvider.onboardingMarmara),
+      WelcomeData(name : "İç Anadolu", image: ImageProvider.onboardingIcAnadolu),
+      WelcomeData(name : "Doğu Anadolu", image: ImageProvider.onboardingDoguAnadolu)
+  ]
   internal var router: UnownedRouter<MainRoute>
   internal var interactor: WelcomeInteractorProtocol?
-  public var onboardingImages: [OnboardingImageModel] = []
-  public var completionHandler: VoidHandler?
   
   init(router: UnownedRouter<MainRoute>) {
     self.router = router
@@ -32,20 +37,9 @@ final class WelcomePresenter: WelcomePresenterProtocol {
   }
   
   public func loadUI() {
-    interactor?.loadData()
-    interactor?.loadHandler = { [weak self] in
-      if (self?.interactor?.onboardingImages.count ?? 0) > 0 {
-        self?.dataLoaded()
-      }
-    }
-    
+   
   }
-  func dataLoaded() {
-    guard let interactor = interactor else { return }
-    onboardingImages = interactor.onboardingImages
-    self.completionHandler?()
-  }
-  
+
 }
 
 
