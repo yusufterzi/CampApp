@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FirebaseUI
+import FirebaseStorageUI
 
 public class ImageViewModel {
     public var size: CGSize

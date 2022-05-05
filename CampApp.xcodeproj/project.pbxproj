@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		108F33DF8A5A48B5C00CBA19 /* Pods_CampApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E42352CEB98B49187469C0 /* Pods_CampApp.framework */; };
+		2E162A8A2823EFCC000F81CC /* Geofirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E162A892823EFCC000F81CC /* Geofirestore.swift */; };
 		2E17278D2819CDE100438393 /* CampAreasForMeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17278C2819CDE100438393 /* CampAreasForMeInteractor.swift */; };
 		2E17278F2819CE9F00438393 /* CampAreasForMePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17278E2819CE9F00438393 /* CampAreasForMePresenter.swift */; };
 		2E1727912819D0A300438393 /* CampAreasForMeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1727902819D0A300438393 /* CampAreasForMeController.swift */; };
@@ -107,6 +109,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2E162A892823EFCC000F81CC /* Geofirestore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geofirestore.swift; sourceTree = "<group>"; };
 		2E17278C2819CDE100438393 /* CampAreasForMeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampAreasForMeInteractor.swift; sourceTree = "<group>"; };
 		2E17278E2819CE9F00438393 /* CampAreasForMePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampAreasForMePresenter.swift; sourceTree = "<group>"; };
 		2E1727902819D0A300438393 /* CampAreasForMeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampAreasForMeController.swift; sourceTree = "<group>"; };
@@ -208,6 +211,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E162A882823EFBA000F81CC /* GeoFireStore */ = {
+			isa = PBXGroup;
+			children = (
+				2E162A892823EFCC000F81CC /* Geofirestore.swift */,
+			);
+			path = GeoFireStore;
+			sourceTree = "<group>";
+		};
 		2E1727872819CD0C00438393 /* CampAreasForMe */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +264,7 @@
 		2E1822352704684500B271CA /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				2E162A882823EFBA000F81CC /* GeoFireStore */,
 				2E1822362704688500B271CA /* Extension */,
 				2E1822332704684200B271CA /* FirebaseNetwork.swift */,
 				2E825C872818857100D5F75F /* FirebaseNetwork+User.swift */,
@@ -847,6 +859,7 @@
 		DF178F2957180F8E5CB6890F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+
 				AAC4BD1AD7ACD14677ECAB03 /* Pods-CampApp.debug.xcconfig */,
 				DB4FFD195A6B10CC381E7F18 /* Pods-CampApp.release.xcconfig */,
 			);
@@ -873,6 +886,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E98854B26FBA1F300A881F7 /* Build configuration list for PBXNativeTarget "CampApp" */;
 			buildPhases = (
+
 				047D1A16944F8CB9E87AC61A /* [CP] Check Pods Manifest.lock */,
 				3C6DB88D27BBE78D0005D050 /* ShellScript */,
 				2E98853326FBA1F200A881F7 /* Sources */,
@@ -983,6 +997,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+
 			);
 			outputFileListPaths = (
 			);
@@ -1034,6 +1049,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E162A8A2823EFCC000F81CC /* Geofirestore.swift in Sources */,
 				3C65B95F27C41C1E0069A832 /* ImageSliderController.swift in Sources */,
 				2E98856526FBB9BF00A881F7 /* ProfileCoordinator.swift in Sources */,
 				3C600F0F27BA672B00D2E692 /* WelcomeCell.swift in Sources */,

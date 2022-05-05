@@ -8,7 +8,7 @@
 import Foundation
 import YTNetwork
 import Common
-import FirebaseUI
+import FirebaseStorageUI
 
 public class CampComponentViewModel {
     public var name: String?

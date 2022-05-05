@@ -10,7 +10,7 @@ import Carbon
 import SnapKit
 import UIKit
 import SDWebImage
-import FirebaseUI
+import FirebaseStorageUI
 public protocol YTCarouselViewProtocol: BaseView {
   
 }

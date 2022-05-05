@@ -9,7 +9,7 @@ import Foundation
 import YTNetwork
 import Carbon
 import Common
-import FirebaseUI
+import FirebaseStorageUI
 
 public enum FavoriteType {
     case add

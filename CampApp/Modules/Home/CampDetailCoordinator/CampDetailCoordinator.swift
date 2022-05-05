@@ -8,7 +8,7 @@
 import XCoordinator
 import YTNetwork
 import YTUI
-import FirebaseUI
+import FirebaseStorageUI
 
 enum CampDetailRoute: Route {
   case initialize(CampComponentViewModel)

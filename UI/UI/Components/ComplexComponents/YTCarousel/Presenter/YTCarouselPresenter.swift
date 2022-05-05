@@ -9,7 +9,7 @@ import Foundation
 import AttributedStringBuilder
 import Common
 import YTNetwork
-import FirebaseUI
+import FirebaseStorageUI
 
 public class CampCarouselViewModel {
     public var name: String?
