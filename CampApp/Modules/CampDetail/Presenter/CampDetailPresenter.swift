@@ -57,12 +57,23 @@ final class CampDetailPresenter: CampDetailPresenterProtocol, BaseListPresenter 
     var cells: [CellNode] = []
 
     let campDetailPresenter = CampDetailComponentPresenter(item: self.item)
+    
+    if let user = SessionHelper.shared.user {
+      if user.favouriteCamps.contains(self.item.id) {
+        campDetailPresenter.userFavorite = true
+      }
+    }
     campDetailPresenter.backButtonTapped = { [weak self] in
         self?.router.trigger(.back)
     }
     campDetailPresenter.maximizeButtonTapped = { [weak self] references in
         self?.router.trigger(.imageSlider(references), with: TransitionOptions(animated: true))
     }
+    campDetailPresenter.favoriteButtonHandler = { [weak self] favoriteType in
+      favoriteType == FavoriteType.add ? self?.interactor?.addFavorite(campId: self?.item.id ?? "", completion: nil) : self?.interactor?.deleteFavorite(campId: self?.item.id ?? "", completion: nil)
+    }
+ 
+    
     let campComponent = CampDetailComponent(id: "", presenter: campDetailPresenter)
     
     cells.append(CellNode(campComponent))

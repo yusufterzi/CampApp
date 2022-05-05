@@ -9,12 +9,12 @@ import XCoordinator
 import Common
 
 enum MainRoute: Route {
-    case home
+    case home(category: Int?)
     case welcome
     case campSelection
 }
 final class MainCoordinator: NavigationCoordinator<MainRoute> {
-    private var initialRoute: RouteType = .home
+    private var initialRoute: RouteType = .welcome
     init() {
         CampDefaults.setup(with: PersistentDomain.test)
         let appFirstLaunch : Bool = CampDefaults.shared.retrieve(with: .appFirstLaunch) ?? true

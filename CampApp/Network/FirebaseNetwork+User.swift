@@ -10,24 +10,45 @@ import YTNetwork
 import FirebaseAuth
 
 extension FirebaseNetwork {
-  func setFavourite(campId: String,
-                    completion: @escaping (GenericResult<Void>) -> Void) {
+  func addFavourite(campId: String,
+                    completion: ((GenericResult<Void>) -> Void)?) {
     guard let user = SessionHelper.shared.user else { return }
     let document = database.collection("user").document("\(user.userID)")
     
-    var favouriteAreas: [String] = user.favouriteAreas
-    favouriteAreas.append(campId)
-    user.favouriteAreas = favouriteAreas
+    var favouriteCamps: [String] = user.favouriteCamps
+    favouriteCamps.append(campId)
+    user.favouriteCamps = favouriteCamps
     
     var parameter = Parameters()
-    parameter[CampUser.Keys.favouriteAreas] = favouriteAreas
-
+    parameter[CampUser.Keys.favouriteCamps] = favouriteCamps
+    
     document.setData(parameter, merge: true) { error in
       if let error = error {
-        completion(.failure(error))
+        completion?(.failure(error))
         return
       }
-      completion(.success)
+      completion?(.success)
+    }
+  }
+  
+  func deleteFavorite(campId: String,
+                      completion: ((GenericResult<Void>) -> Void)?) {
+    guard let user = SessionHelper.shared.user else { return }
+    let document = database.collection("user").document("\(user.userID)")
+    
+    var favouriteCamps: [String] = user.favouriteCamps
+    favouriteCamps.removeAll(where: { campId == $0 } )
+    user.favouriteCamps = favouriteCamps
+    
+    var parameter = Parameters()
+    parameter[CampUser.Keys.favouriteCamps] = favouriteCamps
+    
+    document.setData(parameter, merge: true) { error in
+      if let error = error {
+        completion?(.failure(error))
+        return
+      }
+      completion?(.success)
     }
   }
   
@@ -38,15 +59,15 @@ extension FirebaseNetwork {
     
     let ref = database.collection("user").document("\(currentUser.uid)")
     ref.getDocument { snapshot, error in
-      if error != nil {
-        guard let data = snapshot?.data(),
-              let documentID = snapshot?.documentID else {
-          return
-        }
-        
-        let user = CampUser(userID: documentID, snapshotValue: data)
-        SessionHelper.shared.user = user
+      guard let data = snapshot?.data(),
+            let documentID = snapshot?.documentID else {
+        SessionHelper.shared.user = CampUser(userID: currentUser.uid, snapshotValue: Parameters())
+        return
       }
+      
+      let user = CampUser(userID: documentID, snapshotValue: data)
+      SessionHelper.shared.user = user
     }
   }
+  
 }

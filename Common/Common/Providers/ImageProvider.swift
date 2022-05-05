@@ -30,16 +30,12 @@ public final class ImageProvider {
   public static let arrowBottom: UIImage = UIImage(named: "arrowBottom")!
   public static let addButton: UIImage = UIImage(named: "addButton")!
   public static let removeButton: UIImage = UIImage(named: "removeButton")!
-  public static let onboardingEge: UIImage = UIImage(named: "ege")!
+  public static let onboardingEge: UIImage = UIImage(named: "Ege")!
   public static let onboardingKaradeniz: UIImage = UIImage(named: "Karadeniz")!
   public static let onboardingAkdeniz: UIImage = UIImage(named: "Akdeniz")!
   public static let onboardingMarmara: UIImage = UIImage(named: "Marmara")!
   public static let onboardingIcAnadolu: UIImage = UIImage(named: "IcAnadolu")!
   public static let onboardingDoguAnadolu: UIImage = UIImage(named: "DoguAnadolu")!
-  
-  
-  
-  
-  
+
   
 }

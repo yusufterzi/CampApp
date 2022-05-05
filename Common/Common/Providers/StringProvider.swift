@@ -51,6 +51,8 @@ public final class StringProvider {
     public static let save: String = "Kaydet".localized
     public static let searchHeader: String = "Kamp Alanı Bul".localized
     public static let searchPlaceHodler: String = "Ara".localized
+    public static let itDoesntMatter: String = "hiç farketmez".localized
+
 
 
 
