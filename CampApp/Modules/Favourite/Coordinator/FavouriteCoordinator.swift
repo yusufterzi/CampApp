@@ -9,7 +9,6 @@ import XCoordinator
 import Common
 import YTNetwork
 import YTUI
-import FirebaseUI
 
 enum FavouriteRoute: Route {
   case favorite
