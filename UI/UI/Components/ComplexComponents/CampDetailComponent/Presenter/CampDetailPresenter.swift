@@ -9,7 +9,7 @@ import Foundation
 import YTNetwork
 import Carbon
 import Common
-import FirebaseUI
+import FirebaseStorageUI
 
 public protocol CampDetailComponentPresenterProtocol {
     var point: String { get }

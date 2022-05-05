@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		108F33DF8A5A48B5C00CBA19 /* Pods_CampApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E42352CEB98B49187469C0 /* Pods_CampApp.framework */; };
+		2E162A8A2823EFCC000F81CC /* Geofirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E162A892823EFCC000F81CC /* Geofirestore.swift */; };
 		2E17278D2819CDE100438393 /* CampAreasForMeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17278C2819CDE100438393 /* CampAreasForMeInteractor.swift */; };
 		2E17278F2819CE9F00438393 /* CampAreasForMePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17278E2819CE9F00438393 /* CampAreasForMePresenter.swift */; };
 		2E1727912819D0A300438393 /* CampAreasForMeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1727902819D0A300438393 /* CampAreasForMeController.swift */; };
@@ -83,7 +85,6 @@
 		3C8111C327CC1DD100E6832C /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8111C227CC1DD100E6832C /* ProfileController.swift */; };
 		3C8111C527CC1EAC00E6832C /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8111C427CC1EAC00E6832C /* ProfilePresenter.swift */; };
 		3C8111C727CC1F2C00E6832C /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8111C627CC1F2C00E6832C /* ProfileInteractor.swift */; };
-		F86F770C553950290F5CE6CC /* Pods_CampApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11285E0B7ECA8F940163781 /* Pods_CampApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -103,6 +104,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2E162A892823EFCC000F81CC /* Geofirestore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geofirestore.swift; sourceTree = "<group>"; };
 		2E17278C2819CDE100438393 /* CampAreasForMeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampAreasForMeInteractor.swift; sourceTree = "<group>"; };
 		2E17278E2819CE9F00438393 /* CampAreasForMePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampAreasForMePresenter.swift; sourceTree = "<group>"; };
 		2E1727902819D0A300438393 /* CampAreasForMeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampAreasForMeController.swift; sourceTree = "<group>"; };
@@ -180,9 +182,9 @@
 		3C8111C227CC1DD100E6832C /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileController.swift; path = Common/Common/Extensions/ProfileController.swift; sourceTree = SOURCE_ROOT; };
 		3C8111C427CC1EAC00E6832C /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfilePresenter.swift; path = Common/Common/Extensions/ProfilePresenter.swift; sourceTree = SOURCE_ROOT; };
 		3C8111C627CC1F2C00E6832C /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileInteractor.swift; path = Common/Common/Extensions/ProfileInteractor.swift; sourceTree = SOURCE_ROOT; };
-		95A58A161A0213B2B1E520B8 /* Pods-CampApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampApp.debug.xcconfig"; path = "Target Support Files/Pods-CampApp/Pods-CampApp.debug.xcconfig"; sourceTree = "<group>"; };
-		F11285E0B7ECA8F940163781 /* Pods_CampApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CampApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F63913CC5AB555B52BA26BD0 /* Pods-CampApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampApp.release.xcconfig"; path = "Target Support Files/Pods-CampApp/Pods-CampApp.release.xcconfig"; sourceTree = "<group>"; };
+		9B3535AF8CB66F0AC75FC0FD /* Pods-CampApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampApp.debug.xcconfig"; path = "Target Support Files/Pods-CampApp/Pods-CampApp.debug.xcconfig"; sourceTree = "<group>"; };
+		C5E42352CEB98B49187469C0 /* Pods_CampApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CampApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0AE82958DC2484E11139B10 /* Pods-CampApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampApp.release.xcconfig"; path = "Target Support Files/Pods-CampApp/Pods-CampApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,13 +195,21 @@
 				2E1821DD270457CC00B271CA /* Common.framework in Frameworks */,
 				2E18222A270459F400B271CA /* YTNetwork.framework in Frameworks */,
 				2E1821B82704538300B271CA /* YTUI.framework in Frameworks */,
-				F86F770C553950290F5CE6CC /* Pods_CampApp.framework in Frameworks */,
+				108F33DF8A5A48B5C00CBA19 /* Pods_CampApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E162A882823EFBA000F81CC /* GeoFireStore */ = {
+			isa = PBXGroup;
+			children = (
+				2E162A892823EFCC000F81CC /* Geofirestore.swift */,
+			);
+			path = GeoFireStore;
+			sourceTree = "<group>";
+		};
 		2E1727872819CD0C00438393 /* CampAreasForMe */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +255,7 @@
 		2E1822352704684500B271CA /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				2E162A882823EFBA000F81CC /* GeoFireStore */,
 				2E1822362704688500B271CA /* Extension */,
 				2E1822332704684200B271CA /* FirebaseNetwork.swift */,
 				2E825C872818857100D5F75F /* FirebaseNetwork+User.swift */,
@@ -827,8 +838,8 @@
 		DF178F2957180F8E5CB6890F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				95A58A161A0213B2B1E520B8 /* Pods-CampApp.debug.xcconfig */,
-				F63913CC5AB555B52BA26BD0 /* Pods-CampApp.release.xcconfig */,
+				9B3535AF8CB66F0AC75FC0FD /* Pods-CampApp.debug.xcconfig */,
+				F0AE82958DC2484E11139B10 /* Pods-CampApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -841,7 +852,7 @@
 				2E1821B72704538300B271CA /* YTUI.framework */,
 				2E1821B32704523200B271CA /* UI.framework */,
 				2E182180270451A900B271CA /* libAppUI.a */,
-				F11285E0B7ECA8F940163781 /* Pods_CampApp.framework */,
+				C5E42352CEB98B49187469C0 /* Pods_CampApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -853,14 +864,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E98854B26FBA1F300A881F7 /* Build configuration list for PBXNativeTarget "CampApp" */;
 			buildPhases = (
-				6EC70ABC09FCF616A8357F55 /* [CP] Check Pods Manifest.lock */,
+				414EFAE4C11DCF6FC59FAE9F /* [CP] Check Pods Manifest.lock */,
 				3C6DB88D27BBE78D0005D050 /* ShellScript */,
 				2E98853326FBA1F200A881F7 /* Sources */,
 				2E98853426FBA1F200A881F7 /* Frameworks */,
 				2E98853526FBA1F200A881F7 /* Resources */,
 				2E1821BA2704538300B271CA /* Embed Frameworks */,
-				10F5C4B41E3CF02E50917468 /* [CP] Embed Pods Frameworks */,
-				2573A7EFFA32766DC274651D /* [CP] Copy Pods Resources */,
+				5C377F1F40E0A556ED9F711B /* [CP] Embed Pods Frameworks */,
+				D6B8AC65DD6EC1942A8BA119 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -933,40 +944,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		10F5C4B41E3CF02E50917468 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2573A7EFFA32766DC274651D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3C6DB88D27BBE78D0005D050 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -982,10 +959,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "
-";
+			shellScript = "\n";
 		};
-		6EC70ABC09FCF616A8357F55 /* [CP] Check Pods Manifest.lock */ = {
+		414EFAE4C11DCF6FC59FAE9F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1007,6 +983,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5C377F1F40E0A556ED9F711B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6B8AC65DD6EC1942A8BA119 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1014,6 +1024,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E162A8A2823EFCC000F81CC /* Geofirestore.swift in Sources */,
 				3C65B95F27C41C1E0069A832 /* ImageSliderController.swift in Sources */,
 				2E98856526FBB9BF00A881F7 /* ProfileCoordinator.swift in Sources */,
 				3C600F0F27BA672B00D2E692 /* WelcomeCell.swift in Sources */,
@@ -1209,7 +1220,7 @@
 		};
 		2E98854C26FBA1F300A881F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95A58A161A0213B2B1E520B8 /* Pods-CampApp.debug.xcconfig */;
+			baseConfigurationReference = 9B3535AF8CB66F0AC75FC0FD /* Pods-CampApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1245,7 +1256,7 @@
 		};
 		2E98854D26FBA1F300A881F7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F63913CC5AB555B52BA26BD0 /* Pods-CampApp.release.xcconfig */;
+			baseConfigurationReference = F0AE82958DC2484E11139B10 /* Pods-CampApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

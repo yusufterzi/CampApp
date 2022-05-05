@@ -15,17 +15,19 @@ target 'CampApp' do
   pod 'SnapKit'
 
   #firebase
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Auth'
-  pod 'Firebase/Firestore'
-  pod 'Firebase/Storage'
+  pod 'FirebaseFirestore'
+  pod 'FirebaseCore'
+  pod 'FirebaseStorage'
   pod 'SPPermissions/LocationWhenInUse'
   pod 'SDWebImage'
   pod 'AttributedStringBuilder'
   pod 'ActionKit'
   pod 'FloatingPanel'
   pod 'GooglePlaces'
-  pod 'Geofirestore'
+  pod 'FirebaseFirestoreSwift'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'GeoFire/Utils'
 end
 
 target 'YTUI' do

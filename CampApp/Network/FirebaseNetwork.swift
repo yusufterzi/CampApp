@@ -9,7 +9,6 @@ import FirebaseFirestore
 import Firebase
 import FirebaseStorage
 import YTNetwork
-import Geofirestore
 import MapKit
 
 public final class FirebaseNetwork {

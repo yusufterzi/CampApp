@@ -7,7 +7,7 @@
 
 import UIKit
 import SDWebImage
-import FirebaseUI
+import FirebaseStorageUI
 
 final class ImageViewCell: UICollectionViewCell {
     static let identifier = String(describing: ImageViewCell.self)
