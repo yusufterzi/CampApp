@@ -28,6 +28,7 @@ target 'CampApp' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'GeoFire/Utils'
+  pod 'FirebaseUI/Storage'
 end
 
 target 'YTUI' do
