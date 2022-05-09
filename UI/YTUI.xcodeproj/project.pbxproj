@@ -24,6 +24,7 @@
 		2E1821E1270457D600B271CA /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E1821DF270457D600B271CA /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2E18222D270459FD00B271CA /* YTNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E18222C270459FD00B271CA /* YTNetwork.framework */; };
 		2E18222E270459FD00B271CA /* YTNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E18222C270459FD00B271CA /* YTNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2E33F52A2829A36500FD6CEE /* GeneralUIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E33F5292829A36500FD6CEE /* GeneralUIHelper.swift */; };
 		2E4300FB2704F12400B4A381 /* ViewHeaderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4300FA2704F12400B4A381 /* ViewHeaderComponent.swift */; };
 		2E4300FF2704F13B00B4A381 /* ViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4300FE2704F13B00B4A381 /* ViewHeaderView.swift */; };
 		2E4301012704F14400B4A381 /* ViewHeaderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4301002704F14400B4A381 /* ViewHeaderPresenter.swift */; };
@@ -113,6 +114,7 @@
 		2E1821B02704522000B271CA /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		2E1821DF270457D600B271CA /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E18222C270459FD00B271CA /* YTNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YTNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E33F5292829A36500FD6CEE /* GeneralUIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralUIHelper.swift; sourceTree = "<group>"; };
 		2E4300FA2704F12400B4A381 /* ViewHeaderComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHeaderComponent.swift; sourceTree = "<group>"; };
 		2E4300FE2704F13B00B4A381 /* ViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHeaderView.swift; sourceTree = "<group>"; };
 		2E4301002704F14400B4A381 /* ViewHeaderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHeaderPresenter.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 		2E18218E2704520400B271CA /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				2E33F5282829A35900FD6CEE /* Helpers */,
 				2E770C292707917900872550 /* Extensions */,
 				2E1821A62704522000B271CA /* Components */,
 				2E1821B22704522000B271CA /* Base */,
@@ -369,6 +372,14 @@
 				2E1821B12704522000B271CA /* Then */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		2E33F5282829A35900FD6CEE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2E33F5292829A36500FD6CEE /* GeneralUIHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		2E4300F92704F11400B4A381 /* ViewHeaderComponent */ = {
@@ -1008,6 +1019,7 @@
 				3C0AF36827D2568000A36CE1 /* CampAreaCollectionPresenter.swift in Sources */,
 				2E770C48270902B400872550 /* CampAreaItemPresenter.swift in Sources */,
 				2E770C2627078CF500872550 /* YTPageStackViewPresenter.swift in Sources */,
+				2E33F52A2829A36500FD6CEE /* GeneralUIHelper.swift in Sources */,
 				2E1821C12704550200B271CA /* BasePresenter.swift in Sources */,
 				2E1821C22704550600B271CA /* BaseInteractor.swift in Sources */,
 				3C0AF35C27D122B000A36CE1 /* MultilineTextViewComponent.swift in Sources */,

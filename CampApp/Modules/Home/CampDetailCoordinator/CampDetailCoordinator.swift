@@ -42,6 +42,7 @@ class CampDetailCoordinator: NavigationCoordinator<CampDetailRoute> {
     viewController.setupPresenter(presenter: CampDetailPresenter(view: viewController,
                                                                  router: self.unownedRouter,
                                                                  item: item))
+    viewController.hidesBottomBarWhenPushed = true
     return .push(viewController, animation: .default)
     
   }

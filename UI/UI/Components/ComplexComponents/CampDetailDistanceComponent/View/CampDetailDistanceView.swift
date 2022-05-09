@@ -38,6 +38,11 @@ public final class CampDetailDistanceView: UIView {
     loadUI()
   }
   
+  public override func layoutSubviews() {
+    super.layoutSubviews()
+    roundCorners(corners: [.topLeft, .topRight], radius: 20)
+  }
+  
   public func loadUI() {
 
     let startPresenter = TwoRowIconedLabelPresenter(title: StringProvider.likes,

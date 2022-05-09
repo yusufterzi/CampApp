@@ -35,6 +35,7 @@
 		2E18225727046B4200B271CA /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E18224927046B4200B271CA /* Rubik-BoldItalic.ttf */; };
 		2E26797C2703917E0090F074 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E26797B2703917E0090F074 /* HomePresenter.swift */; };
 		2E26797E270391870090F074 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E26797D270391870090F074 /* HomeInteractor.swift */; };
+		2E33F5272829A2D800FD6CEE /* GeneralHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E33F5262829A2D800FD6CEE /* GeneralHelper.swift */; };
 		2E770C162706543300872550 /* HomeSegmentEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E770C152706543300872550 /* HomeSegmentEnum.swift */; };
 		2E7BB7E6270B784500B2DCBB /* CampDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7BB7E5270B784500B2DCBB /* CampDetailController.swift */; };
 		2E7BB7E8270B788000B2DCBB /* CampDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7BB7E7270B788000B2DCBB /* CampDetailPresenter.swift */; };
@@ -136,6 +137,7 @@
 		2E18224927046B4200B271CA /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
 		2E26797B2703917E0090F074 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		2E26797D270391870090F074 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		2E33F5262829A2D800FD6CEE /* GeneralHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralHelper.swift; sourceTree = "<group>"; };
 		2E770C152706543300872550 /* HomeSegmentEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSegmentEnum.swift; sourceTree = "<group>"; };
 		2E7BB7E5270B784500B2DCBB /* CampDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampDetailController.swift; sourceTree = "<group>"; };
 		2E7BB7E7270B788000B2DCBB /* CampDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampDetailPresenter.swift; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 			children = (
 				2E825C85281879D700D5F75F /* SessionHelper.swift */,
 				2E825C8928188D9300D5F75F /* User.swift */,
+				2E33F5262829A2D800FD6CEE /* GeneralHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -979,7 +982,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\n";
+			shellScript = "
+";
 		};
 		412C21F9E3FEC9D72B78EC58 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1070,6 +1074,7 @@
 				3C0AF38E27DA692E00A36CE1 /* Location.swift in Sources */,
 				2EAE5C0F2811EA3E004495D9 /* SearchPlaceEntity.swift in Sources */,
 				2E7BB7E8270B788000B2DCBB /* CampDetailPresenter.swift in Sources */,
+				2E33F5272829A2D800FD6CEE /* GeneralHelper.swift in Sources */,
 				3C0AF38927D7A65900A36CE1 /* MapViewPresenter.swift in Sources */,
 				3CB4BA0F281C183600E5C0C2 /* WelcomeInteractor.swift in Sources */,
 				2E98855926FBB8F800A881F7 /* HomeCoordinator.swift in Sources */,

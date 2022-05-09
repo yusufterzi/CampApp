@@ -21,6 +21,8 @@ final class HomeController: BaseListController<HomePresenter> {
       presenter?.needOpenForMe()
     }
     
+    
+    GeneralUIHelper.shared.tabbarHeight = tabBarController?.tabBar.frame.height ?? 49.0
   }
   
   override func viewWillAppear(_ animated: Bool) {
