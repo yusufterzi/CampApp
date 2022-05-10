@@ -16,6 +16,7 @@ final class CampDetailController: BaseListController<CampDetailPresenter> {
     topSafeEnabled = false
     super.viewDidLoad()
     self.view.backgroundColor = ColorProvider.whiteTextColor.color
+    self.disableScrolling()
   }
   
   override func viewWillAppear(_ animated: Bool) {
