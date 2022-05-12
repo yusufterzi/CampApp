@@ -61,6 +61,11 @@
 		2E7BB7F9270E2D6700B2DCBB /* CampDetailDistancePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7BB7F8270E2D6700B2DCBB /* CampDetailDistancePresenter.swift */; };
 		2E7BB7FC270E2F8700B2DCBB /* TwoRowIconedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7BB7FB270E2F8700B2DCBB /* TwoRowIconedLabel.swift */; };
 		2E7BB7FF270E2FA300B2DCBB /* TwoRowIconedLabelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7BB7FE270E2FA300B2DCBB /* TwoRowIconedLabelPresenter.swift */; };
+		3C07F5E4282AE03E00FABD9A /* SelectionViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07F5E3282AE03E00FABD9A /* SelectionViewComponent.swift */; };
+		3C07F5E6282AE08500FABD9A /* SelectionViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07F5E5282AE08500FABD9A /* SelectionViewPresenter.swift */; };
+		3C07F5E8282AE1AF00FABD9A /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07F5E7282AE1AF00FABD9A /* SelectionView.swift */; };
+		3C07F5EC282D7C1600FABD9A /* SelectionRowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07F5EB282D7C1600FABD9A /* SelectionRowPresenter.swift */; };
+		3C07F5EE282D7C2B00FABD9A /* SelectionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C07F5ED282D7C2B00FABD9A /* SelectionRowView.swift */; };
 		3C0AF35C27D122B000A36CE1 /* MultilineTextViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0AF35B27D122B000A36CE1 /* MultilineTextViewComponent.swift */; };
 		3C0AF36027D1231C00A36CE1 /* MultilineTextViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0AF35F27D1231C00A36CE1 /* MultilineTextViewPresenter.swift */; };
 		3C0AF36227D1233400A36CE1 /* MultilineTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0AF36127D1233400A36CE1 /* MultilineTextView.swift */; };
@@ -151,6 +156,11 @@
 		2E7BB7F8270E2D6700B2DCBB /* CampDetailDistancePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampDetailDistancePresenter.swift; sourceTree = "<group>"; };
 		2E7BB7FB270E2F8700B2DCBB /* TwoRowIconedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoRowIconedLabel.swift; sourceTree = "<group>"; };
 		2E7BB7FE270E2FA300B2DCBB /* TwoRowIconedLabelPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoRowIconedLabelPresenter.swift; sourceTree = "<group>"; };
+		3C07F5E3282AE03E00FABD9A /* SelectionViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewComponent.swift; sourceTree = "<group>"; };
+		3C07F5E5282AE08500FABD9A /* SelectionViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewPresenter.swift; sourceTree = "<group>"; };
+		3C07F5E7282AE1AF00FABD9A /* SelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
+		3C07F5EB282D7C1600FABD9A /* SelectionRowPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionRowPresenter.swift; sourceTree = "<group>"; };
+		3C07F5ED282D7C2B00FABD9A /* SelectionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionRowView.swift; sourceTree = "<group>"; };
 		3C0AF35B27D122B000A36CE1 /* MultilineTextViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextViewComponent.swift; sourceTree = "<group>"; };
 		3C0AF35F27D1231C00A36CE1 /* MultilineTextViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextViewPresenter.swift; sourceTree = "<group>"; };
 		3C0AF36127D1233400A36CE1 /* MultilineTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextView.swift; sourceTree = "<group>"; };
@@ -291,6 +301,8 @@
 		2E1821A52704522000B271CA /* BasicComponents */ = {
 			isa = PBXGroup;
 			children = (
+				3C07F5E9282D7BED00FABD9A /* SelectionRowView */,
+				3C07F5E0282ADFC200FABD9A /* SelectionViewComponent */,
 				3C0AF36C27D25CBD00A36CE1 /* Button */,
 				3C0AF35A27D1227B00A36CE1 /* MultilineTextViewComponent */,
 				3C71204727CFD3DB003F2EEE /* TextFieldComponent */,
@@ -708,6 +720,49 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		3C07F5E0282ADFC200FABD9A /* SelectionViewComponent */ = {
+			isa = PBXGroup;
+			children = (
+				3C07F5E2282ADFE700FABD9A /* View */,
+				3C07F5E1282ADFD900FABD9A /* Presenter */,
+				3C07F5E3282AE03E00FABD9A /* SelectionViewComponent.swift */,
+			);
+			path = SelectionViewComponent;
+			sourceTree = "<group>";
+		};
+		3C07F5E1282ADFD900FABD9A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3C07F5E5282AE08500FABD9A /* SelectionViewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3C07F5E2282ADFE700FABD9A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3C07F5E7282AE1AF00FABD9A /* SelectionView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3C07F5E9282D7BED00FABD9A /* SelectionRowView */ = {
+			isa = PBXGroup;
+			children = (
+				3C07F5EA282D7C0000FABD9A /* Presenter */,
+				3C07F5ED282D7C2B00FABD9A /* SelectionRowView.swift */,
+			);
+			path = SelectionRowView;
+			sourceTree = "<group>";
+		};
+		3C07F5EA282D7C0000FABD9A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3C07F5EB282D7C1600FABD9A /* SelectionRowPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		3C0AF35A27D1227B00A36CE1 /* MultilineTextViewComponent */ = {
 			isa = PBXGroup;
 			children = (
@@ -999,6 +1054,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C07F5E6282AE08500FABD9A /* SelectionViewPresenter.swift in Sources */,
 				3C0AF36B27D2570300A36CE1 /* CampAreaCollectionView.swift in Sources */,
 				2E7BB7DD270B711200B2DCBB /* ImageView.swift in Sources */,
 				2E7BB7DB270B70FF00B2DCBB /* ImageComponent.swift in Sources */,
@@ -1017,7 +1073,9 @@
 				2E52F07F270996EC00A3A0AD /* CampDetailComponent.swift in Sources */,
 				3C71204F27CFD5AF003F2EEE /* TextField.swift in Sources */,
 				3C0AF36827D2568000A36CE1 /* CampAreaCollectionPresenter.swift in Sources */,
+				3C07F5E8282AE1AF00FABD9A /* SelectionView.swift in Sources */,
 				2E770C48270902B400872550 /* CampAreaItemPresenter.swift in Sources */,
+				3C07F5E4282AE03E00FABD9A /* SelectionViewComponent.swift in Sources */,
 				2E770C2627078CF500872550 /* YTPageStackViewPresenter.swift in Sources */,
 				2E33F52A2829A36500FD6CEE /* GeneralUIHelper.swift in Sources */,
 				2E1821C12704550200B271CA /* BasePresenter.swift in Sources */,
@@ -1056,11 +1114,13 @@
 				2E770C2D27089CFC00872550 /* LabelComponent.swift in Sources */,
 				3C0AF37A27D26B2500A36CE1 /* CampAreaImageItemComponent.swift in Sources */,
 				2E7BB7DF270B711A00B2DCBB /* ImagePresenter.swift in Sources */,
+				3C07F5EC282D7C1600FABD9A /* SelectionRowPresenter.swift in Sources */,
 				2E4300FB2704F12400B4A381 /* ViewHeaderComponent.swift in Sources */,
 				2E1821C42704550D00B271CA /* Then.swift in Sources */,
 				2E4301012704F14400B4A381 /* ViewHeaderPresenter.swift in Sources */,
 				2E770C46270902AC00872550 /* CampAreaItemView.swift in Sources */,
 				2E52F081270996F900A3A0AD /* CampDetailView.swift in Sources */,
+				3C07F5EE282D7C2B00FABD9A /* SelectionRowView.swift in Sources */,
 				2E4301152706313B00B4A381 /* SegmentItemView.swift in Sources */,
 				2E7BB7FF270E2FA300B2DCBB /* TwoRowIconedLabelPresenter.swift in Sources */,
 				2E770C1D2707885500872550 /* YTCarouselView.swift in Sources */,

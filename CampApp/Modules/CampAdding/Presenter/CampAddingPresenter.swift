@@ -41,6 +41,8 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
     cells.append(campAreaNameView())
     cells.append(campLocationSearchView())
     cells.append(campLocationView())
+    cells.append(campAreaSelectionView())
+    cells.append(campTypeSelectionView())
     cells.append(campDescriptionView())
     cells.append(campUploadImageView())
     cells.append(saveButtonView())
@@ -109,6 +111,38 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
                                        presenter: presenter)
     return CellNode(component)
   }
+  
+  private func campAreaSelectionView() -> CellNode {
+    let presenter = SelectionViewPresenter(header: "Bölge Seç", itemList: [CampAreaEnum.ege,
+                                                                  CampAreaEnum.karadeniz,
+                                                                  CampAreaEnum.akdeniz,
+                                                                  CampAreaEnum.marmara,
+                                                                  CampAreaEnum.icAnadolu,
+                                                                  CampAreaEnum.doguAnadolu], multipleSelection: false)
+    presenter.selectionHandler = { [weak self] selectedItems in
+      
+    }
+   
+    let component = SelectionViewComponent(id: "",
+                                               presenter: presenter)
+    return CellNode(component)
+ 
+  }
+  
+  private func campTypeSelectionView() -> CellNode {
+    let presenter = SelectionViewPresenter(header: "Konaklama Türü", itemList: [CampTypeEnum.caravan,
+                                                                  CampTypeEnum.tent,
+                                                                  CampTypeEnum.bungalow,
+                                                                  CampTypeEnum.all], multipleSelection: true)
+    presenter.selectionHandler = { [weak self] selectedItems in
+      
+    }
+    
+    let component = SelectionViewComponent(id: "",
+                                               presenter: presenter)
+    return CellNode(component)
+  }
+  
   private func campDescriptionView() -> CellNode {
     
     let presenter = MultilineTextViewPresenter(headerTitle: StringProvider.description,

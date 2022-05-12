@@ -31,6 +31,7 @@ public final class FontProvider {
     public static let profileRowTextFont: UIFont = UIFont(name: fontName + "-Regular", size: 16)!
     public static let bold18: UIFont = UIFont(name: fontName + "-Bold", size: 19)!
     public static let bold12: UIFont = UIFont(name: fontName + "-Bold", size: 12)!
+    public static let regular17: UIFont = UIFont(name: fontName + "-Regular", size: 17)!
 
 
 
