@@ -60,6 +60,11 @@ public final class StringProvider {
   public static let doguAnadolu: String = "Doğu Anadolu".localized
   public static let karadeniz: String = "Karadeniz".localized
   
+  public static let campAreasForYou: String = "İşte senin için".localized
+  public static let suggestions: String = "öneriler!".localized
+
+
+  
   
   
   
