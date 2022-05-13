@@ -19,8 +19,9 @@ public class CampModel: Codable {
     public var point: Double?
     public var address: String?
     public var id: String
+    public var area: [Int]?
+    public var type: [Int]?
 
-    
     public init(name: String? = nil, subLocation: String? = nil , city: String? = nil, description: String? = nil, images: [String]? = nil, latitude: Double? = nil, longitude: Double? = nil, point: Double? = nil, address:String? = nil) {
         
         self.name = name

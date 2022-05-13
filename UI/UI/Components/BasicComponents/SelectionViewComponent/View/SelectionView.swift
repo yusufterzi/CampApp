@@ -50,6 +50,7 @@ public final class SelectionView: UIView, Tappable {
     
     if ((presenter.itemList.first as? CampTypeEnum) != nil) {
       selectedItemList.append(SelectionRowPresenter(item: CampTypeEnum.all, isSelected: true))
+      presenter.selectionHandler?(selectedItemList)
     }
     header.text = presenter.header
     loadStack()

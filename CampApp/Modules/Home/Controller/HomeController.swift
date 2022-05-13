@@ -21,13 +21,16 @@ final class HomeController: BaseListController<HomePresenter> {
       presenter?.needOpenForMe()
     }
     
-    
     GeneralUIHelper.shared.tabbarHeight = tabBarController?.tabBar.frame.height ?? 49.0
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     navigationController?.setNavigationBarHidden(true, animated: false)
+    if let reloadHomeTab : Bool = CampDefaults.shared.retrieve(with: .reloadHomeTab), reloadHomeTab {
+      CampDefaults.shared.storeFlag(with: .reloadHomeTab, value: false)
+      presenter?.loadUI()
+    }
   }
   
 }

@@ -10,9 +10,9 @@ import Common
 
 public final class SelectionRowPresenter {
 
-  var item: SelectionItemProtocol
-  var isSelected: Bool
-  var onTap: Handler<SelectionRowPresenter>?
+  public var item: SelectionItemProtocol
+  public var isSelected: Bool
+  public var onTap: Handler<SelectionRowPresenter>?
 
   public init(item: SelectionItemProtocol, isSelected: Bool) {
     self.item = item
