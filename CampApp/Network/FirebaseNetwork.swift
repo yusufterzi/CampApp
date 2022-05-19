@@ -10,6 +10,7 @@ import Firebase
 import FirebaseStorage
 import YTNetwork
 import MapKit
+import YTUI
 
 public final class FirebaseNetwork {
   public static var shared: FirebaseNetwork?
@@ -25,8 +26,8 @@ public final class FirebaseNetwork {
     FirebaseNetwork.shared = self
   }
   
-  public func allCamps(completion: @escaping (GenericResult<[CampModel]>) -> Void) {
-    let ref = database.collection("camp")
+  public func allCamps(campSegment: HomeSegmentEnum, completion: @escaping (GenericResult<[CampModel]>) -> Void) {
+    let ref = database.collection("camp").whereField("type", arrayContainsAny: [campSegment.rawValue])
     let query = ref.limit(to: 50)
     query.getDocumentsObjects { (result: GenericResult<[CampModel]>) in
       completion(result)

@@ -12,7 +12,7 @@ import Common
 
 protocol HomeInteractorProtocol: BaseInteractor {
     
-    func loadData()
+    func loadData(campSegment: HomeSegmentEnum)
     var camps: [CampModel] { get set }
     var campImages: [CampImageModel] { get set }
     var areas: [CampAreaModel] { get set }
@@ -30,12 +30,12 @@ final class HomeInteractor: HomeInteractorProtocol {
     var campImages: [CampImageModel] = .init()
 
     
-    func loadData() {
-        getCamps()
+    func loadData(campSegment: HomeSegmentEnum) {
+        getCamps(campSegment: campSegment)
     }
     
-    private func getCamps() {
-        FirebaseNetwork.shared?.allCamps { [weak self] response in
+    private func getCamps(campSegment: HomeSegmentEnum) {
+        FirebaseNetwork.shared?.allCamps(campSegment: campSegment) { [weak self] response in
             if let data = response.value {
                 self?.camps = data
                 self?.getCampAreas()

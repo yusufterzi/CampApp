@@ -19,7 +19,7 @@ public final class SegmentItemComponent: IdentifiableComponent {
   }
   
   public func render(in content: SegmentItemView) {
-    content.presenter = presenter
+    content.configureView(presenter: presenter) 
   }
 
   public func shouldContentUpdate(with next: SegmentItemComponent) -> Bool {
@@ -32,7 +32,6 @@ public final class SegmentItemComponent: IdentifiableComponent {
   
   public func renderContent() -> SegmentItemView {
     let view = SegmentItemView()
-    view.configureView(presenter: presenter)
     return view
   }
 }

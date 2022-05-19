@@ -26,8 +26,8 @@ class HomeCoordinator: NavigationCoordinator<HomeRoute> {
   
   override func prepareTransition(for route: HomeRoute) -> NavigationTransition {
     switch route {
-    case .home:
-      return showHomeController()
+    case .home(let category):
+      return showHomeController(with: category)
     case .campDetail(let item):
       return showCampDetailController(item: item)
     case .back:
@@ -46,10 +46,10 @@ class HomeCoordinator: NavigationCoordinator<HomeRoute> {
     return .present(viewController)
   }
   
-  private func showHomeController() -> NavigationTransition {
+  private func showHomeController(with category: Int?) -> NavigationTransition {
     let viewController = HomeController()
     viewController.setupPresenter(presenter: HomePresenter(view: viewController,
-                                                           router: self.unownedRouter))
+                                                           router: self.unownedRouter, selectedSegment: category))
     viewController.tabBarItem = UITabBarItem(title: Tabs.home.name,
                                              image: Tabs.home.image,
                                              tag: Tabs.home.tag)

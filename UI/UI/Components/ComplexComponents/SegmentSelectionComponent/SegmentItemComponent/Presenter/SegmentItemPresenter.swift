@@ -13,6 +13,7 @@ public protocol SegmentItemPresenterProtocol {
   var name: String { get set }
   var identifier: Int { get set }
   var isSelected: Bool { get set }
+  var onTap: Handler<SegmentItemPresenterProtocol>? { get set }
   
   var titleColor: UIColor { get }
   var backgroundColor: UIColor { get }
@@ -23,6 +24,7 @@ public final class SegmentItemPresenter: SegmentItemPresenterProtocol {
   public var name: String
   public var identifier: Int
   public var isSelected: Bool
+  public var onTap: Handler<SegmentItemPresenterProtocol>?
   
   public var titleColor: UIColor {
     if isSelected {

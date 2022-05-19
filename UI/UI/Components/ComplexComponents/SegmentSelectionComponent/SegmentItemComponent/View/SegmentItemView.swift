@@ -13,7 +13,7 @@ public protocol SegmentItemViewProtocol: BaseView {
   
 }
 
-public final class SegmentItemView: UIView, SegmentItemViewProtocol {
+public final class SegmentItemView: UIView, Tappable, SegmentItemViewProtocol {
   
   private let button: UIButton = UIButton().then {
     $0.layer.cornerRadius = 12
@@ -46,7 +46,15 @@ public final class SegmentItemView: UIView, SegmentItemViewProtocol {
     button.backgroundColor = presenter.backgroundColor
     button.setTitleColor(presenter.titleColor, for: .normal)
     button.titleLabel?.font = presenter.font
+    button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
     
+  }
+  
+  @objc func buttonTapped () {
+    guard let presenter = presenter else {
+      return
+    }
+    self.presenter?.onTap?(presenter)
   }
 }
 
