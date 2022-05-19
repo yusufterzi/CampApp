@@ -36,7 +36,7 @@ final class HomePresenter: HomePresenterProtocol, BaseListPresenter {
   
   func loadUI() {
     view?.sendAction(.title(StringProvider.firstTabTitle))
-    interactor?.loadData(campSegment: selectedSegment)
+    interactor?.loadData(campSegment: self.selectedSegment)
     interactor?.loadHandler = { [weak self] in
       if (self?.interactor?.camps.count ?? 0) > 0 && (self?.interactor?.areas.count ?? 0) > 0 {
         self?.dataLoaded()

@@ -41,9 +41,7 @@ public final class CampComponentView: UIView, Tappable, CampComponentViewProtoco
     
     public func configureView(presenter: CampComponentPresenterProtocol) {
         self.presenter = presenter
-        
         loadUI()
-        
     }
     
     public func loadUI() {
