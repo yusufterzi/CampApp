@@ -29,7 +29,7 @@ public final class FirebaseNetwork {
   public func allCamps(campSegment: HomeSegmentEnum, completion: @escaping (GenericResult<[CampModel]>) -> Void) {
     let ref = database.collection("camp").whereField("type", arrayContainsAny: [campSegment.rawValue])
     let query = ref.limit(to: 50)
-    query.getDocumentsObjects { (result: GenericResult<[CampModel]>) in
+    query.getCampModelObjects { (result: GenericResult<[CampModel]>) in
       completion(result)
     }
   }
@@ -47,7 +47,7 @@ public final class FirebaseNetwork {
       return
     }
     let ref = database.collection("camp").whereField("id", in: user.favouriteCamps)
-    ref.getDocumentsObjects { (result: GenericResult<[CampModel]>) in
+    ref.getCampModelObjects() { (result: GenericResult<[CampModel]>) in
       completion(result)
     }
   }
@@ -56,7 +56,9 @@ public final class FirebaseNetwork {
     let ref = database.collection("camp").document()
     data?.id = ref.documentID
     
-    guard let parameters = data?.getParameters() else { return }
+    guard var parameters = data?.getParameters() else { return }
+    parameters["updatedOn"] = FieldValue.serverTimestamp()
+    parameters["createdOn"] = FieldValue.serverTimestamp()
     ref.setData(parameters) { err in
       if let err = err {
         debugPrint("Error adding document: \(err)")
