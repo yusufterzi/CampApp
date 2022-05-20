@@ -27,7 +27,8 @@ public final class FirebaseNetwork {
   }
   
   public func allCamps(campSegment: HomeSegmentEnum, completion: @escaping (GenericResult<[CampModel]>) -> Void) {
-    let ref = database.collection("camp").whereField("type", arrayContainsAny: [campSegment.rawValue])
+    
+    let ref = campSegment == HomeSegmentEnum.all ? database.collection("camp") :  database.collection("camp").whereField("type", arrayContainsAny: [campSegment.rawValue])
     let query = ref.limit(to: 50)
     query.getCampModelObjects { (result: GenericResult<[CampModel]>) in
       completion(result)
