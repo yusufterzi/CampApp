@@ -8,6 +8,8 @@ target 'CampApp' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
+  pod 'GoogleUtilities'
+
   # Pods for CampApp
   pod 'XCoordinator'
   pod 'Localize'
@@ -36,6 +38,7 @@ target 'YTUI' do
 
   project 'UI/YTUI.xcodeproj'
 
+  pod 'GoogleUtilities'
   pod 'XCoordinator'
   pod 'Localize'
   pod 'Carbon'

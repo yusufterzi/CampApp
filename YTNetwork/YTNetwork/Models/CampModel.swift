@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import FirebaseFirestoreSwift
 
 public class CampModel: Codable {
   public var name: String?
