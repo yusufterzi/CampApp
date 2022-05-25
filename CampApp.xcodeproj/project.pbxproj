@@ -191,7 +191,7 @@
 		3C8111C427CC1EAC00E6832C /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfilePresenter.swift; path = Common/Common/Extensions/ProfilePresenter.swift; sourceTree = SOURCE_ROOT; };
 		3C8111C627CC1F2C00E6832C /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileInteractor.swift; path = Common/Common/Extensions/ProfileInteractor.swift; sourceTree = SOURCE_ROOT; };
 		3CB4BA0E281C183600E5C0C2 /* WelcomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInteractor.swift; sourceTree = "<group>"; };
-		3CB4BA12281D5B8800E5C0C2 /* WelcomeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeData.swift; sourceTree = SOURCE_ROOT; };
+		3CB4BA12281D5B8800E5C0C2 /* WelcomeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeData.swift; path = CampApp/Modules/Welcome/Models/WelcomeData.swift; sourceTree = SOURCE_ROOT; };
 		3CDECA942819F1EE001C8113 /* FavoriteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteController.swift; sourceTree = "<group>"; };
 		3CDECA982819F232001C8113 /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
 		3CDECA9A2819F245001C8113 /* FavoriteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteInteractor.swift; sourceTree = "<group>"; };
@@ -616,6 +616,14 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		2EADC7E9283EA99C00103019 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3CB4BA12281D5B8800E5C0C2 /* WelcomeData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		2EAE5C012811EA0F004495D9 /* SearchPlace */ = {
 			isa = PBXGroup;
 			children = (
@@ -708,8 +716,8 @@
 		3C600F0227BA5B4400D2E692 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
+				2EADC7E9283EA99C00103019 /* Models */,
 				3CB4BA0D281C182300E5C0C2 /* Interactor */,
-				3C600F0D27BA626100D2E692 /* Models */,
 				3C6DB88A27BADA460005D050 /* Presenter */,
 				3C600F0327BA5B5F00D2E692 /* Controller */,
 			);
@@ -723,14 +731,6 @@
 				3C600F0E27BA672B00D2E692 /* WelcomeCell.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		3C600F0D27BA626100D2E692 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				3CB4BA12281D5B8800E5C0C2 /* WelcomeData.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		3C65B95C27C41C020069A832 /* ImageSlider */ = {
