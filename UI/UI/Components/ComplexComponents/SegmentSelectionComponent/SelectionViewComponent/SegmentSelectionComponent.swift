@@ -19,7 +19,7 @@ public final class SegmentSelectionComponent: IdentifiableComponent {
   }
   
   public func render(in content: SegmentSelectionView) {
-    content.presenter = presenter
+    content.configureView(presenter: presenter)
   }
 
   public func shouldContentUpdate(with next: SegmentSelectionComponent) -> Bool {
@@ -32,7 +32,6 @@ public final class SegmentSelectionComponent: IdentifiableComponent {
   
   public func renderContent() -> SegmentSelectionView {
     let view = SegmentSelectionView()
-    view.configureView(presenter: presenter)
     return view
   }
 }

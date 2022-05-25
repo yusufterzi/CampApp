@@ -22,8 +22,8 @@ final class CampSelectionController: UIViewController, Storyboarded {
     @IBOutlet var tentLabel: UILabel!
     @IBOutlet var bungalowImageView: UIImageView!
     @IBOutlet var bungalowLabel: UILabel!
-    
-    override func viewDidLoad() {
+    @IBOutlet var doesntMatterButton: UIButton!
+  override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.loadUI(viewController: self)
     }

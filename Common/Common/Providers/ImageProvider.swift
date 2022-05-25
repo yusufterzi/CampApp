@@ -36,10 +36,6 @@ public final class ImageProvider {
   public static let onboardingMarmara: UIImage = UIImage(named: "Marmara")!
   public static let onboardingIcAnadolu: UIImage = UIImage(named: "IcAnadolu")!
   public static let onboardingDoguAnadolu: UIImage = UIImage(named: "DoguAnadolu")!
-  
-  
-  
-  
-  
+  public static let check: UIImage = UIImage(named: "check")!
   
 }

@@ -8,7 +8,7 @@
 import XCoordinator
 import YTNetwork
 import YTUI
-import FirebaseUI
+import FirebaseStorageUI
 
 enum CampDetailRoute: Route {
   case initialize(CampComponentViewModel)
@@ -42,6 +42,7 @@ class CampDetailCoordinator: NavigationCoordinator<CampDetailRoute> {
     viewController.setupPresenter(presenter: CampDetailPresenter(view: viewController,
                                                                  router: self.unownedRouter,
                                                                  item: item))
+    viewController.hidesBottomBarWhenPushed = true
     return .push(viewController, animation: .default)
     
   }

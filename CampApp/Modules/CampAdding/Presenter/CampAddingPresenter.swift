@@ -27,7 +27,7 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
   internal var router: UnownedRouter<ProfileRoute>
   public var camp: CampModel
   public var campGoogleImages: [UIImage]?
-
+  
   init(view: BaseListView, router: UnownedRouter<ProfileRoute>, camp: CampModel) {
     self.view = view
     self.router = router
@@ -41,6 +41,8 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
     cells.append(campAreaNameView())
     cells.append(campLocationSearchView())
     cells.append(campLocationView())
+    cells.append(campAreaSelectionView())
+    cells.append(campTypeSelectionView())
     cells.append(campDescriptionView())
     cells.append(campUploadImageView())
     cells.append(saveButtonView())
@@ -109,6 +111,46 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
                                        presenter: presenter)
     return CellNode(component)
   }
+  
+  private func campAreaSelectionView() -> CellNode {
+    let presenter = SelectionViewPresenter(header: "Bölge Seç", itemList: [CampAreaEnum.ege,
+                                                                           CampAreaEnum.karadeniz,
+                                                                           CampAreaEnum.akdeniz,
+                                                                           CampAreaEnum.marmara,
+                                                                           CampAreaEnum.icAnadolu,
+                                                                           CampAreaEnum.doguAnadolu], multipleSelection: false)
+    presenter.selectionHandler = { [weak self] selectedItems in
+      self?.camp.area = []
+      for data in selectedItems {
+        self?.camp.area?.append(data.item.id)
+      }
+      
+    }
+    
+    let component = SelectionViewComponent(id: "",
+                                           presenter: presenter)
+    return CellNode(component)
+    
+  }
+  
+  private func campTypeSelectionView() -> CellNode {
+    let presenter = SelectionViewPresenter(header: "Konaklama Türü", itemList: [CampTypeEnum.caravan,
+                                                                                CampTypeEnum.tent,
+                                                                                CampTypeEnum.bungalow,
+                                                                                CampTypeEnum.all], multipleSelection: true)
+    presenter.selectionHandler = { [weak self] selectedItems in
+      self?.camp.type = []
+      for data in selectedItems {
+        self?.camp.type?.append(data.item.id)
+      }
+      
+    }
+    
+    let component = SelectionViewComponent(id: "",
+                                           presenter: presenter)
+    return CellNode(component)
+  }
+  
   private func campDescriptionView() -> CellNode {
     
     let presenter = MultilineTextViewPresenter(headerTitle: StringProvider.description,
@@ -136,7 +178,7 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
       presenter.selectedImages = campImages
       presenter.selectedImagesHandler?(campImages)
     }
-   
+    
     let component = CampAreaCollectionComponent(id: "",
                                                 presenter: presenter)
     return CellNode(component)
@@ -150,6 +192,8 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
                                     backgroundColor: ColorProvider.onboardingRedColor.color)
     presenter.tapped = { [weak self] in
       guard let self = self else { return }
+      CampDefaults.shared.storeFlag(with: .reloadHomeTab, value: true)
+      
       self.interactor?.campImages = self.campImages ?? .init()
       self.interactor?.camp = self.camp
       self.interactor?.camp.images = self.campImages?.compactMap( {$0.uuid})

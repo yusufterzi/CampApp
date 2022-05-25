@@ -9,6 +9,8 @@ import UIKit
 
 public enum CampDefaultsKey {
   case appFirstLaunch
+  case favouritesFirstOpen
+  case reloadHomeTab
   case onboardingAreaSelection
   case onboardingCampSelection
   case needOpenForMe

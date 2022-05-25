@@ -25,7 +25,7 @@ final class CampAreasForMeInteractor: CampAreasForMeInteractorProtocol {
   }
 
   private func getCamps() {
-    FirebaseNetwork.shared?.allCamps { [weak self] response in
+    FirebaseNetwork.shared?.allCamps(campSegment: HomeSegmentEnum.all) { [weak self] response in
       if let data = response.value {
         self?.camps = data
         self?.loadHandler?()

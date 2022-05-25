@@ -30,6 +30,8 @@ public enum ColorProvider: String {
     case campSelectionFrameColor
     case campSelectionLabelColor
     case lightGray
+    case like
+    case unlike
 
     
     public var color: UIColor {

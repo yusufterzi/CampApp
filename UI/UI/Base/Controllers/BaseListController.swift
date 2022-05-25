@@ -45,6 +45,10 @@ open class BaseListController<T: BaseListPresenter>: UIViewController {
     super.viewWillAppear(animated)
   }
   
+  public func disableScrolling() {
+    tableView.isScrollEnabled = false
+  }
+  
   public func setupPresenter(presenter: Presenter) {
     self.presenter = presenter
   }

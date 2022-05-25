@@ -45,6 +45,8 @@ final class CampAreasForMePresenter: CampAreasForMePresenterProtocol, BaseListPr
     guard let interactor = interactor else { return }
     var cells: [CellNode] = []
     
+    cells.append(headerView())
+    
     let campComponentViews = interactor.camps.compactMap { item in
       return CampComponentViewModel(name: item.name,
                                     subLocation: item.subLocation,
@@ -61,6 +63,8 @@ final class CampAreasForMePresenter: CampAreasForMePresenterProtocol, BaseListPr
       let presenter = CampComponentPresenter(item: camp)
       presenter.onTap = { [weak self] in
         self?.router.trigger(.campDetail(camp), with: TransitionOptions(animated: true))
+        self?.router.trigger(.dismiss, with: TransitionOptions(animated: true))
+
       }
       let component = CampComponent(id: camp.name ?? "",
                                     presenter: presenter)
@@ -74,4 +78,27 @@ final class CampAreasForMePresenter: CampAreasForMePresenterProtocol, BaseListPr
     view?.sendAction(.loadData([section]))
   }
   
+  private func headerView() -> CellNode {
+    
+    let firstPartAttributes: [AttributedStringBuilder.Attribute] = [
+      .font(FontProvider.onboardingBigRegular),
+      .textColor(ColorProvider.blackTextColor.color),
+    ]
+    
+    let firstPart: NSAttributedString = AttributedStringBuilder().text(StringProvider.campAreasForYou, attributes: firstPartAttributes).attributedString
+    
+    let secondPartAttributes: [AttributedStringBuilder.Attribute] = [
+      .font(FontProvider.onboardingBigBold),
+      .textColor(ColorProvider.onboardingRedColor.color),
+    ]
+    
+    let secondPart: NSAttributedString = AttributedStringBuilder().text(StringProvider.suggestions, attributes: secondPartAttributes).attributedString
+    
+    let component = ViewHeaderComponent(id: "header",
+                                        presenter: ViewHeaderPresenter(firstPart: firstPart, secondPart: secondPart))
+    
+    return CellNode(component)
+  }
+  
 }
+

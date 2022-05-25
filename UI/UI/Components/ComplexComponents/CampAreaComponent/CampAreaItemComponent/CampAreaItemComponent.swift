@@ -19,7 +19,7 @@ public final class CampAreaItemComponent: IdentifiableComponent {
   }
   
   public func render(in content: CampAreaItemView) {
-    content.presenter = presenter
+    content.configureView(presenter: presenter)
   }
 
   public func shouldContentUpdate(with next: CampAreaItemComponent) -> Bool {
@@ -32,7 +32,6 @@ public final class CampAreaItemComponent: IdentifiableComponent {
   
   public func renderContent() -> CampAreaItemView {
     let view = CampAreaItemView()
-    view.configureView(presenter: presenter)
     return view
   }
 }

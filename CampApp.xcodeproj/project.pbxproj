@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E162A8A2823EFCC000F81CC /* Geofirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E162A892823EFCC000F81CC /* Geofirestore.swift */; };
 		2E17278D2819CDE100438393 /* CampAreasForMeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17278C2819CDE100438393 /* CampAreasForMeInteractor.swift */; };
 		2E17278F2819CE9F00438393 /* CampAreasForMePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17278E2819CE9F00438393 /* CampAreasForMePresenter.swift */; };
 		2E1727912819D0A300438393 /* CampAreasForMeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1727902819D0A300438393 /* CampAreasForMeController.swift */; };
@@ -34,6 +35,7 @@
 		2E18225727046B4200B271CA /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E18224927046B4200B271CA /* Rubik-BoldItalic.ttf */; };
 		2E26797C2703917E0090F074 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E26797B2703917E0090F074 /* HomePresenter.swift */; };
 		2E26797E270391870090F074 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E26797D270391870090F074 /* HomeInteractor.swift */; };
+		2E33F5272829A2D800FD6CEE /* GeneralHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E33F5262829A2D800FD6CEE /* GeneralHelper.swift */; };
 		2E770C162706543300872550 /* HomeSegmentEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E770C152706543300872550 /* HomeSegmentEnum.swift */; };
 		2E7BB7E6270B784500B2DCBB /* CampDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7BB7E5270B784500B2DCBB /* CampDetailController.swift */; };
 		2E7BB7E8270B788000B2DCBB /* CampDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7BB7E7270B788000B2DCBB /* CampDetailPresenter.swift */; };
@@ -69,7 +71,6 @@
 		3C0AF39227DA818A00A36CE1 /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0AF39127DA818A00A36CE1 /* SearchViewCell.swift */; };
 		3C600F0627BA5B7D00D2E692 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C600F0427BA5B7C00D2E692 /* WelcomeController.swift */; };
 		3C600F0F27BA672B00D2E692 /* WelcomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C600F0E27BA672B00D2E692 /* WelcomeCell.swift */; };
-		3C600F1127BA678000D2E692 /* WelcomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C600F1027BA678000D2E692 /* WelcomeData.swift */; };
 		3C65B95F27C41C1E0069A832 /* ImageSliderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C65B95E27C41C1E0069A832 /* ImageSliderController.swift */; };
 		3C65B96827C423650069A832 /* ImageSliderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C65B96727C423650069A832 /* ImageSliderPresenter.swift */; };
 		3C65B96A27C426D40069A832 /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C65B96927C426D40069A832 /* ImageViewCell.swift */; };
@@ -83,7 +84,12 @@
 		3C8111C327CC1DD100E6832C /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8111C227CC1DD100E6832C /* ProfileController.swift */; };
 		3C8111C527CC1EAC00E6832C /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8111C427CC1EAC00E6832C /* ProfilePresenter.swift */; };
 		3C8111C727CC1F2C00E6832C /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8111C627CC1F2C00E6832C /* ProfileInteractor.swift */; };
-		F86F770C553950290F5CE6CC /* Pods_CampApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F11285E0B7ECA8F940163781 /* Pods_CampApp.framework */; };
+		3CB4BA0F281C183600E5C0C2 /* WelcomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB4BA0E281C183600E5C0C2 /* WelcomeInteractor.swift */; };
+		3CB4BA13281D5B8800E5C0C2 /* WelcomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB4BA12281D5B8800E5C0C2 /* WelcomeData.swift */; };
+		3CDECA952819F1EE001C8113 /* FavoriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDECA942819F1EE001C8113 /* FavoriteController.swift */; };
+		3CDECA992819F232001C8113 /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDECA982819F232001C8113 /* FavoritePresenter.swift */; };
+		3CDECA9B2819F245001C8113 /* FavoriteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDECA9A2819F245001C8113 /* FavoriteInteractor.swift */; };
+		DF63A25CEBD50583B5DE275A /* Pods_CampApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A293C1550CBBF57D23F73A /* Pods_CampApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -103,6 +109,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0D2A0EF5BFD82CD4AE7D9601 /* Pods-CampApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampApp.release.xcconfig"; path = "Target Support Files/Pods-CampApp/Pods-CampApp.release.xcconfig"; sourceTree = "<group>"; };
+		29A293C1550CBBF57D23F73A /* Pods_CampApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CampApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E162A892823EFCC000F81CC /* Geofirestore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geofirestore.swift; sourceTree = "<group>"; };
 		2E17278C2819CDE100438393 /* CampAreasForMeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampAreasForMeInteractor.swift; sourceTree = "<group>"; };
 		2E17278E2819CE9F00438393 /* CampAreasForMePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampAreasForMePresenter.swift; sourceTree = "<group>"; };
 		2E1727902819D0A300438393 /* CampAreasForMeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampAreasForMeController.swift; sourceTree = "<group>"; };
@@ -129,6 +138,7 @@
 		2E18224927046B4200B271CA /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
 		2E26797B2703917E0090F074 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		2E26797D270391870090F074 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		2E33F5262829A2D800FD6CEE /* GeneralHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralHelper.swift; sourceTree = "<group>"; };
 		2E770C152706543300872550 /* HomeSegmentEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSegmentEnum.swift; sourceTree = "<group>"; };
 		2E7BB7E5270B784500B2DCBB /* CampDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampDetailController.swift; sourceTree = "<group>"; };
 		2E7BB7E7270B788000B2DCBB /* CampDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampDetailPresenter.swift; sourceTree = "<group>"; };
@@ -158,6 +168,7 @@
 		2EAE5C082811EA3E004495D9 /* SearchPlaceEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPlaceEntity.swift; sourceTree = "<group>"; };
 		2EAE5C0A2811EA3E004495D9 /* SearchPlaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPlaceController.swift; sourceTree = "<group>"; };
 		2EAE5C0C2811EA3E004495D9 /* SearchPlaceInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPlaceInteractor.swift; sourceTree = "<group>"; };
+		32AE1242BBA0A838569103D9 /* Pods-CampApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampApp.debug.xcconfig"; path = "Target Support Files/Pods-CampApp/Pods-CampApp.debug.xcconfig"; sourceTree = "<group>"; };
 		3C0AF38427D7A5FB00A36CE1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3C0AF38827D7A65900A36CE1 /* MapViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewPresenter.swift; sourceTree = "<group>"; };
 		3C0AF38B27D7C3CC00A36CE1 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -166,7 +177,6 @@
 		3C0AF39127DA818A00A36CE1 /* SearchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
 		3C600F0427BA5B7C00D2E692 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		3C600F0E27BA672B00D2E692 /* WelcomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCell.swift; sourceTree = "<group>"; };
-		3C600F1027BA678000D2E692 /* WelcomeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeData.swift; sourceTree = "<group>"; };
 		3C65B95E27C41C1E0069A832 /* ImageSliderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSliderController.swift; sourceTree = "<group>"; };
 		3C65B96727C423650069A832 /* ImageSliderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSliderPresenter.swift; sourceTree = "<group>"; };
 		3C65B96927C426D40069A832 /* ImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
@@ -180,9 +190,11 @@
 		3C8111C227CC1DD100E6832C /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileController.swift; path = Common/Common/Extensions/ProfileController.swift; sourceTree = SOURCE_ROOT; };
 		3C8111C427CC1EAC00E6832C /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfilePresenter.swift; path = Common/Common/Extensions/ProfilePresenter.swift; sourceTree = SOURCE_ROOT; };
 		3C8111C627CC1F2C00E6832C /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileInteractor.swift; path = Common/Common/Extensions/ProfileInteractor.swift; sourceTree = SOURCE_ROOT; };
-		95A58A161A0213B2B1E520B8 /* Pods-CampApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampApp.debug.xcconfig"; path = "Target Support Files/Pods-CampApp/Pods-CampApp.debug.xcconfig"; sourceTree = "<group>"; };
-		F11285E0B7ECA8F940163781 /* Pods_CampApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CampApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F63913CC5AB555B52BA26BD0 /* Pods-CampApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampApp.release.xcconfig"; path = "Target Support Files/Pods-CampApp/Pods-CampApp.release.xcconfig"; sourceTree = "<group>"; };
+		3CB4BA0E281C183600E5C0C2 /* WelcomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInteractor.swift; sourceTree = "<group>"; };
+		3CB4BA12281D5B8800E5C0C2 /* WelcomeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeData.swift; sourceTree = SOURCE_ROOT; };
+		3CDECA942819F1EE001C8113 /* FavoriteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteController.swift; sourceTree = "<group>"; };
+		3CDECA982819F232001C8113 /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
+		3CDECA9A2819F245001C8113 /* FavoriteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,13 +205,21 @@
 				2E1821DD270457CC00B271CA /* Common.framework in Frameworks */,
 				2E18222A270459F400B271CA /* YTNetwork.framework in Frameworks */,
 				2E1821B82704538300B271CA /* YTUI.framework in Frameworks */,
-				F86F770C553950290F5CE6CC /* Pods_CampApp.framework in Frameworks */,
+				DF63A25CEBD50583B5DE275A /* Pods_CampApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E162A882823EFBA000F81CC /* GeoFireStore */ = {
+			isa = PBXGroup;
+			children = (
+				2E162A892823EFCC000F81CC /* Geofirestore.swift */,
+			);
+			path = GeoFireStore;
+			sourceTree = "<group>";
+		};
 		2E1727872819CD0C00438393 /* CampAreasForMe */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +265,7 @@
 		2E1822352704684500B271CA /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				2E162A882823EFBA000F81CC /* GeoFireStore */,
 				2E1822362704688500B271CA /* Extension */,
 				2E1822332704684200B271CA /* FirebaseNetwork.swift */,
 				2E825C872818857100D5F75F /* FirebaseNetwork+User.swift */,
@@ -355,6 +376,7 @@
 			children = (
 				2E825C85281879D700D5F75F /* SessionHelper.swift */,
 				2E825C8928188D9300D5F75F /* User.swift */,
+				2E33F5262829A2D800FD6CEE /* GeneralHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -482,9 +504,9 @@
 		2E98855E26FBB95200A881F7 /* Favourite */ = {
 			isa = PBXGroup;
 			children = (
-				2E98857A26FCC14E00A881F7 /* Interactor */,
-				2E98857B26FCC15500A881F7 /* Presenter */,
-				2E98857C26FCC15D00A881F7 /* Controller */,
+				3CDECA972819F222001C8113 /* Interactor */,
+				3CDECA962819F21C001C8113 /* Presenter */,
+				3CDECA932819F1DC001C8113 /* Controller */,
 				2E98855F26FBB97D00A881F7 /* Coordinator */,
 			);
 			path = Favourite;
@@ -547,27 +569,6 @@
 				3C8111C627CC1F2C00E6832C /* ProfileInteractor.swift */,
 			);
 			path = Interactor;
-			sourceTree = "<group>";
-		};
-		2E98857A26FCC14E00A881F7 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		2E98857B26FCC15500A881F7 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		2E98857C26FCC15D00A881F7 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		2E98857D26FCC16E00A881F7 /* Controller */ = {
@@ -707,6 +708,7 @@
 		3C600F0227BA5B4400D2E692 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
+				3CB4BA0D281C182300E5C0C2 /* Interactor */,
 				3C600F0D27BA626100D2E692 /* Models */,
 				3C6DB88A27BADA460005D050 /* Presenter */,
 				3C600F0327BA5B5F00D2E692 /* Controller */,
@@ -726,7 +728,7 @@
 		3C600F0D27BA626100D2E692 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3C600F1027BA678000D2E692 /* WelcomeData.swift */,
+				3CB4BA12281D5B8800E5C0C2 /* WelcomeData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -824,11 +826,43 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		3CB4BA0D281C182300E5C0C2 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				3CB4BA0E281C183600E5C0C2 /* WelcomeInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		3CDECA932819F1DC001C8113 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3CDECA942819F1EE001C8113 /* FavoriteController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3CDECA962819F21C001C8113 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3CDECA982819F232001C8113 /* FavoritePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3CDECA972819F222001C8113 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				3CDECA9A2819F245001C8113 /* FavoriteInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		DF178F2957180F8E5CB6890F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				95A58A161A0213B2B1E520B8 /* Pods-CampApp.debug.xcconfig */,
-				F63913CC5AB555B52BA26BD0 /* Pods-CampApp.release.xcconfig */,
+				32AE1242BBA0A838569103D9 /* Pods-CampApp.debug.xcconfig */,
+				0D2A0EF5BFD82CD4AE7D9601 /* Pods-CampApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -841,7 +875,7 @@
 				2E1821B72704538300B271CA /* YTUI.framework */,
 				2E1821B32704523200B271CA /* UI.framework */,
 				2E182180270451A900B271CA /* libAppUI.a */,
-				F11285E0B7ECA8F940163781 /* Pods_CampApp.framework */,
+				29A293C1550CBBF57D23F73A /* Pods_CampApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -853,14 +887,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E98854B26FBA1F300A881F7 /* Build configuration list for PBXNativeTarget "CampApp" */;
 			buildPhases = (
-				6EC70ABC09FCF616A8357F55 /* [CP] Check Pods Manifest.lock */,
+				01214A806F24627F25F9CBEB /* [CP] Check Pods Manifest.lock */,
 				3C6DB88D27BBE78D0005D050 /* ShellScript */,
 				2E98853326FBA1F200A881F7 /* Sources */,
 				2E98853426FBA1F200A881F7 /* Frameworks */,
 				2E98853526FBA1F200A881F7 /* Resources */,
 				2E1821BA2704538300B271CA /* Embed Frameworks */,
-				10F5C4B41E3CF02E50917468 /* [CP] Embed Pods Frameworks */,
-				2573A7EFFA32766DC274651D /* [CP] Copy Pods Resources */,
+				0B507793093D2204857816FD /* [CP] Embed Pods Frameworks */,
+				22AA5A4FE4332A32BABA0BFE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -933,7 +967,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		10F5C4B41E3CF02E50917468 /* [CP] Embed Pods Frameworks */ = {
+		01214A806F24627F25F9CBEB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CampApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0B507793093D2204857816FD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -950,7 +1006,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CampApp/Pods-CampApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2573A7EFFA32766DC274651D /* [CP] Copy Pods Resources */ = {
+		22AA5A4FE4332A32BABA0BFE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -985,28 +1041,6 @@
 			shellScript = "
 ";
 		};
-		6EC70ABC09FCF616A8357F55 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CampApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1014,6 +1048,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E162A8A2823EFCC000F81CC /* Geofirestore.swift in Sources */,
 				3C65B95F27C41C1E0069A832 /* ImageSliderController.swift in Sources */,
 				2E98856526FBB9BF00A881F7 /* ProfileCoordinator.swift in Sources */,
 				3C600F0F27BA672B00D2E692 /* WelcomeCell.swift in Sources */,
@@ -1022,14 +1057,16 @@
 				3C0AF39027DA6DFC00A36CE1 /* SearchViewController.swift in Sources */,
 				2E802A67281C705800842018 /* CampDetailCoordinator.swift in Sources */,
 				2E98856126FBB98800A881F7 /* FavouriteCoordinator.swift in Sources */,
+				3CDECA992819F232001C8113 /* FavoritePresenter.swift in Sources */,
 				3C600F0627BA5B7D00D2E692 /* WelcomeController.swift in Sources */,
+				3CB4BA13281D5B8800E5C0C2 /* WelcomeData.swift in Sources */,
+				3CDECA952819F1EE001C8113 /* FavoriteController.swift in Sources */,
 				2E825C86281879D700D5F75F /* SessionHelper.swift in Sources */,
 				2E26797E270391870090F074 /* HomeInteractor.swift in Sources */,
 				3C8111C327CC1DD100E6832C /* ProfileController.swift in Sources */,
 				3C0AF38C27D7C3CD00A36CE1 /* LocationManager.swift in Sources */,
 				2E1822342704684200B271CA /* FirebaseNetwork.swift in Sources */,
 				2E770C162706543300872550 /* HomeSegmentEnum.swift in Sources */,
-				3C600F1127BA678000D2E692 /* WelcomeData.swift in Sources */,
 				3C0AF39227DA818A00A36CE1 /* SearchViewCell.swift in Sources */,
 				2E98853F26FBA1F200A881F7 /* ViewController.swift in Sources */,
 				3C71204227CFC49B003F2EEE /* CampAddingController.swift in Sources */,
@@ -1037,7 +1074,9 @@
 				3C0AF38E27DA692E00A36CE1 /* Location.swift in Sources */,
 				2EAE5C0F2811EA3E004495D9 /* SearchPlaceEntity.swift in Sources */,
 				2E7BB7E8270B788000B2DCBB /* CampDetailPresenter.swift in Sources */,
+				2E33F5272829A2D800FD6CEE /* GeneralHelper.swift in Sources */,
 				3C0AF38927D7A65900A36CE1 /* MapViewPresenter.swift in Sources */,
+				3CB4BA0F281C183600E5C0C2 /* WelcomeInteractor.swift in Sources */,
 				2E98855926FBB8F800A881F7 /* HomeCoordinator.swift in Sources */,
 				3C71204627CFC64F003F2EEE /* CampAddingInteractor.swift in Sources */,
 				2EAE5C102811EA3E004495D9 /* SearchPlaceController.swift in Sources */,
@@ -1063,6 +1102,7 @@
 				2E7BB7EA270B78D600B2DCBB /* CampDetailInteractor.swift in Sources */,
 				3C65B96827C423650069A832 /* ImageSliderPresenter.swift in Sources */,
 				3C65B96A27C426D40069A832 /* ImageViewCell.swift in Sources */,
+				3CDECA9B2819F245001C8113 /* FavoriteInteractor.swift in Sources */,
 				2E1822382704689200B271CA /* Extensions.swift in Sources */,
 				3C0AF38627D7A5FB00A36CE1 /* MapViewController.swift in Sources */,
 				2E825C8A28188D9300D5F75F /* User.swift in Sources */,
@@ -1209,18 +1249,20 @@
 		};
 		2E98854C26FBA1F300A881F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95A58A161A0213B2B1E520B8 /* Pods-CampApp.debug.xcconfig */;
+			baseConfigurationReference = 32AE1242BBA0A838569103D9 /* Pods-CampApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = W3475PQ5N9;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CampApp/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please allow location access to use our app!";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow location access to use our app!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1245,16 +1287,18 @@
 		};
 		2E98854D26FBA1F300A881F7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F63913CC5AB555B52BA26BD0 /* Pods-CampApp.release.xcconfig */;
+			baseConfigurationReference = 0D2A0EF5BFD82CD4AE7D9601 /* Pods-CampApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = W3475PQ5N9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CampApp/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please allow location access to use our app!";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow location access to use our app!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1268,7 +1312,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.campApp.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = camp_app_dev;
+				PROVISIONING_PROFILE_SPECIFIER = camp_dist;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

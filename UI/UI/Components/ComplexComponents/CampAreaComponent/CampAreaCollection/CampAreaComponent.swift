@@ -31,7 +31,6 @@ public final class CampAreaComponent: IdentifiableComponent {
   
   public func renderContent() -> CampAreaComponentView {
     let view = CampAreaComponentView()
-    view.configureView(presenter: presenter)
     return view
   }
 }

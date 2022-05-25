@@ -11,79 +11,88 @@ import UIKit
 import SnapKit
 
 public final class CampDetailDistanceView: UIView {
+  
+  public var presenter: CampDetailDistancePresenterProtocol?
+  private let starView: TwoRowIconedLabel = TwoRowIconedLabel()
+  private let distanceView: TwoRowIconedLabel = TwoRowIconedLabel()
+  private let pointView: TwoRowIconedLabel = TwoRowIconedLabel()
+  private let stackView: UIStackView = UIStackView().then {
+    $0.axis = .horizontal
+    $0.spacing = 21
+    $0.distribution = .fillEqually
+  }
+  private var favorited: Bool = false
+  public init() {
+    super.init(frame: .zero)
+    initialize()
     
-    public var presenter: CampDetailDistancePresenterProtocol?
-    private let starView: TwoRowIconedLabel = TwoRowIconedLabel()
-    private let distanceView: TwoRowIconedLabel = TwoRowIconedLabel()
-    private let pointView: TwoRowIconedLabel = TwoRowIconedLabel()
-    private let stackView: UIStackView = UIStackView().then {
-        $0.axis = .horizontal
-        $0.spacing = 21
-        $0.distribution = .fillEqually
-    }
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
+  public func configureView(presenter: CampDetailDistancePresenterProtocol) {
+    self.presenter = presenter
     
-    public init() {
-        super.init(frame: .zero)
-        initialize()
-        
-    }
+    loadUI()
+  }
+  
+  public override func layoutSubviews() {
+    super.layoutSubviews()
+    roundCorners(corners: [.topLeft, .topRight], radius: 20)
+  }
+  
+  public func loadUI() {
+
+    let startPresenter = TwoRowIconedLabelPresenter(title: StringProvider.likes,
+                                                    secondTitle: "4.8 (3.2k)",
+                                                    image: ImageProvider.heart)
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    startPresenter.imageTintColor = self.presenter?.userFavorite ?? false ? ColorProvider.like.color : ColorProvider.unlike.color
+    startPresenter.onTap = { [weak self] in
+      self?.presenter?.userFavorite.toggle()
+      self?.loadUI()
+      self?.presenter?.favoriteHandler?(self?.presenter?.userFavorite ?? false ? FavoriteType.add : FavoriteType.delete )
+      
     }
+    starView.configureView(presenter: startPresenter)
     
-    public func configureView(presenter: CampDetailDistancePresenterProtocol) {
-        self.presenter = presenter
-        
-        loadUI()
-    }
+    let distancePresenter = TwoRowIconedLabelPresenter(title: StringProvider.distance,
+                                                       secondTitle: "346 km",
+                                                       image: ImageProvider.distance)
+    distanceView.configureView(presenter: distancePresenter)
     
-    public func loadUI() {
-        
-        let startPresenter = TwoRowIconedLabelPresenter(title: StringProvider.likes,
-                                                        secondTitle: "4.8 (3.2k)",
-                                                        image: ImageProvider.heart)
-        startPresenter.imageTintColor = ColorProvider.onboardingRedColor.color
-        startPresenter.onTap = { [weak self] in
-            debugPrint("Beğeni butonu tıklandı")
-        }
-        starView.configureView(presenter: startPresenter)
-        
-        let distancePresenter = TwoRowIconedLabelPresenter(title: StringProvider.distance,
-                                                           secondTitle: "346 km",
-                                                           image: ImageProvider.distance)
-        distanceView.configureView(presenter: distancePresenter)
-        
-        let pointPresenter = TwoRowIconedLabelPresenter(title: StringProvider.likes,
-                                                        secondTitle: "85",
-                                                        image: ImageProvider.star)
-        pointPresenter.imageTintColor = ColorProvider.starYellow.color
-        pointView.configureView(presenter: pointPresenter)
-        
-    }
+    let pointPresenter = TwoRowIconedLabelPresenter(title: StringProvider.likes,
+                                                    secondTitle: "85",
+                                                    image: ImageProvider.star)
+    pointPresenter.imageTintColor = ColorProvider.starYellow.color
+    pointView.configureView(presenter: pointPresenter)
+    
+  }
 }
 
 extension CampDetailDistanceView {
-    func initialize() {
-        setupViews()
-        setupConstraints()
-    }
+  func initialize() {
+    setupViews()
+    setupConstraints()
+  }
+  
+  func setupViews() {
+    addSubview(stackView)
     
-    func setupViews() {
-        addSubview(stackView)
-        
-        stackView.addArrangedSubview(starView)
-        stackView.addArrangedSubview(distanceView)
-        stackView.addArrangedSubview(pointView)
-        
-    }
+    stackView.addArrangedSubview(starView)
+    stackView.addArrangedSubview(distanceView)
+    stackView.addArrangedSubview(pointView)
     
-    func setupConstraints() {
-        stackView.snp.makeConstraints {
-            $0.top.equalTo(40)
-            $0.leading.equalTo(20)
-            $0.trailing.equalTo(-20)
-            $0.height.equalTo(36)
-        }
+  }
+  
+  func setupConstraints() {
+    stackView.snp.makeConstraints {
+      $0.top.equalTo(40)
+      $0.leading.equalTo(20)
+      $0.trailing.equalTo(-20)
+      $0.height.equalTo(36)
     }
+  }
 }

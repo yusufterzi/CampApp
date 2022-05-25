@@ -8,14 +8,13 @@
 import UIKit
 import Foundation
 
-
 final class WelcomeCell: UICollectionViewCell {
   
   static let identifier = String(describing: WelcomeCell.self)
   @IBOutlet private var imageView: UIImageView!
   
-  func setup(_ slide: WelcomeData, frameView: UIView)  {
-    imageView.image = slide.image
+  func setup(_ data: WelcomeData, frameView: UIView)  {
+    imageView.image = data.image
     
     let roundedRect = CGRect (
       x: frameView.frame.minX,

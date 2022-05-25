@@ -19,7 +19,7 @@ public final class YTCarouselComponent: IdentifiableComponent {
   }
   
   public func render(in content: YTCarouselView) {
-    content.presenter = presenter
+    content.configureView(presenter: presenter)
   }
 
   public func shouldContentUpdate(with next: YTCarouselComponent) -> Bool {
@@ -32,7 +32,6 @@ public final class YTCarouselComponent: IdentifiableComponent {
   
   public func renderContent() -> YTCarouselView {
     let view = YTCarouselView()
-    view.configureView(presenter: presenter)
     return view
   }
 }

@@ -25,13 +25,14 @@ final class CampSelectionPresenter: CampSelectionPresenterProtocol {
     self.router = router
     CampDefaults.setup(with: PersistentDomain.test)
   }
-  
   public func loadUI(viewController: CampSelectionController) {
     setupLabel(viewController: viewController)
     setupViews(viewController: viewController)
     setupImages(viewController: viewController)
+    setupButton(viewController: viewController)
     
   }
+  
   
   public func setupLabel(viewController: CampSelectionController) {
     
@@ -66,7 +67,6 @@ final class CampSelectionPresenter: CampSelectionPresenterProtocol {
     viewController.bungalowLabel.textAlignment = .center
     
   }
-  
   public func setupViews(viewController: CampSelectionController) {
     
     viewController.caravanView.backgroundColor = UIColor(white: 1, alpha: 1)
@@ -83,6 +83,8 @@ final class CampSelectionPresenter: CampSelectionPresenterProtocol {
     viewController.bungalowView.layer.cornerRadius = 34
     viewController.bungalowView.layer.borderWidth = 1
     viewController.bungalowView.layer.borderColor = ColorProvider.campSelectionFrameColor.color.cgColor
+    
+    
   }
   public func setupImages(viewController: CampSelectionController) {
     viewController.caravanImageView.image = ImageProvider.caravan
@@ -102,12 +104,29 @@ final class CampSelectionPresenter: CampSelectionPresenterProtocol {
     viewController.bungalowView.addGestureRecognizer(bungalowTapGestureRecognizer)
   }
   
+  private func setupButton(viewController: CampSelectionController) {
+    let buttonTextFont: [AttributedStringBuilder.Attribute] = [
+      .font(FontProvider.bold18),
+      .textColor(ColorProvider.segmentItemSelectedText.color),
+    ]
+    let buttonText: NSAttributedString = AttributedStringBuilder().text(StringProvider.itDoesntMatter, attributes: buttonTextFont).attributedString
+    viewController.doesntMatterButton.setAttributedTitle(buttonText, for: .normal)
+    viewController.doesntMatterButton.backgroundColor = ColorProvider.whiteTextColor.color
+    viewController.doesntMatterButton.addTarget(self, action: #selector(onBtnClick), for: .touchUpInside)
+  }
+  
+  @objc private func onBtnClick(_ sender: UIButton) {
+    debugPrint("Select: \(sender.tag)")
+    CampDefaults.shared.store(with: .onboardingAreaSelection, value: sender.tag)
+    router.trigger(.home(category: sender.tag), with: TransitionOptions(animated: true))
+  }
+  
   @objc func viewTapped(sender: UITapGestureRecognizer) {
     if let view = sender.view {
       debugPrint("View tapped: \(view.tag)")
       CampDefaults.shared.store(with: .onboardingCampSelection, value: view.tag)
       CampDefaults.shared.store(with: .needOpenForMe, value: true)
-      router.trigger(.home, with: TransitionOptions(animated: true))
+      router.trigger(.home(category: view.tag), with: TransitionOptions(animated: true))
     }
   }
 }

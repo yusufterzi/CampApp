@@ -24,18 +24,19 @@ final class HomePresenter: HomePresenterProtocol, BaseListPresenter {
   internal var router: UnownedRouter<HomeRoute>
   
   private var segments: [HomeSegmentEnum] = [.all, .caravan, .tent, .bungalow]
-  private var selectedSegment: HomeSegmentEnum = .all
+  private var selectedSegment: HomeSegmentEnum
   private let storageRef = Storage.storage().reference()
 
-  init(view: BaseListView, router: UnownedRouter<HomeRoute>) {
+  init(view: BaseListView, router: UnownedRouter<HomeRoute>, selectedSegment: Int?) {
     self.view = view
     self.router = router
     self.interactor = HomeInteractor()
+    self.selectedSegment = HomeSegmentEnum(rawValue: selectedSegment ?? HomeSegmentEnum.all.rawValue)  ?? HomeSegmentEnum.all
   }
   
   func loadUI() {
     view?.sendAction(.title(StringProvider.firstTabTitle))
-    interactor?.loadData()
+    interactor?.loadData(campSegment: self.selectedSegment)
     interactor?.loadHandler = { [weak self] in
       if (self?.interactor?.camps.count ?? 0) > 0 && (self?.interactor?.areas.count ?? 0) > 0 {
         self?.dataLoaded()
@@ -121,7 +122,12 @@ final class HomePresenter: HomePresenterProtocol, BaseListPresenter {
                        isSelected: segment == selectedSegment))
     }
     
-    let component = SegmentSelectionComponent(id: "segment", presenter: SegmentSelectionPresenter(items: items))
+    let presenter = SegmentSelectionPresenter(items: items)
+    presenter.segmentSelectionHandler = { [weak self] selectedSegment in
+      self?.selectedSegment = HomeSegmentEnum(rawValue: selectedSegment.identifier) ?? HomeSegmentEnum.all
+      self?.loadUI()
+    }
+    let component = SegmentSelectionComponent(id: "segment", presenter: presenter)
     return CellNode(component)
   }
   

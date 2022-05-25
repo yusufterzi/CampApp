@@ -13,7 +13,7 @@ import YTUI
 import YTNetwork
 import AttributedStringBuilder
 import UIKit
-import FirebaseUI
+import FirebaseStorageUI
 
 protocol ImageSliderPresenterProtocol {
     func cellForRow(at indexPath: IndexPath, to collectionView: UICollectionView) -> ImageViewCell

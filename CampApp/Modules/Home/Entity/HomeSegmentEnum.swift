@@ -7,11 +7,11 @@
 
 import Common
 
-enum HomeSegmentEnum: Int {
-  case all
+public enum HomeSegmentEnum: Int {
   case caravan
   case tent
   case bungalow
+  case all
   
   var title: String {
     switch self {

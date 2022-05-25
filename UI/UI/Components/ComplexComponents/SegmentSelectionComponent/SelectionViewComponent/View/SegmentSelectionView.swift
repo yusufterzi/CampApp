@@ -44,7 +44,6 @@ public final class SegmentSelectionView: UIView, SegmentSelectionViewProtocol {
   
   public func configureView(presenter: SegmentSelectionPresenterProtocol?) {
     self.presenter = presenter
-    
     loadUI()
   }
   
@@ -52,7 +51,6 @@ public final class SegmentSelectionView: UIView, SegmentSelectionViewProtocol {
     guard let presenter = presenter else {
       return
     }
-    
     renderer.render(presenter.sections)
   }
 }
