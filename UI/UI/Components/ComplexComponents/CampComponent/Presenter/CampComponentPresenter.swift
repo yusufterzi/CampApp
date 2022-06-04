@@ -21,8 +21,9 @@ public class CampComponentViewModel {
     public var point: Double?
     public var address: String?
     public var id: String
-    
-    public init(name: String? = nil, subLocation: String? = nil , city: String? = nil, description: String? = nil, imageReference: [StorageReference]? = nil, latitude: Double? = nil, longitude: Double? = nil, point: Double? = nil, address: String? = nil, id: String) {
+    public var introImageIndex: Int?
+
+    public init(name: String? = nil, subLocation: String? = nil , city: String? = nil, description: String? = nil, imageReference: [StorageReference]? = nil, latitude: Double? = nil, longitude: Double? = nil, point: Double? = nil, address: String? = nil, id: String, introImageIndex: Int? = nil) {
         
         self.name = name
         self.subLocation = subLocation
@@ -34,6 +35,7 @@ public class CampComponentViewModel {
         self.point = point
         self.address = address
         self.id = id
+        self.introImageIndex = introImageIndex
     }
 }
 
@@ -58,7 +60,7 @@ public final class CampComponentPresenter: CampComponentPresenterProtocol {
     }
     
     public var image: StorageReference? {
-        item.imageReference?.first 
+      item.imageReference?[item.introImageIndex ?? 0]
     }
     
     public init(item: CampComponentViewModel) {

@@ -22,5 +22,13 @@ public extension Tappable where Self: UIView {
     addGestureRecognizer(tap)
     isUserInteractionEnabled = true
   }
+  
+  func longPress(handler: @escaping VoidHandler) {
+    let longPress = UILongPressGestureRecognizer() {
+      handler()
+    }
+    addGestureRecognizer(longPress)
+    isUserInteractionEnabled = true
+  }
 
 }

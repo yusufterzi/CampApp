@@ -68,7 +68,8 @@ final class HomePresenter: HomePresenterProtocol, BaseListPresenter {
                                     longitude: item.longitude,
                                     point: item.point,
                                     address: item.address,
-                                    id: item.id)
+                                    id: item.id,
+                                    introImageIndex: item.introImageIndex)
     }
     
     for camp in campComponentViews {
@@ -142,7 +143,8 @@ final class HomePresenter: HomePresenterProtocol, BaseListPresenter {
                                        longitude: item.longitude,
                                        point: item.point,
                                        address: item.address,
-                                       id: item.id)
+                                       id: item.id,
+                                       introImageIndex: item.introImageIndex)
       }
     
     let presenter: YTCarouselPresenter = YTCarouselPresenter(items: campComponentViewModel)

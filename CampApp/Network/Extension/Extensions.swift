@@ -37,6 +37,8 @@ extension Parameters {
       item.type = (self["type"] as? [Int])
       item.createdOn = (self["createdOn"] as? Timestamp)?.dateValue()
       item.updatedOn = (self["updatedOn"] as? Timestamp)?.dateValue()
+      item.introImageIndex = (self["introImageIndex"] as? Int)
+
 
       return item
     
