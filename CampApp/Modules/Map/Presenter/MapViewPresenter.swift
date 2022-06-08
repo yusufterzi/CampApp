@@ -18,10 +18,10 @@ protocol MapViewPresenterProtocol {
 
 final class MapViewPresenter: MapViewPresenterProtocol {
     
-    internal var router: UnownedRouter<ProfileRoute>
+    internal var router: UnownedRouter<CampDetailRoute>
     
     
-    init(router: UnownedRouter<ProfileRoute>) {
+    init(router: UnownedRouter<CampDetailRoute>) {
         self.router = router
     }
     
