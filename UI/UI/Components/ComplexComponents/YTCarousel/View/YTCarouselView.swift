@@ -65,7 +65,7 @@ public final class YTCarouselView: UIView, Tappable, YTCarouselViewProtocol {
     setupBackRight()
 
     let currentItem = presenter.items[presenter.index]
-      if let ref = currentItem.imageReference?.first {
+    if let ref = currentItem.imageReference?[currentItem.introImageIndex ?? 0] {
         frontImageView.sd_setImage(with: ref)
     } else {
       frontImageView.image = nil

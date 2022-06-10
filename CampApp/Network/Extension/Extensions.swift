@@ -8,6 +8,28 @@
 import FirebaseFirestore
 import YTNetwork
 
+public enum FirebaseConstant {
+  static let id: String = "id"
+  static let areas: String = "areas"
+  static let camp: String = "camp"
+  static let type: String = "type"
+  static let updatedOn: String = "updatedOn"
+  static let createdOn: String = "createdOn"
+  static let address: String = "address"
+  static let name: String = "name"
+  static let subLocation: String = "subLocation"
+  static let city: String = "city"
+  static let description: String = "description"
+  static let images: String = "images"
+  static let latitude: String = "latitude"
+  static let longitude: String = "longitude"
+  static let point: String = "point"
+  static let area: String = "area"
+  static let introImageIndex: String = "introImageIndex"
+  static let user: String = "user"
+
+}
+
 public typealias Parameters = [String: Any]
 
 extension Parameters {
@@ -23,20 +45,22 @@ extension Parameters {
   func decodeCampModel() -> CampModel? {
     
       let item = CampModel(name: "", subLocation: "", city: "", description: "", images: [], latitude: 0, longitude: 0, point: 0, address: "")
-      item.id = (self["id"] as? String) ?? UUID().uuidString
-      item.address = (self["address"] as? String)
-      item.name = (self["name"] as? String)
-      item.subLocation = (self["subLocation"] as? String)
-      item.city = (self["city"] as? String)
-      item.description = (self["description"] as? String)
-      item.images = (self["images"] as? [String])
-      item.latitude = (self["latitude"] as? Double)
-      item.longitude = (self["longitude"] as? Double)
-      item.point = (self["point"] as? Double)
-      item.area = (self["area"] as? [Int])
-      item.type = (self["type"] as? [Int])
-      item.createdOn = (self["createdOn"] as? Timestamp)?.dateValue()
-      item.updatedOn = (self["updatedOn"] as? Timestamp)?.dateValue()
+      item.id = (self[FirebaseConstant.id] as? String) ?? UUID().uuidString
+      item.address = (self[FirebaseConstant.address] as? String)
+      item.name = (self[FirebaseConstant.name] as? String)
+      item.subLocation = (self[FirebaseConstant.subLocation] as? String)
+      item.city = (self[FirebaseConstant.city] as? String)
+      item.description = (self[FirebaseConstant.description] as? String)
+      item.images = (self[FirebaseConstant.images] as? [String])
+      item.latitude = (self[FirebaseConstant.latitude] as? Double)
+      item.longitude = (self[FirebaseConstant.longitude] as? Double)
+      item.point = (self[FirebaseConstant.point] as? Double)
+      item.area = (self[FirebaseConstant.area] as? [Int])
+      item.type = (self[FirebaseConstant.type] as? [Int])
+      item.createdOn = (self[FirebaseConstant.createdOn] as? Timestamp)?.dateValue()
+      item.updatedOn = (self[FirebaseConstant.updatedOn] as? Timestamp)?.dateValue()
+      item.introImageIndex = (self[FirebaseConstant.introImageIndex] as? Int)
+
 
       return item
     

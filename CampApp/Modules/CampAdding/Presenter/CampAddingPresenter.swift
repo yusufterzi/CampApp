@@ -173,6 +173,9 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
     presenter.selectedImagesHandler = { [weak self] images in
       self?.campImages = presenter.selectedImages.compactMap( { CampImageModel(campImage: $0) } )
     }
+    presenter.introImageIndexHandler = {[weak self] index in
+      self?.camp.introImageIndex = index
+    }
     
     if let campImages = self.campGoogleImages, campImages.count > 0 {
       presenter.selectedImages = campImages

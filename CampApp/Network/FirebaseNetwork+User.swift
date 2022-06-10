@@ -13,7 +13,7 @@ extension FirebaseNetwork {
   func addFavourite(campId: String,
                     completion: ((GenericResult<Void>) -> Void)?) {
     guard let user = SessionHelper.shared.user else { return }
-    let document = database.collection("user").document("\(user.userID)")
+    let document = database.collection(FirebaseConstant.user).document("\(user.userID)")
     
     var favouriteCamps: [String] = user.favouriteCamps
     favouriteCamps.append(campId)
@@ -34,7 +34,7 @@ extension FirebaseNetwork {
   func deleteFavorite(campId: String,
                       completion: ((GenericResult<Void>) -> Void)?) {
     guard let user = SessionHelper.shared.user else { return }
-    let document = database.collection("user").document("\(user.userID)")
+    let document = database.collection(FirebaseConstant.user).document("\(user.userID)")
     
     var favouriteCamps: [String] = user.favouriteCamps
     favouriteCamps.removeAll(where: { campId == $0 } )
@@ -57,7 +57,7 @@ extension FirebaseNetwork {
       return
     }
     
-    let ref = database.collection("user").document("\(currentUser.uid)")
+    let ref = database.collection(FirebaseConstant.user).document("\(currentUser.uid)")
     ref.getDocument { snapshot, error in
       guard let data = snapshot?.data(),
             let documentID = snapshot?.documentID else {

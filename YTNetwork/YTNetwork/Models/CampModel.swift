@@ -23,8 +23,10 @@ public class CampModel: Codable {
   public var type: [Int]?
   public var createdOn: Date?
   public var updatedOn: Date?
+  public var introImageIndex: Int?
+
   
-  public init(name: String? = nil, subLocation: String? = nil , city: String? = nil, description: String? = nil, images: [String]? = nil, latitude: Double? = nil, longitude: Double? = nil, point: Double? = nil, address:String? = nil) {
+  public init(name: String? = nil, subLocation: String? = nil , city: String? = nil, description: String? = nil, images: [String]? = nil, latitude: Double? = nil, longitude: Double? = nil, point: Double? = nil, address:String? = nil, introImageIndex: Int? = nil) {
     
     self.name = name
     self.subLocation = subLocation
@@ -36,6 +38,7 @@ public class CampModel: Codable {
     self.point = point
     self.address = address
     self.id = UUID().uuidString
+    self.introImageIndex = introImageIndex
   }
 }
 
