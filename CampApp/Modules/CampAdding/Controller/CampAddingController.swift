@@ -12,14 +12,16 @@ import Common
 
 final class CampAddingController: BaseListController<CampAddingPresenter> {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = ColorProvider.whiteTextColor.color
-        self.title  = StringProvider.addCamp
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    self.view.backgroundColor = ColorProvider.whiteTextColor.color
+    self.title  = StringProvider.addCamp
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    navigationController?.setNavigationBarHidden(false, animated: false)
+  }
     
 }
 

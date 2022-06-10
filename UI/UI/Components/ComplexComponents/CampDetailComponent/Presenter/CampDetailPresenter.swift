@@ -25,6 +25,7 @@ public protocol CampDetailComponentPresenterProtocol {
   var description: String { get }
   var imageIndex: Int { get set }
   var backButtonTapped: VoidHandler? { get set }
+  var editButtonTapped: VoidHandler? { get set }
   var maximizeButtonTapped: Handler<[StorageReference]>? { get set }
   var favoriteButtonHandler: Handler<FavoriteType>? { get set }
   var userFavorite: Bool {get set}
@@ -33,6 +34,7 @@ public protocol CampDetailComponentPresenterProtocol {
 
 public final class CampDetailComponentPresenter: CampDetailComponentPresenterProtocol {
   public var backButtonTapped: VoidHandler?
+  public var editButtonTapped: VoidHandler?
   public var maximizeButtonTapped: Handler<[StorageReference]>?
   private var item: CampComponentViewModel
   public var imageIndex: Int = 0

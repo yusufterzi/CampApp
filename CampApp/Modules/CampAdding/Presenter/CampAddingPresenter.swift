@@ -24,11 +24,11 @@ final class CampAddingPresenter: CampAddingPresenterProtocol, BaseListPresenter 
   public var campImages: [CampImageModel]?
   internal weak var view: BaseListView?
   internal var interactor: CampAddingInteractorProtocol?
-  internal var router: UnownedRouter<ProfileRoute>
+  internal var router: UnownedRouter<CampDetailRoute>
   public var camp: CampModel
   public var campGoogleImages: [UIImage]?
   
-  init(view: BaseListView, router: UnownedRouter<ProfileRoute>, camp: CampModel) {
+  init(view: BaseListView, router: UnownedRouter<CampDetailRoute>, camp: CampModel) {
     self.view = view
     self.router = router
     self.interactor = CampAddingInteractor()

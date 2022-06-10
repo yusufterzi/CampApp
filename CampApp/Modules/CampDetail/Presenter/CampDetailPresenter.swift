@@ -66,6 +66,19 @@ final class CampDetailPresenter: CampDetailPresenterProtocol, BaseListPresenter 
     campDetailPresenter.backButtonTapped = { [weak self] in
         self?.router.trigger(.back)
     }
+    campDetailPresenter.editButtonTapped = { [weak self] in
+      guard let item = self?.item else { return }
+      let references = item.imageReference?.compactMap { $0.name }
+      self?.router.trigger(.editCampArea(CampModel(name: item.name,
+                                                   subLocation: item.subLocation,
+                                                   city: item.city,
+                                                   description: item.description,
+                                                   images: references,
+                                                   latitude: item.latitude,
+                                                   longitude: item.longitude,
+                                                   point: item.point,
+                                                   address: item.address)))
+    }
     campDetailPresenter.maximizeButtonTapped = { [weak self] references in
         self?.router.trigger(.imageSlider(references), with: TransitionOptions(animated: true))
     }

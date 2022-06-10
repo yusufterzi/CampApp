@@ -65,6 +65,7 @@ extension SearchPlaceController: GMSAutocompleteResultsViewControllerDelegate {
     
     let dispatchGroup = DispatchGroup()
     
+    self.campImages.removeAll()
     for photo in place.photos ?? [] {
       dispatchGroup.enter()
       GMSPlacesClient.shared().loadPlacePhoto(photo, callback: { (photo, error) -> Void in

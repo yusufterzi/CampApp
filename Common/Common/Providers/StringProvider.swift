@@ -62,6 +62,7 @@ public final class StringProvider {
   
   public static let campAreasForYou: String = "İşte senin için".localized
   public static let suggestions: String = "öneriler!".localized
+  public static let edit: String = "Düzenle".localized
 
 
   

@@ -61,6 +61,9 @@ public final class CampDetailComponentView: UIView, CampDetailComponentViewProto
     $0.font = FontProvider.bigHeaderRegular
     $0.textColor = ColorProvider.whiteTextColor.color
   }
+  private let editButton: UIButton = UIButton().then {
+    $0.setTitle(StringProvider.edit, for: .normal)
+  }
   
   private let pageView: YTPageStackView = YTPageStackView()
   private let distanceView: CampDetailDistanceView = CampDetailDistanceView()
@@ -112,8 +115,10 @@ public final class CampDetailComponentView: UIView, CampDetailComponentViewProto
     let expandViewTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(maximizeButtonClicked(sender:)))
     expandView.addGestureRecognizer(expandViewTapRecognizer)
     
-    
+    editButton.addTarget(self, action: #selector(editButtonClicked), for: .touchUpInside)
+
   }
+  
   private func setupLocationLabel(presenter: CampDetailComponentPresenterProtocol) {
     let locationPresenter = IconedLabelPresenter(title: presenter.location,
                                                  image: ImageProvider.mapPin,
@@ -125,6 +130,7 @@ public final class CampDetailComponentView: UIView, CampDetailComponentViewProto
     locationPresenter.radius = 10
     locationLabel.configureView(presenter: locationPresenter)
   }
+  
   private func setupPageView() {
     let presenter = YTPageStackViewPresenter(itemCount: self.presenter?.images.count ?? 0)
     presenter.selectedItemIndex = self.presenter?.imageIndex ?? 0
@@ -145,11 +151,17 @@ public final class CampDetailComponentView: UIView, CampDetailComponentViewProto
     distanceView.configureView(presenter: campDetailDistancePresenter)
     
   }
+  
   @objc func backButtonClicked () {
     if let backButtonTapped = self.presenter?.backButtonTapped {
       backButtonTapped()
     }
   }
+  
+  @objc func editButtonClicked () {
+    self.presenter?.editButtonTapped?()
+  }
+  
   @objc func maximizeButtonClicked (sender: UITapGestureRecognizer) {
     if let maximizeButtonTapped = self.presenter?.maximizeButtonTapped {
       maximizeButtonTapped(presenter?.images ?? [])
@@ -176,6 +188,7 @@ extension CampDetailComponentView {
     addSubview(nameLabel)
     addSubview(pageView)
     addSubview(textLabel)
+    addSubview(editButton)
   }
   
   func setupConstraints() {
@@ -205,6 +218,12 @@ extension CampDetailComponentView {
     
     locationLabel.snp.makeConstraints {
       $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(35)
+      $0.trailing.equalToSuperview().offset(-20)
+      $0.height.equalTo(20)
+    }
+    
+    editButton.snp.makeConstraints {
+      $0.top.equalTo(locationLabel.snp.bottom).offset(8)
       $0.trailing.equalToSuperview().offset(-20)
       $0.height.equalTo(20)
     }
