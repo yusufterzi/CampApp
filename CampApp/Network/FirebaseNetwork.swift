@@ -11,6 +11,7 @@ import FirebaseStorage
 import YTNetwork
 import MapKit
 import YTUI
+import Common
 
 public final class FirebaseNetwork {
   public static var shared: FirebaseNetwork?
@@ -21,14 +22,14 @@ public final class FirebaseNetwork {
   public init(_ database: FirebaseFirestore.Firestore) {
     self.database = database
     self.storage = Storage.storage()
-    let geoFirestoreRef = database.collection("camp")
+    let geoFirestoreRef = database.collection(FirebaseConstant.camp)
     geoFirestore = GeoFirestore(collectionRef: geoFirestoreRef)
     FirebaseNetwork.shared = self
   }
   
   public func allCamps(campSegment: HomeSegmentEnum, completion: @escaping (GenericResult<[CampModel]>) -> Void) {
     
-    let ref = campSegment == HomeSegmentEnum.all ? database.collection("camp") :  database.collection("camp").whereField("type", arrayContainsAny: [campSegment.rawValue])
+    let ref = campSegment == HomeSegmentEnum.all ? database.collection(FirebaseConstant.camp) :  database.collection(FirebaseConstant.camp).whereField(FirebaseConstant.type, arrayContainsAny: [campSegment.rawValue])
     let query = ref.limit(to: 50)
     query.getCampModelObjects { (result: GenericResult<[CampModel]>) in
       completion(result)
@@ -36,7 +37,7 @@ public final class FirebaseNetwork {
   }
   
   public func allCampAreas(completion: @escaping (GenericResult<[CampAreaModel]>) -> Void) {
-    let ref = database.collection("areas")
+    let ref = database.collection(FirebaseConstant.areas)
     let query = ref.limit(to: 50)
     query.getDocumentsObjects { (result: GenericResult<[CampAreaModel]>) in
       completion(result)
@@ -47,19 +48,19 @@ public final class FirebaseNetwork {
       completion(.success([]))
       return
     }
-    let ref = database.collection("camp").whereField("id", in: user.favouriteCamps)
+    let ref = database.collection(FirebaseConstant.camp).whereField(FirebaseConstant.id, in: user.favouriteCamps)
     ref.getCampModelObjects() { (result: GenericResult<[CampModel]>) in
       completion(result)
     }
   }
   
   public func addCamp(data: CampModel?, completion: @escaping (GenericResult<Bool>) -> Void) {
-    let ref = database.collection("camp").document()
+    let ref = database.collection(FirebaseConstant.camp).document()
     data?.id = ref.documentID
     
     guard var parameters = data?.getParameters() else { return }
-    parameters["updatedOn"] = FieldValue.serverTimestamp()
-    parameters["createdOn"] = FieldValue.serverTimestamp()
+    parameters[FirebaseConstant.updatedOn] = FieldValue.serverTimestamp()
+    parameters[FirebaseConstant.createdOn] = FieldValue.serverTimestamp()
     ref.setData(parameters) { err in
       if let err = err {
         debugPrint("Error adding document: \(err)")
@@ -78,7 +79,7 @@ public final class FirebaseNetwork {
     }
     _ = circleQuery.observe(.documentEntered, with: { [weak self] (key, location) in
       guard let self = self, let key = key else { return }
-      self.database.collection("camp").document(key).getDocument { (document, error) in
+      self.database.collection(FirebaseConstant.camp).document(key).getDocument { (document, error) in
         if let document = document, document.exists {
           
         } else {
